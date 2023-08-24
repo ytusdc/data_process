@@ -6,16 +6,6 @@ from pathlib import Path
 import shutil
 from sklearn.model_selection import train_test_split
 
-'''
-适用于数据结构为
-.
-├── images
-│   ├── beida_20220321_29.jpg
-│   └── beida_20220321_6.jpg
-└── labels
-    ├── beida_20220321_29.txt
-    └── beida_20220321_6.txt
-'''
 
 '''
 data_dir: 文件路径
