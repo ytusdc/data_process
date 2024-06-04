@@ -122,14 +122,6 @@ for example
 0 0.412500 0.318981 0.358333 0.636111
 ```
 
-- <object-class>：对象的标签索引
+- object-class：对象的标签索引
 - x,y是目标的中心坐标，width,height是目标的宽和高。这些坐标是通过归一化的，其中x，width是使用原图的width进行归一化；而y，height是使用原图的height进行归一化。
-</details>
 
-<details open>
-
-https://zhuanlan.zhihu.com/p/160103709
-https://blog.csdn.net/weixin_38145317/article/details/103137822
-
-<summary>参考网址</summary>
-</details>
