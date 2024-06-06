@@ -90,22 +90,28 @@ def read_image_ids(image_sets_file):
     ids = []
     with open(image_sets_file, 'r') as f:
         for line in f.readlines():
-            ids.append(line.strip())
+            ids.append(line.strip().split(".")[0])
     return ids
 
 
-def parseXmlFilse(data_dir, json_save_path, split='train'):
-    assert os.path.exists(data_dir), "data path:{} does not exist".format(data_dir)
-    labelfile = split + ".txt"
-    image_sets_file = os.path.join(data_dir, "ImageSets", "Main", labelfile)
+"""
+解析 voc 数据集，xml 格式的数据
+
+data_dir： 标签文件 xml 存放路径
+save_json_file:  转换后将所有结果保存的一个 json 文件的全路径
+dataset_split_file： 划分数据集（train，val，test），存放数据集中文件名的文件
+                     针对特别情况——通过一个文件来划分记录数据集
+"""
+def parseXmlFiles(label_dir, save_json_file, dataset_split_file=None):
+    assert os.path.exists(label_dir), "data path:{} does not exist".format(label_dir)
     xml_files_list = []
-    if os.path.isfile(image_sets_file):
-        ids = read_image_ids(image_sets_file)
-        xml_files_list = [os.path.join(data_dir, "Annotations", f"{i}.xml") for i in ids]
-    elif os.path.isdir(data_dir):
+    if dataset_split_file is not None:
+        ids = read_image_ids(dataset_split_file)
+        xml_files_list = [os.path.join(label_dir, f"{i}.xml") for i in ids]
+    elif os.path.isdir(label_dir):
         # 修改此处xml的路径即可
         # xml_dir = os.path.join(data_dir,"labels/voc")
-        xml_dir = data_dir
+        xml_dir = label_dir
         xml_list = os.listdir(xml_dir)
         xml_files_list = [os.path.join(xml_dir, i) for i in xml_list]
 
@@ -139,7 +145,7 @@ def parseXmlFilse(data_dir, json_save_path, split='train'):
             current_image_id = addImgItem(file_name, size)
             print('add image with name: {}\tand\tsize: {}'.format(file_name, size))
         elif file_name in image_set:
-            raise Exception('file_name duplicated')
+            raise Exception(f'duplicated image: {file_name}')
         else:
             raise Exception("file name:{}\t size:{}".format(file_name, size))
 
@@ -157,7 +163,7 @@ def parseXmlFilse(data_dir, json_save_path, split='train'):
             else:
                 current_category_id = category_set[object_name]
 
-            # 初始化标签列表
+            # 初始化标签列表， bndbox voc格式的标注信息
             bndbox = dict()
             bndbox['xmin'] = None
             bndbox['xmax'] = None
@@ -175,6 +181,8 @@ def parseXmlFilse(data_dir, json_save_path, split='train'):
                     raise Exception('xml structure broken at bndbox tag')
                 if current_category_id is None:
                     raise Exception('xml structure broken at bndbox tag')
+
+                # coco 格式的bbox
                 bbox = []
                 # x
                 bbox.append(bndbox['xmin'])
@@ -190,10 +198,11 @@ def parseXmlFilse(data_dir, json_save_path, split='train'):
                                                                                                    bbox))
                 addAnnoItem(object_name, current_image_id, current_category_id, bbox)
 
-    json_parent_dir = os.path.dirname(json_save_path)
+    # 如果路径不存在则创建
+    json_parent_dir = os.path.dirname(save_json_file)
     if not os.path.exists(json_parent_dir):
         os.makedirs(json_parent_dir)
-    json.dump(coco, open(json_save_path, 'w'))
+    json.dump(coco, open(save_json_file, 'w'))
     print("class nums:{}".format(len(coco['categories'])))
     print("image nums:{}".format(len(coco['images'])))
     print("bbox nums:{}".format(len(coco['annotations'])))
@@ -202,25 +211,23 @@ def parseXmlFilse(data_dir, json_save_path, split='train'):
 if __name__ == '__main__':
     """
     脚本说明：
-        本脚本用于将VOC格式的标注文件.xml转换为coco格式的标注文件.json
-    参数说明：
-        voc_data_dir:两种格式
-            1.voc2012文件夹的路径，会自动找到voc2012/imageSets/Main/xx.txt
-            2.xml标签文件存放的文件夹
-        json_save_path:json文件输出的文件夹
-        split:主要用于voc2012查找xx.txt,如train.txt.如果用格式2，则不会用到该参数
+    本脚本用于将VOC格式的标注文件.xml转换为coco格式的标注文件.json
+    data_dir： 标签文件 xml 存放路径
+    json_save_path: 转换后将所有结果保存的一个 json 文件的全路径
+    dataset_split_file： 划分数据集（train，val，test），存放数据集中文件名的文件
+                        针对特别情况——训练集和测试集在一起，通过一个文件来划分数据集
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--voc-dir', type=str, default='data/label/voc', help='voc path')
-    parser.add_argument('-s', '--save-path', type=str, default='./data/convert/coco/train.json', help='json save path')
-    parser.add_argument('-t', '--type', type=str, default='train', help='only use in voc2012/2007')
+    parser.add_argument('-d', '--voclabel-dir', type=str, default='data/label/voc', help='voc path')
+    parser.add_argument('-s', '--json-save-path', type=str, default='./data/convert/coco/train.json', help='json save path')
+    parser.add_argument('-t', '--dataset-split-file', type=str, default=None)
     opt = parser.parse_args()
     if len(sys.argv) > 1:
         print(opt)
-        parseXmlFilse(opt.voc_dir, opt.save_path, opt.type)
+        parseXmlFiles(opt.voc_dir, opt.save_path, opt.type)
     else:
         # voc_data_dir = r'D:\dataset\VOC2012\VOCdevkit\VOC2012'
-        voc_data_dir = './data/labels/voc'
+        voc_label_dir = './data/labels/voc'
         json_save_path = './data/convert/coco/train.json'
-        split = 'train'
-        parseXmlFilse(data_dir=voc_data_dir, json_save_path=json_save_path, split=split)
+        splitSet = None
+        parseXmlFiles(label_dir=voc_label_dir, save_json_file=json_save_path, dataset_split_file=splitSet)

@@ -63,6 +63,8 @@
     "categories": [category]    # list,内部是dict
 }
 
+下面是对上面各个字段内容的详细解释
+————————————————————————————————————————————————————————————
 info{                           # 数据集信息描述
     "year": int,                # 数据集年份
     "version": str,             # 数据集版本
@@ -111,6 +113,7 @@ categories{                     # 类别描述
 - images:存放图片数据
 - labels:存放标注txt文本
 - 一个标注信息txt对应一张图片，如xxx.txt对应xxx.jpg所有的标注信息
+- yolo 
 
 ### YOLO标注格式：txt格式
 ```
@@ -122,6 +125,9 @@ for example
 0 0.412500 0.318981 0.358333 0.636111
 ```
 
-- object-class：对象的标签索引
+- object-class：对象的标签索引，
+  > yolo 标注的类别只有索引，这是由于yolo训练时候都会有一个 yaml 文件，yaml中存放了类别标签，训练时候会自动解析，通过标签id查找到标签名，因此如果只是类别转换，
+  > 可以把标签复制出来放到 classes.txt 中，具体参照 data/convert/yolo/classes.txt 
 - x,y是目标的中心坐标，width,height是目标的宽和高。这些坐标是通过归一化的，其中x，width是使用原图的width进行归一化；而y，height是使用原图的height进行归一化。
+
 

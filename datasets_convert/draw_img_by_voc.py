@@ -168,9 +168,12 @@ if __name__ == '__main__':
         print("image nums: {}".format(len(image_set)))
         print("bbox nums: {}".format(sum(every_class_num.values())))
     else:
-        image_path = './data/images'
-        anno_path = './data/convert/voc'
-        save_img_dir = './data/save'
+        # image_path = './data/images'
+        # anno_path = './data/convert/voc'
+        # save_img_dir = './data/save'
+        image_path = '/home/ytusdc/Data/data/文水赤峪/image'
+        anno_path = '/home/ytusdc/Data/data/文水赤峪/xml'
+        save_img_dir = '/home/ytusdc/Data/data/文水赤峪/plot'
 
         draw_image(image_path, anno_path, save_img_dir)
         print(every_class_num)
