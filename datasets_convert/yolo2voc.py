@@ -127,7 +127,7 @@ if __name__ == '__main__':
         print("bbox nums: {}".format(bbox_nums))
     else:
         anno_path = './data/labels/yolo'
-        save_path = './data/convert/voc1'
+        save_path = './data/convert/voc'
         image_path = './data/images'
         parseXmlFilse(image_path, anno_path, save_path)
         print("image nums: {}".format(images_nums))

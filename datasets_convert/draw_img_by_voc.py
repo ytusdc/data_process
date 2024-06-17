@@ -7,15 +7,20 @@ from collections import defaultdict
 import argparse
 import sys
 import datetime
+from utils.colortable import get_color_rgb, get_color_bgr
 
 category_set = dict()
 image_set = set()
 every_class_num = defaultdict(int)
-
 category_item_id = -1
 
-
-def draw_box(xml_file_path, image_dir, save_dir):
+"""
+imgs_dir: 原始图片所在路径
+annos_dir： 标签文件所在路径
+imgs_save_dir： 绘制 bbox后的img存储位置
+bgr： 颜色值格式为bgr，使用opencv绘图颜色值是bgr， 如果是rgb格式颜色值需要做相应转换
+"""
+def draw_box(xml_file_path, image_dir, save_dir, bgr=True):
 
     with open(xml_file_path) as fid:
         xml_str = fid.read()
@@ -43,23 +48,13 @@ def draw_box(xml_file_path, image_dir, save_dir):
         xmax = int(object['bndbox']['xmax'])
         ymax = int(object['bndbox']['ymax'])
 
-        def hex2rgb(h):  # rgb order (PIL)
-            return tuple(int(h[1 + i:1 + i + 2], 16) for i in (0, 2, 4))
-
-        hex = ('FF3838', 'FF9D97', 'FF701F', 'FFB21D', 'CFD231', '48F90A', '92CC17', '3DDB86', '1A9334', '00D4BB',
-               '2C99A8', '00C2FF', '344593', '6473FF', '0018EC', '8438FF', '520085', 'CB38FF', 'FF95C8', 'FF37C7')
-
-        palette = [hex2rgb('#' + c) for c in hex]
-        n = len(palette)
-        c = palette[int(category_id) % n]
-        bgr = False
-        color = (c[2], c[1], c[0]) if bgr else c
-
-        cv2.rectangle(img, (xmin, ymin), (xmax, ymax), color)
-        cv2.putText(img, category_name, (xmin, ymin), cv2.FONT_HERSHEY_SIMPLEX, 1, color)
+        if bgr:
+            color = get_color_bgr(category_id)
+        else:
+            color = get_color_rgb(category_id)
+        cv2.rectangle(img, (xmin, ymin), (xmax, ymax), color, thickness=2)
+        cv2.putText(img, category_name, (xmin, ymin), cv2.FONT_HERSHEY_SIMPLEX, 1, color, thickness=2)
         cv2.imwrite(os.path.join(save_dir, filename), img)
-
-
 
 def addCatItem(name):
     global category_item_id
@@ -171,9 +166,9 @@ if __name__ == '__main__':
         # image_path = './data/images'
         # anno_path = './data/convert/voc'
         # save_img_dir = './data/save'
-        image_path = '/home/ytusdc/Data/data/文水赤峪/image'
-        anno_path = '/home/ytusdc/Data/data/文水赤峪/xml'
-        save_img_dir = '/home/ytusdc/Data/data/文水赤峪/plot'
+        image_path = '/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/split_data/images/val'
+        anno_path = '/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/xml'
+        save_img_dir = '/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/split_data/images/plot'
 
         draw_image(image_path, anno_path, save_img_dir)
         print(every_class_num)

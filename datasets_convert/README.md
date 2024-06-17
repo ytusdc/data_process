@@ -126,8 +126,10 @@ for example
 ```
 
 - object-class：对象的标签索引，
-  > yolo 标注的类别只有索引，这是由于yolo训练时候都会有一个 yaml 文件，yaml中存放了类别标签，训练时候会自动解析，通过标签id查找到标签名，因此如果只是类别转换，
-  > 可以把标签复制出来放到 classes.txt 中，具体参照 data/convert/yolo/classes.txt 
+  > yolo 标注的类别只有索引，这是由于yolo训练时候都会有一个 yaml 文件，yaml中存放了类别标签，训练时候会自动解析，通过标签id查找到标签名，yaml格式 参考yaml文件夹下的文件，
+  > 其中 [names] 标签下存放的是 yolo 标签id和对应的类别
+  
 - x,y是目标的中心坐标，width,height是目标的宽和高。这些坐标是通过归一化的，其中x，width是使用原图的width进行归一化；而y，height是使用原图的height进行归一化。
+- 如果其他数据集转换成yolo时候不传入yaml标签文件，程序会对标签自动排序，并生成一个对应的yaml文件， 这一点需要格外注意
 
 

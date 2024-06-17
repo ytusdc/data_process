@@ -5,6 +5,8 @@ from tqdm import tqdm
 import sys
 import argparse
 
+from utils.yamloperate import write_yaml
+
 images_nums = 0
 category_nums = 0
 bbox_nums = 0
@@ -16,7 +18,6 @@ def catid2name(coco):
         classes[cat['id']] = cat['name']
     return classes
 
-
 # 将[xmin,ymin,xmax,ymax]转换为yolo格式[x_center, y_center, w, h](做归一化)
 def xyxy2xywhn(object, width, height):
     cat_id = object[0]
@@ -27,7 +28,6 @@ def xyxy2xywhn(object, width, height):
     out = "{} {:.5f} {:.5f} {:.5f} {:.5f}".format(cat_id, xn, yn, wn, hn)
     return out
 
-
 def save_anno_to_txt(images_info, save_path):
     filename = images_info['filename']
     txt_name = filename[:-3] + "txt"
@@ -35,7 +35,6 @@ def save_anno_to_txt(images_info, save_path):
         for obj in images_info['objects']:
             line = xyxy2xywhn(obj, images_info['width'], images_info['height'])
             f.write("{}\n".format(line))
-
 
 # 利用cocoAPI从json中加载信息
 def load_coco(anno_file, xml_save_path):
@@ -47,10 +46,6 @@ def load_coco(anno_file, xml_save_path):
     classes = catid2name(coco)
     imgIds = coco.getImgIds()
     classesIds = coco.getCatIds()
-
-    with open(os.path.join(xml_save_path, "classes.txt"), 'w') as f:
-        for id in classesIds:
-            f.write("{}\n".format(classes[id]))
 
     for imgId in tqdm(imgIds):
         info = {}
@@ -77,6 +72,8 @@ def load_coco(anno_file, xml_save_path):
         info['objects'] = objs
         save_anno_to_txt(info, xml_save_path)
 
+    id_cls_dict = dict((id, classes[id]) for id in classesIds)
+    return id_cls_dict
 
 def parseJsonFile(json_path, txt_save_path):
     assert os.path.exists(json_path), "json path:{} does not exists".format(json_path)
@@ -86,8 +83,10 @@ def parseJsonFile(json_path, txt_save_path):
 
     assert json_path.endswith('json'), "json file:{} It is not json file!".format(json_path)
 
-    load_coco(json_path, txt_save_path)
-
+    index_cls_dict = load_coco(json_path, txt_save_path)
+    # 将coco中id和类别对应关系保存到 yolo格式下的yaml文件中
+    save_yaml_file = os.path.join(txt_save_path, "classes.yaml")
+    write_yaml(save_yaml_file, index_cls_dict)
 
 if __name__ == '__main__':
     """

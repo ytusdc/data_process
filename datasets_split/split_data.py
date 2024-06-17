@@ -10,8 +10,11 @@ from sklearn.model_selection import train_test_split
 '''
 data_dir: 文件路径
 file_suffix： 文件后缀 None/str/[str1,str2,..]
+['jpg', 'png', 'jpeg']
+
 '''
-def get_filter_file(data_dir, file_suffix=None):
+# def get_filter_file(data_dir, file_suffix=None):
+def get_filter_file(data_dir, file_suffix=['.jpg', '.png', '.jpeg']):
     file_ls = []
     # 过滤掉 ‘.’开头的隐藏文件, 有的情况下会出现，大部分情况不会，以防万一
     filter_file_ls = os.listdir(data_dir)
@@ -73,7 +76,10 @@ def split_data(ori_img_dir, ori_label_dir, des_img_dir, des_label_dir, split_per
     #     print(f"sum percent is not equal 1, please make sure the sum percent is 1.")
     #     return
 
-    imgs_ls = get_filter_file(ori_img_dir, img_suffix)
+    if img_suffix is None:
+        imgs_ls = get_filter_file(ori_img_dir)
+    else:
+        imgs_ls = get_filter_file(ori_img_dir, img_suffix)
 
     if len(split_per_dict) == 2:
         X_train, X_test = train_test_split(imgs_ls, test_size=split_percent_ls[-1], random_state=random_seed)
@@ -106,6 +112,7 @@ def split_data(ori_img_dir, ori_label_dir, des_img_dir, des_label_dir, split_per
 
         imgs_id_ls = list(map(lambda x: os.path.splitext(x)[0], img_ls))
         for id in imgs_id_ls:
+            # print(id)
             src_img_file = Path(ori_img_dir, id_img_dict[id])
             src_label_file = Path(ori_label_dir, id_label_dict[id])
             shutil.copy(src_img_file, target_img_path)
@@ -114,7 +121,7 @@ def split_data(ori_img_dir, ori_label_dir, des_img_dir, des_label_dir, split_per
 if __name__ == '__main__':
     split_per_dict = {
         "train": 0.8,
-        "test2": 0.1,
+        "test": 0.1,
         "val": 0.1, }
 
     # split_per_dict = {
@@ -128,6 +135,12 @@ if __name__ == '__main__':
 
     des_img_dir = "/home/cv/datasets/data_split/images"    # 图片目标地址
     des_label_dir = "/home/cv/datasets/data_split/labels"  #  标签目标地址
+
+    ori_img_dir = "/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/image"      # 图片源文件地址
+    ori_label_dir = "/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/yolo"    # 标签源文件
+
+    des_img_dir = "/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/split_data/images"    # 图片目标地址
+    des_label_dir = "/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/split_data/labels"  #  标签目标地址
 
     split_data(ori_img_dir, ori_label_dir, des_img_dir, des_label_dir, split_per_dict)
 
