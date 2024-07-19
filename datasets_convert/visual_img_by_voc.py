@@ -166,9 +166,9 @@ if __name__ == '__main__':
         # image_path = './data/images'
         # anno_path = './data/convert/voc'
         # save_img_dir = './data/save'
-        image_path = '/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/split_data/images/val'
-        anno_path = '/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/xml'
-        save_img_dir = '/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/split_data/images/plot'
+        image_path = '/home/ytusdc/Data/sdc/数据/行车(包含人)/image'
+        anno_path = '/home/ytusdc/Data/sdc/数据/行车(包含人)/xml'
+        save_img_dir = '/home/ytusdc/Data/sdc/数据/行车(包含人)/plot'
 
         draw_image(image_path, anno_path, save_img_dir)
         print(every_class_num)

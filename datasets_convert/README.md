@@ -54,9 +54,16 @@
 
 ### json标注格式
 以Object Instance为例，这种格式的文件从头至尾按照顺序分为以下段落：
+
+info: 信息，有关数据集的元数据，例如版本、创建日期和贡献者信息
+licenses: 许可证，与数据集中的图像关联的许可证
+images: 图片，数据集中所有图像的列表，包含文件路径、高度、宽度和其他元数据等详细信息
+annotations: 注释，每个图像的所有对象注释的列表，包含对象类别、边界框坐标和分割掩模（如果可用）
+categories: 类别，所有数据集对象类别的列表，包含数据集中所有对象类别的名称和对应ID
+
 ```
 {
-    "info": info,               # dict
+    "info": info,               # dict 
     "licenses": [license],      # list,内部是dict
     "images": [image],          # list,内部是dict
     "annotations": [annotation],# list,内部是dict
@@ -65,6 +72,7 @@
 
 下面是对上面各个字段内容的详细解释
 ————————————————————————————————————————————————————————————
+
 info{                           # 数据集信息描述
     "year": int,                # 数据集年份
     "version": str,             # 数据集版本
@@ -82,25 +90,25 @@ image{      # images是一个list,存放所有图片(dict)信息。image是一�
     "id": int,                  # 图片的ID编号（每张图片ID唯一）
     "width": int,               # 图片宽
     "height": int,              # 图片高
-    "file_name": str,           # 图片名字
-    "license": int,             # 协议
+    "file_name": str,           # 图片名字，图像的文件名
+    "license": int,             # 协议，图片的许可id
     "flickr_url": str,          # flickr链接地址
-    "coco_url": str,            # 网络连接地址
-    "date_captured": datetime,  # 数据集获取日期
+    "coco_url": str,            # 网络连接地址（如果有）
+    "date_captured": datetime,  # 数据集获取日期（如果有）
 }
-annotation{ # annotations是一个list,存放所有标注(dict)信息。annotation是一个dict,存放单个目标标注信息。
+annotation{     # annotations是一个list,存放所有标注(dict)信息。annotation是一个dict,存放单个目标标注信息。
     "id": int,                  # 目标对象ID（每个对象ID唯一），每张图片可能有多个目标
     "image_id": int,            # 对应图片ID
     "category_id": int,         # 对应类别ID，与categories中的ID对应
     "segmentation": RLE or [polygon],   # 实例分割，对象的边界点坐标[x1,y1,x2,y2,....,xn,yn]
     "area": float,              # 对象区域面积
-    "bbox": [xmin,ymin,width,height], # 目标检测，对象定位边框[x,y,w,h]
+    "bbox": [xmin,ymin,width,height], # 目标检测，对象定位边框[x,y,w,h]，左上角的 x 和 y 坐标以及框的宽度和高度
     "iscrowd": 0 or 1,          # 表示是否是人群
 }
 categories{                     # 类别描述
-    "id": int,                  # 类别对应的ID（0默认为背景）
-    "name": str,                # 子类别名字
-    "supercategory": str,       # 主类别名字
+    "id": int,                  # 类别对应的ID（0默认为背景），类别的唯一整数标识符
+    "name": str,                # 类别名字
+    "supercategory": str,       # 主类别名字，可选字段，指定比当前类别name更广泛的类别
 }
 ```
 
@@ -132,4 +140,6 @@ for example
 - x,y是目标的中心坐标，width,height是目标的宽和高。这些坐标是通过归一化的，其中x，width是使用原图的width进行归一化；而y，height是使用原图的height进行归一化。
 - 如果其他数据集转换成yolo时候不传入yaml标签文件，程序会对标签自动排序，并生成一个对应的yaml文件， 这一点需要格外注意
 
-
+- COCO、YOLO、VOC、json数据格式转换脚本 https://zhuanlan.zhihu.com/p/653184708
+- 目标检测coco voc yolo格式转换和划分数据集 https://blog.csdn.net/weixin_56314292/article/details/131562730
+- YOLO系列之数据划分和数据格式转换篇 https://download.csdn.net/blog/column/12475400/135069518

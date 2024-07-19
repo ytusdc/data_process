@@ -6,6 +6,8 @@ from collections import defaultdict
 import cv2
 import matplotlib
 
+from utils.colortable import get_color_rgb
+
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 from tqdm import tqdm

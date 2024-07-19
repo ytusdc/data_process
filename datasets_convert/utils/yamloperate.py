@@ -7,7 +7,7 @@ data > id_cls_dict
 '''
 def write_yaml(file_path, data: dict[str,str]):
     yaml_names_dict = {}
-    yaml_names_dict["name"] = data
+    yaml_names_dict["names"] = data
     with open(file_path, 'w') as file:
         yaml.dump(yaml_names_dict, file, allow_unicode=True)
 

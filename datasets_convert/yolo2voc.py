@@ -61,7 +61,7 @@ def xywhn2xyxy(bbox, size):
     return list(map(int, box))
 
 
-def parseXmlFilse(image_path, anno_path, save_path):
+def parseXmlFiles(image_path, anno_path, save_path):
     global images_nums, category_nums, bbox_nums
     assert os.path.exists(image_path), "ERROR {} dose not exists".format(image_path)
     assert os.path.exists(anno_path), "ERROR {} dose not exists".format(anno_path)
@@ -121,7 +121,7 @@ if __name__ == '__main__':
     opt = parser.parse_args()
     if len(sys.argv) > 1:
         print(opt)
-        parseXmlFilse(**vars(opt))
+        parseXmlFiles(**vars(opt))
         print("image nums: {}".format(images_nums))
         print("category nums: {}".format(category_nums))
         print("bbox nums: {}".format(bbox_nums))
@@ -129,7 +129,7 @@ if __name__ == '__main__':
         anno_path = './data/labels/yolo'
         save_path = './data/convert/voc'
         image_path = './data/images'
-        parseXmlFilse(image_path, anno_path, save_path)
+        parseXmlFiles(image_path, anno_path, save_path)
         print("image nums: {}".format(images_nums))
         print("category nums: {}".format(category_nums))
         print("bbox nums: {}".format(bbox_nums))

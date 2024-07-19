@@ -53,12 +53,16 @@ des_img_dir： 划分后的图片存放路径
 des_label_dir： 划分后的标签存放路径
 split_percent_dict,  数据集划分比例字典，比例之和必须为1，否则报错， 可以划分两个或者三个数据集
 img_suffix: 文件后缀 None/str/[str1,str2,..]  如：[‘.jpg’, '.png']
-random_seed = 100 随机种子保证可重复性
+random_seed = 100 随机种子保证可重复性, 保证随机结果可复现
 '''
 
-def split_data(ori_img_dir, ori_label_dir, des_img_dir, des_label_dir, split_percent_dict, img_suffix=None, random_seed=100):
-
-      # 保证随机结果可复现
+def split_data(ori_img_dir,
+               ori_label_dir,
+               des_img_dir,
+               des_label_dir,
+               split_percent_dict,
+               img_suffix=None,
+               random_seed=100):
 
     split_name_ls = []
     split_percent_ls = []
@@ -72,28 +76,26 @@ def split_data(ori_img_dir, ori_label_dir, des_img_dir, des_label_dir, split_per
         percent_sum += float(percent)
 
     assert percent_sum == 1, "sum percent is not equal 1, please make sure the sum percent is 1."
-    # if percent_sum != 1:
-    #     print(f"sum percent is not equal 1, please make sure the sum percent is 1.")
-    #     return
 
     if img_suffix is None:
         imgs_ls = get_filter_file(ori_img_dir)
     else:
         imgs_ls = get_filter_file(ori_img_dir, img_suffix)
 
-    if len(split_per_dict) == 2:
+    if len(split_percent_dict) == 2:
         X_train, X_test = train_test_split(imgs_ls, test_size=split_percent_ls[-1], random_state=random_seed)
         # X_train, X_test, Y_train, Y_test  = train_test_split(imgs_ls, imgs_ls, test_size=split_percent_ls[-1], random_state=100)
         split_img_ls.append(X_train)
         split_img_ls.append(X_test)
-    elif len(split_per_dict) == 3:
+    elif len(split_percent_dict) == 3:
+        # 分两次划分
         split_testval = split_percent_ls[-1] + split_percent_ls[-2]
         X_train, X_testval = train_test_split(imgs_ls, test_size=split_testval, random_state=random_seed)
         new_perent = split_percent_ls[-2] / split_testval
-        new_train, new_test = train_test_split(X_testval, test_size=new_perent, random_state=random_seed)
+        new_X_train, new_X_test = train_test_split(X_testval, test_size=new_perent, random_state=random_seed)
         split_img_ls.append(X_train)
-        split_img_ls.append(new_train)
-        split_img_ls.append(new_test)
+        split_img_ls.append(new_X_train)
+        split_img_ls.append(new_X_test)
     else:
         print(f"split percent len is error")
         return
@@ -118,31 +120,32 @@ def split_data(ori_img_dir, ori_label_dir, des_img_dir, des_label_dir, split_per
             shutil.copy(src_img_file, target_img_path)
             shutil.copy(src_label_file, target_label_path)
 
-if __name__ == '__main__':
+def main():
+
+    # 划分 三个数据集
     split_per_dict = {
         "train": 0.8,
         "test": 0.1,
         "val": 0.1, }
 
+    # 划分两个数据集
     # split_per_dict = {
     #     "train": 0.8,
     #     "test": 0.2
     #     }
 
+    ori_img_dir = "/home/cv/datasets/data_ori/images"    # 图片源文件地址
+    ori_label_dir = "/home/cv/datasets/data_ori/labels"  # 对应标签源文件
+    des_dir = "./data_split"  # 划分后数据集保存位置
 
-    ori_img_dir = "/home/cv/datasets/data_ori/images"      # 图片源文件地址
-    ori_label_dir = "/home/cv/datasets/data_ori/labels"    # 标签源文件
-
-    des_img_dir = "/home/cv/datasets/data_split/images"    # 图片目标地址
-    des_label_dir = "/home/cv/datasets/data_split/labels"  #  标签目标地址
-
-    ori_img_dir = "/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/image"      # 图片源文件地址
-    ori_label_dir = "/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/yolo"    # 标签源文件
-
-    des_img_dir = "/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/split_data/images"    # 图片目标地址
-    des_label_dir = "/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/split_data/labels"  #  标签目标地址
-
+    # 划分后数据集 自动生成 images， labels 文件夹，根据需要自己修改
+    des_img_dir = os.path.join(des_dir, "images")    # 图片目存储标地址
+    des_label_dir = os.path.join(des_dir, "labels")  # 标签目标存储地址
     split_data(ori_img_dir, ori_label_dir, des_img_dir, des_label_dir, split_per_dict)
+
+if __name__ == '__main__':
+    main()
+
 
 
 

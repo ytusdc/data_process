@@ -5,6 +5,7 @@ import sys
 import shutil
 from lxml import etree
 from tqdm import tqdm
+from pathlib import Path
 
 from utils.yamloperate import read_yaml, write_yaml, get_id_cls_dict
 
@@ -50,6 +51,11 @@ def parser_info(info: dict, only_cat=True, class_indices=None):
     objects = []
     width = int(info['annotation']['size']['width'])
     height = int(info['annotation']['size']['height'])
+
+    if 'object' not in info['annotation']:
+        print(filename)
+        return filename, []
+
     for obj in info['annotation']['object']:
         obj_name = obj['name']
         category_set.add(obj_name)
@@ -64,10 +70,10 @@ def parser_info(info: dict, only_cat=True, class_indices=None):
             obj_category = class_indices[obj_name]
             object = [obj_category, bbox]
             objects.append(object)
-
+    # print(filename)
     return filename, objects
 
-def getClassIndex(xml_files, yaml_file=None):
+def getClassIndex(xml_files, save_dir, yaml_file=None):
 
     if yaml_file is not None:
         id_cls_dict = get_id_cls_dict(yaml_file)
@@ -81,29 +87,38 @@ def getClassIndex(xml_files, yaml_file=None):
             parser_info(info_dict, only_cat=True)
 
         id_cls_dict = dict((k, v) for k, v in enumerate(sorted(category_set)))
-        # yaml_dict["names"] = id_cls_dict
+
         save_yaml_file = os.path.join(save_dir, "classes.yaml")
         write_yaml(save_yaml_file, id_cls_dict)
 
     class_indices_dict = dict((v, k) for k, v in id_cls_dict.items())
     return class_indices_dict
 
-def parseXmlFilse(voc_dir, save_dir, yaml_file=None):
+def parseXmlFiles(voc_dir, save_dir, yaml_file=None):
     assert os.path.exists(voc_dir), "ERROR {} does not exists".format(voc_dir)
-    if os.path.exists(save_dir):
-        shutil.rmtree(save_dir)
-    os.makedirs(save_dir)
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+    else:
+        # shutil.rmtree(save_dir)
+        pass
 
     xml_files = [os.path.join(voc_dir, i) for i in os.listdir(voc_dir) if os.path.splitext(i)[-1] == '.xml']
-    class_indices = getClassIndex(xml_files, yaml_file)
+    class_indices = getClassIndex(xml_files, save_dir, yaml_file)
 
     xml_files = tqdm(xml_files)
     for xml_file in xml_files:
         with open(xml_file) as fid:
             xml_str = fid.read()
-        xml = etree.fromstring(xml_str)
+        # print(xml_file)
+        xml = etree.fromstring(xml_str.encode('utf-8'))
+        # xml = etree.fromstring(xml_str)
         info_dict = parse_xml_to_dict(xml)
         filename, objects = parser_info(info_dict, only_cat=False, class_indices=class_indices)
+
+        #临时解决方案 有的xml 中记录的filename和真实数据对不上，因此用 xml文件名
+        basename = Path(xml_file).name
+        filename = basename
+
         if len(objects) != 0:
             global bbox_nums
             bbox_nums += len(objects)
@@ -120,17 +135,17 @@ if __name__ == '__main__':
     opt = parser.parse_args()
     if len(sys.argv) > 1:
         print(opt)
-        parseXmlFilse(**vars(opt))
+        parseXmlFiles(**vars(opt))
         print("image nums: {}".format(len(image_set)))
         print("category nums: {}".format(len(category_set)))
         print("bbox nums: {}".format(bbox_nums))
     else:
-        voc_dir = './data/labels/voc'
+        voc_xml_dir = './data/labels/voc'
         save_dir = './data/convert/yolo'
         yaml_file = "./yaml/yolo_sample.yaml"
 
-        # parseXmlFilse(voc_dir, save_dir, yaml_file)
-        parseXmlFilse(voc_dir, save_dir)
+        parseXmlFiles(voc_xml_dir, save_dir, yaml_file)
+        # parseXmlFilse(voc_dir, save_dir)
         print("image nums: {}".format(len(image_set)))
         print("category nums: {}".format(len(category_set)))
         print("bbox nums: {}".format(bbox_nums))
