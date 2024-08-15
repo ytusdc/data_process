@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 import shutil
 from sklearn.model_selection import train_test_split
+from tqdm import tqdm
 
 
 '''
@@ -113,7 +114,7 @@ def split_data(ori_img_dir,
         id_label_dict = get_id_filename_dict(ori_label_dir)
 
         imgs_id_ls = list(map(lambda x: os.path.splitext(x)[0], img_ls))
-        for id in imgs_id_ls:
+        for id in tqdm(imgs_id_ls, desc=split_dir_name + " split process"):
             # print(id)
             src_img_file = Path(ori_img_dir, id_img_dict[id])
             src_label_file = Path(ori_label_dir, id_label_dict[id])

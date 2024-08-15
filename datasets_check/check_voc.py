@@ -137,6 +137,7 @@ def check_filename_equal(xml_info, img_file_path, xml_file_path, ismodify=True):
         # 修改xml 中filename 值 为 img 的名字
         modify_elem(xml_file_path, "filename", file_name_img)
         print(f"xml file = {xml_file_path}, in xml name= {file_name_in_xml},  modify filename")
+        return True
     else:
         error_save_file = os.path.join(save_error_files_dir, "filename_not_equal")
         move_files(img_file_path, xml_file_path, error_save_file)
