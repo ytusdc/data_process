@@ -93,10 +93,10 @@ def draw_image(imgs_dir, annos_dir, yaml_file, imgs_save_dir, bgr = True):
                 category_id = addCatItem(category_name)
             else:
                 category_id = category_set[category_name]
-            xmin = int(object[1][0])
-            ymin = int(object[1][1])
-            xmax = int(object[1][2])
-            ymax = int(object[1][3])
+            xmin = int(float(object[1][0]))
+            ymin = int(float(object[1][1]))
+            xmax = int(float(object[1][2]))
+            ymax = int(float(object[1][3]))
 
             if bgr:
                 color = get_color_bgr(category_id)
@@ -161,13 +161,9 @@ if __name__ == '__main__':
         print("image nums: {}".format(len(image_set)))
         print("bbox nums: {}".format(sum(every_class_num.values())))
     else:
-        # image_path = './data/images'
-        # anno_path = './data/convert/yolo'
-        # save_img_dir = './data/save'
-
-        image_path = '/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/split_data/images/val'
-        anno_path = '/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/split_data/labels/val'
-        save_img_dir = '/home/ytusdc/Data/数据/人员安全帽/有安全帽/彩色安全帽/split_data/images/plot'
+        image_path = './data/images'
+        anno_path = './data/convert/yolo'
+        save_img_dir = './data/save'
         yaml_file = "./yaml/coco_hat.yaml"
 
         draw_image(image_path, anno_path, yaml_file, save_img_dir)

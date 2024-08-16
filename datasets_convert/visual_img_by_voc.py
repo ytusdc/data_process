@@ -9,7 +9,7 @@ import sys
 import datetime
 from utils.colortable import get_color_rgb, get_color_bgr
 
-category_set = dict()
+category_id_dict = dict()
 image_set = set()
 every_class_num = defaultdict(int)
 category_item_id = -1
@@ -35,36 +35,39 @@ def draw_box(xml_file_path, image_dir, save_dir, bgr=True):
     img = cv2.imread(file_path)
     if img is None:
         return
-    objects = xml_info_dict['annotation']['object']
+
+    if 'object' in xml_info_dict['annotation'].keys():
+        objects = xml_info_dict['annotation']['object']
+    else:
+        print(f"{xml_file_path} have not object")
+        return
+
     for object in objects:
         category_name = object['name']
         every_class_num[category_name] += 1
-        if category_name not in category_set:
+        if category_name not in category_id_dict:
             category_id = addCatItem(category_name)
         else:
-            category_id = category_set[category_name]
-        xmin = int(object['bndbox']['xmin'])
-        ymin = int(object['bndbox']['ymin'])
-        xmax = int(object['bndbox']['xmax'])
-        ymax = int(object['bndbox']['ymax'])
+            category_id = category_id_dict[category_name]
+
+        xmin = int(float(object['bndbox']['xmin']))
+        ymin = int(float(object['bndbox']['ymin']))
+        xmax = int(float(object['bndbox']['xmax']))
+        ymax = int(float(object['bndbox']['ymax']))
 
         if bgr:
             color = get_color_bgr(category_id)
         else:
             color = get_color_rgb(category_id)
         cv2.rectangle(img, (xmin, ymin), (xmax, ymax), color, thickness=2)
-        cv2.putText(img, category_name, (xmin, ymin), cv2.FONT_HERSHEY_SIMPLEX, 1, color, thickness=2)
+        cv2.putText(img, category_name, (xmin, ymin), cv2.FONT_HERSHEY_SIMPLEX, 2, color, thickness=2)
         cv2.imwrite(os.path.join(save_dir, filename), img)
 
 def addCatItem(name):
     global category_item_id
-    category_item = dict()
     category_item_id += 1
-    category_item['id'] = category_item_id
-    category_item['name'] = name
-    category_set[name] = category_item_id
+    category_id_dict[name] = category_item_id
     return category_item_id
-
 
 def parse_xml_to_dict(xml):
     """
@@ -159,19 +162,16 @@ if __name__ == '__main__':
         print(opt)
         draw_image(opt.imgs_dir, opt.anno_dir, opt.save_dir)
         print(every_class_num)
-        print("category nums: {}".format(len(category_set)))
+        print("category nums: {}".format(len(category_id_dict)))
         print("image nums: {}".format(len(image_set)))
         print("bbox nums: {}".format(sum(every_class_num.values())))
     else:
-        # image_path = './data/images'
-        # anno_path = './data/convert/voc'
-        # save_img_dir = './data/save'
-        image_path = '/home/ytusdc/Data/sdc/数据/行车(包含人)/image'
-        anno_path = '/home/ytusdc/Data/sdc/数据/行车(包含人)/xml'
-        save_img_dir = '/home/ytusdc/Data/sdc/数据/行车(包含人)/plot'
+        image_path = './data/images'
+        anno_path = './data/convert/voc'
+        save_img_dir = './data/save'
 
         draw_image(image_path, anno_path, save_img_dir)
         print(every_class_num)
-        print("category nums: {}".format(len(category_set)))
+        print("category nums: {}".format(len(category_id_dict)))
         print("image nums: {}".format(len(image_set)))
         print("bbox nums: {}".format(sum(every_class_num.values())))
