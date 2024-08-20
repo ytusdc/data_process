@@ -109,9 +109,9 @@ if __name__ == '__main__':
     脚本说明：
         本脚本用于将yolo格式的标注文件.txt转换为voc格式的标注文件.xml
     参数说明：
-        anno_path:标注文件txt存储路径
-        save_path:json文件输出的文件夹
-        image_path:图片路径
+        anno_path : 标注文件txt存储路径
+        save_path : json文件输出的文件夹
+        image_path: 图片路径
     """
     parser = argparse.ArgumentParser()
     parser.add_argument('-ap', '--anno-path', type=str, default='./data/labels/yolo', help='yolo txt path')

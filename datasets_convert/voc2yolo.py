@@ -61,10 +61,10 @@ def parser_info(info: dict, only_cat=True, class_indices=None):
         category_set.add(obj_name)
         if only_cat:
             continue
-        xmin = int(obj['bndbox']['xmin'])
-        ymin = int(obj['bndbox']['ymin'])
-        xmax = int(obj['bndbox']['xmax'])
-        ymax = int(obj['bndbox']['ymax'])
+        xmin = float(obj['bndbox']['xmin'])
+        ymin = float(obj['bndbox']['ymin'])
+        xmax = float(obj['bndbox']['xmax'])
+        ymax = float(obj['bndbox']['ymax'])
         bbox = xyxy2xywhn((xmin, ymin, xmax, ymax), (width, height))
         if class_indices is not None:
             obj_category = class_indices[obj_name]
@@ -85,9 +85,7 @@ def getClassIndex(xml_files, save_dir, yaml_file=None):
             xml = etree.fromstring(xml_str)
             info_dict = parse_xml_to_dict(xml)
             parser_info(info_dict, only_cat=True)
-
         id_cls_dict = dict((k, v) for k, v in enumerate(sorted(category_set)))
-
         save_yaml_file = os.path.join(save_dir, "classes.yaml")
         write_yaml(save_yaml_file, id_cls_dict)
 
@@ -140,9 +138,12 @@ if __name__ == '__main__':
         print("category nums: {}".format(len(category_set)))
         print("bbox nums: {}".format(bbox_nums))
     else:
-        voc_xml_dir = './data/labels/voc'
-        save_dir = './data/convert/yolo'
-        yaml_file = "./yaml/yolo_sample.yaml"
+        # voc_xml_dir = './data/labels/voc'
+        # save_dir = './data/convert/yolo'
+        # yaml_file = "./yaml/yolo_sample.yaml"
+        voc_xml_dir = '/home/ytusdc/Data/voc2012_filter/xml'
+        save_dir = '/home/ytusdc/Data/voc2012_filter/yolo'
+        yaml_file = "/home/ytusdc/Data/voc2012_filter/voc2012_filter.yaml"
 
         parseXmlFiles(voc_xml_dir, save_dir, yaml_file)
         # parseXmlFilse(voc_dir, save_dir)

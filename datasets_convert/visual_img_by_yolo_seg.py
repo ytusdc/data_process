@@ -13,7 +13,7 @@ imgs_save_dir： 绘制 bbox后的img存储位置
 yaml_file: yolo 标签对应类别的文件
 bgr： 颜色值格式为bgr，使用opencv绘图颜色值是bgr， 如果是rgb格式颜色值需要做相应转换
 """
-def draw_image(images_dir, annos_dir, yaml_file, imgs_save_dir, bgr = True, img_type={'.jpg', 'png', '.jpeg'}):
+def draw_image(images_dir, annos_dir, yaml_file, imgs_save_dir, bgr = True, img_type={'.jpg', '.png', '.jpeg'}):
     assert os.path.exists(images_dir), "image path:{} dose not exists".format(images_dir)
     assert os.path.exists(annos_dir), "annotation path:{} does not exists".format(annos_dir)
     if not os.path.exists(imgs_save_dir):
@@ -66,9 +66,10 @@ annos_dir：      yolo 标签文件存储位置
 yaml_file：      yolo 标签对应 yaml 文件
 imgs_save_dir：  最终可视化后，图片保存位置
 '''
+
 if __name__ == '__main__':
-    images_dir = "/path/to/images"
-    annos_dir = "/path/to/yolo_label"
-    yaml_file = "/path/to/coco_seg.yaml"
-    imgs_save_dir = "/path/to//result_visual_img"
+    images_dir = "/home/ytusdc/Data/sdc/煤流检测/image"
+    annos_dir = "/home/ytusdc/Data/sdc/煤流检测/yolo"
+    yaml_file = "/home/ytusdc/codes/ultralytics/ultralytics/cfg/datasets/coco-seg-meiliu.yaml"
+    imgs_save_dir = "/home/ytusdc/Data/sdc/煤流检测/result_img"
     draw_image(images_dir, annos_dir, yaml_file, imgs_save_dir)
