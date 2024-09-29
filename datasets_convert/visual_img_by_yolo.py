@@ -80,8 +80,7 @@ def draw_image(imgs_dir, annos_dir,  imgs_save_dir, yaml_file=None, bgr=True):
     if not os.path.exists(imgs_save_dir):
         os.makedirs(imgs_save_dir)
 
-    anno_file_list = [os.path.join(annos_dir, file) for file in os.listdir(annos_dir) if file.endswith(".txt")]
-
+    # anno_file_list = [os.path.join(annos_dir, file) for file in os.listdir(annos_dir) if file.endswith(".txt")]
     img_type = {'.jpg', '.png', '.jpeg'}
     img_id_dict = {Path(i).stem: os.path.join(imgs_dir, i) for i in os.listdir(imgs_dir) if os.path.splitext(i)[-1] in img_type}
     label_id_dict = {Path(i).stem: os.path.join(annos_dir, i) for i in os.listdir(annos_dir) if os.path.splitext(i)[-1]=='.txt'}
@@ -93,7 +92,10 @@ def draw_image(imgs_dir, annos_dir,  imgs_save_dir, yaml_file=None, bgr=True):
     for id in tqdm(label_id_dict.keys()):
         label_file = label_id_dict[id]
         img_file = img_id_dict[id]
-        filename = img_file.split(os.sep)[-1].split('.')[0] + ".jpg"
+
+        filename = os.path.basename(img_file)
+
+        # filename = img_file.split(os.sep)[-1].split('.')[0] + ".jpg"
         img = cv2.imread(img_file)
         if img is None:
             print(f"{img_file} read is None")
@@ -191,10 +193,10 @@ if __name__ == '__main__':
         # save_img_dir = './data/save'
         # yaml_file = "./yaml/coco_hat.yaml"
 
-        image_path = '/run/user/1000/gvfs/smb-share:server=192.168.1.197,share=files/sdc/Download/Fall-Detection/data/fall_dataset/images/val'
-        anno_path = '/run/user/1000/gvfs/smb-share:server=192.168.1.197,share=files/sdc/Download/Fall-Detection/data/fall_dataset/labels/val'
-        save_img_dir = '/run/user/1000/gvfs/smb-share:server=192.168.1.197,share=files/sdc/Download/Fall-Detection/data/fall_dataset/images/visual'
-        yaml_file = "/home/ytusdc/Downloads/Smoking-and-Drinking-Dataset-for-YOLO/Dataset/data_2.yaml"
+        image_path = '/home/ytusdc/project-10-at-2024-09-29-15-10-594eb3fb/images'
+        anno_path = '/home/ytusdc/project-10-at-2024-09-29-15-10-594eb3fb/labels'
+        save_img_dir = '/home/ytusdc/project-10-at-2024-09-29-15-10-594eb3fb/visual'
+        # yaml_file = "/home/ytusdc/Downloads/Smoking-and-Drinking-Dataset-for-YOLO/Dataset/data_2.yaml"
 
         draw_image(image_path, anno_path, save_img_dir)
         print(every_class_num)

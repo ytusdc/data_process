@@ -1,4 +1,5 @@
 import argparse
+import json
 import os
 import sys
 from collections import defaultdict
@@ -52,6 +53,15 @@ def draw_image(imgs_dir, annos_dir, imgs_save_dir, bgr=True):
 
     if not os.path.exists(imgs_save_dir):
         os.makedirs(imgs_save_dir)
+
+    # with open(annos_dir, 'r') as f_r:
+    #     car_0 = json.load(f_r)
+    #
+    # anno_path = '/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/annotations/instance_test.json'
+    # with open(anno_path, 'r') as f_r:
+    #     car_1 = json.load(f_r)
+
+
 
     coco = COCO(annos_dir)
     classes = catid2name(coco)
@@ -168,6 +178,10 @@ if __name__ == '__main__':
         image_path = './data/images'
         anno_path = './data/labels/coco/train.json'
         save_img_dir = './data/save'
+
+        image_path = '/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/val'
+        anno_path = '/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/annotations/instance_val.json'
+        save_img_dir = '/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/visual_val'
         draw_image(image_path, anno_path, save_img_dir)
 
         print(every_class_num)
