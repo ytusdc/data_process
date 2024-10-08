@@ -148,8 +148,12 @@ if __name__ == '__main__':
     # fold_name = input("请输入您要抓取的图片名字:")
     # # 输入要抓取的图片页数
     # page_num = input("请输入要抓取多少页？ (0. 1. 2. 3. .....)")
-    fold_name="电气焊"
-    page_num = 20
 
+
+    searchName = input("查询内容：")
+    fold_name = searchName
+    # fold_name = "着火"
+
+    page_num = 30
     save_dir =  r"/home/ytusdc/Pictures"
     main(fold_name, page_num, save_dir)

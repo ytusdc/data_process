@@ -61,8 +61,7 @@ class BaiduImageSpider(object):
             print("存储路径：" + filename)
 
     # 入口函数
-    def run(self):
-        searchName = input("查询内容：")
+    def run(self, searchName):
         searchName_parse = parse.quote(searchName)  # 编码
 
         self.create_directory(searchName)
@@ -85,6 +84,8 @@ class BaiduImageSpider(object):
 
 if __name__ == '__main__':
     spider = BaiduImageSpider()
-    count = input("下载的图像组数(一组30张图像)：")
+    # count = input("下载的图像组数(一组30张图像)：")
+    count = 30
     spider.json_count = int(count)
-    spider.run()
+    searchName = input("查询内容：")
+    spider.run(searchName)

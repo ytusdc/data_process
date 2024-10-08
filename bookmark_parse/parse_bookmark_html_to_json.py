@@ -8,9 +8,7 @@
 
 from lxml import etree
 import json
-
-from networkx.algorithms.operators.binary import difference
-
+# from networkx.algorithms.operators.binary import difference
 
 def get_regular_html(bookmark_html_file):
     """
@@ -64,14 +62,18 @@ def parse_html_recursive(root_html):
 
 def html_2_json(bookmark_html_file, root_name=None):
     """
+    html 文件转 json 格式
     Args:
         bookmark_html_file:
-        root_name: 根节点名，可以自己定义
+        root_name: 根节点名，可以自己定义，如果None 则会默认设置为 '书签'
     Returns:
-
     """
     html = etree.HTML(get_regular_html(bookmark_html_file))
-    links = html.xpath('//dt/a')
+
+    """
+    通过原始html统计标签个数
+    """
+    # links = html.xpath('//dt/a')
     # print(f"html 中得到的书签数量是：{len(links)}")
     if root_name is None:
         root_name = '书签'
@@ -85,7 +87,6 @@ def html_2_json(bookmark_html_file, root_name=None):
 def writejson(json_data, save_json_file):
     with open(save_json_file, 'w', encoding='utf-8-sig') as f:
         f.write(json.dumps(json_data, indent=2, ensure_ascii=False))
-
 
 def process_json_data(json_data, url_name_dict, labelname=None):
     """
@@ -119,7 +120,11 @@ def process_json_data(json_data, url_name_dict, labelname=None):
             for child in json_data["children"]:
                 process_json_data(child, url_name_dict)
 
+
 def get_url_name_dict(html_file, label_name):
+    """
+    获取 url->name 对应的字典
+    """
     bookmark_json =  html_2_json(html_file)
     result_dict = dict()
     process_json_data(bookmark_json, result_dict, labelname=label_name)
@@ -133,7 +138,6 @@ def main(bookmark_file_old, bookmark_file_new, label_name):
         bookmark_file_old:
         bookmark_file_new:
         label_name: 书签文件中的指定比对的目录
-
     Returns:
     """
     old_url_name_dict = get_url_name_dict(bookmark_file_old, label_name)
@@ -153,9 +157,11 @@ def main(bookmark_file_old, bookmark_file_new, label_name):
 
 if __name__ == '__main__':
     old_html_file = "/home/ytusdc/Documents/favorites_9_25_24_111.html"
-    new_html_file = '/home/ytusdc/Documents/favorites_9_30_24.html'
+    # old_html_file = '/home/ytusdc/Documents/favorites_10_8_24.html'
+    new_html_file = '/home/ytusdc/Documents/favorites_10_8_24.html'
 
     labelname = "网文html"
+    # labelname = None
     main(old_html_file, new_html_file, labelname)
 
 
