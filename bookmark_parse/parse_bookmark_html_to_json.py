@@ -5,10 +5,10 @@
 # github            https://github.com/inspurer
 # github            https://github.com/inspurer/ChromeBookmarkVisual/tree/master
 # 微信公众号          月小水长
+import copy
 
 from lxml import etree
 import json
-# from networkx.algorithms.operators.binary import difference
 
 def get_regular_html(bookmark_html_file):
     """
@@ -42,7 +42,7 @@ def parse_html_recursive(root_html):
         if tag_name == 'dt':
             if ele.xpath('./h3'):
                 name = ele.xpath('./h3/text()')[0].strip()
-                # if name in exclude_collection:
+                # if name in exclude_collection:  # 不包含的name，暂时用不到
                 #     continue
                 children.append({
                     name_key: name,
@@ -93,11 +93,11 @@ def process_json_data(json_data, url_name_dict, labelname=None):
     Args:
         json_data: html 解析后的 json数据
         url_name_dict: url 作为key，是为了防止 name 名字重复的情况
-        labelname: 需要查找的标签文件夹名
+        labelname: 需要查找的标签文件夹名， 如果 labelname=None， 则查找整个书签文件
     Returns:
     """
     """
-    递归处理多层级的 JSON 字典数据， 获取每个连接name 和 url
+    递归处理多层级的 JSON 字典数据， 获取每个链接 name 和 url
     """
     if labelname is not None:
         name = json_data["name"]
@@ -110,16 +110,15 @@ def process_json_data(json_data, url_name_dict, labelname=None):
                     process_json_data(child, url_name_dict, labelname)
     else:
         if "url" in json_data.keys():
-            name = json_data["name"]
+            url_name = json_data["name"]
             url = json_data["url"]
             if url in url_name_dict.values():
-                print(f"重复的书签： {name}, {url}")
+                print(f"重复的书签： {url_name}, {url}")
             else:
-                url_name_dict[url] = name
+                url_name_dict[url] = url_name
         elif "children" in json_data.keys():
             for child in json_data["children"]:
                 process_json_data(child, url_name_dict)
-
 
 def get_url_name_dict(html_file, label_name):
     """
@@ -133,7 +132,7 @@ def get_url_name_dict(html_file, label_name):
 
 def main(bookmark_file_old, bookmark_file_new, label_name):
     """
-    比较两个 html书签 文件中不同的项目
+    比较两个 html书签 文件中不同的项目， 基于 url 进行比较
     Args:
         bookmark_file_old:
         bookmark_file_new:
@@ -153,16 +152,15 @@ def main(bookmark_file_old, bookmark_file_new, label_name):
     print(f"************************************")
     print(f"总共找到不同项 {len(diff_url_set)} 个")
 
-
-
 if __name__ == '__main__':
     old_html_file = "/home/ytusdc/Documents/favorites_9_25_24_111.html"
-    # old_html_file = '/home/ytusdc/Documents/favorites_10_8_24.html'
-    new_html_file = '/home/ytusdc/Documents/favorites_10_8_24.html'
+    # old_html_file = '/home/ytusdc/Documents/favorites_10_11_24.html'
+    new_html_file = '/home/ytusdc/Documents/favorites_10_11_24.html'
 
     labelname = "网文html"
     # labelname = None
     main(old_html_file, new_html_file, labelname)
+
 
 
 
