@@ -25,6 +25,7 @@ def parse_cls_info(info: dict):
         obj_name = obj['name']
         cls_set.add(obj_name)
     return cls_set
+
 def get_xml_AllClasses(voc_xml_dir):
     xml_files = [os.path.join(voc_xml_dir, i) for i in os.listdir(voc_xml_dir) if os.path.splitext(i)[-1] == '.xml']
     category_set = set()
@@ -55,7 +56,6 @@ def parse_xml_to_dict(xml):
     """
     if len(xml) == 0:  # 遍历到底层，直接返回tag对应的信息
         return {xml.tag: xml.text}
-
     result = {}
     for child in xml:
         child_result = parse_xml_to_dict(child)  # 递归遍历标签信息
@@ -66,37 +66,74 @@ def parse_xml_to_dict(xml):
                 result[child.tag] = []
             result[child.tag].append(child_result[child.tag])
     return {xml.tag: result}
-def dict_to_xml(root_tag, d):
-    """
-    将字典转换为XML字符串。
-    参数:
-    - root_tag: XML根标签
-    - d: 字典数据
-    """
-    elem = ET.Element(root_tag)
-    def _dict_to_xml(parent, d):
-        for k, v in d.items():
-            if isinstance(v, dict):
-                child = ET.SubElement(parent, k)
-                _dict_to_xml(child, v)
-            else:
-                ET.SubElement(parent, k).text = str(v)
 
-    _dict_to_xml(elem, d)
-    return ET.tostring(elem, encoding='utf-8').decode('utf-8')
+# def dict_to_xml(root_tag, d):
+#     """
+#     将字典转换为XML字符串。
+#     参数:
+#     - root_tag: XML根标签
+#     - d: 字典数据
+#     """
+#     elem = ET.Element(root_tag)
+#     def _dict_to_xml(parent, d):
+#         for k, v in d.items():
+#             if isinstance(v, dict):
+#                 child = ET.SubElement(parent, k)
+#                 _dict_to_xml(child, v)
+#             else:
+#                 ET.SubElement(parent, k).text = str(v)
+#
+#     _dict_to_xml(elem, d)
+#     return ET.tostring(elem, encoding='utf-8').decode('utf-8')
 
-def parser_retain_info(info: dict, retain_cls_set):
+def get_include_info(info: dict, include_cls_set):
+    """
+    Args: 过滤包含 include_cls_set 中（一个或者多个）类别的 info
+        info:
+        include_cls_set:
+    Returns:
+    """
     new_objs_list = []
-
-    objs = info['annotation']['object']
-    for obj in info['annotation']['object']:
-        obj_name = obj['name']
-        if obj_name in retain_cls_set:
-            if "part" in obj.keys():
-                obj.pop("part")
-            new_objs_list.append(obj)
+    try:
+        for obj in info['annotation']['object']:
+            obj_name = obj['name']
+            if obj_name in include_cls_set:
+                if "part" in obj.keys():
+                    obj.pop("part")
+                new_objs_list.append(obj)
+    except:
+        new_objs_list = []
+        pass
     info['annotation']['object'] = new_objs_list
     return info
+
+def get_exclude_info(info: dict, exclude_cls_set):
+    """
+    Args: 过滤不包含 exclude_cls_set 中（全部）类别的 info
+        info:
+        exclude_cls_set:
+    Returns:
+    """
+    '''
+    有图片中没有目标object的情况
+    '''
+    try:
+        for obj in info['annotation']['object']:
+            obj_name = obj['name']
+            if obj_name in exclude_cls_set:
+                info['annotation']['object'] = []
+                return info
+    except:
+        info['annotation']['object'] = []
+    return info
+
+
+def parser_retain_info(info: dict, retain_cls_set=None, unretain_cls_set=None):
+    if retain_cls_set is None:
+        return get_exclude_info(info, unretain_cls_set)
+    else:
+        return get_include_info(info, unretain_cls_set)
+
 def save_anno_to_xml(info_dict, save_path):
     annotation_dict = info_dict['annotation']
     filename = annotation_dict['filename']
@@ -138,25 +175,29 @@ def save_anno_to_xml(info_dict, save_path):
     etree.ElementTree(anno_tree).write(save_path, pretty_print=True)
 
 
-def filterXmlFiles(img_voc_dir, xml_voc_dir, save_dir, filter_cat_set):
+def filterXmlFiles(img_voc_dir, xml_voc_dir, save_dir, filter_include_set=None, filter_exclude_set=None):
     img_save_dir = os.path.join(save_dir, "image")
     xml_save_dir = os.path.join(save_dir, "xml")
+
+    if filter_include_set is not None and filter_exclude_set is not None:
+        print("filter_include_set 和 filter_exclude_set 只能有一个不为None")
+        return
     if not utils.mkdirs(img_save_dir) or not utils.mkdirs(xml_save_dir):
         return
-
     if not os.path.exists(img_voc_dir) or not os.path.exists(xml_voc_dir):
         print("VOC dir {JPEGImages} or {Annotations} is not exist, please check")
         return
 
     xml_files = [os.path.join(xml_voc_dir, i) for i in os.listdir(xml_voc_dir) if os.path.splitext(i)[-1] == '.xml']
-    xml_files = tqdm(xml_files)
-    for xml_file in xml_files:
+
+    for xml_file in tqdm(xml_files):
         with open(xml_file) as fid:
             xml_str = fid.read()
         xml = etree.fromstring(xml_str.encode('utf-8'))
         info_dict = parse_xml_to_dict(xml)
 
-        retain_info_dict = parser_retain_info(info_dict, filter_cat_set)
+        # print(xml_file)
+        retain_info_dict = parser_retain_info(info_dict, retain_cls_set=filter_include_set, unretain_cls_set=filter_exclude_set)
         if len(retain_info_dict['annotation']['object']) <= 0:
             continue
 
@@ -178,12 +219,20 @@ filter_set： 需要筛选的类
 
 if __name__ == '__main__':
 
-    voc_dir = "/run/user/1000/gvfs/smb-share:server=192.168.1.197,share=files/sdc/Public_Data_Set/voc2012/VOCdevkit/VOC2012"
-    img_voc_dir = os.path.join(voc_dir, "JPEGImages")
-    xml_voc_dir = os.path.join(voc_dir, "Annotations")
-    save_dir = "/home/ytusdc/Data/voc2012_filter"
-    filter_set = set(['bicycle', 'car', 'person', 'motorbike'])
+
+    # img_voc_dir = os.path.join(voc_dir, "JPEGImages")
+    # xml_voc_dir = os.path.join(voc_dir, "Annotations")
+
+    xml_voc_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/annotations/train"
+    img_voc_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/train"
+    save_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/fliter"
+
     # get_xml_AllClasses(xml_voc_dir)
-    filterXmlFiles(img_voc_dir, xml_voc_dir, save_dir, filter_set)
+
+    # include_cls_set = set(['bicycle', 'car', 'person', 'motorbike'])
+    include_cls_set = None
+    exclude_cls_set = set(['Pedestrian', 'Cyclist', 'Tricycle'])
+
+    filterXmlFiles(img_voc_dir, xml_voc_dir, save_dir, filter_include_set=include_cls_set, filter_exclude_set=exclude_cls_set)
 
 
