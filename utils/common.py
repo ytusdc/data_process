@@ -6,6 +6,27 @@ Time    : 2024-10-09 15:35
 Author  : sdc
 """
 import os
+
+"""
+获取文件夹下相关列表或者字典
+"""
+
+"""
+过滤特定类型，获取文件名列表， 默认获取图片文件列表
+"""
+def get_filename_ls(data_dir, suffix=['.jpg', '.png', '.jpeg', '.bmp']):
+    # 过滤掉 ‘.’开头的隐藏文件, 有的情况下会出现，大部分情况不会，以防万一
+    filter_file_ls = os.listdir(data_dir)
+    for i in range(len(filter_file_ls) - 1, -1, -1):  # for i in range(0, num_list.__len__())[::-1]
+        if filter_file_ls[i].startswith('.'):
+            filter_file_ls.pop(i)
+    file_ls = []
+    if isinstance(suffix, str):
+        file_ls = list(filter(lambda x: x.lower().endswith(suffix), filter_file_ls))
+    elif isinstance(suffix, list):
+        file_ls = [filename for filename in filter_file_ls if os.path.splitext(filename.lower())[-1] in suffix]
+    return sorted(file_ls)  # 排序， 不同平台保持顺序一致
+
 """
 获取图片 id： fullpath, 字典
 前提是文件名命名没有相同的，因为id不包含后缀，如 1.jpg 和 1.png 是不同的文件但是id相同
@@ -39,6 +60,22 @@ def get_id_path_dict(data_dir, file_suffix=['.jpg', '.png', '.jpeg', '.bmp']):
 
     return id_filepath_dict
 
+def get_id_filename_dict(data_dir, file_suffix=['.jpg', '.png', '.jpeg', '.bmp']):
+
+    # id_path_dict = get_id_path_dict(data_dir, file_suffix=file_suffix)
+    # id_filename_dict = {}
+    # for id, path in id_path_dict.items():
+    #     _, filename = os.path.split(path)
+    #     id_filename_dict[id] = filename
+    # return id_filename_dict
+
+    filter_file_ls = os.listdir(data_dir)
+    for i in range(len(filter_file_ls) - 1, -1, -1):  # for i in range(0, num_list.__len__())[::-1]
+        if filter_file_ls[i].startswith('.'):
+            filter_file_ls.pop(i)
+    id_name_dict = {os.path.splitext(name)[0]: name for name in filter_file_ls}
+    return id_name_dict
+
 """
 获取图片 文件名： fullpath, 字典， 防止出现重复的id，
 """
@@ -64,7 +101,6 @@ def get_filename_path_dict(data_dir, file_suffix=['.jpg', '.png', '.jpeg']):
     for file_name in sorted(file_ls):
         filename_filepath_dict[file_name] = os.path.join(data_dir, file_name)
     return filename_filepath_dict
-
 
 def find_duplicate_elem(arry_list):
     """

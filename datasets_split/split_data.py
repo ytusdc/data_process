@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 from pathlib import Path
 import shutil
 from sklearn.model_selection import train_test_split
 from tqdm import tqdm
+import argparse
 
 
 '''
@@ -122,6 +124,11 @@ def split_data(ori_img_dir,
             shutil.copy(src_label_file, target_label_path)
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--img-dir', type=str, default=None, help='图片文件路径')
+    parser.add_argument('-l', '--label-dir', type=str, default=None, help='对应标签文件路径（yolo/voc）格式')
+    parser.add_argument('-d', '--des-dir', type=str, default=None, help='划分后数据集存储路径')
+    opt = parser.parse_args()
 
     # 划分 三个数据集
     split_per_dict = {
@@ -135,9 +142,21 @@ def main():
     #     "test": 0.2
     #     }
 
-    ori_img_dir = "/home/cv/datasets/data_ori/images"    # 图片源文件地址
-    ori_label_dir = "/home/cv/datasets/data_ori/labels"  # 对应标签源文件
-    des_dir = "./data_split"  # 划分后数据集保存位置
+    input_args = sys.argv[1:]  # 第一个参数是脚本名本身
+    if len(input_args) > 0:
+        if len(input_args) / 2 != 3:
+            print(f"必须传入三个参数，请检查输入")
+            sys.exit(-1)
+        if opt.img_dir is None or opt.label_dir is None or opt.des_dir is None:
+            print(f"参数不能为 None")
+            sys.exit(-1)
+        ori_img_dir = opt.img_dir  # 图片源文件地址
+        ori_label_dir = opt.label_dir  # 对应标签源文件
+        des_dir = opt.des_dir  # 划分后数据集保存位置
+    else:
+        ori_img_dir = ""  # 图片源文件地址
+        ori_label_dir = ""  # 对应标签源文件
+        des_dir = ""  # 划分后数据集保存位置
 
     # 划分后数据集 自动生成 images， labels 文件夹，根据需要自己修改
     des_img_dir = os.path.join(des_dir, "images")    # 图片目存储标地址

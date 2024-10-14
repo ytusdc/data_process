@@ -10,7 +10,6 @@ import datetime
 from utils.colortable import get_color_rgb, get_color_bgr
 
 category_id_dict = dict()
-image_set = set()
 every_class_num = defaultdict(int)
 category_item_id = -1
 
@@ -24,12 +23,17 @@ def draw_box(xml_file_path, image_dir, save_dir, bgr=True):
 
     with open(xml_file_path) as fid:
         xml_str = fid.read()
-    xml = etree.fromstring(xml_str)
+    xml = etree.fromstring(xml_str.encode('utf-8'))
     xml_info_dict = parse_xml_to_dict(xml)
 
-    filename = xml_info_dict['annotation']['filename']
-    image_set.add(filename)
-    file_path = os.path.join(image_dir, filename)
+    """
+    不能保证 xml 中的 图片名 可以跟images中图片名对应，所以取 xml 中的文件名和 图片后缀（因为有多种格式）构建图片名
+    """
+    extension =  os.path.splitext(xml_info_dict['annotation']['filename'])[1]
+    name_without_extension = os.path.splitext(os.path.basename(xml_file_path))[0]
+    img_filename = name_without_extension + extension
+
+    file_path = os.path.join(image_dir, img_filename)
     if not os.path.exists(file_path):
         return
     img = cv2.imread(file_path)
@@ -60,8 +64,8 @@ def draw_box(xml_file_path, image_dir, save_dir, bgr=True):
         else:
             color = get_color_rgb(category_id)
         cv2.rectangle(img, (xmin, ymin), (xmax, ymax), color, thickness=2)
-        cv2.putText(img, category_name, (xmin, ymin), cv2.FONT_HERSHEY_SIMPLEX, 2, color, thickness=2)
-        cv2.imwrite(os.path.join(save_dir, filename), img)
+        cv2.putText(img, category_name, (xmin, ymin), cv2.FONT_HERSHEY_SIMPLEX, 1, color, thickness=1)
+        cv2.imwrite(os.path.join(save_dir, img_filename), img)
 
 def addCatItem(name):
     global category_item_id
@@ -104,7 +108,7 @@ def draw_image(imgs_dir, annos_dir, imgs_save_dir):
         os.makedirs(imgs_save_dir)
     anno_file_list = [os.path.join(annos_dir, file) for file in os.listdir(anno_path) if file.endswith(".xml")]
 
-    for xml_file in tqdm(anno_file_list):
+    for xml_file in tqdm(sorted(anno_file_list)):
         if not xml_file.endswith('.xml'):
             continue
 
@@ -163,15 +167,19 @@ if __name__ == '__main__':
         draw_image(opt.imgs_dir, opt.anno_dir, opt.save_dir)
         print(every_class_num)
         print("category nums: {}".format(len(category_id_dict)))
-        print("image nums: {}".format(len(image_set)))
+        # print("image nums: {}".format(len(image_set)))
         print("bbox nums: {}".format(sum(every_class_num.values())))
     else:
         image_path = './data/images'
         anno_path = './data/convert/voc'
         save_img_dir = './data/save'
 
+        image_path = '/home/ytusdc/Data/Data_split/Data_spark/images'
+        anno_path = '/home/ytusdc/Data/Data_split/Data_spark/xml'
+        save_img_dir = '/home/ytusdc/Data/Data_split/Data_spark/visual'
+
         draw_image(image_path, anno_path, save_img_dir)
         print(every_class_num)
         print("category nums: {}".format(len(category_id_dict)))
-        print("image nums: {}".format(len(image_set)))
+        # print("image nums: {}".format(len(image_set)))
         print("bbox nums: {}".format(sum(every_class_num.values())))
