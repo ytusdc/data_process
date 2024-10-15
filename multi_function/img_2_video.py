@@ -10,9 +10,11 @@ Time    : 2024-10-14 15:57
 Author  : sdc
 """
 
-import cv2
 import os
 import numpy as np
+import argparse
+import sys
+import cv2
 import utils.common as common_fun
 
 """
@@ -22,8 +24,6 @@ import utils.common as common_fun
 def images_to_video(image_folder, video_name, fps=24):
     # 获取图片列表
     images = common_fun.get_filename_ls(image_folder)
-
-    # 对图片进行排序，以保持正确的顺序
 
     # 检查图片列表是否为空
     if not images:
@@ -68,8 +68,17 @@ def images_to_video(image_folder, video_name, fps=24):
 
 
 if __name__ == '__main__':
-    # 使用示例
-    image_folder = '/home/ytusdc/codes_zkyc/ultralytics_yolov5/runs/detect/exp7'  # 图片文件夹路径
-    video_name = 'output.mp4'  # 输出视频文件名
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--img-dir', type=str, default=None, help='图片文件存储路径')
+    opt = parser.parse_args()
+
+    input_args = sys.argv[1:]  # 第一个参数是脚本名本身
+    if len(input_args) > 0:
+        img_dir = opt.img_dir
+    else:
+        img_dir = '/home/ytusdc/codes_zkyc/ultralytics_yolov5/runs/detect/exp7'
+
+    video_name = 'output.mp4'  # 输出视频文件名， 输出在当前目录下
     fps = 1  # 帧率
-    images_to_video(image_folder, video_name, fps)
+    images_to_video(img_dir, video_name, fps)
