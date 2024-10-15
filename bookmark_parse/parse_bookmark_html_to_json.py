@@ -5,10 +5,13 @@
 # github            https://github.com/inspurer
 # github            https://github.com/inspurer/ChromeBookmarkVisual/tree/master
 # 微信公众号          月小水长
-import copy
 
 from lxml import etree
 import json
+
+"""
+html 格式书签 转换为 json
+"""
 
 def get_regular_html(bookmark_html_file):
     """

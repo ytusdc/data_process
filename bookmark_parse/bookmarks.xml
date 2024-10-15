@@ -1,0 +1,3321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xbel PUBLIC "+//IDN python.org//DTD XML Bookmark Exchange Language 1.0//EN//XML" "http://pyxml.sourceforge.net/topics/dtds/xbel.dtd">
+<xbel version="1.0">
+<!--- highestId :2961: for Floccus bookmark sync browser extension -->
+
+<folder id="1282">
+  <title>Bookmarks Bar</title>
+  <folder id="1295">
+    <title>工作书签</title>
+    <bookmark href="http://www.fudanmed.com/institute/news222.aspx" id="1398">
+      <title>医院排行榜</title>
+    </bookmark>
+    <bookmark href="https://sleazyfork.org/zh-CN/scripts?page=1" id="1399">
+      <title>用户脚本</title>
+    </bookmark>
+    <bookmark href="https://wpzy.vip/" id="1400">
+      <title>AQ网盘资源地址发布页，收藏我回家不迷路！</title>
+    </bookmark>
+    <bookmark href="https://wpzy.cc/" id="1401">
+      <title>AQ网盘资源社区</title>
+    </bookmark>
+    <bookmark href="http://tairen.ysepan.com/" id="1402">
+      <title>1000T云盘资源网</title>
+    </bookmark>
+    <bookmark href="http://btbtt13.com/forum-index-fid-951-page-1.htm" id="1403">
+      <title>bt电影下载,网盘电影下载,高清电影下载：BT之家老牌电影下载网站，百万用户选择了这里</title>
+    </bookmark>
+    <bookmark href="https://support-cn.wd.com/app/answers/detailweb/a_id/7622" id="1404">
+      <title>WD 产品的软件、固件和驱动程序</title>
+    </bookmark>
+    <bookmark href="https://link3.cc/jijinshe" id="1406">
+      <title>公众号：技锦社 | Link3</title>
+    </bookmark>
+  </folder>
+  <folder id="1296">
+    <title>综合整理</title>
+    <bookmark href="https://mp.weixin.qq.com/s/6pgIo1rrqH6WQOZLv_yhIw" id="1410">
+      <title>最全干货：从写简历，到面试、谈薪酬的那些技巧和防坑指南</title>
+    </bookmark>
+    <folder id="1411">
+      <title>算法推导简介</title>
+      <bookmark href="https://blog.csdn.net/kingzone_2008/article/details/15073987" id="1962">
+        <title>范数与距离的关系以及在机器学习中的应用 - __kingzone__的专栏 - CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/pinard/p/5970503.html" id="1963">
+        <title>梯度下降（Gradient Descent）小结 - 刘建平Pinard - 博客园</title>
+      </bookmark>
+      <bookmark href="http://baijiahao.baidu.com/s?id=1584050253403320005&amp;wfr=spider&amp;for=pc" id="1964">
+        <title>详解机器学习的梯度下降法</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/pinard/p/6004041.html" id="1965">
+        <title>线性回归原理小结 - 刘建平Pinard - 博客园</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/jerrylead/archive/2011/03/05/1971867.html" id="1966">
+        <title>对线性回归，logistic回归和一般回归的认识 - JerryLead - 博客园</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/53979679" id="1967">
+        <title>线性回归详解 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/programmer_wei/article/details/52072939" id="1968">
+        <title>Logistic Regression（逻辑回归）原理及公式推导 - oo笨小孩oo的专栏 - CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/lxs0731/p/8573044.html" id="1969">
+        <title>逻辑回归（Logistic Regression）推导 - 野草Leo - 博客园</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/God-Li/p/8999023.html" id="1970">
+        <title>机器学习算法 --- 逻辑回归及梯度下降 - 码农47 - 博客园</title>
+      </bookmark>
+      <bookmark href="http://blog.sina.com.cn/s/blog_4298002e010144k8.html" id="1971">
+        <title>支持向量机（SVM）的详细推导过程及注解（一）_dfxhvj_新浪博客</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/77750026" id="1972">
+        <title>【机器学习】支持向量机 SVM（非常详细） - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/maybe2030/p/4946256.html" id="1973">
+        <title>[Math &amp; Algorithm] 拉格朗日乘数法 - Poll的笔记 - 博客园</title>
+      </bookmark>
+      <bookmark href="http://www.cnblogs.com/elaron/archive/2012/10/29/2745010.html" id="1974">
+        <title>贝叶斯决策论 - elar - 博客园</title>
+      </bookmark>
+      <bookmark href="http://www.dataguru.cn/thread-508373-1-1.html" id="1975">
+        <title>从贝叶斯方法谈到贝叶斯网络 - 大数据算法-炼数成金-Dataguru专业数据分析社区</title>
+      </bookmark>
+      <bookmark href="http://www.cnblogs.com/zyber/p/6490663.html" id="1976">
+        <title>机器学习之朴素贝叶斯及高斯判别分析 - 鹿往森处走 - 博客园</title>
+      </bookmark>
+      <bookmark href="http://www.cnblogs.com/pinard/p/6069267.html" id="1977">
+        <title>朴素贝叶斯算法原理小结 - 刘建平Pinard - 博客园</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/maybe2030/p/4585705.html" id="1978">
+        <title>[Machine Learning &amp; Algorithm] 随机森林（Random Forest） - Poll的笔记 - 博客园</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/rong86/p/3517573.html" id="1979">
+        <title>K-means聚类算法与EM算法 - Providence - 博客园</title>
+      </bookmark>
+      <bookmark href="http://www.cnblogs.com/pinard/p/6140514.html" id="1980">
+        <title>梯度提升树(GBDT)原理小结 - 刘建平Pinard - 博客园</title>
+      </bookmark>
+      <bookmark href="https://www.jianshu.com/p/005a4e6ac775" id="1981">
+        <title>GBDT：梯度提升决策树 - 简书</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/ScorpioLu/p/8296994.html" id="1982">
+        <title>GBDT原理详解 - ScorpioLu - 博客园</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/peizhe123/p/5086128.html" id="1983">
+        <title>GBDT详解 - 白开水加糖 - 博客园</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/Determined22/p/5772538.html" id="1984">
+        <title>机器学习 —— 类不平衡问题与SMOTE过采样算法 - Determined22 - 博客园</title>
+      </bookmark>
+    </folder>
+    <folder id="1412">
+      <title>概率题</title>
+      <bookmark href="https://www.jianshu.com/p/2d54e2affb91" id="1985">
+        <title>智力题和概率 - 简书</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/u011240016/article/details/53148211/" id="1986">
+        <title>max(X,Y),min(X,Y)的期望求解_DrCrypto的博客-CSDN博客_均匀分布min与max期望</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/46592195" id="1987">
+        <title>2019 校园招聘算法面试概率题 - 知乎</title>
+      </bookmark>
+    </folder>
+    <bookmark href="https://leetcode-cn.com/problemset/all/" id="1413">
+      <title>题库 - 力扣 (LeetCode) 全球极客挚爱的技术成长平台</title>
+    </bookmark>
+    <bookmark href="https://www.cnblogs.com/grandyang/p/4606334.html" id="1414">
+      <title>LeetCode All in One 题目讲解汇总(持续更新中...) - Grandyang - 博客园</title>
+    </bookmark>
+    <bookmark href="https://cuijiahua.com/blog/2018/02/basis_67.html" id="1415">
+      <title>剑指Offer系列刷题笔记汇总</title>
+    </bookmark>
+    <bookmark href="https://www.nowcoder.com/949903654" id="1416">
+      <title>牛客网 - 互联网学习平台_牛客网</title>
+    </bookmark>
+    <bookmark href="https://www.cnblogs.com/gzshan/p/10910831.html" id="1417">
+      <title>【剑指Offer】剑指offer题目汇总 - gzshan - 博客园</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s/B1YmCdOWDG5Zsn27ocLj5A" id="1418">
+      <title>机器学习与深度学习核心知识点总结</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s/Egnxzfdwt12yJ4gUF7Gd6w" id="1419">
+      <title>机器学习与深度学习常见面试题（上）</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/24964987" id="1420">
+      <title>互联网公司最常见的面试算法题有哪些？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/61528654" id="1421">
+      <title>深度学习经验法则 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s?__biz=MjM5NDYxMzk1Nw==&amp;mid=2652262346&amp;idx=5&amp;sn=14187accd92c46067e197c12e7effb7e&amp;chksm=bd67f0608a1079769f9429019ec755a566ee369c53e3cfe8578aa1768679d79797ae54896465&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1570669916814&amp;sharer_shareid=080e1493a90b218fe6797df4fa7dd8fd&amp;pass_ticket=txzzH%2FcNuz1CqL4L9WZNf5SudVZ%2Bx2uYyCVXrYn3vKHgGNs3DGBOeoE%2BWRKRbYHI#rd" id="1422">
+      <title>50w字+的技术类校招面试题汇总（附答案+考点）</title>
+    </bookmark>
+    <bookmark href="https://juejin.im/post/5b9a6093f265da0ad947ba15" id="1423">
+      <title>微软的100道算法面试题（终结版） - 掘金</title>
+    </bookmark>
+    <bookmark href="https://oldpan.me/archives/deep-learning-knowledge" id="1424">
+      <title>深度学习面试知识点汇总 - Oldpan的个人博客</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s/qWUWWLMInQO4dqpFa1_diw" id="1425">
+      <title>【干货】22道机器学习常见面试题目</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&amp;mid=2247522916&amp;idx=4&amp;sn=1e5e5b5f41b3a2c94819380c84aa052a&amp;source=41#wechat_redirect" id="1426">
+      <title>深度学习面试必备的25个问题</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s?__biz=MzI5MDUyMDIxNA==&amp;mid=2247560045&amp;idx=2&amp;sn=44d4faf590882c93392f9265b07c3584&amp;chksm=ec1d0694db6a8f82bb60e1a5099a168dc417b9c4c7ed5302412177c81de116dcf5216d530ba8&amp;scene=21#wechat_redirect" id="1427">
+      <title>一位算法工程师从30+场秋招面试中总结出的超强面经—文本检测与GAN篇（含答案）</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s?__biz=MzI5MDUyMDIxNA==&amp;mid=2247559490&amp;idx=1&amp;sn=0fcaa8ce7f5457ef226ac4d1670679db&amp;chksm=ec1d04bbdb6a8dada659e865e28d96bc69ef3fec551c360e16aee1f037b684112c88819d8eb0&amp;scene=21#wechat_redirect" id="1428">
+      <title>图像处理知多少？准大厂算法工程师30+场秋招后总结的面经问题详解</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s?__biz=MzI5MDUyMDIxNA==&amp;mid=2247557731&amp;idx=1&amp;sn=6beb382062c90405fff55d57405503b0&amp;chksm=ec1d0f9adb6a868ceb0603d1114e920139e59f840801fe725e0ef21d2c2fb741cef82a8dfd69&amp;scene=21#wechat_redirect" id="1429">
+      <title>深度学习三十问！一位算法工程师经历30+场CV面试后总结的常见问题合集（含答案）</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s?__biz=MzI5MDUyMDIxNA==&amp;mid=2247558288&amp;idx=1&amp;sn=b38ddf6755ef911262eca7ded2e98030&amp;chksm=ec1d0969db6a807fd53e5bac66356fbf504ac7b30cfde78db28cac2665d834e313b80cfca173&amp;scene=21#wechat_redirect" id="1430">
+      <title>深度学习六十问！一位算法工程师经历30+场CV面试后总结的常见问题合集下篇（含答案）</title>
+    </bookmark>
+    <bookmark href="https://github.com/datawhalechina/daily-interview/blob/master/AI%E7%AE%97%E6%B3%95/CV/CV%E5%9F%BA%E7%A1%80.md" id="1431">
+      <title>daily-interview/CV基础.md at master · datawhalechina/daily-interview</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s?__biz=Mzg4NzAwNTcyOQ==&amp;mid=2247484827&amp;idx=1&amp;sn=ffda07639491245cd3ce23ee73f622a6&amp;chksm=cf91b2d5f8e63bc3c342baed1b2563a711026098f3304a570167198de6bd379363a7a2b3999b&amp;scene=21#wechat_redirect" id="1432">
+      <title>面试篇——2021字节跳动秋招提前批算法岗面经汇总</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/77118951" id="1433">
+      <title>[LeetCode] 题目汇总(持续更新) - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/column/c_1382302933883768832" id="1434">
+      <title>算法岗面试交流圈 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI5MDUyMDIxNA==&amp;action=getalbum&amp;album_id=1890587599585509377&amp;scene=173&amp;from_msgid=2247557731&amp;from_itemidx=1&amp;count=3&amp;nolastread=1#wechat_redirect" id="1435">
+      <title>#CV面经</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/554814230" id="1436">
+      <title>计算机视觉面试题-Transformer相关问题总结 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://bbs.cvmart.net/c/blog" id="1437">
+      <title>专栏 | 极市高质量视觉算法开发者社区</title>
+    </bookmark>
+  </folder>
+  <folder id="1297">
+    <title>GitHub</title>
+    <bookmark href="https://www.shenlanxueyuan.com/open/course/explore?code=cv" id="1438">
+      <title>公开课 - 深蓝学院 - 专注人工智能的在线教育</title>
+    </bookmark>
+    <bookmark href="https://app.astralapp.com/dashboard" id="1439">
+      <title>Astral GitHub标签</title>
+    </bookmark>
+    <bookmark href="http://ethereon.github.io/netscope/#/editor" id="1440">
+      <title>Netscope 框架图</title>
+    </bookmark>
+    <bookmark href="https://www.nuscenes.org/object-detection?externalData=all&amp;mapData=all&amp;modalities=Camera" id="1441">
+      <title>Object detection task - nuScenes</title>
+    </bookmark>
+    <bookmark href="https://www.nuscenes.org/object-detection" id="1442">
+      <title>nuScenes dataset - Object Detection</title>
+    </bookmark>
+    <bookmark href="https://paperswithcode.com/" id="1443">
+      <title>Papers With Code : the latest in machine learning</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247499291&amp;idx=3&amp;sn=30a826eb2b5b018fdce8001e47e1c705&amp;chksm=f9a18c94ced60582e8409681cae9d671fe41989842fb300de2bfa4be29eff27ea39b5af94cd6&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1589635617228&amp;sharer_shareid=42a896371dfe6ebe8cc4cd474d9b747c&amp;key=a9d3e4aafe27e32f2b3195a614466e871dd8a008c9e09a845bf8ed627a0c1f2d6ccba171d6d9c3e863faab0c0784e58f3b1f5782d850486fa47915ac1cdf8335b58758831fef468d7b97bdae32d44dff&amp;ascene=1&amp;uin=Mjc0MDIxODY2MQ%3D%3D&amp;devicetype=Windows+10+x64&amp;version=6209007b&amp;lang=zh_CN&amp;exportkey=AfPzuiuBZ8myNrmMXZ7zIyo%3D&amp;pass_ticket=dXeaZ9%2FWVWOKTLikJP5umBRsbXAUd1LI5XKeUjAiNVlNQLuzoCb8v3t40p%2FqrchX" id="1444">
+      <title>用了这个方法，我下载GitHub项目速度达5MB/s！</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/91873965" id="1445">
+      <title>终端-模糊查找神器-fzf - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.pianshen.com/article/70541390843/" id="1446">
+      <title>github 无法访问的 完美解决方案 - 程序员大本营</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/358264897?ivk_sa=1024320u" id="1447">
+      <title>Github上不去登不了的解决办法 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.realvnc.com/en/connect/download/viewer/" id="1448">
+      <title>Download VNC Viewer | VNC® Connect</title>
+    </bookmark>
+    <bookmark href="http://www.skpwz.com/index.php/archives/74/" id="1449">
+      <title>realvnc 序列号 - 四点的太阳 - 宋凯鹏网站</title>
+    </bookmark>
+    <bookmark href="https://paperswithcode.com/sota/3d-object-detection-on-nuscenes" id="1450">
+      <title>nuScenes Benchmark (3D Object Detection) | Papers With Code</title>
+    </bookmark>
+    <bookmark href="https://paperswithcode.com/task/3d-object-detection" id="1451">
+      <title>3D Object Detection | Papers With Code</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/BBeymax/article/details/122462479" id="1452">
+      <title>windows访问Github解决方案_YBayMax的博客-CSDN博客</title>
+    </bookmark>
+  </folder>
+  <folder id="1298">
+    <title>知识星球</title>
+    <folder id="2781">
+      <title>直播问答</title>
+      <bookmark href="https://articles.zsxq.com/id_lwenkzg4pa2s.html" id="1462">
+        <title>起点编辑青狐梳理【凡人流】各类写法和主线\金手指\剧情大纲模式</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_jrpomv77jxr3.html" id="1473">
+        <title>起点青狐谈当下新人入行之路的题材选择（附当前起点具有可行性题材）</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_4c57rf5jlfmn.html" id="1474">
+        <title>起点青狐：无法签约及签约后无法拿到成绩的建议/扫榜/智能推/起点番茄现状（4800字原文+重新梳理总结）</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_faqus9tu5tw6.html" id="1495">
+        <title>起点青狐编辑谈【传统玄幻】的书单与基础结构特征</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_g2b4cnxmas59.html" id="1497">
+        <title>提升网文认知必看！青狐12月21-1月6日直播精选问答52个</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_bdwv2k9b4k0i.html" id="1498">
+        <title>青狐编辑谈起点网文【仙侠】区题材分类与新人推荐</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_b5blnd4hxhfa.html" id="1499">
+        <title>青狐编辑谈起点网文【历史】区题材现状与写作注意事项</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_5u6hqks1wa43.html" id="1500">
+        <title>适合新人！青狐编辑谈起点【诸天无限】分区题材类别与写作注意事项</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_41ha5thxfvco.html" id="1501">
+        <title>青狐编辑谈起点【玄幻】分区题材类别与推荐</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_e6074gnm7iif.html" id="1502">
+        <title>青狐编辑直播答疑精选14-19日共40个起点题材、投稿、推荐相关问题</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_3pdz2dub8rqe.html" id="1503">
+        <title>青狐编辑谈起点目前【都市文】的写作题材类型与新手推荐题材</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_g8rqlag6i0az.html" id="1504">
+        <title>【起点各类题材的选择与建议】青狐编辑12月15日-16日直播问答精选记录</title>
+      </bookmark>
+    </folder>
+    <folder id="2938">
+      <title>拆书方法</title>
+      <bookmark href="https://www.lkong.com/thread/3155235" id="2189">
+        <title>关于怎么拆书的思考 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3335911?author=1783802" id="2942">
+        <title>近期拆书心得，写作技巧总结 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3471743?author=1198684" id="2208">
+        <title>【拆书经验分享】拆书不仅是拆节奏框架，万物都可拆。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="2782">
+      <title>写作工具</title>
+      <bookmark href="https://www.tboxn.com/" id="2784">
+        <title>Tbox导航 | 只收录优质在线工具的导航网站</title>
+      </bookmark>
+      <bookmark href="https://write.qq.com/download" id="2785">
+        <title>作家助手桌面端下载</title>
+      </bookmark>
+      <bookmark href="https://www.shenyandayi.com/" id="2786">
+        <title>深言达意 – 找词找句</title>
+      </bookmark>
+      <bookmark href="https://tool.mingdawoo.com/lang/nearby_word/search?q=%E4%BD%A0%E5%A5%BD&amp;ds=2" id="2787">
+        <title>你好 - 近邻词汇检索 @明达明达 #明达明达的口袋#</title>
+      </bookmark>
+      <bookmark href="https://hetu.dev/random-names/" id="1457">
+        <title>仙侠小说专有名词随机生成器</title>
+      </bookmark>
+      <bookmark href="https://www.qmsjmfb.com/" id="1458">
+        <title>网名生成器、姓名生成器、名字在线生成器</title>
+      </bookmark>
+      <bookmark href="https://www.abailing.com/" id="1468">
+        <title>百灵创作</title>
+      </bookmark>
+      <bookmark href="http://www.cgmazi.com/" id="1470">
+        <title>橙瓜码字</title>
+      </bookmark>
+      <bookmark href="https://www.kdwrite.cn/#/" id="1471">
+        <title>口袋写作官网 - 口袋里的写作小帮手</title>
+      </bookmark>
+      <bookmark href="https://quanmin.baidu.com/sv?source=share-h5&amp;pd=qm_share_search&amp;vid=10460180928615122025" id="1475">
+        <title>7个网文小说写作必备APP｜搞定小说写作素材-度小视</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/question/348812792/answer/3166522761?utm_id=0" id="1476">
+        <title>我想知道作家写作都用什么软件？ - 知乎</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_zrc0vwk2hgw5.html" id="1477">
+        <title>工具书汇总推荐（一）</title>
+      </bookmark>
+      <bookmark href="https://www.makeamap.cn/" id="1482">
+        <title>易制地图-架空世界地图、小说地图、游戏地图制作工具。</title>
+      </bookmark>
+      <bookmark href="https://wantwords.net/" id="1490">
+        <title>WantWords 反向词典</title>
+      </bookmark>
+      <bookmark href="https://wantquotes.net/" id="1491">
+        <title>WantQuotes 据意查句</title>
+      </bookmark>
+    </folder>
+    <folder id="2783">
+      <title>爽点桥段情节库</title>
+      <bookmark href="https://www.lkong.com/thread/2844913?pid=339583ac-b4df-4b3f-b315-f0385a8bf524" id="2788">
+        <title>【长期散财】收集爽点和套路！！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://wx.zsxq.com/dweb2/index/topic_detail/412885542811158" id="1463">
+        <title>54个爽点桥段</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3425646" id="1507">
+        <title>【思维导图】爽文377个爽点套路 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2843323" id="2300">
+        <title>研究了几个拉仇恨的人物描写方式，大家可以来探讨一下 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3471244" id="2302">
+        <title>套路2.0：两万字在网上收集整理的408个套路爽点 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2002590" id="2304">
+        <title>【分享】个人收集的都市套路和毒点 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2133503" id="2316">
+        <title>装逼素材分类整理精华合集，可能你这一生都装不完这些逼 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3448829" id="2320">
+        <title>整理了一些前几年到现在收集的网络上各种梗 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.bilibili.com/video/BV1jG411j77v/?share_source=copy_web&amp;vd_source=918902e1677fd045f453cd86fb304577" id="2793">
+        <title>爆款网文都在用的40个万能小说情节套路码字必备_哔哩哔哩_bilibili</title>
+      </bookmark>
+    </folder>
+    <folder id="2794">
+      <title>AI辅助</title>
+      <bookmark href="https://articles.zsxq.com/id_9aaajtikw11d.html" id="2790">
+        <title>如何利用ai人工智能对写作提纲激发灵感？</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/677343140" id="1325">
+        <title>用GPT Store整理网络小说设定细节的尝试 - 知乎</title>
+      </bookmark>
+    </folder>
+    <folder id="2795">
+      <title>网站机制</title>
+      <bookmark href="https://wx.zsxq.com/dweb2/index/topic_detail/188482484515142" id="1483">
+        <title>番茄推荐机制</title>
+      </bookmark>
+      <bookmark href="https://news.chenggua.com/detail/30683.html" id="1484">
+        <title>#网文知识科普#均订、首订、总订、日销、渠道、分成、保底、黄金三章、凡人流-橙瓜</title>
+      </bookmark>
+      <bookmark href="https://wx.zsxq.com/dweb2/index/topic_detail/411842528412418" id="1480">
+        <title>小说网站投稿、稿费福利、网站词汇（起点篇）</title>
+      </bookmark>
+      <bookmark href="https://articles.zsxq.com/id_rwoegelg9mfk.html" id="1494">
+        <title>时代不同了！智能推让网文萌新选题+扫榜思路发生了多少改变？谈新人如今怎么选择能赚钱的起点题材！</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3432344" id="2801">
+        <title>某点新书期攻略，万字原创干货（申请个龙晶） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/question/509203769/answer/3416253569" id="1339">
+        <title>在番茄小说写小说怎么样？新人，现实题材？ - 知乎</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=Mzk0MTQ0ODcyOQ==&amp;mid=2247492756&amp;idx=1&amp;sn=7fbc2b5341658f10631c8f94dbb8eee9&amp;chksm=c2d0efe2f5a766f422ccfc3a982bc46b6f1cdd019ff758cf9bcdc01ffcdca402cfb023946050&amp;token=1816892133&amp;lang=zh_CN&amp;scene=25#wechat_redirect" id="2820">
+        <title>起点榜单沦为有钱作者的玩物，普通作者新书该如何选材呢？</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3146127" id="2005">
+        <title>2月14日讲课整理：传统与脑洞，以及如何让留存更好看 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="2802">
+      <title>文笔技巧</title>
+      <bookmark href="https://www.zhihu.com/question/539705518/answer/2617783825" id="1487">
+        <title>为什么写小说时脑海中明明有了画面，用文字表现出来却总不对味? - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3401870" id="2807">
+        <title>讲一个新人可以无脑挣钱的写书方法 🔥🔥🔥 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3424052" id="2808">
+        <title>进阶版：讲一个新人可以无脑挣钱的写书方法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3464433" id="2809">
+        <title>【完结篇】讲一个新人可以无脑挣钱的写作方法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3463887" id="1505">
+        <title>【自用】网文技巧总结贴 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/question/360033751/answer/944366960" id="2819">
+        <title>新手小白怎么开始写网文小说？ - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3458510?author=852786" id="2810">
+        <title>教学贴【真正的从零教学】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/12waali2rAE_rxtHctdWiQ" id="2800">
+        <title>写给新人的网文扫榜攻略</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3478952" id="2865">
+        <title>文笔是什么？为什么很多人觉得自己文笔很好，写的书没人 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="2835">
+      <title>个人感想</title>
+      <bookmark href="https://www.lkong.com/thread/3040421" id="2839">
+        <title>【原评七月杯】从千字10，到月入10W+，我用了一年 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3251183" id="2840">
+        <title>写网文半年的阶段性总结（长文&amp;干） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3080399" id="2841">
+        <title>我的网文圈十五年【成神证道，宁有种乎！】（谨以此文献给所有的网文创作者们） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3482978?author=1637156" id="2866">
+        <title>分享一个无脑赚钱的简单秘籍 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="2939">
+      <title>经验分享</title>
+      <bookmark href="https://www.lkong.com/thread/3485332" id="2943">
+        <title>【写作经验分享】面向有基础的作者向精品冲击的攻略 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3485717" id="2944">
+        <title>【飞卢小乔】七大网文书名公式 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3479392" id="2945">
+        <title>爽文的基础写作公式，做到这些你就及格了——类教学贴 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/question/523853441/answer/2976062215" id="2946">
+        <title>新人第一次扫榜，这样的方法对吗？ - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3486196" id="2947">
+        <title>谈谈新人该不该看教学贴，最后附个新人容易赚钱的方法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="2940">
+      <title>故事卡</title>
+      <bookmark href="https://articles.zsxq.com/id_2mzgz4qpv41v.html" id="2948">
+        <title>△的故事卡心得分享（1）</title>
+      </bookmark>
+      <bookmark href="https://wx.zsxq.com/dweb2/index/topic_detail/2855818114544551" id="2949">
+        <title>分享新故事卡。（一）</title>
+      </bookmark>
+      <bookmark href="https://wx.zsxq.com/dweb2/index/topic_detail/8855812525142212" id="2950">
+        <title>故事卡开源计划：新故事卡分享（二）</title>
+      </bookmark>
+    </folder>
+    <bookmark href="https://articles.zsxq.com/id_5gishabqttl9.html" id="2814">
+      <title>【拆书/拉片】星球内案例参考目录</title>
+    </bookmark>
+    <bookmark href="https://articles.zsxq.com/id_9g2xgdntjpir.html" id="1340">
+      <title>“5.5亿用户”与“1000位铁粉”背后的逻辑：写网文你真的需要讨好那么多人吗？</title>
+    </bookmark>
+    <bookmark href="https://www.bilibili.com/video/BV1VC411W7cw/?share_source=copy_web&amp;vd_source=67c92917a4c1502d7cb19d01430fdba6" id="1338">
+      <title>建议不要过度准备，先学会做一个垃圾出来_哔哩哔哩_bilibili</title>
+    </bookmark>
+    <bookmark href="https://www.bilibili.com/video/BV112421F76M/?share_source=copy_web&amp;vd_source=1f111ccb00e9a86ef4c5ea19d841efdf" id="1346">
+      <title>【拷打】好低能的网文流派，好一场酣畅淋漓的赤石_哔哩哔哩_bilibili</title>
+    </bookmark>
+    <bookmark href="https://www.lkong.com/thread/3460691" id="1344">
+      <title>深夜翻青狐的说说，发现一个宝藏帖 - 龙的天空lkong.com - 龙空</title>
+    </bookmark>
+    <bookmark href="https://wx.zsxq.com/dweb2/index/topic_detail/588521415452214" id="1464">
+      <title>#故事结构/卷纲/大纲/节奏/情绪折线# #铺垫/爽点/期待感#</title>
+    </bookmark>
+    <bookmark href="https://articles.zsxq.com/id_nqo7spow900b.html" id="1467">
+      <title>星友个人作品总结、写作感悟、认知提升汇总贴</title>
+    </bookmark>
+    <bookmark href="https://wx.zsxq.com/dweb2/index/topic_detail/811455885812242" id="1479">
+      <title>原创重点，关于信息安排的一些个人心得</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/598354787/answer/3081385962" id="1481">
+      <title>那些写小说产量很高的作者，脑袋里那么多故事怎么来的？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://articles.zsxq.com/id_pi2wz8phw598.html" id="1492">
+      <title>昨天作者们聊天的总结笔录分享（其中一部分）</title>
+    </bookmark>
+    <bookmark href="https://www.bilibili.com/video/BV1CU4y1Z7FM/?vd_source=cb7a5bcadd5ee9c12ff873ded693ba7b" id="1506">
+      <title>年轻人的第二本网文——《诡秘之主》_哔哩哔哩_bilibili</title>
+    </bookmark>
+    <bookmark href="https://articles.zsxq.com/id_0mt0sertx8vf.html" id="1508">
+      <title>“故事卡系统”方法论课程汇总与讨论</title>
+    </bookmark>
+    <bookmark href="https://www.lkong.com/thread/3383608" id="2821">
+      <title>写作如何判断入门，不写看似正确内容【只写有效的情绪】 - 龙的天空lkong.com - 龙空</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/column/c_1654533149165080576" id="1333">
+      <title>千门36局详解 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/column/c_1712069084727013376" id="2822">
+      <title>千门八将36局解析 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/499826952" id="2823">
+      <title>锻炼写小说拆书这要怎么拆？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s/huGqn4eeZ1UcHVlOvhxEbw" id="2824">
+      <title>如何在最短的时间内投入创作，让剧情变得像样起来？</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/492755169/answer/2290167303?utm_id=0" id="1455">
+      <title>小说的结构是什么？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://wx.zsxq.com/dweb2/index/topic_detail/5122524551421554" id="2867">
+      <title>知识星球 | 深度连接铁杆粉丝，运营高品质社群，知识变现的工具</title>
+    </bookmark>
+  </folder>
+  <folder id="1299">
+    <title>网文相关</title>
+    <folder id="2836">
+      <title>关注贴主</title>
+      <bookmark href="https://www.lkong.com/user/662965/thread" id="2842">
+        <title>主题 - 红猫子 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3468674?author=1198684" id="2843">
+        <title>龙空收藏夹分享：分类整理的写作经验帖 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/user/935301/thread" id="2844">
+        <title>主题 - 剑主沉浮 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/user/1459412/thread" id="2845">
+        <title>主题 - 薇拉0205 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.jianshu.com/u/5b35aa5dea1d" id="2846">
+        <title>禁代曲奇 - 简书</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/user/1472423/thread" id="2847">
+        <title>主题 - 丁雪衣 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1511">
+      <title>【开篇】（简明扼要+爽文思维）</title>
+      <bookmark href="https://www.lkong.com/thread/3047397" id="1991">
+        <title>盖世巨星的七个中心点 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2628064" id="1992">
+        <title>【开篇写法技巧以及基础套路分享】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3461466?pid=4296917c-a34e-439b-a7a5-81d154870f7e" id="1993">
+        <title>看了胡说和迦南，写书开篇到底是快节奏好还是立住人物形象好？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2659816" id="1994">
+        <title>爽文开篇教程，很黄很暴力…… - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2774785" id="1995">
+        <title>​为什么写网文不讲逻辑！（网文加特林第二弹！） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3162652" id="1996">
+        <title>水一贴，说个所有重生文通用的标准模板。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3336443" id="1997">
+        <title>浅谈一下起点开头如何过签（个人理解） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3292376" id="1998">
+        <title>极致简化写法。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3419507" id="1999">
+        <title>新人向“黄金三章”修改小技巧——“删”字决 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3359193" id="2000">
+        <title>分享总结，写一些自己的开篇写作经验。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3208556" id="2001">
+        <title>【飞卢小乔】干货来啦！还不会写简介的可以来康康模板呀 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3317886" id="2002">
+        <title>【个人经验】新人如何写开篇 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3470121" id="2003">
+        <title>开头怎么写才有带入感，才能让人有看下去的欲望？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3316781" id="2004">
+        <title>分享一下：爽文思维！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3317913" id="2006">
+        <title>写作干货分享！开头到底怎么写？（新人向）【戏呈】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2481215" id="2007">
+        <title>【年终总结】写作心得小结——输出信息简单化 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3309671" id="2008">
+        <title>说下提升完读率和签约概率的写作技巧吧 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://wx.zsxq.com/dweb2/index/topic_detail/585252124482124" id="2803">
+        <title>ABCDEF开篇公式，以头破为例。</title>
+      </bookmark>
+      <bookmark href="https://wx.zsxq.com/dweb2/index/topic_detail/415848882812588" id="2804">
+        <title>【进阶】写作技巧:网文全武行--开头，这么写就对了!(1)</title>
+      </bookmark>
+      <bookmark href="https://wx.zsxq.com/dweb2/index/topic_detail/585121114581144" id="2805">
+        <title>【进阶】写作技巧:网文全武行--开头，这么写就对了!(2)</title>
+      </bookmark>
+    </folder>
+    <folder id="2837">
+      <title>『爽文↗爽点』（百巧之核）</title>
+      <bookmark href="https://www.lkong.com/thread/3047094" id="2848">
+        <title>【原评七月杯】对于剧情，期待感、爽点的一些理论总结 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2956221" id="2042">
+        <title>记录一下，情节冲突设计心得（随时更新，忘了就不更新） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3201632" id="2849">
+        <title>废卢千订小作者最近的感悟，爽点与期待经验之谈 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2811181" id="2850">
+        <title>【干货】六个核心爽点的分析及运用 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3319903" id="2851">
+        <title>分享一个超级简单的爽点构造 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3192528" id="2045">
+        <title>以说人话的方式，解析所谓的看点和爽点 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2679896" id="2852">
+        <title>【心得交流】关于爽点本质的思考 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3117842" id="2853">
+        <title>学习心得——《我们真正理解爽点吗？》和《爽点的本质》 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3457607" id="2854">
+        <title>【干货】爽点有哪些！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3178895" id="2855">
+        <title>爽点核心：收获和展开。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2943302" id="2856">
+        <title>爽点的本质是什么（长文深度分析，附简单案例、问题答疑） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2709647" id="2857">
+        <title>【经验分享】我将写书多年所有学到的关于写作的经验分享在了这里 ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2612260" id="2858">
+        <title>爽点！爽点！爽点整理从自闭到出关。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3254803?author=1760634" id="2859">
+        <title>新媒体【套路+爽点+写法+】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1519">
+      <title>『爽文↗爽点铺垫』（拉期待感）</title>
+      <bookmark href="https://www.lkong.com/thread/3237216" id="2080">
+        <title>【心得感悟分享】关于情节与爽点的内核理解之一（干货） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3274085" id="2081">
+        <title>【心得感悟分享】关于情节与爽点的内核理解之二（干货） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3192983" id="2082">
+        <title>信息隐藏拉期待的技巧 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3218812" id="2083">
+        <title>浅谈围绕核心点开展期待感、爽点、剧情 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3373962" id="2084">
+        <title>网文干货-铺垫 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3370496" id="2086">
+        <title>个人分享：如何快速设计爆爽剧情【申精】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3281631" id="2087">
+        <title>分享一点浅薄网文经验【水水龙空】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2708019" id="2088">
+        <title>飞卢都市装比打脸攻略详解，实例讲解 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1514">
+      <title>『爽文↗核心卖点』（如何设置）</title>
+      <bookmark href="https://www.lkong.com/thread/3316052" id="2028">
+        <title>核心卖点讨论，学习技巧分享 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3230113" id="2029">
+        <title>网文干货：拓展卖点，增强期待感 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3204433" id="2031">
+        <title>九千字长帖，思考关于”卖点偏移“，以及“需求”的问题 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3305729" id="2032">
+        <title>干货分享！浅谈核心卖点——一本书的诞生（上）【戏呈】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3450330" id="2033">
+        <title>新人开篇的教程、选择以及正确抓到核心的思路。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3316052?pid=9268d0c7-e43d-40e1-80f0-47dac27a6161" id="2034">
+        <title>核心卖点讨论，学习技巧分享 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3318713?pid=62f620ad-29fd-462f-9b80-7368a46ef5a7" id="2035">
+        <title>啥是技巧类分享贴？核心卖点和故事的关系是什么？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1515">
+      <title>『爽文↗亲友反派视角』（阵营）</title>
+      <bookmark href="https://www.lkong.com/thread/1949197" id="2037">
+        <title>【南山网文理论】之“九线法”之“一拖九”写法-之“后宫+配角/反派” ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3158576" id="2038">
+        <title>长文分析：爽点分层+三方阵营理论 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3157586" id="2039">
+        <title>写文的阵营、套路公式等东西，建议打开例文一起看 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3395827" id="2040">
+        <title>【西湖干货分享01期】何谓框架？如何根据“阵营手牌法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3029015" id="2041">
+        <title>谈一谈以“阵营”为切入点，如何安排剧情。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1516">
+      <title>『爽文↗信息差下众生相』</title>
+      <bookmark href="https://www.lkong.com/thread/3368276" id="2043">
+        <title>期待感、爽点与信息差 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3426516" id="2044">
+        <title>小说写作之信息差 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3409712" id="2036">
+        <title>【小说技巧】三种叙述策略管理信息差 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1517">
+      <title>『爽文↗情绪』（拉扯、递增）</title>
+      <bookmark href="https://www.lkong.com/thread/3473209" id="2046">
+        <title>【长文预警】谈谈我对节奏和情绪的一点理解 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3274085" id="2047">
+        <title>【心得感悟分享】关于情节与爽点的内核理解之二（干货） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3237216" id="2048">
+        <title>【心得感悟分享】关于情节与爽点的内核理解之一（干货） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3118578" id="2049">
+        <title>心得——如何调动情绪 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3181753" id="2050">
+        <title>天榜老作者，总结一下自己这么多年的小说经验。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3294130" id="2051">
+        <title>剑主大佬的“震惊”、“情绪的递进”、“三翻四震” - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2971025" id="2052">
+        <title>前段时间大火的技巧帖“三番四震”，老作者千万别用！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3285578" id="2053">
+        <title>【申精】有关情绪拉扯的剧情和应用。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3129984?pid=9c6339bc-574e-4f4f-bb34-1473e16d6dcf" id="2054">
+        <title>各位，什么是强情绪？什么是强人设？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2962633" id="2055">
+        <title>“观念理论——”如何用心理学调动读者的“情绪” - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3320616" id="2056">
+        <title>【求教】关于情绪递进的点（已更新） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3207664" id="2057">
+        <title>愤怒的香蕉：网文写作，怎么做到每一句话都为情绪服务 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3273993" id="2058">
+        <title>【龙虎山】浅谈情绪递增+期待+反馈值。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3162982" id="2059">
+        <title>浅谈——网文核心拉情绪 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3320616?pid=84e4ef6e-0ce5-476c-a63b-e676187ed76b" id="2060">
+        <title>【求教】关于情绪递进的点（已更新） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1518">
+      <title>『爽文↗期待感』（如何设置）</title>
+      <bookmark href="https://www.lkong.com/thread/2954678" id="2061">
+        <title>期待感有关联的物品，和没有关联的需求 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2774407" id="2062">
+        <title>​我来告诉你们，期待感真正核心两个字是什么？（网文加特林第一弹）重发 ... ... ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2877877" id="2063">
+        <title>再发个飞卢写作的期待感，情节架构模式，爽点逻辑思维 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3124623" id="2064">
+        <title>技巧为血肉，期待感是网文的灵魂——解说期待感 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3230378" id="2065">
+        <title>深挖期待感和期待感升级 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3175403" id="2066">
+        <title>期待感的14种写法：“金变多利反对蹭，心事问话诗抒修。” - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2845649" id="2067">
+        <title>关于“期待感”的探讨 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3447799" id="2068">
+        <title>从入门到万订的一些感悟（已补充万订思路，此帖完结）。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2944458" id="2069">
+        <title>【七月写作】教你三步提升期待感 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3026535" id="2070">
+        <title>辉妈小课堂·网文期待感总结·一讲 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3042256" id="2071">
+        <title>【原评七月杯】“期待感”——网文之魂 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2288614" id="2072">
+        <title>【三文鱼浅谈系列】一个公式告诉你什么叫期待感 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3402928" id="2073">
+        <title>大年年bilibili谈网文五感 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1969052" id="2074">
+        <title>期待感、逼格、对话、文笔……个人感悟整理。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3316702" id="2075">
+        <title>【分享】关于期待感的一些总结！发完这贴应该够升7级了 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3133456" id="2076">
+        <title>理论思考（1）：尝试讨论网文期待感的底层原理 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3230113" id="2077">
+        <title>网文干货：拓展卖点，增强期待感 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2488797" id="2078">
+        <title>【系统性研究网文写作】看点——读者的需求【已修缮】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3281631" id="2079">
+        <title>分享一点浅薄网文经验【水水龙空】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1520">
+      <title>『爽文↗剧情节奏』（框架套路）</title>
+      <bookmark href="https://www.lkong.com/thread/2689207" id="2091">
+        <title>【干货/硬货】故事，剧情与情节，解析，运用并实战 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2873271" id="2092">
+        <title>发个飞卢节奏的个人理解，老扑街之言大家随意评判 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3302442" id="2093">
+        <title>干货分享，适合新人的写作节奏（飞卢风）！【戏呈】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3043185" id="2094">
+        <title>【飞卢攻略】飞卢快速月入过万的基础知识！（实战版） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3472026" id="2095">
+        <title>谈几个稳定月入5000的小技巧、小感悟、小思路 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2964344" id="2096">
+        <title>全职两年的小总结帖！！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3157710" id="2097">
+        <title>装逼震惊总结 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3273993" id="2098">
+        <title>【龙虎山】浅谈情绪递增+期待+反馈值。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2507244" id="2099">
+        <title>【代发】瓜子飞卢攻略！献丑！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1907937" id="2100">
+        <title>《重生之都市修仙》装逼套路总结 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1248461" id="2101">
+        <title>《我真是大明星》终于败退了，靠打脸展开剧情 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2273603?pid=aaaaaaaa-5c98-8ec8-d01c-da4d9f57f1e7" id="2102">
+        <title>写小说如何做到环环相扣啊 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3306486" id="2103">
+        <title>干货分享！浅谈模板循环——一本书的诞生（下）【戏呈】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3478218" id="2825">
+        <title>【心得体会】如何最快让你的剧情变得像样！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1521">
+      <title>『爽文↗震惊』（三翻四震、螺旋震惊）</title>
+      <bookmark href="https://www.lkong.com/thread/2971025" id="2104">
+        <title>前段时间大火的技巧帖“三番四震”，老作者千万别用！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3318713?pid=9ed0c774-bcac-4b8e-82cb-16a35fddf077" id="2105">
+        <title>啥是技巧类分享贴？核心卖点和故事的关系是什么？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3407343" id="2106">
+        <title>浅谈三翻四震，草灰蛇线…… - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3294130" id="2107">
+        <title>剑主大佬的“震惊”、“情绪的递进”、“三翻四震” - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3223593" id="2108">
+        <title>关于“螺旋震惊”的求问 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3223593?pid=050e52f5-1449-4c5e-8d88-65ccd7a72e03" id="2109">
+        <title>关于“螺旋震惊”的求问 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.bilibili.com/video/BV1Bj411h7Jv/?buvid=Z94B7F98ECCAD70348DC862FC9BFC0878C8C&amp;from_spmid=main.my-history.0.0&amp;is_story_h5=false&amp;mid=wNNLT4r5A1uBUlymjA0mKw%3D%3D&amp;p=1&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=iphone&amp;share_plat=ios&amp;share_session_id=508DD973-306B-4AE3-981D-FF162998D528&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1699658473&amp;unique_k=uD1ZTQm&amp;up_id=1756890390&amp;vd_source=cb7a5bcadd5ee9c12ff873ded693ba7b" id="1465">
+        <title>拿捏读者的一百个写作技巧：三翻四震_哔哩哔哩_bilibili</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3472590?pid=4c311a5b-7212-4f7f-81ce-b5381a4c8691" id="2826">
+        <title>剑主装逼三要素，我对照着写了两千字，求人帮看一眼 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1522">
+      <title>【起承转合】（矛盾冲突）</title>
+      <bookmark href="https://www.lkong.com/thread/3472372" id="2110">
+        <title>什么样的剧情算水？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2678675" id="2111">
+        <title>【攻略/硬货】如何构建一个有趣的故事/剧情 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2775520" id="2112">
+        <title>​我发现，原来很多人根本不知道什么是节奏！（网文加特林第三弹）重发 ... ... ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3163453" id="2113">
+        <title>短剧写作指南，以及影视剧本创作的基本手法。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3201598" id="2114">
+        <title>（韭菜五弹）“六步法”增加网文“爽点”的精彩度 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3239344" id="2115">
+        <title>交流与分享（其一）：三幕十序列和八要素 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3196486" id="2116">
+        <title>最近关于写书的一些想法，整理发出来分享给大家 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3179976" id="2117">
+        <title>半夜发帖，一个简单粗暴无脑机械的梳理剧情的方法🔥 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2717500" id="2118">
+        <title>【心得体会】关于“好故事”的分享 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3169823" id="2119">
+        <title>小说框架的构造 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3291771" id="2120">
+        <title>“起承转合”一个公式构建网文剧情 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3318994" id="2121">
+        <title>说说我个人理解的“矛盾”，与”延长地图寿命“等问题 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3273993" id="2123">
+        <title>【龙虎山】浅谈情绪递增+期待+反馈值。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/795998" id="2124">
+        <title>谈谈小说的矛盾冲突、大高潮小高潮如何营造及小说节奏 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1572020" id="2125">
+        <title>【明月小课】如何设计剧情冲突 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3204515" id="2126">
+        <title>如何让读者上瘾！？（长文干货！成神技！） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3240084" id="2127">
+        <title>剧情设计讲解，附实操案例，防止“水”文，拉高收订比 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2145047?pid=aaaaaaaa-5bae-a396-d01c-da4d9fb4ab4a" id="2128">
+        <title>走错路了很迷茫，龙币求指点（已遇良师，关贴） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3444569" id="2868">
+        <title>网文中的转折 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3481727?pid=76d9fe85-48a0-43b9-85fb-f649a756e1c2" id="2869">
+        <title>谈谈网文行业，以及情绪写作的正确写法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1523">
+      <title>【角色塑造】（强人设）</title>
+      <bookmark href="https://www.lkong.com/thread/2656121" id="2129">
+        <title>人物的28种性格，分享一波 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3239873" id="2130">
+        <title>人物角色塑造的方法和总结 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3290869" id="2131">
+        <title>【申精】如何进行有效的人物外貌描写 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3276078" id="2132">
+        <title>人物塑造浅谈：极易被忽略的点——情绪线（长文警告） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3399327" id="2133">
+        <title>分享两个人设的取巧手段。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3212420" id="2134">
+        <title>用洗脑术来教你一秒学会塑造人物，能量格局观的核心法则 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3453385" id="2135">
+        <title>‘人设’、‘代入感’，对主角的‘认知’，完结篇 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3452667" id="2136">
+        <title>‘总结’和‘复盘’才能理解所有作品的内核。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3129984?pid=9c6339bc-574e-4f4f-bb34-1473e16d6dcf" id="2137">
+        <title>各位，什么是强情绪？什么是强人设？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3423034" id="2138">
+        <title>【写作分享八】角色性格塑造-佚名 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3396657" id="2139">
+        <title>【写作分享一】角色的塑造-不祈十弦 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2507244" id="2140">
+        <title>【代发】瓜子飞卢攻略！献丑！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1716254" id="2141">
+        <title>关于大纲和细纲，有不懂的可以进来看看。ps：十七楼烽火大神传授套路心得 ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1716254?pid=aaaaaaaa-58dc-b68a-d01c-da4d9fc5ca36" id="2142">
+        <title>关于大纲和细纲，有不懂的可以进来看看。ps：十七楼烽火大神传授套路心得 ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3177366" id="2143">
+        <title>【心得体会】分享几个立竿见影的简单小技巧，小套路。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3316388" id="2144">
+        <title>【干货】人物形象如何塑造，才能清晰立体？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2506887" id="2145">
+        <title>【系统性研究网文写作】角色塑造 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3320306" id="2146">
+        <title>【散财】聊聊姬叉大佬的乱世书，该怎么写好一个女性角色。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3468573" id="2147">
+        <title>什么是人物人物弧光？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3382718" id="2798">
+        <title>谈谈人物塑造 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3488389" id="2870">
+        <title>【写作分享十一】以梗为中心塑造人设，剧情和对话-蠢蠢凡愚QD - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1524">
+      <title>【主线支线】（草灰蛇线）</title>
+      <bookmark href="https://www.lkong.com/thread/2874698" id="2148">
+        <title>飞卢主线的简单理解 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3025466" id="2149">
+        <title>浅谈主线的结构、类型和作用 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3469286?pid=4d719c96-86e7-4bfa-83fc-5bfe4ea66ef3" id="2150">
+        <title>写多了升级爽文，这种缺点改如何改变 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1949197" id="2151">
+        <title>【南山网文理论】之“九线法”之“一拖九”写法-之“后宫+配角/反派” ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/817141" id="2152">
+        <title>JK罗琳的草灰蛇线——《密室》的埋线填坑手法略观 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3456930?pid=58136eed-2268-44fd-9787-1d8895160330" id="2153">
+        <title>分享个愤怒香蕉“叠纸法”或“草灰蛇线” - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3124588" id="2154">
+        <title>纯干货帖：飞卢起点风 节奏感、和主线支线协调的研究 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3217079" id="2155">
+        <title>玩完原神，我终于知道怎么拖剧情，写支线了 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3187535" id="2156">
+        <title>发个关于【主线设计】的套用框架，干货 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2922494" id="2157">
+        <title>主线和期待感（飞卢向） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2147106?pid=aaaaaaaa-5bb2-12f6-d01c-da4d9fb70d26" id="2158">
+        <title>主线，事件线我都能明白，可是辅线就有点理解无能。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2147106?pid=aaaaaaaa-5bb1-d468-d01c-da4d9fb6dd00" id="2159">
+        <title>主线，事件线我都能明白，可是辅线就有点理解无能。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3399615" id="2160">
+        <title>分享一个稳定提高成绩的写法，“主线写法”【适合新人】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/478418173" id="1485">
+        <title>01 如何写网文大纲和主线——《故事策略》的启发 - 知乎</title>
+      </bookmark>
+    </folder>
+    <folder id="1525">
+      <title>【剧情衔接】（下钩子，莲花地图法）</title>
+      <bookmark href="https://www.lkong.com/thread/3461466?pid=4296917c-a34e-439b-a7a5-81d154870f7e" id="2161">
+        <title>看了胡说和迦南，写书开篇到底是快节奏好还是立住人物形象好？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3025466" id="2162">
+        <title>浅谈主线的结构、类型和作用 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3026206" id="2163">
+        <title>深度解析【一级结构】与【二级结构】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3202491" id="2164">
+        <title>【已更新】老作者过去四年，共五本崩盘书的总结与困惑 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3178533" id="2165">
+        <title>面向新人的简易版写文思路 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2068229" id="2166">
+        <title>已更新，我是宅猪，我来战斗……错了，我来说一说换地图 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3423204" id="2167">
+        <title>【写作分享九】新手避免地图崩盘的技巧-纯九莲宝灯 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3028718?pid=a7d6e480-5b4c-4930-9e12-20e3e60d02a3" id="2168">
+        <title>莲花地图法是什么意思？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3028718?pid=c4d9e845-538b-4ffc-a68d-9d5b09b7b7a0" id="2169">
+        <title>莲花地图法是什么意思？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1526">
+      <title>进阶：以故事为内核（非技巧类）</title>
+      <bookmark href="https://www.lkong.com/thread/3318311" id="2171">
+        <title>说个小忠言：沉迷技巧之前，先考虑故事 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3318311?pid=5b0d0a2d-5494-4d3b-a965-d32834103f3a" id="2181">
+        <title>说个小忠言：沉迷技巧之前，先考虑故事 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3458937" id="2172">
+        <title>喝了点酒，浅谈对于网文的看法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3042887" id="2173">
+        <title>【转载】@姬叉 写的《一点基础教学》 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3423613" id="2174">
+        <title>爱潜水的乌贼创作理念与心得分享 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3239637" id="2177">
+        <title>聊聊网文。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3159145" id="2175">
+        <title>网文创作：新人扑街的进阶之路。（完结） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3240406" id="2176">
+        <title>看青峰大佬分享贴，也跟着说一下个人的积累方式~ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3246177" id="2179">
+        <title>看完烽火的讲课，我更加坚定求稳，比求爽更重要了 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3202491" id="2180">
+        <title>【已更新】老作者过去四年，共五本崩盘书的总结与困惑 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3318869?pid=b0088d9f-96a5-4f3e-8c0f-5234a1a46f72" id="2182">
+        <title>在姬叉帖子之外说点跟他不一样的 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1527">
+      <title>【拆书】（含火书大纲）</title>
+      <bookmark href="https://www.lkong.com/thread/3473083" id="2183">
+        <title>《逼我重生是吧》上架前个人拆书分享 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1907937" id="2184">
+        <title>《重生之都市修仙》装逼套路总结 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3314918" id="2185">
+        <title>万订作品：《怨种系统和战狂我》2万字解析 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3424699" id="2186">
+        <title>拆书，武道长生，从五禽戏开始，以第一个地图。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3046200" id="2187">
+        <title>【原评七月杯】《网游之我有十倍攻速》全本大纲！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2848713" id="2188">
+        <title>夜研番茄火书《一剑独尊》记录前六章细纲与自己见解。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3420807" id="2190">
+        <title>万字拆书长文，三行作品，据说均订曾三万，能加精吗？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3284196" id="2191">
+        <title>飞卢【复制天赋】【亿万倍天赋】【死灵法师】细纲 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3283478" id="2193">
+        <title>文抄公《勾在妖武乱世修仙》227章-327章技巧解析 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3099508" id="2194">
+        <title>《大奉打更人》详细大纲剧情解析 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3268673" id="2195">
+        <title>起点首订过万:我慕容复只想修仙，剧情解析 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2119718" id="2196">
+        <title>深蓝椰子汁《星河帝国》精品大纲分享 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3296788" id="2197">
+        <title>2万均作品《幸运亿的玩家，没见过吧》万字拆书 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3262750" id="2198">
+        <title>3万均作品，说好的制作烂游戏，泰坦陨落是什么鬼，解析 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3346286" id="2199">
+        <title>《路明非不想成为超级英雄》1-40 5k随笔分析 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3289300" id="2200">
+        <title>《御兽之王》前25万字超详细拆书，1万3字长文 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3287073" id="2201">
+        <title>《都重生了，谁谈恋爱啊》上架前细纲及个人阅读总结 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2313484" id="2202">
+        <title>八千字都市大纲：新人可选择性观看 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2360611" id="2203">
+        <title>《我是全能大明星》全本大纲分享 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2466264" id="2204">
+        <title>掌阅爆款《女总裁的上门女婿》前五十章大纲解析！！！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2683088" id="2205">
+        <title>价值百万的镇国战神大纲已出，居然涉嫌… - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3081953" id="2206">
+        <title>拆了下灵境第一卷大纲 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3372862" id="2207">
+        <title>【学习】《逆天邪神》前248章大框架，以及阅读理解 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3341123" id="2871">
+        <title>天榜禁咒法师1-200剧情随笔 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3342482" id="2872">
+        <title>《隐秘死角》1-98，1万8千字解析 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3261644" id="2873">
+        <title>起点三万订作品:刚成仙神子孙求我出山-大纲分享 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/643877509" id="2874">
+        <title>起承转合在网文中的使用（十）——遮天第一卷大纲 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/645912465" id="2875">
+        <title>起承转合在网文中的使用（十一）——遮天第一卷大纲详解1.0 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/655752903" id="2876">
+        <title>起承转合在网文中的使用（十二）——遮天第二卷大纲初探 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/663926485" id="2877">
+        <title>起承转合在网文中的使用（十三）——遮天第二卷大纲总结 - 知乎</title>
+      </bookmark>
+    </folder>
+    <folder id="1528">
+      <title>【大纲细纲】（身份金手指力量体系）</title>
+      <bookmark href="https://www.lkong.com/thread/737986" id="2209">
+        <title>小说写作大纲详解（玄幻类） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2033172" id="2210">
+        <title>网络小说九线写法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/878094" id="2211">
+        <title>商业化写作指导帖 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1399766" id="2212">
+        <title>大纲大纲，要看大纲的进来！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2127970" id="2213">
+        <title>《娱乐春秋》人物与世界设定集 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3255110" id="2214">
+        <title>起点一书成神的秘密！终于被我找到！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3106391" id="2215">
+        <title>玄幻小说的一些力量设定相关 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3270935" id="2216">
+        <title>简要谈谈新手该如何做大纲和融入套路 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3402547" id="2217">
+        <title>浅谈万订的终极秘诀（一）， 金手指背后的“逻辑”！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2846856" id="2218">
+        <title>关于写大纲的一点小小心得 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3377514" id="2219">
+        <title>或许是些干货，浅谈一些写作技巧 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3053346" id="2220">
+        <title>【原评七月杯】我个人的制作大纲且卡节奏不崩盘的方法。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3194333" id="2221">
+        <title>开新书前要做什么准备？关于大纲人设和世界观的个人分享 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3297867" id="2222">
+        <title>光辉·脑洞创意的创作技巧（第一节） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3366540?pid=6f754acb-91e9-4b31-ad23-9ba002e2e624" id="2223">
+        <title>发一个200多次天榜书作者的分享 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3462459" id="2224">
+        <title>10步创作小说—雪花创作法（22000字重点批注版） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2846856?pid=1dcd2760-460d-45f7-a64c-cf6eb4b54548" id="2225">
+        <title>关于写大纲的一点小小心得 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3070327" id="2226">
+        <title>光辉·飞卢文大纲写法（第一种 市场定位型大纲） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3105914" id="2227">
+        <title>光辉·飞卢文大纲写法（第二种 人物经历型大纲） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3181065" id="2228">
+        <title>从系统流小说的两种思路到金手指的核心原理。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3176761" id="2229">
+        <title>个人心得：关于如何把网文写长，剧情变丰满的方法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2002590?pid=aaaaaaaa-5acb-0dbe-d01c-da4d9f0bc8ad" id="2230">
+        <title>【分享】个人收集的都市套路和毒点 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3369974" id="2231">
+        <title>五千字长帖，聊聊”剧情流“的”切入点“怎么选的问题 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1210260" id="2232">
+        <title>肥猫写作攻略——金手指关键不在于如何牛逼，而在于如何限制 ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2136214" id="2233">
+        <title>编辑胡杨：浅析无线文中金手指的应用和开发 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2261950?pid=aaaaaaaa-5c84-e09a-d01c-da4d9f483c03" id="2234">
+        <title>有没有人来一起研究下《史上最强赘婿》这本书 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/747431" id="2235">
+        <title>闲话大纲创作，纯个人感悟 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1889325" id="2236">
+        <title>肥猫写作攻略——直播如何做新书大纲设定（双十一更新） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/369538" id="2237">
+        <title>网络小说大纲写作技巧心得（完） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2192047" id="2238">
+        <title>怎么样写大纲 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3260695" id="2239">
+        <title>整理了一下烽火的PPT，文字版方便阅读，这里分享一下 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3244620" id="2240">
+        <title>分享个烽火的课 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1716254" id="2241">
+        <title>关于大纲和细纲，有不懂的可以进来看看。ps：十七楼烽火大神传授套路心得 ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3396258" id="2242">
+        <title>长帖，聊聊如何设计出好剧情，以及怎样判断细纲的好坏 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3319649" id="2243">
+        <title>【稿费破两万帖】拆书斗破的粗浅总结【一】力量体系 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3146127" id="2244">
+        <title>2月14日讲课整理：传统与脑洞，以及如何让留存更好看 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3177517" id="2245">
+        <title>个人精华帖：如何从0开始，设计大纲、细纲 、动笔 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3464041" id="2246">
+        <title>【写作分享】剑宗秘籍-极简大纲法，送给头疼新书的朋友 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1529">
+      <title>大佬技巧贴合集（一贴多论）</title>
+      <bookmark href="https://www.lkong.com/thread/744066" id="2248">
+        <title>101谈写作（一）如何让你的小说更好看？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3319903" id="2249">
+        <title>分享一个超级简单的爽点构造 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3218812" id="2251">
+        <title>浅谈围绕核心点开展期待感、爽点、剧情 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3047397" id="2252">
+        <title>盖世巨星的七个中心点 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2123278" id="2254">
+        <title>评文小结:新人必看的七个基础知识点 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2924186" id="2255">
+        <title>常年天榜老作者教学贴（真正干货——文笔篇终极秘密（三）） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2923093" id="2256">
+        <title>常年天榜老作者教学贴（真正的干货（二） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2922793" id="2257">
+        <title>天榜老司机第一次写教学贴（真正的干货（一）） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3201632" id="2258">
+        <title>废卢千订小作者最近的感悟，爽点与期待经验之谈 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3047094" id="2261">
+        <title>【原评七月杯】对于剧情，期待感、爽点的一些理论总结 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2909149" id="2262">
+        <title>（第六次更新，已完结！）网文理论：网文如美人，皮肉筋骨神-附使用技巧及新书案例！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3045689" id="2263">
+        <title>【原评七月杯】系统性入门学习网文写作？学习风向剖析 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3296827" id="2264">
+        <title>学技巧不如改变认知，你是兔子还是乌龟？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3205139" id="2265">
+        <title>关于起点文写作，不写爽点，也有人看的原因和写作方法论 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2661103" id="2266">
+        <title>【攻略/硬货】从人气动漫“东京喰种”，分析及引用如何完成一部小说的开篇及构架 ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2807215" id="2267">
+        <title>光辉：在飞卢第五年，对2021年飞卢风的分析（干货） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3468674?pid=affcede3-bef4-4891-bb17-f1a8c075fe24" id="2268">
+        <title>龙空收藏夹分享：分类整理的写作经验帖 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3202491" id="2269">
+        <title>【已更新】老作者过去四年，共五本崩盘书的总结与困惑 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3317804" id="2270">
+        <title>【全网含金量最高的干货教学】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3168748" id="2272">
+        <title>【新人写作资料汇总】技巧、教程、工具、封面、博主一站式 | 链接直达 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3322733" id="2273">
+        <title>【正义大使】的帖子，关于自身思考，以及写作技巧 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3319801" id="2274">
+        <title>教你如何构思故事，故事八要素。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3166503" id="2277">
+        <title>精华帖 之 盖世巨星 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3318727?pid=f489fe40-4025-4fec-ba8d-49177f4f48bf" id="2280">
+        <title>当年的飞卢滋养了好多伪神呐！！！· - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3462815" id="2878">
+        <title>【写作分享】少看幸存者偏差，老扑街的十年教训总结 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1530">
+      <title>心得杂谈访谈帖（含问对贴）</title>
+      <bookmark href="https://www.lkong.com/thread/2507210" id="2281">
+        <title>【代发】聊一下我这本平平无奇大师兄吧！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2487944" id="2282">
+        <title>飞卢十八攻略 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2862664" id="2283">
+        <title>【七月整理】苏亘评摊精彩点评汇总第七期 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3423806" id="2284">
+        <title>完本了，经验分享，也是做个总结【散点小财图个彩头】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2928921" id="2285">
+        <title>光辉·2022第一个帖子：飞卢写书，心态崩了怎么办？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3401404" id="2286">
+        <title>【新手向】小白从零开始写网文（合集持续更新0.26.1.20240327） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2121103" id="2287">
+        <title>【龙门访谈】《娱乐春秋》作者姬叉（上篇）——报告政府，我从没过写后宫文！ ... ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2125060" id="2288">
+        <title>【龙门访谈】《娱乐春秋》作者姬叉（下篇）——我在家里比较硬！ ... ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2257216" id="2289">
+        <title>【龙门访谈】《紫阳》作者风御九秋——曾经走街串巷，而今深山隐居 ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2588376" id="2290">
+        <title>​【飞卢探索】新手四本书之后的总结，以及思考（完成！ ... ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3297268" id="2291">
+        <title>发现很多人曲解我的意思，我解释下我认为的七字真言。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3359888" id="2292">
+        <title>分享一个三步走的写手进阶路线。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1536366" id="2293">
+        <title>[苏亘评摊] 评摊，黄金三章点评，无偿修改 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2229332" id="2294">
+        <title>【七月整理】苏亘评摊精彩点评汇总第一期 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2230106" id="2295">
+        <title>【七月整理】苏亘评摊精彩点评汇总第二期 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3317817" id="2296">
+        <title>诸位白金，你们设计剧情，是先有什么？（已做总结 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3227564" id="2297">
+        <title>写书三年总结一下每个阶段作者要重点学习什么技能 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1616695" id="2298">
+        <title>套路装逼，小白文和老白文的区别 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1531">
+      <title>【词库】</title>
+      <bookmark href="https://www.lkong.com/thread/3282334" id="2301">
+        <title>【总结】都市小说套路和毒点大全 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3470878" id="2303">
+        <title>发个以前摘录《元尊》的词库，以及龙空词库大全。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2192789" id="2307">
+        <title>全部家产求词库 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1846140" id="2308">
+        <title>超级词库 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2521779" id="2309">
+        <title>【写作词汇汇总】持续更新 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2531205" id="2311">
+        <title>写作词汇分享。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2234062" id="2313">
+        <title>【龙币求助】关于《重生之都市修仙》中的常用词句 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2844913" id="2317">
+        <title>【长期散财】收集爽点和套路！！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2910337" id="2318">
+        <title>震惊网文界，速进！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2909071" id="2319">
+        <title>拟声词大全集，阅毕：横走网文界！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2056393" id="2827">
+        <title>一些常用词汇的收集 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1532">
+      <title>【玄幻打斗】</title>
+      <bookmark href="https://www.lkong.com/thread/3471717" id="2321">
+        <title>打斗套路，打斗描写辅助。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2007834" id="2322">
+        <title>为啥打斗总要伴随着嘴炮？实在是理解不能啊！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1520513" id="2323">
+        <title>【散财】求教打斗场面怎么写（新增两段试写，诚心求评） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1669733" id="2324">
+        <title>大家是怎么写打斗动作的 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/960493" id="2325">
+        <title>《白菜群每周话题之打斗描写》 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1669733?pid=aaaaaaaa-588e-3033-d01c-da4d9f855346" id="2326">
+        <title>大家是怎么写打斗动作的 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/1891280" id="2327">
+        <title>【网络小说】三分法+打斗套路 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/711697" id="2328">
+        <title>打斗设计指南 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2073012" id="2329">
+        <title>肥猫写作攻略——如何描写战斗！已更新玄幻、修仙、武侠篇 ... - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2304272" id="2330">
+        <title>果然玄幻打斗是最能水数字的，难怪顶尖大神也喜欢写 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/972977" id="2331">
+        <title>论玄幻小说打斗场面的描写与塑造。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="2806">
+      <title>【玄幻设定】</title>
+      <bookmark href="https://wx.zsxq.com/dweb2/index/topic_detail/814282111484112" id="1461">
+        <title>玄幻文介绍</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/69891727" id="1350">
+        <title>上古十大神器【上古十大神兵】简介、排名 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/70223437" id="1351">
+        <title>古代传说、四大凶兽和四大神兽分别是什么 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.bilibili.com/read/cv16832690/" id="1489">
+        <title>实用写作小技巧分享：打斗描写的八个小技巧 - 哔哩哔哩</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/question/417460873/answer/2432813321" id="2811">
+        <title>玄幻小说里的等级设定？ - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/question/588734501/answer/2930640378" id="2828">
+        <title>玄幻小说境界的小划分怎么分合适? - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3311222" id="2879">
+        <title>佛教修行升级体系（大乘篇） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3309672" id="2880">
+        <title>佛教修行升级体系（小乘篇） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/people/wu-zhi-74-46-40/posts" id="2881">
+        <title>无止 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/question/522375281/answer/2784415471" id="2882">
+        <title>有哪些古诗可以写进修仙小说里？ - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/people/47-67-12-29" id="2883">
+        <title>北风知我意 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/question/380047941/answer/2115932704" id="2884">
+        <title>你见过最惊艳的玄幻小说等级制度是什么？ - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/564936816" id="2885">
+        <title>网文写作干货：宗门+丹药+功法+阵法+起名篇。 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/question/354359234/answer/3422236378" id="2886">
+        <title>想写修真玄幻小说都有哪些修仙体系？ - 知乎</title>
+      </bookmark>
+    </folder>
+    <folder id="1533">
+      <title>【题材】（狗粮文+后悔流）</title>
+      <bookmark href="https://www.lkong.com/thread/2844565" id="2332">
+        <title>谈谈东京文主角成年后的职业选择 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3042470" id="2333">
+        <title>【原评七月杯】时空门援X类小说，开挂注意事项 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2992347" id="2334">
+        <title>近期乡村神医流要素分析 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3232302" id="2335">
+        <title>分享点小心得——短篇悬疑 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3344862" id="2336">
+        <title>长期贴：西幻领主种田文。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3200949" id="2337">
+        <title>浅谈无敌流 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3312865" id="2338">
+        <title>番茄规则怪谈类小说写作经验分享（不定期更新） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3136827" id="2339">
+        <title>光辉：飞卢第七年，来个年总结（附天榜密码攻略） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3449207" id="2340">
+        <title>如何靠【四合院】月入过千，（只针对新人） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2723133" id="2341">
+        <title>【飞卢攻略】题材分析 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2990502" id="2342">
+        <title>关于新媒体文写作的一些想法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3452667" id="2344">
+        <title>‘总结’和‘复盘’才能理解所有作品的内核。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3396771" id="2345">
+        <title>【写作分享二】舞台的搭建（lol电竞文）-幽影夜神 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3423023" id="2346">
+        <title>【写作分享七】历史文写作经验总结-花非花月夜 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3400945" id="2347">
+        <title>【写作分享四】都市娱乐文心得（4k字）-不是老狗 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3401773" id="2348">
+        <title>【写作分享六】文娱恋爱文主线解析-乐多是只猫 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3400617" id="2349">
+        <title>【写作分享三】搞笑文注意事项-最白的乌鸦/弥天大厦 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2512071" id="2350">
+        <title>起点足球小说挣零花钱的攻略及资料查找路线 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2477610" id="2351">
+        <title>【年终总结】情感线写法与女婿文的情感内涵 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3452001" id="2352">
+        <title>‘吸量’与‘赛道’的认知，个人进阶万订的思路。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3449580" id="2353">
+        <title>光辉：飞卢八年，来个年总结（天榜密码与写作攻略） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3314691" id="2354">
+        <title>题材、卖点、困境。（仙侠长生流） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3322005" id="2355">
+        <title>想学习写那种原谅文，后悔流 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3194092" id="2356">
+        <title>种田文写法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2693243" id="2357">
+        <title>单女主狗粮文的一些心得 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3321028" id="2358">
+        <title>这本书的爽点是什么？看不太懂 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2701301" id="2359">
+        <title>浅谈下飞卢的都市技巧攻略吧 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3225698" id="2360">
+        <title>浅谈轻松搞笑文的写法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+    <folder id="1534">
+      <title>【杂类技巧】（跟风文笔水文）</title>
+      <bookmark href="https://www.lkong.com/thread/2446246" id="2361">
+        <title>【写作技巧分享】代入感分析之第三人称半知视角 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2923093" id="2362">
+        <title>常年天榜老作者教学贴（真正的干货（二） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3228000" id="2363">
+        <title>如何写刀子骗评论（浅谈） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3250503" id="2364">
+        <title>浅谈画面感 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3227306" id="2365">
+        <title>浅谈伏笔和明笔 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3287785" id="2366">
+        <title>【写作经验】海量实例系统说文笔（附练习方法） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3051359" id="2367">
+        <title>【原评七月杯】从业七年，谈谈如何把网文写爽写长 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3045150" id="2368">
+        <title>【原评七月杯】万字长帖！语文老师带你分析小说三要素 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3160558" id="2369">
+        <title>画面感写法：“动态镜头推进法”初步解析 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2867701" id="2370">
+        <title>光辉：2021年，跟风盛行的飞卢，该如何写书？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3297661" id="2371">
+        <title>关于【跟风创作】以及【抄】【高仿对象】的选择及技巧 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3298550" id="2372">
+        <title>快速赚钱之【跟风创作】【挖框架】【切割剧情】（2） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3292376" id="2373">
+        <title>极致简化写法。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2488795" id="2374">
+        <title>【系统性研究网文写作】文笔【已修缮】 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2271770" id="2375">
+        <title>论视角和码字速度 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2167612" id="2376">
+        <title>说说如何让读者买账的水！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/731520" id="2377">
+        <title>收集各位老读者阅读时无法忍受的毒点………… - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3169863" id="2378">
+        <title>行文的基础——“文笔” - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3321421" id="2379">
+        <title>震惊！如何使得，不堪入目啊！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2191088" id="2380">
+        <title>求教帖：人物谈话之间的衔接应该如何处理？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.processon.com/view/link/65ca4811c92847624174a84c" id="2829">
+        <title>关于【跟风创作】以及【抄】【高仿对象】的选择及技巧| ProcessOn免费在线作图,在线流程图,在线思维导图</title>
+      </bookmark>
+    </folder>
+    <folder id="1535">
+      <title>默认收藏夹（工具素材库）</title>
+      <bookmark href="https://www.lkong.com/collection/1198684" id="2381">
+        <title>默认收藏夹（工具素材库） - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2604128" id="2382">
+        <title>《历史，风水，佛教，奇幻……》自用资料 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2379446" id="2383">
+        <title>看到这个神话资源合集，有兴趣的可以保存一下。 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2308654" id="2384">
+        <title>超级清晰透彻！地府神仙职能地位概述 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2306575" id="2385">
+        <title>分享一些整理文档的小技巧 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2287824" id="2386">
+        <title>请问有没有可以批量替换关键字的码字软件？ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2278111" id="2387">
+        <title>身体是革命的本钱，全职写手健康习惯收集帖！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2247909" id="2388">
+        <title>写小说可用的查资料网站，我推荐一个 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2246880" id="2389">
+        <title>安利一款贼棒的国产架空地图制作软件~写手必备！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2192358" id="2390">
+        <title>【技术贴】找到了一种推算某本书均订的方法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3264589" id="2391">
+        <title>创业和年代文资料，高清无码生肉流出，18岁以下勿进！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2865219" id="2392">
+        <title>突然睡不着了。分享码字生涯中可能用得着的工具或资料库 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3004295" id="2393">
+        <title>总结篇(随时加入) - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3139030" id="2394">
+        <title>阅后即焚！网站推荐！对码字受益终生！！！【持续更新 37/100】！！！ - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3052078" id="2395">
+        <title>【七月整理】网文写作工具箱新人版20220720更新 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3065305" id="2396">
+        <title>214本写作参考书，秘！严禁外传…… - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3199525" id="2397">
+        <title>（面向番茄新人）番茄给量问题全面答疑 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3291830" id="2398">
+        <title>【教学贴】剖析专注的秘诀，让你彻底自律 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3441379" id="2399">
+        <title>分享一个番茄查看读完率的方法 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3471332" id="2400">
+        <title>盘点番茄稿费月报发展史 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3455387" id="2401">
+        <title>很多历史文的朋友不清楚历代官职，有了这个资料库够用了 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3321034" id="2402">
+        <title>求古代军阵战斗的资料 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3151806" id="2403">
+        <title>老扑街分享一些码字辅助用品和使用感受 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3027400" id="2404">
+        <title>分享一下网络小说写作素材 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/3022145" id="2405">
+        <title>关于查错别字的软件的问题，有偿提问 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2976428" id="2406">
+        <title>对于二十个哲学家的理论整理分享 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2974937" id="2407">
+        <title>莫，大家有没有小说素材的好网站啊 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2970676" id="2408">
+        <title>四百龙币求比较详尽林正英茅山收尸手法跟各种道术 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+      <bookmark href="https://www.lkong.com/thread/2969853" id="2409">
+        <title>推荐一个网站，记录了全世界的妖怪 - 龙的天空lkong.com - 龙空</title>
+      </bookmark>
+    </folder>
+  </folder>
+  <folder id="2537">
+    <title>CV</title>
+    <folder id="1311">
+      <title>Tensorflow</title>
+      <bookmark href="https://blog.csdn.net/zuolixiangfisher/article/details/80528989" id="1773">
+        <title>理解tf.nn.conv2d方法 ( 附代码详解注释 ) - zuolixiangfisher的博客 - CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/zuolixiangfisher/article/details/89500624" id="1774">
+        <title>tf.placeholder方法 - zuolixiangfisher的博客 - CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/MY0213/p/9208503.html" id="1775">
+        <title>tensorflow变量作用域（variable scope） - 善良的大猪猪 - 博客园</title>
+      </bookmark>
+      <bookmark href="https://www.jianshu.com/p/af0f36e0f8de" id="1776">
+        <title>使用tf.reduce_mean()做avg_pool - 简书</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/loseinvain/article/details/79638183" id="1777">
+        <title>tf.concat, tf.stack和tf.unstack的用法 - 机器学习杂货铺1号店 - CSDN博客</title>
+      </bookmark>
+      <bookmark href="http://chenjingjiu.cn/index.php/2019/07/05/tensorflow-matrix-op/" id="1778">
+        <title>TensorFlow中tf.slice,tf.split,tf.concat,tf.stack等张量操作函数详解 - 陈京九的博客</title>
+      </bookmark>
+      <bookmark href="https://my.oschina.net/liusicong/blog/1593467" id="1779">
+        <title>tf.name_scope() 和 tf.variable_scope() 的用法和玄机 - 刘思聪 - OSCHINA</title>
+      </bookmark>
+      <bookmark href="https://www.w3cschool.cn/tensorflow_python/tensorflow_python-61ue2ocp.html" id="1780">
+        <title>TensorFlow函数：tf.variable_scope_w3cschool</title>
+      </bookmark>
+      <bookmark href="https://mathpretty.com/11156.html" id="1781">
+        <title>Pytorch使用GPU进行训练注意事项 | 文艺数学君</title>
+      </bookmark>
+      <bookmark href="https://www.toutiao.com/a6643945806363623950/" id="1782">
+        <title>每天做100个俯卧撑和300个俯卧撑的人，身材差距有多大？</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/flix/p/11262606.html" id="1783">
+        <title>【Pytorch】Pytorch 中的 dim - Flix - 博客园</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/ECNU_LZJ/article/details/103653133?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-5&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-5" id="1784">
+        <title>(7条消息)torch.nn.functional.normalize详解_人工智能_每天都要进步哦~-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/xys430381_1/article/details/85724668" id="1785">
+        <title>(8条消息)pytorch torchvision.transforms.Normalize()中的mean和std参数---解惑_人工智能_xys430381_1的专栏-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weicao1990/article/details/93599947" id="1786">
+        <title>Pytorch Tensor的索引与切片_洪流之源-CSDN博客_pytorch tensor切片</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/252607023" id="1787">
+        <title>torch.clamp() - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/linuxwindowsios/article/details/67635867" id="1788">
+        <title>tensorflow clip_by_norm函数理解_逍遥游-CSDN博客_tf.clip_by_norm</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_43002433/article/details/105322846?spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~ESLANDING~default-2-105322846-blog-106644765.pc_relevant_landingrelevant&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~ESLANDING~default-2-105322846-blog-106644765.pc_relevant_landingrelevant&amp;utm_relevant_index=5" id="1789">
+        <title>网络训练高效内存管理——torch.utils.checkpoint的使用_风筝大晒的博客-CSDN博客_torch.utils.checkpoint</title>
+      </bookmark>
+      <bookmark href="https://mathpretty.com/12065.html" id="1790">
+        <title>理解PyTorch中维度的概念 | 文艺数学君</title>
+      </bookmark>
+      <bookmark href="https://www.w3cschool.cn/pytorch/pytorch-r9fw3btc.html" id="1791">
+        <title>PyTorch 自定义 C ++和 CUDA 扩展_w3cschool</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/455079868" id="1792">
+        <title>Pytorch和CUDA联合编程的基本步骤 - 知乎</title>
+      </bookmark>
+      <bookmark href="http://pytorch123.com/SecondSection/training_a_classifier/" id="1793">
+        <title>PyTorch 图像分类器 - PyTorch官方教程中文版</title>
+      </bookmark>
+      <bookmark href="https://www.kancloud.cn/madxzb/python-guide/2248092" id="1794">
+        <title>13.2 【代码测试】pytest 的使用 · Python中文教程 · 看云</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/Xiong_Sun/article/details/81710934" id="1795">
+        <title>(8条消息)Semantic Instance Segmentation with a Discriminative Loss Function【论文详解】_人工智能_GX_Sun的博客-CSDN博客</title>
+      </bookmark>
+    </folder>
+    <folder id="1313">
+      <title>onnx</title>
+      <bookmark href="https://blog.csdn.net/weixin_49983900/article/details/124866704" id="1822">
+        <title>Yolov5学习全过程：训练+运行+c#部署（无理论全实操）_yolo c#_weixin_49983900的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/421994173" id="1823">
+        <title>实践 / C# 在 ONNX 上运行 YOLOv3/4/5,并使用 DirectML 加速 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/qing2019/article/details/127302176?spm=1001.2101.3001.6650.16&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-16-127302176-blog-121036458.235%5Ev38%5Epc_relevant_anti_t3&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-16-127302176-blog-121036458.235%5Ev38%5Epc_relevant_anti_t3&amp;utm_relevant_index=23" id="1824">
+        <title>yolov7模型部署——环境搭建(python 导出onnx模型，c# OnnxRunTime-GPU版调用) 踩坑记录_boligongzhu的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/a486259/article/details/132383219?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-132383219-blog-127302176.235^v38^pc_relevant_anti_t3&amp;spm=1001.2101.3001.4242.2&amp;utm_relevant_index=2" id="1825">
+        <title>pytorch 42 C#使用onnxruntime部署内置nms的yolov8模型_万里鹏程转瞬至的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/baidu_31718835/article/details/131010552" id="1826">
+        <title>使用 C# 和 ONNX Runtime 加载和运行 ONNX 模型_c# onnxruntime_shawn xia的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://onnxruntime.ai/" id="1827">
+        <title>ONNX Runtime | Home</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/qiaoqifa/p/17014912.html" id="1828">
+        <title>pytorch模型onnx部署（python版本，c++版本） - 15375357604 - 博客园</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/xeliven/article/details/124614317" id="1829">
+        <title>C#调用Onnx模型_c# onnx_xeliven的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/jizhidexiaoming/article/details/121037981" id="1830">
+        <title>c# 部署onnx定位模型_Mr.Q的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="http://linuxcpp.0voice.com/?id=70546" id="1831">
+        <title>用c# 运行onnx 目标检测代码-高性能服务器开发</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/iuk11/p/17119462.html" id="1832">
+        <title>【opencv c++】实现yolov5部署onnx模型完成目标检测 - iuk11 - 博客园</title>
+      </bookmark>
+    </folder>
+    <folder id="2541">
+      <title>面试_ing</title>
+      <bookmark href="https://blog.csdn.net/wd18508423052/article/details/108562966?spm=1001.2101.3001.6650.13&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-13-108562966-blog-123744242.pc_relevant_3mothn_strategy_recovery&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-13-108562966-blog-123744242.pc_relevant_3mothn_strategy_recovery&amp;utm_relevant_index=14" id="2593">
+        <title>【paper reading】Semantic Flow for Fast and Accurate Scene Parsing_请痛捶我的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/qq_34914551/article/details/108700270?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-108700270-blog-106142991.pc_relevant_default&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-108700270-blog-106142991.pc_relevant_default&amp;utm_relevant_index=2" id="2594">
+        <title>SFNet: Learning Object-aware Semantic Correspondence论文解读_咆哮的阿杰的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_43823175/article/details/123744242" id="2595">
+        <title>(1条消息) Semantic Flow for Fast and Accurate Scene Parsing用于快速准确场景解析的语义流_阮扬才的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://www.freesion.com/article/36101477523/" id="2596">
+        <title>【语义分割】——阅读代码理解/Semantic Flow for Fast and Accurate Scene Parsing - 灰信网（软件开发博客聚合）</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzU0NjgzMDIxMQ==&amp;mid=2247599839&amp;idx=4&amp;sn=6ebbdeddc0f1ef56e7101e42f9fbec9a&amp;chksm=fb54a433cc232d255d82cd4bd7f24c254eda2d8b9270d7db0aece5d5038f3c6fc2a73e54259b&amp;scene=27" id="2597">
+        <title>超强语义分割算法！基于语义流的快速而准确的场景解析</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/449416098" id="2598">
+        <title>量化感知训练实践：实现精度无损的模型压缩和推理加速 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/352060808" id="2599">
+        <title>Pytorch实现量化感知训练QAT(一) - 知乎</title>
+      </bookmark>
+      <bookmark href="https://my.oschina.net/u/4580321/blog/4750607" id="2600">
+        <title>Pytorch量化感知训练详解 - BBuf的个人空间 - OSCHINA - 中文开源技术交流社区</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/559886595" id="2601">
+        <title>pytorch量化-》TVM模型量化部署 初探 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/361094949" id="2602">
+        <title>Pytorch量化感知训练-代码示例 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/572925212" id="2603">
+        <title>Pytorch 量化感知训练流程 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/448395808" id="2604">
+        <title>pytorch模型训练之fp16、apm、多GPU模型、梯度检查点（gradient checkpointing）显存优化等 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/299108528" id="2605">
+        <title>PyTorch的量化 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/557859725" id="2606">
+        <title>【2】量化知识-1：量化基本知识点梳理 - 知乎</title>
+      </bookmark>
+    </folder>
+    <folder id="2542">
+      <title>Detect</title>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzIwMTE1NjQxMQ==&amp;mid=2247488392&amp;idx=1&amp;sn=d42d5edbf36292feca2e4bac89f007f0&amp;chksm=96f361dca184e8ca5e5ce14b73b8a56bf7bd2668c557458bec2882bb3a06ce01666a067ad259&amp;mpshare=1&amp;scene=1&amp;srcid=0909LAsJ1fdVP5BOAH3Imy7F&amp;sharer_sharetime=1568029192593&amp;sharer_shareid=8272f5e4ce757cec260257870655703d&amp;pass_ticket=saPMm4OBdLRnvoV1bz%2FwHO2PnjJQJW8NRsF7RKb3yYIjGmzRNk1VD%2Bm8Au5eci0u#rd" id="2607">
+        <title>目标检测中的不平衡问题综述</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/l2KAPsfdUME3ZP9Ys1tVhg" id="2608">
+        <title>干货 | 视频显著性目标检测（文末附有完整源码）</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247488278&amp;idx=1&amp;sn=3b391e676ff250f586302fca21884df9&amp;chksm=f9a26199ced5e88f339e34d044898bf039e8a90fa13a6561249af12eda49b0301494bc6984e4&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2609">
+        <title>CMU和旷视科技开源：KL-Loss目标检测边界框回归新算法（CVPR2019）</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzU4MjQ3MDkwNA==&amp;mid=2247489275&amp;idx=1&amp;sn=658b967037131347d00338570e8b250f&amp;chksm=fdb68b6ccac1027ae49260daf7c365bbad2b9b6815c22adbf5dcdd8f1255106a5b0e94e8c1d5&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;pass_ticket=pBimut882gO9FfOWN8zy9LBH44hndatFTY8wc3J393jDyFlqPDRuhdBrhv7ehd62#rd" id="2610">
+        <title>CVPR2019目标检测方法进展综述</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247487645&amp;idx=2&amp;sn=74ea4e6e524468493fbf305ae86f9f52&amp;chksm=f9a26212ced5eb04b4808a320192ea98e4fa5afde3c6984bcc464e5fb450165b21a3d0c8d646&amp;mpshare=1&amp;scene=1&amp;srcid=0308ySTsI36VNg2HGGeXOFOO&amp;key=addd0f5b003aa359f60f2c38e247c841744b889189c150e9bd35d15e6cb6f759f57a3effdeb4a67e4dc865b2c68856919e5e6f55367de89c867fd98f81b1c1ac4408124e9288e5fe47eff7975507279e&amp;ascene=1&amp;uin=Mjc0MDIxODY2MQ%3D%3D&amp;devicetype=Windows+10&amp;version=62060728&amp;lang=zh_CN&amp;pass_ticket=1YOBZ6nYVyo1wwTGB9F9DNdVAMhCRgUhjmsTrlArRAbFzftQo%2BYm04HwZ4uhOgAw" id="2611">
+        <title>CVPR2019 | CMU提出Single-Shot目标检测最强算法：FSAF</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247486991&amp;idx=1&amp;sn=25934739c9ec894f8a455a706be6e712&amp;chksm=f9a27c80ced5f5967a88ef1470eb855becb967968c6d1832e6e7fd62f23029368a1de744ad13&amp;mpshare=1&amp;scene=1&amp;srcid=01290f4AfWIWBYwTjBFVg4qv&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2612">
+        <title>清华、宾夕法尼亚大学和字节跳动联合提出：提升Single-Shot目标检测的 Consistent Optimization策略</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/T6qeaj2K-rfZA7yrkWrhhA" id="2613">
+        <title>基于深度学习的目标检测最新进展（2013-2019）</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247489382&amp;idx=1&amp;sn=ce76735afe1521145b0ed099288ca60b&amp;chksm=f9a265e9ced5ecfff8e18869d55a4483d43de751270c8e98b9013132454c2c2e30f48a2479b8&amp;mpshare=1&amp;scene=1&amp;srcid=0915kU9ul38tgR8plkv2f1Ef&amp;sharer_sharetime=1568551792251&amp;sharer_shareid=42a896371dfe6ebe8cc4cd474d9b747c&amp;pass_ticket=saPMm4OBdLRnvoV1bz%2FwHO2PnjJQJW8NRsF7RKb3yYIjGmzRNk1VD%2Bm8Au5eci0u#rd" id="2614">
+        <title>重磅！13篇基于Anchor free的目标检测方法</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/es89TefGPavpf4tpT4dNDw" id="2615">
+        <title>带你捋一捋anchor-free的检测模型：FCOS</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247489262&amp;idx=1&amp;sn=d9055ceb253e6d9296d57448f8b07577&amp;chksm=f9a26461ced5ed77783641bcd57b16a5a1d3dc362e312f08393ab765957a25a98ace0800766c&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;pass_ticket=OIHJNqLoInSVDNJq9B26Qgm1rxb0aLyAWs%2F0JebT4qihibA11fU4J10AKUx6Ge9u#rd" id="2616">
+        <title>从Densebox到Dubox：更快、性能更优、更易部署的anchor-free目标检测</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247488261&amp;idx=1&amp;sn=575430ee955c788cf8674d1a9fd9a2d4&amp;chksm=f9a2618aced5e89cb1d7533d90e0ef359d164f72945042ded5618d2497046bd207bfa8eef38d&amp;mpshare=1&amp;scene=1&amp;srcid=0404EzTLBJOleMbk4jtlO7UK&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2617">
+        <title>超越ResNet：Res2Net；目标检测最新网络：FCOS ；何恺明最新论文：RandWire-WS</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/BohClU-cWo3WBp7Y-VBG3A" id="2618">
+        <title>揭密YOLOv3鲜为人知的关键细节</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/5usz-wraHArK6_HcE4RuZw" id="2619">
+        <title>想读懂YOLOV4，你需要先了解下列技术(二)</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/186014243" id="2620">
+        <title>你一定从未看过如此通俗易懂的YOLO系列(从v1到v5)模型解读 (下) - 知乎</title>
+      </bookmark>
+      <bookmark href="https://bbs.cvmart.net/topics" id="2621">
+        <title>话题列表 | 极市高质量视觉算法开发者社区</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/Ro47FDLI54NqpYlkb9AOAQ" id="2622">
+        <title>ResNet家族迎来新王者！一套模型改进多项视觉任务</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/qq_38316300/article/details/105759305" id="2623">
+        <title>(3条消息) YOLOv4原文翻译 - v4它终于来了！_lp_oreo的博客-CSDN博客_yolov4</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/29393415" id="2624">
+        <title>COCO数据集的标注格式 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/60707912" id="2625">
+        <title>如何画PR curve (PR曲线)基于COCO格式数据集 在maskrcnn_benchmark中 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/qq_38929105/article/details/118327447" id="2626">
+        <title>LSnet：Location-Sensitive Visual Recognition with Cross-IOU Loss 主要源码解读 1_乄洛尘的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/399837729" id="2627">
+        <title>目标检测mAP的计算&amp; COCO的评价指标 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/80852438" id="2628">
+        <title>图像的仿射变换 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/163215464" id="2629">
+        <title>DL：常用损失函数 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/zandaoguang/article/details/107398963" id="2630">
+        <title>YOLOv4损失函数全面解析_zandaoguang的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/137393450" id="2631">
+        <title>一文了解YOLO-v4目标检测 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/96856635" id="2632">
+        <title>说点Cornernet/Centernet代码里面GT heatmap里面如何应用高斯散射核 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247511020&amp;idx=3&amp;sn=b3a694abd1c695c91a5ed74aae9cf4b3&amp;chksm=f9a1d963ced65075920efe04251564b5920909081c051baeafab69a80676fc3ce70b31385975&amp;mpshare=1&amp;scene=24&amp;srcid=102937Lj6xvai91NOefhLSXf&amp;sharer_sharetime=1603954909030&amp;sharer_shareid=080e1493a90b218fe6797df4fa7dd8fd&amp;key=50c6d0ff50751a99713dcc77bd6f61662df5f0b64db1cafefa10376dade72ee8f421a5be1b1ed7348f824ae9af0371d179b06d18b8763029146db9bb0276684e24fd7d3f1c2d7111af5f295ba7872c5d6574467d2114c2090e877b760c15a85927325ab30c784f64fc1a2a9d2b78f3ed87bb43f8678452f1a515bca66b4c7bf4&amp;ascene=14&amp;uin=Mjc0MDIxODY2MQ%3D%3D&amp;devicetype=Windows+8+x64&amp;version=63000039&amp;lang=en&amp;exportkey=AQPwKsiLsZLoN9AcwXPYQzY%3D&amp;pass_ticket=HDct8vKTmM0ITuLIEiaYaMgXtUWY95XsXudXz6lgVHVmWs19sMYAiLUfuFCvOqKv&amp;wx_header=0" id="2633">
+        <title>FCOS官方改进版来了！小修小改，性能高达50.4 AP！收录到顶刊TPAMI</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/lBhPjOiT_05WXwxFCXj2mQ" id="2634">
+        <title>竞赛刷榜神器！目标检测里的多尺度训练和测试</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/259314634" id="2635">
+        <title>FCOS 的改进 trick - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.51cto.com/u_15343816/3703905" id="2636">
+        <title>机器学习初学者都应该知道的5类回归损失函数_wx6125e8704328a的技术博客_51CTO博客</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/question/293815527?sort=created" id="2637">
+        <title>(6 封私信 / 83 条消息) 关键点检测中，为什么要生成高斯图，而不是直接与ground_truth比较？ - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/374842773" id="2638">
+        <title>关键点之热力图Heatmap与坐标FC回归 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/53057942" id="2639">
+        <title>Numerical Coordinate Regression=高斯热图 VS 坐标回归 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://bbs.cvmart.net/articles/5300" id="2640">
+        <title>2021年小目标检测最新研究综述 - 极市社区</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/52566508" id="2641">
+        <title>深度神经网络中的多任务学习汇总 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/366651996" id="2642">
+        <title>LSNet: Anchor-free新玩法，只用一个head统一目标检测，实例分割，姿态估计三种任务 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/147691786" id="2643">
+        <title>大白话 Generalized Focal Loss - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.doc88.com/p-0778399483740.html" id="2644">
+        <title>基于FDK的高精度锥束CT重建算法研究 - 道客巴巴</title>
+      </bookmark>
+    </folder>
+    <folder id="2543">
+      <title>Semantic</title>
+      <bookmark href="https://blog.csdn.net/step_forward_ML/article/details/80519698" id="2645">
+        <title>结合深度神经网络和随机场的图像语义分割 - JRRG的博客 - CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzU4MjQ3MDkwNA==&amp;mid=2247490099&amp;idx=1&amp;sn=b013b9120a43104be26c0296c8934e17&amp;chksm=fdb687a4cac10eb2e01722b58b179338064bad740861c93b74e99726b3de424b02cb929c32ed&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;pass_ticket=DMp7vjVccKYltXCmwkxD0PVehDaWdW6%2FDzAGRtFWq97Uo9XRlaBqjnVR60AvXkYm#rd" id="2646">
+        <title>理解条件随机场</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/step_forward_ml/article/details/78789579" id="2647">
+        <title>条件随机场(Conditinal random field) - JRRG的博客 - CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247487383&amp;idx=1&amp;sn=221bddda91f178091b80e7a47fef4498&amp;chksm=f9a27d18ced5f40ec8e2c6f75b9e791bbf82155d9613e63134b561e61ba1ecc6721a14f07cb1&amp;mpshare=1&amp;scene=1&amp;srcid=0220MD14PP54YQP6T8jf3a1z&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2648">
+        <title>GitHub：图像分割最全资料集锦</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247487841&amp;idx=3&amp;sn=508bf6698a20f60f390b4f0392bb146d&amp;chksm=f9a263eeced5eaf8bcbd25b0dcfd97d50c37716b004fd4fb83b17af7fa4243e138c0d82afb07&amp;mpshare=1&amp;scene=1&amp;srcid=0315pgrlpiOM35qMoqyl7JGC&amp;key=57514d15ddaa2fed89a5133eadb1859ddec88ad0b6e98485439f7a9f073854edd97bbb908b0bd03bb3e8cbd2bdfee947f2dbd6b0a128ce648b238e25f445da554831e57925b92cdf37bf938e811518fc&amp;ascene=1&amp;uin=Mjc0MDIxODY2MQ%3D%3D&amp;devicetype=Windows+10&amp;version=62060728&amp;lang=zh_CN&amp;pass_ticket=1YOBZ6nYVyo1wwTGB9F9DNdVAMhCRgUhjmsTrlArRAbFzftQo%2BYm04HwZ4uhOgAw" id="2649">
+        <title>旷视科技：漫谈全景分割</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzU4MjQ3MDkwNA==&amp;mid=2247487853&amp;idx=1&amp;sn=99332f643f792dee123e2cf96629c94d&amp;chksm=fdb68cfacac105ec22ee3a548ff2ce9e2fe117e2efa4d943d65937bb27b2371c1d5eae641a26&amp;mpshare=1&amp;scene=1&amp;srcid=1210NU5tCUca5brLQWNk3Ahz&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2650">
+        <title>视频语义分割介绍</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247486710&amp;idx=2&amp;sn=19221609cc35ec72ff7671befc1cc03f&amp;chksm=f9a27e79ced5f76f2deb9afda8a78a7610330b8af2d21ed87930c45b7dfa853e1b1bde61b2ad&amp;mpshare=1&amp;scene=1&amp;srcid=0112EvGbpHzKoAjvYJZuh3qe&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2651">
+        <title>何恺明组又出神作！最新论文提出【全景分割】新方法</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/3S9TJo1LJ_A5Zvr2gEl9Nw" id="2652">
+        <title>汇总 | 深度学习中图像语义分割基准数据集详解</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/o0hv6-ysBdsorSsYfm-uiA" id="2653">
+        <title>快速全景分割新网络：FPSNet | 分割效率高，速度可达 35 FPS！</title>
+      </bookmark>
+      <bookmark href="https://bbs.cvmart.net/articles/150" id="2654">
+        <title>图片语义分割深度学习算法要点回顾 | 极市高质量视觉算法开发者社区</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/aPnxaaNANfpSc7OZP2XoJA" id="2655">
+        <title>语义分割之dice loss深度分析</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/just_sort/article/details/104028997" id="2656">
+        <title>(6条消息) 【损失函数合集】超详细的语义分割中的Loss大盘点_I good vegetable a!-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/568095609" id="2657">
+        <title>宵夜杂谈（九）SegNext -当前语义分割版本的最优答案！ - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.cvmart.net/community/detail/6766" id="2658">
+        <title>打破ViT SOTA垄断！SegNeXt：注意力机制重夺语义分割的胜利高地（NeurIPS 22）-极市开发者社区</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_45709330/article/details/113745456" id="2659">
+        <title>【深度学习】语义分割——综述_Delv_Peter的博客-CSDN博客</title>
+      </bookmark>
+    </folder>
+    <folder id="2544">
+      <title>yolo</title>
+      <bookmark href="https://zhuanlan.zhihu.com/p/516362032" id="2660">
+        <title>数据增强-Mosaic - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.pythonheidong.com/blog/article/1362593/0588b7e0cfcfb4a0ec41/" id="2661">
+        <title>Anchor free系列网络之YOLOX源码逐行讲解篇(八)--simOTA标签匹配策略详解(专栏试读)-python黑洞网</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/394392992" id="2662">
+        <title>YOLOX深度解析（二）-simOTA详解 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_44751294/article/details/125303278" id="2663">
+        <title>YoloX | SimOTA标签匹配策略_Clichong的博客-CSDN博客_标签匹配算法</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/139517885" id="2664">
+        <title>VoVNet：实时目标检测的新backbone网络 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/oyezhou/article/details/111224567" id="2665">
+        <title>CenterNet 后处理过程及源码解析_叶舟的博客-CSDN博客_centernet后处理</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/411045300" id="2666">
+        <title>YOLOX源码解析--十分详细，建议收藏！ - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_44457930/article/details/123066376" id="2667">
+        <title>从零开始实现yolox四：模型的训练（一）损失函数与标签分配_weixin_44457930的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/m0_63642362/article/details/121706694?spm=1001.2014.3001.5506" id="2668">
+        <title>复现并深度优化YOLOX_AI Studio的博客-CSDN博客_yolox复现</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_40920183/article/details/122872242" id="2669">
+        <title>[深度文]YoloX部署、优化、训练相关_人工智能与算法学习的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/m0_63642362/article/details/121706694" id="2670">
+        <title>复现并深度优化YOLOX_AI Studio的博客-CSDN博客_yolox复现</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/540049753" id="2671">
+        <title>【目标检测】YOLO v6 浅谈 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/RrQCP4pTSwpTmSgvly9evg" id="2672">
+        <title>YOLOv6：又快又准的目标检测框架开源啦</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/z240626191s/article/details/125968605" id="2673">
+        <title>RepVGG网络中重参化网络结构解读【附代码】_爱吃肉的鹏的博客-CSDN博客_repvgg代码</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/qq_38253797/article/details/119684388" id="2674">
+        <title>【YOLOV5-5.x 源码解读】common.py_满船清梦压星河HK的博客-CSDN博客_yolov5源码</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/411045300?utm_medium=social&amp;utm_oi=1041645338595196928" id="2675">
+        <title>YOLOX源码解析--十分详细，建议收藏！ - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/172121380" id="2676">
+        <title>深入浅出Yolo系列之Yolov5核心基础知识完整讲解 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/397993315" id="2677">
+        <title>深入浅出Yolo系列之Yolox核心基础完整讲解 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/141944304" id="2678">
+        <title>来聊聊DenseNet及其变体PeleeNet、VoVNet - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/464404563" id="2679">
+        <title>mmdetection源码阅读笔记：bbox assigner - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/398545304" id="2680">
+        <title>YOLOX 在 MMDetection 中复现全流程解析 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/68748778" id="2681">
+        <title>【炼丹技巧】指数移动平均（EMA）的原理及PyTorch实现 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/343433169" id="2682">
+        <title>轻松掌握 MMDetection 中 Head 流程 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/HzbGVVo5sR1be5ryhRCILA" id="2683">
+        <title>这是一篇对YOLOv7的详细解读和剖析</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/143747206" id="2684">
+        <title>深入浅出Yolo系列之Yolov3&amp;Yolov4&amp;Yolov5&amp;Yolox核心基础知识完整讲解 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/u012863603/article/details/126118799" id="2685">
+        <title>(7条消息) 目标检测算法——YOLOV7——详解_TigerZ*的博客-CSDN博客_目标检测算法</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/492654210" id="2686">
+        <title>7.3 YOLO入门教程：YOLOF(3)-搭建backbone - 知乎</title>
+      </bookmark>
+    </folder>
+    <folder id="2545">
+      <title>3D_BEV</title>
+      <bookmark href="https://blog.csdn.net/u014301278/article/details/108971877?spm=1001.2014.3001.5501" id="2687">
+        <title>深度学习方法中 3D目标检测 数据预处理综述_水煮鱼的fish的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://yongqi.blog.csdn.net/article/details/108373524?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-10.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-10.control" id="2688">
+        <title>自动驾驶LiDAR点云深度学习综述_3D视觉工坊-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/u014301278/article/details/108971967" id="2689">
+        <title>3D目标检测深度学习方法中voxel-represetnation内容综述（三）_水煮鱼的fish的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/u014301278/article/details/108971927" id="2690">
+        <title>3D目标检测深度学习方法中voxel-represetnation内容综述（二）_水煮鱼的fish的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/u014301278/article/details/108971898?spm=1001.2014.3001.5501" id="2691">
+        <title>3D目标检测深度学习方法中voxel-represetnation内容综述（一）_水煮鱼的fish的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/165874391" id="2692">
+        <title>三维点云分割综述（上） - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/344635951" id="2693">
+        <title>3D点云基础知识 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/phosphenesvision/article/details/106724377" id="2694">
+        <title>PointNet系列论文阅读之一：PointNet基础网络_phosphenesvision的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/BatFlo_wsh/article/details/89330195" id="2695">
+        <title>【论文翻译】从零开始PointNet论文分析与代码复现_BatFlo_wsh的杂货铺-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/maizousidemao/article/details/104855663" id="2696">
+        <title>PointNet 文献阅读及拓展阅读_万俟淋曦的进击手记-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/phosphenesvision/article/details/106724667" id="2697">
+        <title>PointNet系列论文阅读之二：PointNet++进阶网络_phosphenesvision的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzI0MDYxMDk0Ng==&amp;mid=2247488105&amp;idx=1&amp;sn=9fa6e8827dfbd4c884d5785cd186e02d&amp;chksm=e9196984de6ee092c82500dfbb823fe080125d513c7ca8f2f2ddee4f4d010fb509d8a10f07d7&amp;scene=21#wechat_redirect" id="2698">
+        <title>【论文速读】2020最新点云深度学习综述</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_40664094/article/details/83902950" id="2699">
+        <title>PointNet++原文翻译+学习理解（上）_Hova666的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_40664094/article/details/83932046?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control" id="2700">
+        <title>PointNet++原文翻译+学习理解（下）_Hova666的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/356892010" id="2701">
+        <title>【3D目标检测】SECOND算法解析 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://bat.sjtu.edu.cn/zh/jk3d/" id="2702">
+        <title>揭开3D大幕的序曲——3D数据处理 – 上海交通大学类脑智能应用与技术中心</title>
+      </bookmark>
+      <bookmark href="https://www.bilibili.com/video/av459445274/" id="2703">
+        <title>【唐宇迪】3D点云pointnet算法解读_哔哩哔哩_bilibili</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/question/521842610/answer/2581627400" id="2704">
+        <title>自动驾驶BEV感知有哪些让人眼前一亮的新方法？ - 知乎</title>
+      </bookmark>
+      <bookmark href="http://news.sohu.com/a/586333806_121124366" id="2705">
+        <title>BEV最新综述 | 学术界和工业界方案汇总！优化方法与tricks_相机_融合_传感器</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/565212506?utm_source=zhihu&amp;utm_id=0" id="2706">
+        <title>最新论文：BEV感知的综述、评估和对策 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_43148897/article/details/125940889" id="2707">
+        <title>自动驾驶感知新范式——BEV感知经典论文总结和对比（下）_苹果姐的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_43148897/article/details/125940492?spm=1001.2014.3001.5501" id="2708">
+        <title>自动驾驶感知新范式——BEV感知经典论文总结和对比（上）_苹果姐的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/471531558" id="2709">
+        <title>刷榜新模型VAN：视觉注意力网络 - 知乎</title>
+      </bookmark>
+      <bookmark href="http://frankorz.com/2017/09/24/matrix-transformation-2/" id="2710">
+        <title>3D 数学基础 - 矩阵变换（二） | 萤火之森</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/567880155" id="2711">
+        <title>一文读懂BEV自底向上方法：LSS 和 BEVDepth - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/551027632" id="2712">
+        <title>史上最全 | BEV感知算法综述（基于图像/Lidar/多模态数据的3D检测与分割任务） - 知乎</title>
+      </bookmark>
+      <bookmark href="http://www.360doc.com/content/22/0919/20/40892371_1048564604.shtml" id="2713">
+        <title>BEV最新综述 | 学术界和工业界方案汇总！优化方法与tricks</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_43253464/article/details/125428168" id="2714">
+        <title>3D目标检测方案总结_naca yu的博客-CSDN博客_传统3d目标检测</title>
+      </bookmark>
+      <bookmark href="https://guyuehome.com/blog/column/id/43" id="2715">
+        <title>无人驾驶</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/zvideo/1526597302591975424" id="2716">
+        <title>BEVFormer：第 11 期 BEV感知 | 下一代自动驾驶感知算法新范式</title>
+      </bookmark>
+      <bookmark href="https://guyuehome.com/38657" id="2717">
+        <title>多传感器融合综述---FOV与BEV - 古月居</title>
+      </bookmark>
+      <bookmark href="http://mp.ofweek.com/ai/a056714622337" id="2718">
+        <title>一文读懂自动驾驶2D和3D视觉感知算法—维科号</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_43716712/article/details/126239928" id="2719">
+        <title>(1条消息) 自动驾驶 2D 单目\双目\多目视觉方法 一（Pseudo-LiDAR，Mono3D，FCOS3D，PSMNet）_大叔爱学习.的博客-CSDN博客_fcos3d</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/552559901" id="2720">
+        <title>Depth from Motion：探索突破纯视觉 3D 检测瓶颈 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/560416551" id="2721">
+        <title>超全汇总 | 基于Camera的3D目标检测算法综述！（FCOS3D/FCOS3D++/SMOKE/MonoRCNN/Pseudo-Lidar/DSGN++/Disp RCNN等） - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/569422924?utm_source=zhihu" id="2722">
+        <title>BEVStereo | nuScenes纯视觉3D目标检测新SOTA！(旷视、中科大) - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/428258098" id="2723">
+        <title>激光点云3D目标检测算法之PointPillars - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/549480614" id="2724">
+        <title>PointPillars论文详细解读（代码：OpenPCDet） - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/CV_Autobot/article/details/126258751" id="2725">
+        <title>史上最全 | BEV感知算法综述（基于图像/Lidar/多模态数据的3D检测与分割任务）..._自动驾驶之心的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/565735117" id="2726">
+        <title>BEV最新综述 | 学术界和工业界方案汇总！优化方法与trick - 知乎</title>
+      </bookmark>
+      <bookmark href="https://it.cha138.com/javascript/show-66221.html" id="2727">
+        <title>尺度|柱体_PointPillars论文解析和代码实现</title>
+      </bookmark>
+      <bookmark href="http://ksimek.github.io/perspective_camera_toy.html" id="2728">
+        <title>Perspective Camera Toy ←</title>
+      </bookmark>
+      <bookmark href="https://www.bilibili.com/video/BV1uY4y1k7n8/?spm_id_from=333.337.search-card.all.click&amp;vd_source=cb7a5bcadd5ee9c12ff873ded693ba7b" id="2729">
+        <title>多传感器融合感知技术的前沿算法与应用，包括Pointpillars、spconv+、BEVDet、LSS等_哔哩哔哩_bilibili</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/557613388" id="2730">
+        <title>BEVDet系列源码解读 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_43799388/article/details/127536981" id="2731">
+        <title>【单目3D目标检测】FCOS3D + PGD论文解析与代码复现_嗜睡的篠龙的博客-CSDN博客_单目3d目标检测</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/m0_37908025/article/details/127959945" id="2732">
+        <title>3D目标检测算法调研&amp;FCOS/FCOS3D/FCOS3D++算法介绍_主音贝斯手的博客-CSDN博客_fcos3d</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/guai7guai11/article/details/126805615" id="2733">
+        <title>【论文翻译】FCOS3D: Fully Convolutional One-Stage Monocular 3D Object Detection_暖焱的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://www.guyuehome.com/38657" id="2734">
+        <title>多传感器融合综述---FOV与BEV - 古月居</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/people/xin-luan-9/posts" id="2735">
+        <title>黄骏杰-bevdet - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/i6101206007/article/details/123371590" id="2736">
+        <title>nuScenes 数据集（CVPR 2020）_77wpa的博客-CSDN博客_nuscence数据集 道路</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/zyw2002/article/details/128319169" id="2737">
+        <title>【LSS: Lift, Splat, Shoot】代码的复现与详细解读_代码复现_zyw2002的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzU0NjgzMDIxMQ==&amp;mid=2247487439&amp;idx=1&amp;sn=da8c277d40911b114038a415f5873ac9&amp;chksm=fb56ed23cc216435c3bac0429620492e6b4380a63f30f026c8377f37bd81577a320188e1a404&amp;scene=27" id="2738">
+        <title>一文详解四元数、欧拉角、旋转矩阵、轴角如何相互转换</title>
+      </bookmark>
+    </folder>
+    <folder id="2546">
+      <title>Self-Supervised</title>
+      <bookmark href="https://zhuanlan.zhihu.com/p/381354026" id="2739">
+        <title>Self-Supervised Learning 超详细解读 (目录) - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/260627899" id="2740">
+        <title>使用(VAE)生成建模,理解可变自动编码器背后的数学原理 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/435389007" id="2741">
+        <title>SimMIM | 续Kaiming的MAE后，MSRA提出更简单的掩码图像建模框架！ - 知乎</title>
+      </bookmark>
+    </folder>
+    <folder id="2547">
+      <title>VIT</title>
+      <bookmark href="https://zhuanlan.zhihu.com/p/361043177" id="2742">
+        <title>Visual Transformer论文阅读笔记-1（综述） - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/348418189" id="2743">
+        <title>重新思考语义分割范式——SETR - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/441975127" id="2744">
+        <title>论文笔记——Segformer: 一种基于Transformer的语义分割方法 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_39778049/article/details/116020969" id="2745">
+        <title>2021-Swin Transformer Attention机制的详细推导_小毛激励我好好学习的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/361366090" id="2746">
+        <title>CV+Transformer之Swin Transformer - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/100112141" id="2747">
+        <title>Transformer结构中获得相对位置信息的探究 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/106644634" id="2748">
+        <title>一文读懂Transformer模型的位置编码 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.zhihu.com/zvideo/1449195245754380288?utm_source=ZHShareTargetIDMore" id="2749">
+        <title>ViT论文逐段精读【论文精读】 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/qq_37541097/article/details/121119988?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_v31_ecpm-10-121119988.pc_agg_new_rank&amp;utm_term=swin+transformer+%E5%AE%9E%E4%BE%8B%E5%88%86%E5%89%B2&amp;spm=1000.2123.3001.4430" id="2750">
+        <title>(1条消息) Swin-Transformer网络结构详解_霹雳吧啦Wz-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/360513527" id="2751">
+        <title>Swin Transformer对CNN的降维打击 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://aistudio.baidu.com/aistudio/projectdetail/1796427" id="2752">
+        <title>浅析 Swin Transformer - 飞桨AI Studio - 人工智能学习实训社区</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/381449463" id="2753">
+        <title>Swin Transformer论文分享 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/xK9l2HdAZoW7tkk1JBgMEg" id="2754">
+        <title>搞懂 Vision Transformer 原理和代码，看这篇技术综述就够了（二十一）</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/348593638" id="2755">
+        <title>Vision Transformer , Vision MLP 超详细解读 (原理分析+代码解读) (目录) - 知乎</title>
+      </bookmark>
+    </folder>
+    <folder id="2548">
+      <title>NetWork</title>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247489183&amp;idx=2&amp;sn=2356b546f3ab68667336737e8e328d91&amp;chksm=f9a26410ced5ed061619a3faf1a8b859bbe6a9f1a5a1ab5b432d711e1e4799465c520981149c&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;key=1873ed4ed1cb893e11a798e210b1c37a90749cdcca3033e55f6c40d8f31e46a61e43992e2856d6b1b9fc8add923e00f8905c14f2751d1fb96a0f4edab94d21a9f7c8d82c5557af529ccb67b32991e014&amp;ascene=1&amp;uin=Mjc0MDIxODY2MQ%3D%3D&amp;devicetype=Windows+10&amp;version=62060739&amp;lang=zh_CN&amp;pass_ticket=pYgvPcWqIU7AUAJfHLng%2BBIzl5z%2Fs9NiKJyiLgE6boxjvc2SAgCoP%2FsCdxhfLHZw" id="2756">
+        <title>轻量级卷积神经网络的设计</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/CCkrK_pdOPRPYPmHS7W8ZA" id="2757">
+        <title>网络压缩最新进展：2019年最新文章概览</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247489173&amp;idx=1&amp;sn=8d538e16cc3e6c06776ff66914df11e7&amp;chksm=f9a2641aced5ed0c8b32e86a9d1cbf747e0e4ed7eaad00ae4fb48fa9edd00568486861f8b734&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;pass_ticket=EFZwhp9%2BQOmod9%2BURPPI1fARlqc65MhCDp22Uem3njofIjRX3fQqc%2Fl8YARCnbID#rd" id="2758">
+        <title>南邮提出实时语义分割的轻量级网络：LEDNET，可达 71 FPS！70.6% class mIoU！即将开源</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUyMjE2MTE0Mw==&amp;mid=2247487857&amp;idx=1&amp;sn=aca207b828fc5396cc535ca2192b05d0&amp;chksm=f9d14fe9cea6c6ffa0efd4b922ffc31951a2ed4c7f1f0a866fb7320d5054d43900c1b0b62693&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;pass_ticket=OIHJNqLoInSVDNJq9B26Qgm1rxb0aLyAWs%2F0JebT4qihibA11fU4J10AKUx6Ge9u#rd" id="2759">
+        <title>最后一届ImageNet冠军模型：SENet</title>
+      </bookmark>
+    </folder>
+    <folder id="2549">
+      <title>Auto Driver</title>
+      <bookmark href="https://learn.microsoft.com/zh-cn/dotnet/machine-learning/tutorials/object-detection-onnx" id="2760">
+        <title>教程：使用 ONNX 深度学习模型检测对象 - ML.NET | Microsoft Learn</title>
+      </bookmark>
+      <bookmark href="https://max.book118.com/html/2022/0304/7145012042004100.shtm" id="2761">
+        <title>TCSAE 156-2020 自主代客泊车系统总体技术要求.docx-原创力文档</title>
+      </bookmark>
+      <bookmark href="http://csae.sae-china.org/portal/standardDetail?id=e9b14abcfbd1fda9f1a4b4d44d3f4ceb" id="2762">
+        <title>中国汽车工程学会标准信息平台</title>
+      </bookmark>
+      <bookmark href="http://c.gb688.cn/bzgk/gb/showGb?type=online&amp;hcno=35AD74020EBF346AF4E437E1A3E40771" id="2763">
+        <title>在线预览|GB/T 41630-2022</title>
+      </bookmark>
+      <bookmark href="https://www.toutiao.com/a6636246153274851854/?tt_from=weixin_moments&amp;utm_campaign=client_share&amp;wxshare_count=1&amp;timestamp=1545140114&amp;app=news_article&amp;utm_source=weixin_moments&amp;iid=53299413487&amp;utm_medium=toutiao_ios&amp;group_id=6636246153274851854" id="2764">
+        <title>教程：用两种方法完成无人驾驶中的识别、跟踪车道</title>
+      </bookmark>
+      <bookmark href="https://cloud.tencent.com/developer/news/339575" id="2765">
+        <title>想做自动驾驶？这几个数据集你不可不知道！ - 云+社区 - 腾讯云</title>
+      </bookmark>
+      <bookmark href="https://paperswithcode.com/area/computer-vision" id="2766">
+        <title>Papers with Code - Computer Vision</title>
+      </bookmark>
+      <bookmark href="https://paperswithcode.com/task/lane-detection/codeless" id="2767">
+        <title>Papers With Code : Lane Detection</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/xuanyuyt/p/11523192.html" id="2768">
+        <title>深度学习笔记（十二）车道线检测 LaneNet - xuanyuyt - 博客园</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/93572094" id="2769">
+        <title>Lane Detection（二）LaneNet - 知乎</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/39430439" id="2770">
+        <title>ENet 论文笔记 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.cnblogs.com/fourmi/p/10009691.html" id="2771">
+        <title>论文阅读笔记十八：ENet: A Deep Neural Network Architecture for Real-Time Semantic Segmentation(CVPR2016) - fourmi_gsj - 博客园</title>
+      </bookmark>
+      <bookmark href="https://cugtyt.github.io/blog/papers/2019/0114" id="2772">
+        <title>PAYING MORE ATTENTION TO ATTENTION: IMPROVING THE PERFORMANCE OF CONVOLUTIONAL NEURAL NETWORKS VIA ATTENTION TRANSFER | Cugtyt</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/157530787" id="2773">
+        <title>超快的车道线检测 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://www.jianshu.com/p/2d483a7ca7b2" id="2774">
+        <title>车道线检测算法-Ultra-Fast-Lane-Detection - 简书</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_42096202/article/details/109939763" id="2775">
+        <title>实时车道线检测算法 | LaneATT-250FPS &amp;&amp; LSTR-420FPS_chenzy_hust的博客-CSDN博客</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/268894250" id="2776">
+        <title>Keep your Eyes on the Lane - 知乎</title>
+      </bookmark>
+      <bookmark href="https://flashgene.com/archives/160183.html" id="2777">
+        <title>端到端LSTR：Transformer让车道线检测速度快（420 fps）到飞起！ – 闪念基因 – 个人技术分享</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/362656301" id="2778">
+        <title>关于车道线检测方法的论文介绍 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/weixin_43786241/article/details/108469046" id="2779">
+        <title>SAD（自我注意力蒸馏）：Learning Lightweight Lane Detection CNNs by Self Attention Distillation_狂奔的菜鸡的博客-CSDN博客_注意力蒸馏</title>
+      </bookmark>
+      <bookmark href="https://blog.csdn.net/Xiong_Sun/article/details/81710934" id="2780">
+        <title>(38条消息) Semantic Instance Segmentation with a Discriminative Loss Function【论文详解】_sgx_hit的博客-CSDN博客</title>
+      </bookmark>
+    </folder>
+    <folder id="1310">
+      <title>Function</title>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzU4MjQ3MDkwNA==&amp;mid=2247488315&amp;idx=1&amp;sn=9458a38f4e357b151077a18804d937d2&amp;chksm=fdb68eaccac107ba94810048ee736fe702dcfca5b71a7c89822c9d82f2e1c89ab606b4f5ea6f&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="1766">
+        <title>理解梯度提升算法1-梯度提升算法</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247489370&amp;idx=3&amp;sn=95775307e078c25a499ff887ac356cee&amp;chksm=f9a265d5ced5ecc3ef243506a4c1929e796f531915b336e8ad9a3e3f3a302bcbfe4f5d5d117e&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;pass_ticket=OIHJNqLoInSVDNJq9B26Qgm1rxb0aLyAWs%2F0JebT4qihibA11fU4J10AKUx6Ge9u#rd" id="1767">
+        <title>机器学习和深度学习中值得弄清楚的一些问题</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247485566&amp;idx=1&amp;sn=bc6e9bc352dee1a9d038a8254d7a0f37&amp;chksm=f9a27af1ced5f3e7f93b3a8fe88ad56305e75447be843fccc6d5c8d7c55541f5d387e4a9fdbc&amp;mpshare=1&amp;scene=1&amp;srcid=1008g9cccMpY1zMJLHFbD1BO&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="1768">
+        <title>深度学习速查词典</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzU4MjQ3MDkwNA==&amp;mid=2247488854&amp;idx=1&amp;sn=32ccaf393b12bb30f0ea4f7f8c08e65d&amp;chksm=fdb688c1cac101d7729763b08da86c0925b1db7e1f61f055fa65f2eeb49fb51bd0f58450a61b&amp;mpshare=1&amp;scene=1&amp;srcid=0215j8DxmtHtE5d7Mf1diM9K&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="1769">
+        <title>理解隐马尔可夫模型</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/L8-5zsn8loyKTJfqTDV30w" id="1770">
+        <title>一文看尽26种神经网络激活函数（从ReLU到Sinc）</title>
+      </bookmark>
+      <bookmark href="https://zhuanlan.zhihu.com/p/63982470" id="1771">
+        <title>都9102年了，别再用Adam + L2 regularization了 - 知乎</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s/tJhhjtzMufoLKvhkrVe7_w" id="1772">
+        <title>一文概览神经网络的激活函数：从ReLU到GELU</title>
+      </bookmark>
+    </folder>
+  </folder>
+  <folder id="1316">
+    <title>mmdetecton &amp; other</title>
+    <bookmark href="https://blog.csdn.net/ytusdc/article/details/132190751" id="1348">
+      <title>Python 打包配置文件 setup.py 详解_python 中setup.py在哪-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://mmdetection.readthedocs.io/zh-cn/latest/user_guides/index.html" id="1854">
+      <title>训练 &amp; 测试 — MMDetection 3.2.0 文档</title>
+    </bookmark>
+    <bookmark href="https://mmdetection.readthedocs.io/zh-cn/latest/article.html" id="1855">
+      <title>中文解读文案汇总（待更新） — MMDetection 3.2.0 文档</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/93846887" id="1856">
+      <title>[Python]基础语法：函数装饰器，类装饰器，对象装饰器 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://horovod.readthedocs.io/en/stable/pytorch.html" id="1857">
+      <title>Horovod with PyTorch — Horovod documentation</title>
+    </bookmark>
+    <bookmark href="https://aws.amazon.com/cn/blogs/china/multi-gpu-and-distributed-training-using-horovod-in-amazon-sagemaker-pipe-mode/" id="1858">
+      <title>在 Amazon SageMaker 管道模式下使用 Horovod 实现多 GPU 分布式训练 | 亚马逊AWS官方博客</title>
+    </bookmark>
+    <bookmark href="https://cloud.tencent.com/developer/article/1877713" id="1859">
+      <title>激光雷达的强度标定及路标提取 - 云+社区 - 腾讯云</title>
+    </bookmark>
+    <bookmark href="https://mapengsen.blog.csdn.net/article/details/122147538?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-122147538-blog-91599411.pc_relevant_aa_2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-122147538-blog-91599411.pc_relevant_aa_2&amp;utm_relevant_index=1" id="1860">
+      <title>【炼丹技巧】指数移动平均（EMA）【在一定程度上提高最终模型在测试数据上的表现（例如accuracy、FID、泛化能力...）】_马鹏森的博客-CSDN博客_模型ema</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/fishmai/article/details/126943354?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-126943354-blog-123358454.pc_relevant_default&amp;spm=1001.2101.3001.4242.2&amp;utm_relevant_index=4" id="1861">
+      <title>如何打造自动驾驶的数据闭环_麦晓宇的博客-CSDN博客_智能驾驶数据闭环</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/561965702" id="1862">
+      <title>计算资源不够？想快速看到结果？颜水成&amp;林宙辰团队联合打造新型高效优化器Adan - 知乎</title>
+    </bookmark>
+    <bookmark href="https://bbs.cvmart.net/c/blog" id="1863">
+      <title>专栏 | 极市高质量视觉算法开发者社区</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/column/c_1494418493903155200?utm_id=0" id="1864">
+      <title>wandb使用教程 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/577715188" id="1865">
+      <title>玩转 MMYOLO 基础类第一期： 配置文件太复杂？继承用法看不懂？配置全解读来了 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://github.com/open-mmlab/mmyolo/blob/main/docs/zh_cn/recommended_topics/labeling_to_deployment_tutorials.md" id="1866">
+      <title>mmyolo/docs/zh_cn/recommended_topics/labeling_to_deployment_tutorials.md at main · open-mmlab/mmyolo</title>
+    </bookmark>
+    <bookmark href="https://netron.app/" id="1867">
+      <title>Netron</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/595497726" id="1868">
+      <title>MMYOLO 自定义数据集从标注到部署保姆级教程 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://mmdetection.readthedocs.io/zh_CN/latest/index.html" id="1869">
+      <title>Welcome to MMDetection’s documentation! — MMDetection 3.1.0 文档</title>
+    </bookmark>
+    <bookmark href="https://it.cha138.com/jingpin/show-138275.html" id="1870">
+      <title>代码片段_mmdetection 训练自己的数据集</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/qq_44864833/article/details/131295460" id="2887">
+      <title>wandb快速上手、使用心得（超好用的Tensorboard高替品）-CSDN博客</title>
+    </bookmark>
+  </folder>
+  <folder id="2538">
+    <title>天涯社区</title>
+    <bookmark href="https://zhuanlan.zhihu.com/p/679225740" id="2550">
+      <title>26.6G，1000+篇天涯论坛精华经典神贴合集（持续更新中） - 知乎</title>
+    </bookmark>
+    <bookmark href="https://mizixing.com/?p=425" id="2551">
+      <title>全网最全的天涯神贴合集（210篇+88篇）-米字型资源网</title>
+    </bookmark>
+    <bookmark href="https://drive.uc.cn/s/604f1c0337734#/list/share" id="2553">
+      <title>UC网盘分享</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/579685876/answer/3035181531?utm_id=0" id="2554">
+      <title>(7 封私信 / 3 条消息) 有什么天涯神贴的整理分享？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.douban.com/group/topic/288228377/?type=rec&amp;_i=0465969HZQ6qvh" id="2555">
+      <title>全网最全天涯神贴合集</title>
+    </bookmark>
+    <bookmark href="https://www.163.com/dy/article/I6J4J9PS0512T095.html" id="2556">
+      <title>再见了天涯社区！天涯神贴绝版合集！|猫扑|在天涯|当年明月|南派三叔_网易订阅</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/646482595" id="2557">
+      <title>（全网最全最详细）天涯神贴合集1000篇 | 无需解压，无水印，PDF版 | 当年天涯论坛到底是一个怎样的存在？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/645180940?utm_id=0" id="2558">
+      <title>【全网最全】天涯神贴合集600多篇 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://game.sohu.com/a/695455820_121687421" id="2559">
+      <title>天涯论坛上的这些神贴，你绝对不能错过，让人看了忍不住想点赞！_生活_帖子_文章</title>
+    </bookmark>
+    <bookmark href="http://www.22ziliao.com/?p=53" id="2560">
+      <title>【天涯合集】百度网盘资料-逸云学社</title>
+    </bookmark>
+    <bookmark href="https://bgjvr.com/1281.html" id="2561">
+      <title>天涯神贴合集 - BGJVR</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/606280985/answer/3119484237" id="2562">
+      <title>(8 封私信 / 12 条消息) 天涯神贴真的有那么神吗？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/645469033" id="2563">
+      <title>天涯论坛十大灵异事件（无删减） - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.8tupian.com/" id="2564">
+      <title>八图片_8图片-可以将图片或网址加密的网站</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/636911163/answer/3404684265" id="2565">
+      <title>(8 封私信 / 16 条消息) 天涯论坛的哪些帖子很经典？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/325269070/answer/2676352655" id="2566">
+      <title>(8 封私信 / 18 条消息) 有哪些令人印象深刻的天涯论坛讨论帖? - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/681591503" id="2567">
+      <title>（全网最全最详细）1000+篇天涯论坛精华经典神贴合集 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/579685876/answer/3390050416" id="2568">
+      <title>(8 封私信 / 18 条消息) 有什么天涯神贴的整理分享？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/635696715" id="2569">
+      <title>如何加入夸克网盘推广活动？附多图完整教程！ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/569015268" id="2570">
+      <title>地推拉新APP推广接单平台，我推荐这个平台 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/683412867" id="2571">
+      <title>夸克网盘拉新怎么做？官网入口申请在哪？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.hg87.cn/5344.html" id="2572">
+      <title>7个网盘拉新项目，教程+渠道+资源，看完就能操作。 - 87副业网-87副业网</title>
+    </bookmark>
+    <bookmark href="https://www.woniuboke.com/zqxm/6590.html" id="2573">
+      <title>全网最全网盘拉新项目分发平台，日赚1000+，附推广渠道！_蜗牛教授博客</title>
+    </bookmark>
+    <bookmark href="https://www.sohu.com/a/759528292_116252" id="2574">
+      <title>网盘拉新项目入口，操作教程（头条网盘/悟空网盘）_推广_资源_别名</title>
+    </bookmark>
+    <bookmark href="https://www.sohu.com/a/732627440_120280360" id="2576">
+      <title>夸克网盘app拉新去哪接单？盘点十大热门一手单地推拉新对接平台！_项目_行业_合作</title>
+    </bookmark>
+    <bookmark href="https://baijiahao.baidu.com/s?id=1777356938718843112&amp;wfr=spider&amp;for=pc" id="2577">
+      <title>网盘拉新的几种玩法，让你轻松月入过万，夸克迅雷UC网盘推广</title>
+    </bookmark>
+    <bookmark href="https://link3.cc/suoim" id="2578">
+      <title>link3.cc/suoim | Link3</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/599682800/answer/3437213406" id="2579">
+      <title>(5 封私信 / 3 条消息) 为什么传说中的天涯200篇神贴全是夸克网盘？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.douban.com/group/topic/288658351/?type=collect&amp;_i=9631383HZQ6qvh" id="2581">
+      <title>天涯论坛经典神贴合集（无重复254篇）百度+夸克+阿里网盘持续更新...</title>
+    </bookmark>
+    <bookmark href="https://www.lzrj.fun/yun" id="2582">
+      <title>一些 网盘资源 | 老庄日记知识库</title>
+    </bookmark>
+    <bookmark href="https://society.sohu.com/a/692178613_121740327" id="2584">
+      <title>天涯论坛经典神贴合集（无重复254篇）_李明_帖子_故事</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/676756174" id="2585">
+      <title>那些年的天涯神贴集合大全来了 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/677806752" id="2586">
+      <title>天涯神贴合集1000篇 | 无需解压，无水印，（全网最全最详细） - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/653149479?utm_id=0" id="2587">
+      <title>天涯神贴合集500篇（白拿，大合集） - 知乎</title>
+    </bookmark>
+    <bookmark href="https://x-x.fun/" id="2588">
+      <title>喜讯 - 隐藏内容 密码可见 付费关注</title>
+    </bookmark>
+    <bookmark href="https://flowus.cn/share/4a7251b6-ed31-495d-a9f9-ecb66023f2d4" id="2589">
+      <title>（天涯神帖＋电子书籍）VIP群</title>
+    </bookmark>
+    <bookmark href="https://flowus.cn/share/e3dd3424-2be2-442e-b264-172d958782ac" id="2590">
+      <title>天涯论坛神贴绝版资源</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/629371750?utm_id=0" id="2591">
+      <title>天涯神贴全网合集，三大版本1000篇 分为 500篇版，211加63篇补充版，211篇版 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/628139927" id="2592">
+      <title>天涯论坛倒下了，有人却用它的帖子月入3W，复制粘贴挣几个SPA的钱还是没问题的 - 知乎</title>
+    </bookmark>
+  </folder>
+  <folder id="1307">
+    <title>ChatGPT</title>
+    <bookmark href="https://blog.csdn.net/weixin_41259045/article/details/129516641" id="1697">
+      <title>AI作画工具 stable-diffusion-webui 本地部署 多种模型 可生成NSFW_恒TBOSH的博客-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://chat.forchange.cn/" id="1698">
+      <title>FORCHANGE AI EDU</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s?__biz=MzAxOTAzMjQxMA==&amp;mid=2247488111&amp;idx=1&amp;sn=c47781be7c41d7c69de7cd69ed084cde&amp;chksm=9bcc625aacbbeb4cc707d27c4cec3f209e0c57414ce61dff1b0b5bd14130ec8e64c798bcccab&amp;scene=21#wechat_redirect" id="1699">
+      <title>体验AI绘画：快速上手Stable Diffusion的三种方式</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/534841414/answer/2656327242" id="1700">
+      <title>租gpu服务器一个月多少钱，租gpu怎么用？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://sspai.com/post/75544" id="1701">
+      <title>把 AI 作画引擎搬进家用电脑：Stable Diffusion 配置与使用指南 - 少数派</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/615442395" id="1702">
+      <title>5 个令人惊艳的 ChatGPT 项目，开源了！ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/578233719" id="1703">
+      <title>从零开始，手把手教你Window本地化部署stable diffusion AI绘图 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/615312016?utm_id=0" id="1704">
+      <title>AI作图手把手教程系列（1）——stable diffusion云端安装和环境配置 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/qq_44303766/article/details/129584072" id="1705">
+      <title>【教程】如何让ChatGPT生成图片？最新指令分享_苏书QAQ的博客-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://www.codetd.com/article/14545518" id="1706">
+      <title>一看就会！超详细【ChatGPT】注册与使用教程 - 代码天地</title>
+    </bookmark>
+    <bookmark href="https://cloud.tencent.com/developer/article/2214700" id="1707">
+      <title>ChatGPT保姆级教程，一分钟学会使用ChatGPT！ - 腾讯云开发者社区-腾讯云</title>
+    </bookmark>
+    <bookmark href="https://www.music4x.com/post/8844" id="1708">
+      <title>ChatGPT，最全使用方法</title>
+    </bookmark>
+  </folder>
+  <folder id="1312">
+    <title>Git&amp;Vim</title>
+    <bookmark href="https://blog.csdn.net/huwh_/article/details/78505565" id="1796">
+      <title>(6条消息)Git详解 - 胡伟煌的博客 - CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000" id="1797">
+      <title>Git简介 - 廖雪峰的官方网站</title>
+    </bookmark>
+    <bookmark href="https://juejin.im/post/5ae072906fb9a07a9e4ce596" id="1798">
+      <title>git基本操作，一篇文章就够了！ - 掘金</title>
+    </bookmark>
+    <bookmark href="https://git-scm.com/book/zh/v2" id="1799">
+      <title>Git - Book</title>
+    </bookmark>
+    <bookmark href="https://www.cnblogs.com/Jimc/p/10213914.html" id="1800">
+      <title>vi/vim 命令使用详解 - 寒爵 - 博客园</title>
+    </bookmark>
+    <bookmark href="https://www.jianshu.com/p/1509d10a7184" id="1801">
+      <title>vim 最佳配置 - 简书</title>
+    </bookmark>
+    <bookmark href="https://www.jianshu.com/p/bd7e4f2ca281" id="1802">
+      <title>vim终极配置 - 简书</title>
+    </bookmark>
+    <bookmark href="https://www.jianshu.com/p/d80af51d3c2b" id="1803">
+      <title>vim配置 - 简书</title>
+    </bookmark>
+    <bookmark href="https://linux.cn/article-9416-1.html" id="1804">
+      <title>技术|如何在 Linux 上使用 Vundle 管理 Vim 插件</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/amoscykl/article/details/80616688" id="1805">
+      <title>Vim的终极配置方案，完美的写代码界面! ——.vimrc - amoscykl的博客 - CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/qq_16030133/article/details/80877966" id="1806">
+      <title>(2条消息)【Vim】使用Vundle管理配置Vim基本插件 - wephper - CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://www.cnblogs.com/aaronLinux/p/6798898.html" id="1807">
+      <title>[vundle]利用vundle工具来管理vim插件 - aaronGao - 博客园</title>
+    </bookmark>
+    <bookmark href="https://vimawesome.com/" id="1808">
+      <title>Vim Awesome</title>
+    </bookmark>
+    <bookmark href="https://www.linuxidc.com/Linux/2017-09/147109.htm" id="1809">
+      <title>Vim配置详解_Linux教程_Linux公社-Linux系统门户网站</title>
+    </bookmark>
+    <bookmark href="http://dongyado.com/tool/2017/07/26/vim-plugins-and-vimrc/" id="1810">
+      <title>几款好用的 vim 插件和使用 vundle 安装 vim 插件</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/zhongzunfa/article/details/80344585" id="1811">
+      <title>github fork 别人的项目源作者更新后如何同步更新 - zhongzunfa的专栏 - CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://www.runoob.com/git/git-workspace-index-repo.html" id="1812">
+      <title>Git 工作区、暂存区和版本库 | 菜鸟教程</title>
+    </bookmark>
+    <bookmark href="https://www.jianshu.com/p/50ef88bda474" id="1813">
+      <title>Git 快速使用 之 冲突 merge 快速解决 - 简书</title>
+    </bookmark>
+    <bookmark href="https://www.w3cschool.cn/vim/" id="1814">
+      <title>Vim 教程_w3cschool</title>
+    </bookmark>
+    <bookmark href="https://juejin.im/post/5a38c37f6fb9a0450909a151" id="1815">
+      <title>vim进阶 | 使用插件打造实用vim工作环境 - 掘金</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/LSG_Down/article/details/89319472" id="1816">
+      <title>关于vim的详细配置 - LSG_Down的博客 - CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://spacevim.org/cn/documentation/" id="1817">
+      <title>使用文档 | SpaceVim</title>
+    </bookmark>
+    <bookmark href="https://spacevim.org/cn/use-vim-as-a-c-cpp-ide/#%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97" id="1818">
+      <title>使用 Vim 搭建 C/C++ 开发环境 | SpaceVim</title>
+    </bookmark>
+    <bookmark href="https://www.cnblogs.com/ay-a/p/8232584.html" id="1819">
+      <title>Linux命令（九）比较文件差异 diff - ay-a - 博客园</title>
+    </bookmark>
+    <bookmark href="https://www.cnblogs.com/jiu0821/p/9217205.html" id="1820">
+      <title>linux命令之----sort命令用于将文本文件内容加以排序 - jiu~ - 博客园</title>
+    </bookmark>
+    <folder id="1821">
+      <title>Books</title>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzI0NDUwNzYzMg==&amp;mid=2247484315&amp;idx=1&amp;sn=245a01ffc3621879875f6cd8672d644d&amp;chksm=e95df504de2a7c1210b8233122235406f324ca551f33d9245cf2d0e4bf5487644a2665e988ec&amp;mpshare=1&amp;scene=1&amp;srcid=0118RrFq7NH4ESj0wh87tTU1&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2424">
+        <title>GitHub：TensorFlow最全资料集锦</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzI0NDUwNzYzMg==&amp;mid=2247484169&amp;idx=1&amp;sn=06c430e3244d655bad55a279019cf9a6&amp;chksm=e95df596de2a7c809b2308407edc5921761a87e1a1831c4fc0d7c3f99e3c4afd57ea44b9cf2b&amp;mpshare=1&amp;scene=1&amp;srcid=0104ygddnu2ql3tbophZf8t5&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2425">
+        <title>700页的《图形深度学习》为你讲解深度学习如何用于计算机图形学？(附代码)</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzI0NDUwNzYzMg==&amp;mid=2247484049&amp;idx=1&amp;sn=1044162b431b563cfa1ab1b9cf91629c&amp;chksm=e95df40ede2a7d18cc3db534758ebcfde6679589a282e501d2bac1934f16259a4bca191afbec&amp;mpshare=1&amp;scene=1&amp;srcid=1219d61F6HcxsROrmCC3Qvy0&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2426">
+        <title>134页的《深度学习数学基础笔记》(附下载)</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzI0NDUwNzYzMg==&amp;mid=2247484430&amp;idx=1&amp;sn=25996545d18d46cec0939bcbd07726a6&amp;chksm=e95df291de2a7b8792f6bb3cb72b0631db0ab38c7d483a86276f1f3b30e1c36cef43e4ce62b9&amp;mpshare=1&amp;scene=1&amp;srcid=0202sxsct2AIndl2YXcZk2pg&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2427">
+        <title>李宏毅 | 83页的《深度学习的高级技巧》（附下载）</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzI0NDUwNzYzMg==&amp;mid=2247484532&amp;idx=1&amp;sn=17c357dcaeae5c5167b92ddead337087&amp;chksm=e95df2ebde2a7bfd00fe1ab17e90303f78f00e1cf09a23916ab935a062fe744617c8de3766cf&amp;mpshare=1&amp;scene=1&amp;srcid=0219nTxZ9HzOpJVamUXfnvAl&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2428">
+        <title>520页的机器学习笔记（附下载）</title>
+      </bookmark>
+      <bookmark href="https://www.datasetlist.com/" id="2429">
+        <title>100个大型机器学习数据集汇总（CV/NLP/音频方向）</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzUxNjcxMjQxNg==&amp;mid=2247488326&amp;idx=1&amp;sn=9dbbce324705e0480deab21eb571ebd2&amp;chksm=f9a261c9ced5e8df4fcdc831dd267a84128d25529c082ee8ecdb13fd48aba7dbd53edc9af249&amp;mpshare=1&amp;scene=1&amp;srcid=0407aBJtGgRP1Vfgiroa5p2z&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2430">
+        <title>邱锡鹏教授新书《神经网络与深度学习》，正式开源发布！</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzI0NDUwNzYzMg==&amp;mid=2247484395&amp;idx=1&amp;sn=fa2e335b6777a50ec018d67fe35870fc&amp;chksm=e95df574de2a7c6221cdc5c1dfa8f620ffdba61d9be90a3a08681dfef96b13c53971259d42d2&amp;mpshare=1&amp;scene=1&amp;srcid=0128cvh9a2xOC3ncI1YS496i&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2431">
+        <title>重磅 | 547页的《动手学深度学习》 1.0 预发布版本（附电子书和源码下载）</title>
+      </bookmark>
+      <bookmark href="https://mp.weixin.qq.com/s?__biz=MzI0NDUwNzYzMg==&amp;mid=2247484126&amp;idx=1&amp;sn=e9745444f9f6fe80b2a9ba5e41b19642&amp;chksm=e95df441de2a7d577c209e0d09ac1ee87584ddd34c77ad2e9189c11cb3128ff910e815118659&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;pass_ticket=E6E688ax0KPqzfZmifF%2BHLjjYG3ZFrMAOKtn%2FZO2dIu9WO9fybuaDFZaTPSXAEfc#rd" id="2432">
+        <title>强化学习最全资料集锦（含李宏毅等大佬视频教程）</title>
+      </bookmark>
+      <bookmark href="https://zh.d2l.ai/chapter_preface/preface.html" id="2433">
+        <title>前言 — 《动手学深度学习》 文档</title>
+      </bookmark>
+      <bookmark href="http://www.huaxiaozhuan.com/" id="2434">
+        <title>AI算法工程师手册</title>
+      </bookmark>
+    </folder>
+  </folder>
+  <folder id="1314">
+    <title>docker</title>
+    <bookmark href="https://leimao.github.io/blog/TensorBoard-On-Docker/" id="1833">
+      <title>TensorBoard on Docker - Lei Mao&apos;s Log Book</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/weixin_43915709/article/details/97111825" id="1834">
+      <title>(6条消息) 通过端口映射在本地访问服务器（docker容器）上的tensorboard可视化结果_球场恶汉的博客-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/248113520" id="1835">
+      <title>本地机器如何访问服务器上的docker容器内的tensorboard？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.runoob.com/w3cnote/linux-check-port-usage.html" id="1836">
+      <title>Linux 查看端口占用情况 | 菜鸟教程</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/353873413" id="1837">
+      <title>服务器（Docker容器）中使用Tensorboard&amp;Jupyter-notebbok - 知乎</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/weixin_42184097/article/details/114273905" id="1838">
+      <title>在服务器（Docker 容器）中使用Tensorboard&amp;Jupyter_古尔丹是大反派的博客-CSDN博客</title>
+    </bookmark>
+  </folder>
+  <folder id="1315">
+    <title>Pet</title>
+    <bookmark href="https://blog.csdn.net/hhf15980873586/article/details/127128824" id="1331">
+      <title>C# winform 双头滑块 TrackBar2-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/qq_18671415/article/details/104717048" id="1332">
+      <title>c#进度条实现方法_c# 进度条-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://www.jianshu.com/p/00bea9f0209a" id="1345">
+      <title>【C#学习笔记】C#中set和get用法 - 简书</title>
+    </bookmark>
+    <bookmark href="https://gate.uca.fr/download/vgate#/admin" id="1839">
+      <title>vGATE - Project GATE</title>
+    </bookmark>
+    <bookmark href="https://readthedocs.org/projects/opengate/downloads/" id="1840">
+      <title>OpenGATE | Read the Docs</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/weixin_62756927/article/details/127817095" id="1841">
+      <title>CBCT重建保姆级入门（一）_柳什么汁的博客-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/weixin_62756927/article/details/127817663" id="1842">
+      <title>【精选】CBCT重建保姆级入门（二）_三维fbp-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://www.cn-healthcare.com/articlewm/20220818/content-1420248.html" id="1843">
+      <title>CT图像重建：FBP，迭代重建与人工智能|人工智能|CT|图像|放射学|-健康界</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/428721823" id="1844">
+      <title>医学图像重建算法综述（CT） - 知乎</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/sinolover/article/details/121375677" id="1845">
+      <title>【转】CT图像重构方法详解——傅里叶逆变换法、直接反投影法、滤波反投影法-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s?__biz=MzU5MDU1NTMzOQ==&amp;mid=2247488305&amp;idx=2&amp;sn=2f79e2f055b0eda0c4359880ecbe6548&amp;chksm=fe3d2295c94aab83965cb276aa0fba6f2e8f05d363755af0ac6f310a2df382e4e8b736c2f668&amp;scene=21#wechat_redirect" id="1846">
+      <title>六分钟了解核医学(四)：SPECT准直器</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s/HHGCqRCmR7gdtb0GX9uLTQ" id="1847">
+      <title>六分钟了解核医学(五)：SPECT空间分辨率</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s/aEGgzqCdM3T6tBlUwGO-Zg" id="1848">
+      <title>六分钟了解核医学系列——闪烁体探测器无机闪烁体</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s?__biz=MjM5NDk0Mzk5OQ==&amp;mid=2650125622&amp;idx=4&amp;sn=922cedbbae19727e04ca54358eec1a82&amp;chksm=be8113a689f69ab0479bd02210359e4174b5c1e4bf26124a13694fe5bbb6778b8d2b76a5729d&amp;scene=27" id="1849">
+      <title>六分钟了解核医学系列—PET图像的重建</title>
+    </bookmark>
+    <bookmark href="https://mp.weixin.qq.com/s?__biz=Mzg5OTc2OTY5Ng==&amp;mid=2247555693&amp;idx=1&amp;sn=2977453d6d64f1032e6e4687630b3817&amp;chksm=c04c6e62f73be774f53a231ec333285ca7c8eafacb95e9c7a9f6ad2e909cf771fdf4d740896d&amp;scene=27" id="1850">
+      <title>了解核医学系列 | SPECT探头&amp;准直器的类型，看这篇就够了</title>
+    </bookmark>
+    <bookmark href="https://www.elecfans.com/book/story.php?id=41&amp;wd=&amp;eqid=b99da563000046bb000000046470ad96" id="1851">
+      <title>SPECT机的基本构造和工作原理-医学影像设备-电子发烧友网站</title>
+    </bookmark>
+    <bookmark href="https://www.docin.com/p-254414948.html" id="1852">
+      <title>SPECT图像解析重建算法研究现状 - 豆丁网</title>
+    </bookmark>
+    <bookmark href="https://www.docin.com/p-2295921544.html" id="1853">
+      <title>基于神经网络与EM算法的稀疏投影SPECT重建 - 豆丁网</title>
+    </bookmark>
+  </folder>
+  <folder id="1317">
+    <title>职称评定</title>
+    <bookmark href="https://117.73.253.239:9000/sdzc-web-ui/business/login/login.html" id="1871">
+      <title>山东省专业技术人员管理服务平台</title>
+    </bookmark>
+    <bookmark href="http://117.73.255.69:9090/staffYearComplete/staffYearComplete" id="1872">
+      <title>年度完成情况</title>
+    </bookmark>
+    <bookmark href="http://117.73.255.69:9080/" id="1873">
+      <title>山东省专业技术人员继续教育公共服务平台</title>
+    </bookmark>
+    <bookmark href="https://sdly.treewises.com/" id="1874">
+      <title>临沂市专业技术人员继续教育学习平台</title>
+    </bookmark>
+    <bookmark href="http://117.73.255.69:9090/queryRegisterState" id="1875">
+      <title>注册审核进度查询</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/657531853" id="1876">
+      <title>软考高级好考吗？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/480695403/answer/3155418248" id="1877">
+      <title>软考高级好考吗？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/fei33423/article/details/132023696" id="1878">
+      <title>软考 系统分析师和系统架构师 项目管理师_个人渣记录仅为自己搜索用的博客-CSDN博客</title>
+    </bookmark>
+  </folder>
+  <folder id="2941">
+    <title>Working</title>
+    <bookmark href="https://www.thsch.cn/index/" id="1319">
+      <title>天河超级计算淮海分中心</title>
+    </bookmark>
+    <bookmark href="http://www.aict.ac.cn/" id="1320">
+      <title>临沂中科人工智能创新研究院</title>
+    </bookmark>
+    <bookmark href="https://rsj.linyi.gov.cn/" id="2951">
+      <title>临沂市人力资源和社会保障局</title>
+    </bookmark>
+    <bookmark href="https://portal.bjt.beijing.gov.cn/p/login/login.html?pubKey=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCYZ/2GksSvCXffXnoKqwSpYqJLIJtncjzwQCtdakH83S1X4XubJbkJT8vv1X6i+yNAhj1vSOBSi4PQPGCIYV7R5SyCU/ehfrDrJgDaglYcNOeqb9SMKwm0M0pWCEdtdsc1g5Vr9Pip6SOiO/ImjAvWRTt44Lpdv/84+aPxl0PCJwIDAQAB" id="2952">
+      <title>登录-北京市统一身份认证平台</title>
+    </bookmark>
+    <bookmark href="https://m12333.cn/gerenjiaofei/linyi.aspx" id="2953">
+      <title>临沂市灵活就业人员(个体户/自由职业者)社保缴费、医保缴费</title>
+    </bookmark>
+    <bookmark href="http://lyyb.linyi.gov.cn/" id="2954">
+      <title>临沂市医疗保障局</title>
+    </bookmark>
+    <bookmark href="http://fuwu.rsj.beijing.gov.cn/csibiz/indinfo/index.jsp" id="2955">
+      <title>北京市劳动局网上申报系统</title>
+    </bookmark>
+    <bookmark href="http://smart.rshj.yantai.gov.cn/smartsisp-dwwb/?ivk_sa=1024320u#/ytlogon" id="2956">
+      <title>烟台市劳动保障网上办事大厅-登录</title>
+    </bookmark>
+    <bookmark href="http://hrss.shandong.gov.cn/rsks/" id="2957">
+      <title>山东人事考试信息网</title>
+    </bookmark>
+    <bookmark href="http://rsj.linyi.gov.cn/" id="2958">
+      <title>临沂市人力资源和社会保障局</title>
+    </bookmark>
+    <bookmark href="http://rsj.linyi.gov.cn/index/kstd/sydwgkzp.htm" id="2959">
+      <title>事业单位公开招聘-临沂市人力资源和社会保障局</title>
+    </bookmark>
+    <bookmark href="http://linyi.rcsd.cn/zkzp/" id="2960">
+      <title>人才临沂</title>
+    </bookmark>
+    <bookmark href="https://fuwu.rsj.beijing.gov.cn/bjdkhy/bjsbyjsfw/base-module/table2/apply" id="2961">
+      <title>社会保障卡申领</title>
+    </bookmark>
+  </folder>
+  <folder id="2838">
+    <title>去水印</title>
+    <bookmark href="https://blog.csdn.net/m0_61899108/article/details/127715737" id="2792">
+      <title>计算两幅图像的相似度（PSNR、SSIM、MSE、余弦相似度、MD5、直方图、互信息、Hash）&amp; 代码实现 与举例_图的相似度计算 cdcn-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/purple_love/article/details/134715113" id="2860">
+      <title>深度学习图像去水印_深度学习去水印-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/weixin_39683025/article/details/110896306?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-110896306-blog-134715113.235%5Ev43%5Econtrol&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-110896306-blog-134715113.235%5Ev43%5Econtrol&amp;utm_relevant_index=2" id="2861">
+      <title>深度学习 效果突然下降_使用深度学习去除复杂图像水印，效果好过photoshop！...-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/333086833/answer/841650555" id="2862">
+      <title>(11 封私信 / 41 条消息) 如何完美去水印? - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/628101363?utm_id=0" id="2863">
+      <title>基于深度学习的视觉水印去除 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://blog.51cto.com/u_12187/7781669" id="2864">
+      <title>深度学习图像相似度评分 图像相似度指标_karen的技术博客_51CTO博客</title>
+    </bookmark>
+    <bookmark href="https://icver.blog.csdn.net/article/details/109366994?spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2-109366994-blog-134715113.235%5Ev43%5Econtrol&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2-109366994-blog-134715113.235%5Ev43%5Econtrol&amp;utm_relevant_index=5" id="2888">
+      <title>基于深度学习unet模型去除水印_unet 水印去除-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/weixin_39683025/article/details/110896306?spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3-110896306-blog-134715113.235%5Ev43%5Econtrol&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3-110896306-blog-134715113.235%5Ev43%5Econtrol&amp;utm_relevant_index=6" id="2889">
+      <title>深度学习 效果突然下降_使用深度学习去除复杂图像水印，效果好过photoshop！...-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/jerry_liufeng/article/details/132010331" id="2890">
+      <title>自监督去噪：Noise2Noise原理及实现（Pytorch）_noise2noise实现-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/jerry_liufeng/article/details/132056825?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-132056825-blog-132010331.235^v43^control&amp;spm=1001.2101.3001.4242.1&amp;utm_relevant_index=3" id="2891">
+      <title>自监督去噪：Noise2Void原理和调用（Tensorflow）-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.51cto.com/u_15279692/4889706" id="2892">
+      <title>[ACM MM 2021] 基于深度学习的图像水印去除_wx60d14358a4f7b的技术博客_51CTO博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/mago2015/article/details/119484943" id="2893">
+      <title>使用深度学习技术进行水印去除_去水印算法-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/INTSIG/article/details/130149923" id="2894">
+      <title>SLBR通过自校准的定位和背景细化来去除可见的水印_visible watermark removal via self-calibrated loca-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/81373663?lang=zh_CN" id="2895">
+      <title>使用深度学习去除复杂图像水印，效果好过photoshop！ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/ALiLiLiYa/article/details/127814411" id="2896">
+      <title>图片/视频去水印代码（教程+代码）_视频去水印算法-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://gitee.com/loovelj/nowatermark" id="2897">
+      <title>nowatermark: 去水印传统算法</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/qq_42294701/article/details/102863800" id="2898">
+      <title>NVIDIA Docker2安装教程及踩坑历险记_安装nvidia-docker2-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/u011119817/article/details/110386437" id="2899">
+      <title>【Docker】基于docker构建深度学习开发环境_docker搭建德语学习-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://www.runoob.com/docker/docker-container-usage.html" id="2900">
+      <title>Docker 容器使用 | 菜鸟教程</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/weixin_45477628/article/details/132174600" id="2901">
+      <title>使用Docker配置深度学习的运行环境_docker desktop 搭建深度学习-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/667760859?utm_id=0" id="2902">
+      <title>从硬件到软件零起步搭建深度学习环境 | 配置深度学习环境: Docker + Conda + Pytorch + SSH + VS Code - 知乎</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/suiyingy/article/details/130285920" id="2903">
+      <title>Docker AIGC等大模型深度学习环境搭建（完整详细版）-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/qq_39638989/article/details/121275230?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-121275230-blog-130378511.235%5Ev43%5Econtrol&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-121275230-blog-130378511.235%5Ev43%5Econtrol&amp;utm_relevant_index=2" id="2904">
+      <title>Docker部署深度学习服务器，CUDA+cudnn+ssh_arm docker cuda-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/667760859" id="2905">
+      <title>从硬件到软件零起步搭建深度学习环境 | 配置深度学习环境: Docker + Conda + Pytorch + SSH + VS Code - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/658857865?utm_id=0" id="2906">
+      <title>docker安装及其配置深度学习环境 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/667743782" id="2907">
+      <title>从硬件到软件零起步搭建深度学习环境 | 安装Docker容器 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/543082405" id="2908">
+      <title>第十一篇 基于深度学习的图像视频恢复和超分辨率 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/ASASASASASASAB/article/details/136014249" id="2909">
+      <title>毕业设计：基于深度学习的人脸模糊图像复原算法 人工智能_深度学习模糊图像清晰化毕设-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/deephub/article/details/123890368" id="2910">
+      <title>深度学习项目示例 使用自编码器进行模糊图像修复_基于深度学习运动模糊图像复原-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://www.sohu.com/a/443413735_787107" id="2911">
+      <title>图像超分辨率重建算法，让模糊图像变清晰(附数据和代码)_成像</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/657765445" id="2912">
+      <title>大模型训练为什么用A100不用4090 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://blog.csdn.net/baidu_38262850/article/details/134333462" id="2913">
+      <title>图像相似度对比方法_图片相似度对比-CSDN博客</title>
+    </bookmark>
+    <bookmark href="https://www.zhihu.com/question/319373907/answers/updated?utm_id=0" id="2914">
+      <title>关于计算两张图像相似度，用深度学习去做，有什么好的方法与建议？ - 知乎</title>
+    </bookmark>
+    <bookmark href="https://zhuanlan.zhihu.com/p/398435169?utm_id=0" id="2915">
+      <title>[ACM MM 2021] 基于深度学习的图像水印去除 - 知乎</title>
+    </bookmark>
+    <bookmark href="https://github.com/lianchengmingjue/DENet" id="2916">
+      <title>lianchengmingjue/DENet: This is an official pytorch implementation for &quot;DENet: Disentangled Embedding Network for Visible Watermark Removal&quot; (AAAI23).</title>
+    </bookmark>
+  </folder>
+  <bookmark href="https://www.toutiao.com/article/7212639909596201528/?channel=&amp;source=search_tab" id="1322">
+    <title>盘点50本高质量的玄幻小说，都是值得一看的经典小说！-今日头条</title>
+  </bookmark>
+  <bookmark href="https://www.douyin.com/video/7290445580122262839" id="1323">
+    <title>一个视频，看斑爷在四战中是怎么起舞的 #宇智波斑 - 抖音</title>
+  </bookmark>
+  <bookmark href="https://mbd.baidu.com/newspage/data/dtlandingsuper?nid=dt_4182080687195040912" id="1324">
+    <title>🌟比亚迪车主一定要看的养护电池小技巧</title>
+  </bookmark>
+  <bookmark href="https://www.douban.com/group/topic/296164838/?_i=9950110HZQ6qvh" id="1334">
+    <title>《天机38局》——这是世界上目前最牛的做局书籍，没有之一。</title>
+  </bookmark>
+  <bookmark href="http://www.4xiaoshuo.info/174/174807/" id="1341">
+    <title>都重生了谁谈恋爱啊最新章节,都重生了谁谈恋爱啊快眼看书,都重生了谁谈恋爱啊5200</title>
+  </bookmark>
+  <bookmark href="http://www.4xiaoshuo.info/99/99450/" id="1343">
+    <title>我真没想重生啊最新章节,我真没想重生啊快眼看书,我真没想重生啊5200</title>
+  </bookmark>
+  <bookmark href="https://sk.3qxsw.com/xiaoshuo/525226/" id="1347">
+    <title>逼我重生是吧幼儿园一把手免费阅读_逼我重生是吧最新章节_百度云TXT下载_3Q中文网</title>
+  </bookmark>
+  <bookmark href="https://zhuanlan.zhihu.com/p/382770435" id="1349">
+    <title>别想了！普通人搞副业赚钱，除了推荐这几个靠谱，没法弄 - 知乎</title>
+  </bookmark>
+  <bookmark href="https://bbs.ainav.org/t/topic/236" id="1472">
+    <title>ChatGPT 镜像网址汇总 | 整合版 | 每日更新 - AI相关 - AINAV</title>
+  </bookmark>
+  <bookmark href="https://www.qidiantu.com/" id="1328">
+    <title>起点图：起点数据、网络小说数据可视化分析专家</title>
+  </bookmark>
+  <bookmark href="https://n3.aicore.chat/" id="2791">
+    <title>NextChat</title>
+  </bookmark>
+  <bookmark href="https://articles.zsxq.com/id_ls8ip69uowp9.html" id="2917">
+    <title>【宝剑侍从网文教程】文字版总纲（长期更新）</title>
+  </bookmark>
+  <bookmark href="https://cr.console.aliyun.com/cn-hangzhou/instances/artifact" id="2918">
+    <title>容器镜像服务</title>
+  </bookmark>
+  <bookmark href="https://developer.aliyun.com/article/1355600" id="2919">
+    <title>分分钟搞定阿里云私有Docke镜像仓库的搭建-阿里云开发者社区</title>
+  </bookmark>
+  <bookmark href="https://weibo.com/ttarticle/p/show?id=2309405010493483122969" id="2920">
+    <title>2024年山东省事业单位考试真题及答案解析</title>
+  </bookmark>
+  <bookmark href="https://articles.zsxq.com/id_walxjn3fwt8q.html" id="2921">
+    <title>分享《故事写作大师班》兼谈阅读与做读书笔记的心得</title>
+  </bookmark>
+  <bookmark href="https://www.zhihu.com/question/594695353/answer/2977555698" id="2922">
+    <title>起点发文5万字，书名通天仙箓，还没有站短有些迷茫，不知道哪里出了问题，我该如何改进？ - 知乎</title>
+  </bookmark>
+  <bookmark href="https://www.zhihu.com/question/481515989/answer/3374537415" id="2923">
+    <title>你们在Notion、Obsidian、Logseq三者中如何选择？将哪个作为主力笔记软件？为什么？ - 知乎</title>
+  </bookmark>
+  <bookmark href="https://zhuanlan.zhihu.com/p/689365607" id="2924">
+    <title>盘点笔记软件Obsidian的那些神级插件 - 知乎</title>
+  </bookmark>
+  <bookmark href="https://hao.logosc.cn/" id="2925">
+    <title>发现最酷的互联网产品工具和智能神器！ - 神器集</title>
+  </bookmark>
+  <bookmark href="https://zhuanlan.zhihu.com/p/666256721" id="2926">
+    <title>AI技术：分享8个非常实用的AI绘画网站 - 知乎</title>
+  </bookmark>
+  <bookmark href="https://aiart.chuangkit.com/matrix" id="2927">
+    <title>创客贴AI画匠_ AI艺术创作平台_体验智能化内容生成</title>
+  </bookmark>
+  <bookmark href="https://www.toutiao.com/video/7339137833929703945/?log_from=a26f025b82db_1712966966235" id="2928">
+    <title>上道具！动捕演员走两步就性情大变 #动捕演员 #搞笑 #走路 #风格-今日头条</title>
+  </bookmark>
+  <bookmark href="https://www.zaixianai.cn/imageComic" id="2929">
+    <title>人像转动漫化-在线人像转动漫化，照片转动漫，AI人像转动漫化官网</title>
+  </bookmark>
+  <bookmark href="https://gjj.linyi.gov.cn/hdjl/ywzxdh1.htm" id="2930">
+    <title>业务咨询电话-临沂市住房公积金中心</title>
+  </bookmark>
+  <bookmark href="https://www.zhihu.com/question/621550974" id="2931">
+    <title>如何系统的入门大模型？ - 知乎</title>
+  </bookmark>
+  <bookmark href="https://blog.csdn.net/redrnt/article/details/129230014" id="2932">
+    <title>windows服务器实用（2）——搭建本地文档管理（gitbit的部署）_如何搭建本地文件管理系统-CSDN博客</title>
+  </bookmark>
+  <bookmark href="https://www.lkong.com/thread/3488432" id="2933">
+    <title>解构《大奉打更人》，从0%到100%全过程还原 - 龙的天空lkong.com - 龙空</title>
+  </bookmark>
+  <bookmark href="https://blog.csdn.net/weixin_47585269/article/details/118311291" id="2934">
+    <title>Python入门教程(从小白到高级)(新版)_python入门教程(非常详细)-CSDN博客</title>
+  </bookmark>
+  <bookmark href="https://aistudio.baidu.com/projectdetail/1988888?ad-from=1594" id="2935">
+    <title>『行远见大』手把手教你学 Python：基础篇（一） - 飞桨AI Studio星河社区</title>
+  </bookmark>
+  <bookmark href="https://blog.51cto.com/u_16175521/9012374" id="2936">
+    <title>python代码编译为dll_mob649e8169b366的技术博客_51CTO博客</title>
+  </bookmark>
+  <bookmark href="https://blog.csdn.net/weixin_49895216/article/details/127739029" id="2937">
+    <title>最全Python数据工具箱：标准库、第三方库和外部工具都在这里了_python工具箱-CSDN博客</title>
+  </bookmark>
+</folder>
+<folder id="1281">
+  <title>Other Bookmarks</title>
+  <bookmark href="http://hot.win10b.com/" id="1284">
+    <title>今日热点</title>
+  </bookmark>
+  <bookmark href="http://zhuang.win10c.com/" id="1286">
+    <title>电脑重装</title>
+  </bookmark>
+  <bookmark href="http://xzc7sgu7ijuv6mk.66776688.com/" id="1288">
+    <title>在线视频</title>
+  </bookmark>
+  <bookmark href="http://7zcdcgu8izc7q8z.66776688.com/" id="1291">
+    <title>热门游戏</title>
+  </bookmark>
+  <bookmark href="http://zzc6cvu5i4uqk9m.66776688.com/" id="1292">
+    <title>电脑重装</title>
+  </bookmark>
+  <bookmark href="http://kyc8tmuyi6u8y72.66776688.com/" id="1294">
+    <title>软件应用</title>
+  </bookmark>
+</folder>
+<folder id="1283">
+  <title>已删除收藏夹</title>
+</folder>
+</xbel>
