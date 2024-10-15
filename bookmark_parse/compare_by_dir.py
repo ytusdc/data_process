@@ -5,9 +5,16 @@
 Time    : 2024-10-11 11:21
 Author  : sdc
 """
-import parse_bookmark_html_to_json as prase_html
+import parse_bookmark_html_to_json as prase_html_fun
 from utils import print_with_style_and_color
 
+"""
+获取目录， 比价相同目录下的url异同
+"""
+
+"""
+获取 json_data 中 labelname （子目录名）的信息
+"""
 def process_json_data(json_data, url_name_dict, labelname=None):
     if labelname is not None:
         name = json_data["name"]
@@ -75,7 +82,7 @@ def find_url_add(base_url_dict, compare_url_dict):
                 print_with_style_and_color(f"{'-' * 5}{url_name} : {url}")
 
 def get_contents_dict(bookmark_file, label_name):
-    bookmark_json =  prase_html.html_2_json(bookmark_file)
+    bookmark_json =  prase_html_fun.html_2_json(bookmark_file)
     result_dict = dict()
     process_json_data(bookmark_json, result_dict, labelname=label_name)
     contents_dict = process_dict(result_dict, label_name)
@@ -99,5 +106,4 @@ if __name__ == '__main__':
     old_html_file = "/home/ytusdc/Documents/favorites_9_25_24_111.html"
     new_html_file = '/home/ytusdc/Documents/favorites_10_11_24.html'
     labelname = "网文html"
-
     main(old_html_file, new_html_file, labelname)
