@@ -7,7 +7,7 @@ Author  : sdc
 """
 import os
 import sys
-
+from pathlib import Path
 """
 获取文件夹下相关列表或者字典
 """
@@ -79,9 +79,9 @@ def get_id_path_dict(data_dir, suffix=None):
     elif isinstance(suffix, list):
         file_ls = [file_name for file_name in filter_file_ls
                    if os.path.splitext(file_name.lower())[-1] in suffix]
-        # for suffix in file_suffix:
-        #     child_ls = list(filter(lambda x: x.endswith(suffix), os.listdir(data_dir)))
-        #     file_ls.extend(child_ls)
+
+    # img_id_dict = {Path(i).stem: os.path.join(imgs_dir, i) for i in os.listdir(imgs_dir) if os.path.splitext(i)[-1] in suffix}
+    # label_id_dict = {Path(i).stem: os.path.join(annos_dir, i) for i in os.listdir(annos_dir) if os.path.splitext(i)[-1]=='.txt'}
 
     id_filepath_dict = {}
     for filename in sorted(file_ls):    # 排序，保证各平台顺序一致
