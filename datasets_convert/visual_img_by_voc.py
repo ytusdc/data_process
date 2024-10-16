@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import sys
+sys.path.append("..")
 import os
 import cv2
 import matplotlib.pyplot as plt
@@ -5,47 +9,39 @@ from tqdm import tqdm
 from lxml import etree
 from collections import defaultdict
 import argparse
-import sys
 import datetime
-from utils.colortable import get_color_rgb, get_color_bgr
+
+from utils import *
 
 category_id_dict = dict()
 every_class_num = defaultdict(int)
 category_item_id = -1
 
 """
-imgs_dir: 原始图片所在路径
-annos_dir： 标签文件所在路径
-imgs_save_dir： 绘制 bbox后的img存储位置
+img_file_path: 原始图片文件全路径
+xml_file_path： 标签文件全路径
+save_dir： 绘制 bbox后的img存储位置
 bgr： 颜色值格式为bgr，使用opencv绘图颜色值是bgr， 如果是rgb格式颜色值需要做相应转换
 """
-def draw_box(xml_file_path, image_dir, save_dir, bgr=True):
+def draw_box(img_file_path, xml_file_path, save_dir, bgr=True):
 
     with open(xml_file_path) as fid:
         xml_str = fid.read()
-    xml = etree.fromstring(xml_str.encode('utf-8'))
-    xml_info_dict = parse_xml_to_dict(xml)
+    xml_info = etree.fromstring(xml_str.encode('utf-8'))
+    xml_info_dict = utils_xml_opt.parse_xml_to_dict(xml_info)
 
-    """
-    不能保证 xml 中的 图片名 可以跟images中图片名对应，所以取 xml 中的文件名和 图片后缀（因为有多种格式）构建图片名
-    """
-    extension =  os.path.splitext(xml_info_dict['annotation']['filename'])[1]
-    name_without_extension = os.path.splitext(os.path.basename(xml_file_path))[0]
-    img_filename = name_without_extension + extension
-
-    file_path = os.path.join(image_dir, img_filename)
-    if not os.path.exists(file_path):
-        return
-    img = cv2.imread(file_path)
+    img = cv2.imread(img_file_path)
     if img is None:
+        print(f"{img_file_path} : imread img is None")
         return
-
     if 'object' in xml_info_dict['annotation'].keys():
         objects = xml_info_dict['annotation']['object']
     else:
         print(f"{xml_file_path} have not object")
         return
 
+    img_filename = os.path.basename(img_file_path)
+    visual_img_file = os.path.join(save_dir, img_filename)
     for object in objects:
         category_name = object['name']
         every_class_num[category_name] += 1
@@ -65,7 +61,7 @@ def draw_box(xml_file_path, image_dir, save_dir, bgr=True):
             color = get_color_rgb(category_id)
         cv2.rectangle(img, (xmin, ymin), (xmax, ymax), color, thickness=2)
         cv2.putText(img, category_name, (xmin, ymin), cv2.FONT_HERSHEY_SIMPLEX, 1, color, thickness=1)
-        cv2.imwrite(os.path.join(save_dir, img_filename), img)
+        cv2.imwrite(visual_img_file, img)
 
 def addCatItem(name):
     global category_item_id
@@ -73,50 +69,26 @@ def addCatItem(name):
     category_id_dict[name] = category_item_id
     return category_item_id
 
-def parse_xml_to_dict(xml):
-    """
-    将xml文件解析成字典形式，参考tensorflow的recursive_parse_xml_to_dict
-    Args:
-        xml: xml tree obtained by parsing XML file contents using lxml.etree
-
-    Returns:
-        Python dictionary holding XML contents.
-    """
-    if len(xml) == 0:  # 遍历到底层，直接返回tag对应的信息
-        return {xml.tag: xml.text}
-
-    result = {}
-    for child in xml:
-        child_result = parse_xml_to_dict(child)  # 递归遍历标签信息
-        if child.tag != 'object':
-            result[child.tag] = child_result[child.tag]
-        else:
-            if child.tag not in result:  # 因为object可能有多个，所以需要放入列表里
-                result[child.tag] = []
-            result[child.tag].append(child_result[child.tag])
-    return {xml.tag: result}
-
 """
 imgs_dir: 原始图片所在路径
 annos_dir： 标签文件所在路径
-imgs_save_dir： 绘制 bbox后的img存储位置
+visual_save_dir： 绘制 bbox后的img存储位置
 """
-def draw_image(imgs_dir, annos_dir, imgs_save_dir):
+def draw_image(imgs_dir, annos_dir, visual_save_dir):
     assert os.path.exists(imgs_dir), "image path:{} dose not exists".format(image_path)
     assert os.path.exists(annos_dir), "annotation path:{} does not exists".format(anno_path)
-    if not os.path.exists(imgs_save_dir):
-        os.makedirs(imgs_save_dir)
-    anno_file_list = [os.path.join(annos_dir, file) for file in os.listdir(anno_path) if file.endswith(".xml")]
+    if not os.path.exists(visual_save_dir):
+        os.makedirs(visual_save_dir)
 
-    for xml_file in tqdm(sorted(anno_file_list)):
-        if not xml_file.endswith('.xml'):
+    img_id_path_dict = common_fun.get_id_path_dict(imgs_dir)
+    label_id_path_dict = common_fun.get_id_path_dict(annos_dir, suffix=".xml")
+
+    for img_id, img_file in tqdm(img_id_path_dict.items()):
+        if img_id not in set(label_id_path_dict.keys()):  # set 查询速度快
+            print(f"xml中没有找到对应id： {img_id}")
             continue
-
-        draw_box(xml_file, imgs_dir, imgs_save_dir)
-        # show:
-        #     cv2.imshow(filename, img)
-        #     cv2.waitKey()
-        #     cv2.destroyAllWindows()
+        label_file = label_id_path_dict[img_id]
+        draw_box(img_file, label_file, visual_save_dir)
 
     # 默认统计信息
     statistics_info()
@@ -125,7 +97,6 @@ def draw_image(imgs_dir, annos_dir, imgs_save_dir):
 统计信息，并且绘制柱形图，然后输出结果
 """
 def statistics_info():
-
     # 绘制每种类别个数柱状图
     plt.bar(range(len(every_class_num)), every_class_num.values(), align='center')
     # 将横坐标0,1,2,3,4替换为相应的类别名称
@@ -153,33 +124,31 @@ if __name__ == '__main__':
         该脚本用于voc标注格式（.xml）的标注框可视化
     参数明说：
         imgs-dir:图片数据路径
-        anno-dir:xml标注文件路径
+        label-dir:xml标注文件路径
         save-dir:绘制bbox后，图片存储路径
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('-ip', '--imgs-dir', type=str, default='./data/images', help='image path')
-    parser.add_argument('-ap', '--anno-dir', type=str, default='./data/labels/voc', help='annotation path')
-    parser.add_argument('-s', '--save-dir', default='./data/savefolder', help='image save path')
+    parser.add_argument('-i', '--imgs-dir', type=str, default=None, help='图片文件路径')
+    parser.add_argument('-l', '--label-dir', type=str, default=None, help='标签文件路径')
+    parser.add_argument('-s', '--save-dir', default=None, help='图片存储路径')
     opt = parser.parse_args()
 
-    if len(sys.argv) > 1:
-        print(opt)
-        draw_image(opt.imgs_dir, opt.anno_dir, opt.save_dir)
-        print(every_class_num)
+    input_args = sys.argv[1:]  # 第一个参数是脚本名本身
+    if len(input_args) > 0:
+        if len(input_args) / 2 != 3:
+            print(f"必须传入三个参数，请检查输入, 退出脚本！")
+            sys.exit(-1)
+
+        image_path = opt.imgs_dir
+        anno_path = opt.label_dir
+        save_img_dir = opt.save_dir
         print("category nums: {}".format(len(category_id_dict)))
-        # print("image nums: {}".format(len(image_set)))
         print("bbox nums: {}".format(sum(every_class_num.values())))
     else:
         image_path = './data/images'
         anno_path = './data/convert/voc'
         save_img_dir = './data/save'
-
-        image_path = '/home/ytusdc/Data/Data_split/Data_spark/images'
-        anno_path = '/home/ytusdc/Data/Data_split/Data_spark/xml'
-        save_img_dir = '/home/ytusdc/Data/Data_split/Data_spark/visual'
-
-        draw_image(image_path, anno_path, save_img_dir)
-        print(every_class_num)
-        print("category nums: {}".format(len(category_id_dict)))
-        # print("image nums: {}".format(len(image_set)))
-        print("bbox nums: {}".format(sum(every_class_num.values())))
+    draw_image(image_path, anno_path, save_img_dir)
+    print(every_class_num)
+    print("category nums: {}".format(len(category_id_dict)))
+    print("bbox nums: {}".format(sum(every_class_num.values())))

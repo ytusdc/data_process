@@ -15,14 +15,13 @@ sys.path.append("..")
 import os
 import argparse
 from tqdm import tqdm
-from utils import utils_xml as xml_opt_fun
-from utils import common as common_fun
-from utils import operate_dir as operate_dir_fun
+
+from utils import *
 
 def csv2json(csv_file, xml_save_dir):
     assert os.path.exists(csv_file), "csv file :{} dose not exists".format(csv_file)
 
-    if not operate_dir_fun.mkdirs(xml_save_dir):
+    if not operate_dir.mkdirs(xml_save_dir):
         print(f"{xml_save_dir} : 文件夹不为空或者文件夹创建失败，请检查, 退出函数！")
         return
 
@@ -56,7 +55,7 @@ def csv2json(csv_file, xml_save_dir):
 
             objects.append(obj)
         shape = [height, width, channel]
-        xml_opt_fun.save_anno_to_xml(filename, shape, objects, xml_save_dir)
+        utils_xml_opt.save_anno_to_xml(filename, shape, objects, xml_save_dir)
 
 if __name__ == '__main__':
 

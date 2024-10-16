@@ -6,15 +6,22 @@ Time    : 2024-10-09 15:35
 Author  : sdc
 """
 import os
+import sys
 
 """
 获取文件夹下相关列表或者字典
 """
 
+# 图片后缀
+global_img_stuffix = ['.jpg', '.png', '.jpeg', '.bmp']
+
 """
 过滤特定类型，获取文件名列表， 默认获取图片文件列表
 """
-def get_filename_ls(data_dir, suffix=['.jpg', '.png', '.jpeg', '.bmp']):
+def get_filename_ls(data_dir, suffix=None):
+    if suffix is None:
+        suffix = global_img_stuffix  # 如果 suffix 为None， 则默认使用 图片过滤
+
     # 过滤掉 ‘.’开头的隐藏文件, 有的情况下会出现，大部分情况不会，以防万一
     filter_file_ls = os.listdir(data_dir)
     for i in range(len(filter_file_ls) - 1, -1, -1):  # for i in range(0, num_list.__len__())[::-1]
@@ -23,15 +30,38 @@ def get_filename_ls(data_dir, suffix=['.jpg', '.png', '.jpeg', '.bmp']):
     file_ls = []
     if isinstance(suffix, str):
         file_ls = list(filter(lambda x: x.lower().endswith(suffix), filter_file_ls))
+        # file_ls = [x for x in filter_file_ls if x.lower().endswith(suffix)]
     elif isinstance(suffix, list):
-        file_ls = [filename for filename in filter_file_ls if os.path.splitext(filename.lower())[-1] in suffix]
+        # file_ls = list(filter(lambda x: os.path.splitext(x.lower())[-1] in suffix, filter_file_ls))
+        file_ls = [x for x in filter_file_ls if os.path.splitext(x.lower())[-1] in suffix]
     return sorted(file_ls)  # 排序， 不同平台保持顺序一致
 
 """
-获取图片 id： fullpath, 字典
+过滤特定类型，获取文件全路径列表， 默认获取图片文件列表
+"""
+def get_filepath_ls(data_dir, suffix=None):
+    if suffix is None:
+        suffix = global_img_stuffix  # 如果 suffix 为None， 则默认使用 图片过滤
+
+    # 过滤掉 ‘.’开头的隐藏文件, 有的情况下会出现，大部分情况不会，以防万一
+    filter_file_ls = os.listdir(data_dir)
+    for i in range(len(filter_file_ls) - 1, -1, -1):  # for i in range(0, num_list.__len__())[::-1]
+        if filter_file_ls[i].startswith('.'):
+            filter_file_ls.pop(i)
+    file_ls = []
+    if isinstance(suffix, str):
+        file_ls = [os.path.join(data_dir, x) for x in filter_file_ls if x.lower().endswith(suffix)]
+    elif isinstance(suffix, list):
+        file_ls = [os.path.join(data_dir, x) for x in filter_file_ls if os.path.splitext(x.lower())[-1] in suffix]
+    return sorted(file_ls)  # 排序， 不同平台保持顺序一致
+
+"""
+获取文件 id： fullpath, 字典， id 不包含后缀
 前提是文件名命名没有相同的，因为id不包含后缀，如 1.jpg 和 1.png 是不同的文件但是id相同
 """
-def get_id_path_dict(data_dir, file_suffix=['.jpg', '.png', '.jpeg', '.bmp']):
+def get_id_path_dict(data_dir, suffix=None):
+    if suffix is None:
+        suffix = global_img_stuffix  # 如果 suffix 为None， 则默认使用 图片过滤
     file_ls = []
     # 过滤掉 ‘.’开头的隐藏文件, 有的情况下会出现，大部分情况不会，以防万一
     filter_file_ls = os.listdir(data_dir)
@@ -40,24 +70,27 @@ def get_id_path_dict(data_dir, file_suffix=['.jpg', '.png', '.jpeg', '.bmp']):
         if filter_file_ls[i].startswith('.'):
             filter_file_ls.pop(i)
 
-    # 不过滤，得到目录下所有文件list
-    if file_suffix is None:
+    # 不过滤后缀扩展名，得到目录下所有文件list
+    if suffix is None:
         file_ls = filter_file_ls
     # 根据文件后缀过滤
-    elif isinstance(file_suffix, str):
-        file_ls = list(filter(lambda x: x.lower().endswith(file_suffix), filter_file_ls))
-    elif isinstance(file_suffix, list):
+    elif isinstance(suffix, str):
+        file_ls = list(filter(lambda x: x.lower().endswith(suffix), filter_file_ls))
+    elif isinstance(suffix, list):
         file_ls = [file_name for file_name in filter_file_ls
-                  if os.path.splitext(file_name.lower())[-1] in file_suffix]
+                   if os.path.splitext(file_name.lower())[-1] in suffix]
         # for suffix in file_suffix:
         #     child_ls = list(filter(lambda x: x.endswith(suffix), os.listdir(data_dir)))
         #     file_ls.extend(child_ls)
 
     id_filepath_dict = {}
-    for file_name in sorted(file_ls):    # 排序，保证各平台顺序一致
-        name = os.path.splitext(file_name)[0]
-        id_filepath_dict[name] = os.path.join(data_dir, file_name)
-
+    for filename in sorted(file_ls):    # 排序，保证各平台顺序一致
+        name_no_stffix = os.path.splitext(filename)[0]
+        if name_no_stffix in set(id_filepath_dict.keys()):
+            print(f"发现重复id,请检查，程序退出：{name_no_stffix}")
+            sys.exit(-1)
+        else:
+            id_filepath_dict[name_no_stffix] = os.path.join(data_dir, filename)
     return id_filepath_dict
 
 def get_id_filename_dict(data_dir, file_suffix=['.jpg', '.png', '.jpeg', '.bmp']):
@@ -79,7 +112,9 @@ def get_id_filename_dict(data_dir, file_suffix=['.jpg', '.png', '.jpeg', '.bmp']
 """
 获取图片 文件名： fullpath, 字典， 防止出现重复的id，
 """
-def get_filename_path_dict(data_dir, file_suffix=['.jpg', '.png', '.jpeg']):
+def get_filename_path_dict(data_dir, suffix=None):
+    if suffix is None:
+        suffix = global_img_stuffix  # 如果 suffix 为None， 则默认使用 图片过滤
     file_ls = []
     # 过滤掉 ‘.’开头的隐藏文件, 有的情况下会出现，大部分情况不会，以防万一
     filter_file_ls = os.listdir(data_dir)
@@ -88,14 +123,14 @@ def get_filename_path_dict(data_dir, file_suffix=['.jpg', '.png', '.jpeg']):
             filter_file_ls.pop(i)
 
     # 不过滤，得到目录下所有文件list
-    if file_suffix is None:
+    if suffix is None:
         file_ls = filter_file_ls
     # 根据文件后缀过滤
-    elif isinstance(file_suffix, str):
-        file_ls = list(filter(lambda x: x.endswith(file_suffix), filter_file_ls))
-    elif isinstance(file_suffix, list):
+    elif isinstance(suffix, str):
+        file_ls = list(filter(lambda x: x.endswith(suffix), filter_file_ls))
+    elif isinstance(suffix, list):
         file_ls = [file_name for file_name in filter_file_ls
-                  if os.path.splitext(file_name)[-1] in file_suffix]
+                  if os.path.splitext(file_name)[-1] in suffix]
 
     filename_filepath_dict = {}
     for file_name in sorted(file_ls):

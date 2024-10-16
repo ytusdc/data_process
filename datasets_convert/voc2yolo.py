@@ -1,40 +1,20 @@
-import os
-import json
-import argparse
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import sys
-import shutil
+sys.path.append("..")
+
+import os
+import argparse
 from lxml import etree
 from tqdm import tqdm
 from pathlib import Path
 
-from utils.yamloperate import read_yaml, write_yaml, get_id_cls_dict
+from utils import *
 
 category_set = set()
 image_set = set()
 bbox_nums = 0
-
-def parse_xml_to_dict(xml):
-    """
-    将xml文件解析成字典形式，参考tensorflow的recursive_parse_xml_to_dict
-    Args:
-        xml: xml tree obtained by parsing XML file contents using lxml.etree
-
-    Returns:
-        Python dictionary holding XML contents.
-    """
-    if len(xml) == 0:  # 遍历到底层，直接返回tag对应的信息
-        return {xml.tag: xml.text}
-
-    result = {}
-    for child in xml:
-        child_result = parse_xml_to_dict(child)  # 递归遍历标签信息
-        if child.tag != 'object':
-            result[child.tag] = child_result[child.tag]
-        else:
-            if child.tag not in result:  # 因为object可能有多个，所以需要放入列表里
-                result[child.tag] = []
-            result[child.tag].append(child_result[child.tag])
-    return {xml.tag: result}
 
 def xyxy2xywhn(bbox, size):
     bbox = list(map(float, bbox))
@@ -83,10 +63,10 @@ def getClassIndex(xml_files, save_dir, yaml_file=None):
             with open(xml_file) as fid:
                 xml_str = fid.read()
             xml = etree.fromstring(xml_str)
-            info_dict = parse_xml_to_dict(xml)
+            info_dict = utils_xml_opt.parse_xml_to_dict(xml)
             parser_info(info_dict, only_cat=True)
         id_cls_dict = dict((k, v) for k, v in enumerate(sorted(category_set)))
-        save_yaml_file = os.path.join(save_dir, "classes.yaml")
+        save_yaml_file = os.path.join(save_dir, "id_classes.yaml")
         write_yaml(save_yaml_file, id_cls_dict)
 
     class_indices_dict = dict((v, k) for k, v in id_cls_dict.items())
@@ -94,29 +74,23 @@ def getClassIndex(xml_files, save_dir, yaml_file=None):
 
 def parseXmlFiles(voc_dir, save_dir, yaml_file=None):
     assert os.path.exists(voc_dir), "ERROR {} does not exists".format(voc_dir)
-    if not os.path.exists(save_dir):
-        os.makedirs(save_dir)
-    else:
-        # shutil.rmtree(save_dir)
-        pass
-
-    xml_files = [os.path.join(voc_dir, i) for i in os.listdir(voc_dir) if os.path.splitext(i)[-1] == '.xml']
+    if not operate_dir.mkdirs(save_dir):
+        print(f"{save_dir} : 文件夹不为空或者文件夹创建失败，请检查, 退出函数！")
+        return
+    xml_files = common_fun.get_filepath_ls(voc_dir, suffix=".xml")
     class_indices = getClassIndex(xml_files, save_dir, yaml_file)
 
-    xml_files = tqdm(xml_files)
-    for xml_file in xml_files:
-        with open(xml_file) as fid:
-            xml_str = fid.read()
-        # print(xml_file)
-        xml = etree.fromstring(xml_str.encode('utf-8'))
+    for xml_file in tqdm(xml_files):
+        with open(xml_file) as f_r:
+            xml_str = f_r.read()
         # xml = etree.fromstring(xml_str)
-        info_dict = parse_xml_to_dict(xml)
-        filename, objects = parser_info(info_dict, only_cat=False, class_indices=class_indices)
+        xml = etree.fromstring(xml_str.encode('utf-8'))
+        info_dict = utils_xml_opt.parse_xml_to_dict(xml)
+        _, objects = parser_info(info_dict, only_cat=False, class_indices=class_indices)
 
-        #临时解决方案 有的xml 中记录的filename和真实数据对不上，因此用 xml文件名
+        #有的xml 中记录的filename和真实数据对不上，因此用 xml文件名,得到保存的yolo文件名
         basename = Path(xml_file).name
         filename = basename
-
         if len(objects) != 0:
             global bbox_nums
             bbox_nums += len(objects)
@@ -127,26 +101,26 @@ def parseXmlFiles(voc_dir, save_dir, yaml_file=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--voc-dir', type=str, default='./data/labels/voc')
-    parser.add_argument('--save-dir', type=str, default='./data/convert/yolo')
-    parser.add_argument('--yaml-file', type=str, default="./yaml/yolo_sample.yaml")
+    parser.add_argument('-v', '--voc-dir', type=str, default=None, help='voc 文件路径')
+    parser.add_argument('-s', '--save-dir', type=str, default=None, help='yolo 文件存储路径')
+    parser.add_argument('-y', '--yaml-file', type=str, default=None, help='yaml 文件')
     opt = parser.parse_args()
-    if len(sys.argv) > 1:
-        print(opt)
-        parseXmlFiles(**vars(opt))
-        print("image nums: {}".format(len(image_set)))
-        print("category nums: {}".format(len(category_set)))
-        print("bbox nums: {}".format(bbox_nums))
-    else:
-        # voc_xml_dir = './data/labels/voc'
-        # save_dir = './data/convert/yolo'
-        # yaml_file = "./yaml/yolo_sample.yaml"
-        voc_xml_dir = '/home/ytusdc/Data/voc2012_filter/xml'
-        save_dir = '/home/ytusdc/Data/voc2012_filter/yolo'
-        yaml_file = "/home/ytusdc/Data/voc2012_filter/voc2012_filter.yaml"
 
-        parseXmlFiles(voc_xml_dir, save_dir, yaml_file)
-        # parseXmlFilse(voc_dir, save_dir)
-        print("image nums: {}".format(len(image_set)))
-        print("category nums: {}".format(len(category_set)))
-        print("bbox nums: {}".format(bbox_nums))
+    input_args = sys.argv[1:]  # 第一个参数是脚本名本身
+    if len(input_args) > 0:
+        if opt.voc_dir is None or opt.save_dir is None:
+            print("voc 文件路径和转换后文件存储路径不能为空, 退出脚本！")
+            sys.exit(-1)
+        voc_xml_dir = opt.voc_dir
+        yolo_save_dir = opt.save_dir
+        yaml_file = opt.yaml_file
+    else:
+        yaml_file = None
+        voc_xml_dir = './data/labels/voc'
+        yolo_save_dir = './data/convert/yolo'
+        yaml_file = 'path/to/yaml or None'
+
+    parseXmlFiles(voc_xml_dir, yolo_save_dir, yaml_file)
+    print("image nums: {}".format(len(image_set)))
+    print("category nums: {}".format(len(category_set)))
+    print("bbox nums: {}".format(bbox_nums))
