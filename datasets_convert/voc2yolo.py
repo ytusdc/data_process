@@ -16,15 +16,6 @@ category_set = set()
 image_set = set()
 bbox_nums = 0
 
-def xyxy2xywhn(bbox, size):
-    bbox = list(map(float, bbox))
-    size = list(map(float, size))
-    xc = (bbox[0] + (bbox[2] - bbox[0]) / 2.) / size[0]
-    yc = (bbox[1] + (bbox[3] - bbox[1]) / 2.) / size[1]
-    wn = (bbox[2] - bbox[0]) / size[0]
-    hn = (bbox[3] - bbox[1]) / size[1]
-    return (xc, yc, wn, hn)
-
 def parser_info(info: dict, only_cat=True, class_indices=None):
     filename = info['annotation']['filename']
     image_set.add(filename)
@@ -45,7 +36,7 @@ def parser_info(info: dict, only_cat=True, class_indices=None):
         ymin = float(obj['bndbox']['ymin'])
         xmax = float(obj['bndbox']['xmax'])
         ymax = float(obj['bndbox']['ymax'])
-        bbox = xyxy2xywhn((xmin, ymin, xmax, ymax), (width, height))
+        bbox = utils_yolo_opt.xyxy2xywhn((xmin, ymin, xmax, ymax), (width, height))
         if class_indices is not None:
             obj_category = class_indices[obj_name]
             object = [obj_category, bbox]

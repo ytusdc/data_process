@@ -8,6 +8,13 @@ Author  : sdc
 import os
 
 def xywhn2xyxy(box, size):
+    """
+    Args:
+        box: yolo文件读到的 归一化后的 (xc, yc, wn, hn)
+        size: (img_width, img_height)
+    Returns:
+        (xmin, ymin, xmax, ymax)  左上和右下角坐标
+    """
     box = list(map(float, box))
     size = list(map(float, size))
     xmin = (box[0] - box[2] / 2.) * size[0]
@@ -15,6 +22,22 @@ def xywhn2xyxy(box, size):
     xmax = (box[0] + box[2] / 2.) * size[0]
     ymax = (box[1] + box[3] / 2.) * size[1]
     return (xmin, ymin, xmax, ymax)
+
+def xyxy2xywhn(bbox, size):
+    """
+    Args:
+        bbox: (xmin, ymin, xmax, ymax)
+        size:  (img_width, img_height)
+    Returns:
+       归一化后的  (xc, yc, wn, hn)
+    """
+    bbox = list(map(float, bbox))
+    size = list(map(float, size))
+    xc = (bbox[0] + (bbox[2] - bbox[0]) / 2.) / size[0]
+    yc = (bbox[1] + (bbox[3] - bbox[1]) / 2.) / size[1]
+    wn = (bbox[2] - bbox[0]) / size[0]
+    hn = (bbox[3] - bbox[1]) / size[1]
+    return (xc, yc, wn, hn)
 
 def parse_yolo(label_file, img_height, img_width):
     objects = []
