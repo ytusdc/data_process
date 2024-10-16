@@ -119,3 +119,20 @@ def find_duplicate_elem(arry_list):
     duplicates_list = find_duplicates_with_counter(arry_list)
     # duplicates = find_duplicates_with_list_comprehension(arry_list)
     return duplicates_list
+
+
+def find_duplicate_elem_indices(lst):
+    """
+    基于字典的方法, 获取每个元素的所有索引位置
+    """
+    # 创建一个空字典来存储元素及其索引
+    index_dict = {}
+    # 遍历列表，同时获取元素及其索引
+    for index, element in enumerate(lst):
+        # 如果元素已经在字典中，则添加新的索引到对应的值列表中
+        if element in index_dict:
+            index_dict[element].append(index)
+        else:
+            # 如果元素不在字典中，则创建一个新的键值对
+            index_dict[element] = [index]
+    return index_dict

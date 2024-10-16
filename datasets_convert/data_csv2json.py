@@ -15,13 +15,14 @@ json_data = {
     "filename": "",
     "width": 0,
     "height": 0,
-    "object": [],
+    "object": [{}，{}，],
     "segment": [],
 }
-
+object 中是字典组成的列表
 object_child = {
-    "class": "",
-    "bbox": [],  # [xmin, ymin, xmax, ymax]
+    "category": "",
+    "bbox": [],  #矩形框 [xmin, ymin, xmax, ymax]
+    "polygon": [[x1,y1], [x2,y2],[x3,y3]]  # 多边形
 }
 '''
 
