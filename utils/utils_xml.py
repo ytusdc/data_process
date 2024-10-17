@@ -34,11 +34,12 @@ def parse_xml_to_dict(xml_tree):
 
 def parser_info_dict(info: dict):
     """
-    通过xml解析后得到的字典数据，得到数据的类别 object 和图片的 size
+    通过xml解析后得到的字典数据，得到数据的类别 object 和图片的 size， 允许坐标为float型
     Args:
         info:
     Returns:
         objects = [object1, objiect2],  object1 =[cls_name, (xmin, ymin, xmax, ymax)]
+            (xmin, ymin, xmax, ymax) 均为字符串类型
         size_tuple = (width, height)
     """
     filename = info['annotation']['filename']
@@ -54,10 +55,15 @@ def parser_info_dict(info: dict):
     for obj in info['annotation']['object']:
         obj_name = obj['name']
 
-        xmin = float(obj['bndbox']['xmin'])
-        ymin = float(obj['bndbox']['ymin'])
-        xmax = float(obj['bndbox']['xmax'])
-        ymax = float(obj['bndbox']['ymax'])
+        # xmin = float(obj['bndbox']['xmin'])
+        # ymin = float(obj['bndbox']['ymin'])
+        # xmax = float(obj['bndbox']['xmax'])
+        # ymax = float(obj['bndbox']['ymax'])
+        # 返回坐标为字符串，
+        xmin = obj['bndbox']['xmin']
+        ymin = obj['bndbox']['ymin']
+        xmax = obj['bndbox']['xmax']
+        ymax = obj['bndbox']['ymax']
         bbox = (xmin, ymin, xmax, ymax)
         object = [obj_name, bbox]
         objects.append(object)
@@ -65,11 +71,12 @@ def parser_info_dict(info: dict):
 
 def parse_info_xml(xml_file):
     """
-     通过 解析 xml_file 文件， 得到数据的类别 object 和图片的 size
+     通过 解析 xml_file 文件， 得到数据的类别 object 和图片的 size， 允许坐标为float型
     Args:
         xml_file:
     Returns:
         objects = [object1, objiect2],  object1 =[cls_name, (xmin, ymin, xmax, ymax)]
+            (xmin, ymin, xmax, ymax) 均为字符串类型
         size_tuple = (width, height)
     """
     objects = []
@@ -103,9 +110,9 @@ def parse_info_xml(xml_file):
         return objects, size_tuple
 
     # 遍历每个目标的标注信息
-    for object in object_info:
+    for obj in object_info:
         # 提取目标名字
-        object_name = object.findtext('name')
+        object_name = obj.findtext('name')
         # 初始化标签列表， bndbox voc格式的标注信息
         bndbox_dict = dict()
         bndbox_dict['xmin'] = None
@@ -113,9 +120,10 @@ def parse_info_xml(xml_file):
         bndbox_dict['ymin'] = None
         bndbox_dict['ymax'] = None
         # 提取box:[xmin,ymin,xmax,ymax]
-        bndbox_info = object.findall('bndbox')
+        bndbox_info = obj.findall('bndbox')
         for box in bndbox_info[0]:
-            bndbox_dict[box.tag] = int(box.text)
+            # bndbox_dict[box.tag] = int(box.text)
+            bndbox_dict[box.tag] = box.text  # 返回字符串类型
 
         if bndbox_dict['xmin'] is not None:
             bbox = (bndbox_dict['xmin'], bndbox_dict['xmax'], bndbox_dict['ymin'], bndbox_dict['ymax'])

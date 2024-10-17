@@ -53,10 +53,18 @@ def draw_box(img_file_path, xml_file_path, save_dir, bgr=True):
         else:
             color = get_color_rgb(category_id)
 
-        xmin = int(float(obj[1][0]))
-        ymin = int(float(obj[1][1]))
-        xmax = int(float(obj[1][2]))
-        ymax = int(float(obj[1][3]))
+        # xmin = int(float(obj[1][0]))
+        # ymin = int(float(obj[1][1]))
+        # xmax = int(float(obj[1][2]))
+        # ymax = int(float(obj[1][3]))
+
+        # opencv 绘制坐标需要是整数，但是字符串数据中可能有浮点型， 因此先float再int转换
+        bbox = list(map(int, map(float, obj[1])))
+        xmin = bbox[0]
+        ymin = bbox[1]
+        xmax = bbox[2]
+        ymax = bbox[3]
+
         cv2.rectangle(img, (xmin, ymin), (xmax, ymax), color, thickness=2)
         cv2.putText(img, category_name, (xmin, ymin - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, color, thickness=1)
         cv2.imwrite(visual_img_file, img)
