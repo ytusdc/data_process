@@ -60,7 +60,7 @@ def draw_box(img_file_path, xml_file_path, save_dir, bgr=True):
         else:
             color = get_color_rgb(category_id)
         cv2.rectangle(img, (xmin, ymin), (xmax, ymax), color, thickness=2)
-        cv2.putText(img, category_name, (xmin, ymin), cv2.FONT_HERSHEY_SIMPLEX, 1, color, thickness=1)
+        cv2.putText(img, category_name, (xmin, ymin - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, color, thickness=1)
         cv2.imwrite(visual_img_file, img)
 
 def addCatItem(name):
@@ -91,7 +91,7 @@ def draw_image(imgs_dir, annos_dir, visual_save_dir):
         draw_box(img_file, label_file, visual_save_dir)
 
     # 默认统计信息
-    statistics_info()
+    # statistics_info()
 
 """
 统计信息，并且绘制柱形图，然后输出结果

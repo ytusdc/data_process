@@ -1,48 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 import sys
 sys.path.append("..")
 
 import os
 import argparse
-from lxml import etree
 from tqdm import tqdm
 from pathlib import Path
 
 from utils import *
-
-category_set = set()
-image_set = set()
-bbox_nums = 0
-
-def parser_info(info: dict, only_cat=True, class_indices=None):
-    filename = info['annotation']['filename']
-    image_set.add(filename)
-    objects = []
-    width = int(info['annotation']['size']['width'])
-    height = int(info['annotation']['size']['height'])
-
-    if 'object' not in info['annotation']:
-        print(filename)
-        return filename, []
-
-    for obj in info['annotation']['object']:
-        obj_name = obj['name']
-        category_set.add(obj_name)
-        if only_cat:
-            continue
-        xmin = float(obj['bndbox']['xmin'])
-        ymin = float(obj['bndbox']['ymin'])
-        xmax = float(obj['bndbox']['xmax'])
-        ymax = float(obj['bndbox']['ymax'])
-        bbox = utils_yolo_opt.xyxy2xywhn((xmin, ymin, xmax, ymax), (width, height))
-        if class_indices is not None:
-            obj_category = class_indices[obj_name]
-            object = [obj_category, bbox]
-            objects.append(object)
-    # print(filename)
-    return filename, objects
 
 def getClassIndex(xml_files, save_dir, yaml_file=None):
 
@@ -50,12 +16,12 @@ def getClassIndex(xml_files, save_dir, yaml_file=None):
         id_cls_dict = get_id_cls_dict(yaml_file)
     else:
         # 先解析所有xml文件获取所有类别信息 category_set
+        category_set = set()
         for xml_file in xml_files:
-            with open(xml_file) as fid:
-                xml_str = fid.read()
-            xml = etree.fromstring(xml_str)
-            info_dict = utils_xml_opt.parse_xml_to_dict(xml)
-            parser_info(info_dict, only_cat=True)
+            objects, _ = utils_xml_opt.parse_xml(xml_file)
+            for object in objects:
+                object_name = object[0]
+                category_set.add(object_name)
         id_cls_dict = dict((k, v) for k, v in enumerate(sorted(category_set)))
         save_yaml_file = os.path.join(save_dir, "id_classes.yaml")
         write_yaml(save_yaml_file, id_cls_dict)
@@ -63,30 +29,34 @@ def getClassIndex(xml_files, save_dir, yaml_file=None):
     class_indices_dict = dict((v, k) for k, v in id_cls_dict.items())
     return class_indices_dict
 
-def parseXmlFiles(voc_dir, save_dir, yaml_file=None):
+def parse_xml2yolo(voc_dir, save_dir, yaml_file=None):
     assert os.path.exists(voc_dir), "ERROR {} does not exists".format(voc_dir)
     if not operate_dir.mkdirs(save_dir):
-        print(f"{save_dir} : 文件夹不为空或者文件夹创建失败，请检查, 退出函数！")
+        print(f"{save_dir} : 文件夹不为空或者文件夹创建失败，请检查, 程序退出！")
         return
     xml_files = common_fun.get_filepath_ls(voc_dir, suffix=".xml")
-    class_indices = getClassIndex(xml_files, save_dir, yaml_file)
+    class_indices_dict = getClassIndex(xml_files, save_dir, yaml_file)
+    if len(class_indices_dict) == 0:
+        print("没有生成用于 yolo 数据转换的 类别名：id ，对应字典，请检查，程序退出!")
+        return
 
     for xml_file in tqdm(xml_files):
-        with open(xml_file) as f_r:
-            xml_str = f_r.read()
-        # xml = etree.fromstring(xml_str)
-        xml = etree.fromstring(xml_str.encode('utf-8'))
-        info_dict = utils_xml_opt.parse_xml_to_dict(xml)
-        _, objects = parser_info(info_dict, only_cat=False, class_indices=class_indices)
+        objects_voc, size = utils_xml_opt.parse_xml(xml_file)
+        #有的xml 中记录的filename和真实图片文件名对不上，因此用 xml文件名, 得到保存的yolo文件名
+        filename = Path(xml_file).name
 
-        #有的xml 中记录的filename和真实数据对不上，因此用 xml文件名,得到保存的yolo文件名
-        basename = Path(xml_file).name
-        filename = basename
-        if len(objects) != 0:
-            global bbox_nums
-            bbox_nums += len(objects)
+        objects_yolo = []
+        for obj_voc in objects_voc:
+            obj_voc_name = obj_voc[0]
+            bbox_voc = obj_voc[1]
+            obj_category_id = class_indices_dict[obj_voc_name]
+            bbox_yolo = utils_yolo_opt.xyxy2xywhn(bbox_voc, size)
+            obj_yolo = [obj_category_id, bbox_yolo]
+            objects_yolo.append(obj_yolo)
+
+        if len(objects_yolo) != 0:
             with open(save_dir + "/" + filename.split(".")[0] + ".txt", 'w') as f:
-                for obj in objects:
+                for obj in objects_yolo:
                     f.write(
                         "{} {:.5f} {:.5f} {:.5f} {:.5f}\n".format(obj[0], obj[1][0], obj[1][1], obj[1][2], obj[1][3]))
 
@@ -109,9 +79,7 @@ if __name__ == '__main__':
         yaml_file = None
         voc_xml_dir = './data/labels/voc'
         yolo_save_dir = './data/convert/yolo'
-        yaml_file = 'path/to/yaml or None'
+        # yaml_file = 'path/to/yaml or None'
 
-    parseXmlFiles(voc_xml_dir, yolo_save_dir, yaml_file)
-    print("image nums: {}".format(len(image_set)))
-    print("category nums: {}".format(len(category_set)))
-    print("bbox nums: {}".format(bbox_nums))
+    parse_xml2yolo(voc_xml_dir, yolo_save_dir, yaml_file)
+

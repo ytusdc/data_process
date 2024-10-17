@@ -38,13 +38,16 @@ def parser_info_dict(info: dict):
     Args:
         info:
     Returns:
+        objects = [object1, objiect2],  object1 =[cls_name, (xmin, ymin, xmax, ymax)]
+        size_tuple = (width, height)
     """
     filename = info['annotation']['filename']
     objects = []
 
     width = int(info['annotation']['size']['width'])
     height = int(info['annotation']['size']['height'])
-    size_tuple = (height, width)
+    # size_tuple = (height, width)
+    size_tuple = (width, height)
 
     if 'object' not in info['annotation']:
         return objects, size_tuple
@@ -66,6 +69,8 @@ def parse_info_xml(xml_file):
     Args:
         xml_file:
     Returns:
+        objects = [object1, objiect2],  object1 =[cls_name, (xmin, ymin, xmax, ymax)]
+        size_tuple = (width, height)
     """
     objects = []
     tree = ET.parse(xml_file)
@@ -89,7 +94,8 @@ def parse_info_xml(xml_file):
     for subelem in size_info[0]:
         size[subelem.tag] = int(subelem.text)
 
-    size_tuple = (size['height'], size['width'])
+    # size_tuple = (size['height'], size['width'])
+    size_tuple = (size['width'], size['height'])
 
     # 提取一张图片内所有目标object标注信息
     object_info = root.findall('object')
@@ -126,9 +132,10 @@ def parse_xml(xml_file, select=True):
     Returns:
     """
     if select is True:
-        with open(xml_file) as fid:
-            xml_str = fid.read()
-        xml = etree.fromstring(xml_str)
+        with open(xml_file) as f_r:
+            xml_str = f_r.read()
+        # xml = etree.fromstring(xml_str)
+        xml = etree.fromstring(xml_str.encode('utf-8'))
         info_dict = parse_xml_to_dict(xml)
         return parser_info_dict(info_dict)
     else:

@@ -86,7 +86,7 @@ def draw_image(imgs_dir, annos_dir,  imgs_save_dir, yaml_file=None, bgr=True):
                 color = get_color_rgb(category_id)
 
             cv2.rectangle(img, (xmin, ymin), (xmax, ymax), color, thickness=2)
-            cv2.putText(img, category_name, (xmin - 10, ymin - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, color, thickness=2)
+            cv2.putText(img, category_name, (xmin, ymin - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, color, thickness=2)
             cv2.imwrite(os.path.join(imgs_save_dir, filename), img)
 
     # 默认统计信息
