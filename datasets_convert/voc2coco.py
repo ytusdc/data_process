@@ -14,13 +14,13 @@ coco['categories'] = []
 category_set = dict()
 image_set = set()
 
-category_item_id = -1
+global_category_id = -1
 image_id = 000000
 annotation_id = 0
 
 
 def addCatItem(name):
-    global category_item_id
+    global global_category_id
     category_item = dict()
     category_item['supercategory'] = 'none'
     category_item_id += 1

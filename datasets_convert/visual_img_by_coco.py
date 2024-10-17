@@ -19,11 +19,11 @@ category_set = dict()
 image_set = set()
 every_class_num = defaultdict(int)
 
-category_item_id = -1
+global_category_id = -1
 
 
 def addCatItem(name):
-    global category_item_id
+    global global_category_id
     category_item = dict()
     category_item_id += 1
     category_item['id'] = category_item_id

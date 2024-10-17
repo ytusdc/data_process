@@ -10,7 +10,7 @@ from utils.colortable import get_color_rgb, get_color_bgr
 import json
 
 category_id_dict = dict()
-category_item_id = -1
+global_category_id = -1
 
 """
 imgs_dir: 原始图片所在路径
@@ -58,7 +58,7 @@ def draw_box(json_file_path, image_dir, save_dir, bgr=True):
         cv2.imwrite(os.path.join(save_dir, filename), img)
 
 def addCatItem(name):
-    global category_item_id
+    global global_category_id
     category_item_id += 1
     category_id_dict[name] = category_item_id
     return category_item_id

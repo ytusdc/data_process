@@ -4,18 +4,23 @@ import sys
 sys.path.append("..")
 import os
 import cv2
-import matplotlib.pyplot as plt
 from tqdm import tqdm
-from lxml import etree
-from collections import defaultdict
 import argparse
-import datetime
 
 from utils import *
 
-category_id_dict = dict()
-every_class_num = defaultdict(int)
-category_item_id = -1
+# 类别和对应的id号， id用作绘制box时候的颜色
+global_category_id_dict = dict()
+global_category_id = -1
+
+"""
+生成类别名和id， id是随机的，主要是用作box的颜色设置
+"""
+def addCatItem(name):
+    global global_category_id
+    global_category_id += 1
+    global_category_id_dict[name] = global_category_id
+    return global_category_id
 
 """
 img_file_path: 原始图片文件全路径
@@ -24,50 +29,37 @@ save_dir： 绘制 bbox后的img存储位置
 bgr： 颜色值格式为bgr，使用opencv绘图颜色值是bgr， 如果是rgb格式颜色值需要做相应转换
 """
 def draw_box(img_file_path, xml_file_path, save_dir, bgr=True):
-
-    with open(xml_file_path) as fid:
-        xml_str = fid.read()
-    xml_info = etree.fromstring(xml_str.encode('utf-8'))
-    xml_info_dict = utils_xml_opt.parse_xml_to_dict(xml_info)
+    objects, _ = utils_xml_opt.parse_xml(xml_file_path)
+    if len(objects) == 0:
+        print(f"{xml_file_path} have not object")
+        return
 
     img = cv2.imread(img_file_path)
     if img is None:
-        print(f"{img_file_path} : imread img is None")
-        return
-    if 'object' in xml_info_dict['annotation'].keys():
-        objects = xml_info_dict['annotation']['object']
-    else:
-        print(f"{xml_file_path} have not object")
+        print(f"{img_file_path} : imread img is None or imread failed")
         return
 
     img_filename = os.path.basename(img_file_path)
     visual_img_file = os.path.join(save_dir, img_filename)
-    for object in objects:
-        category_name = object['name']
-        every_class_num[category_name] += 1
-        if category_name not in category_id_dict:
+    for obj in objects:
+        category_name = obj[0]
+        if category_name not in global_category_id_dict.keys():
             category_id = addCatItem(category_name)
         else:
-            category_id = category_id_dict[category_name]
-
-        xmin = int(float(object['bndbox']['xmin']))
-        ymin = int(float(object['bndbox']['ymin']))
-        xmax = int(float(object['bndbox']['xmax']))
-        ymax = int(float(object['bndbox']['ymax']))
+            category_id = global_category_id_dict[category_name]
 
         if bgr:
             color = get_color_bgr(category_id)
         else:
             color = get_color_rgb(category_id)
+
+        xmin = int(float(obj[1][0]))
+        ymin = int(float(obj[1][1]))
+        xmax = int(float(obj[1][2]))
+        ymax = int(float(obj[1][3]))
         cv2.rectangle(img, (xmin, ymin), (xmax, ymax), color, thickness=2)
         cv2.putText(img, category_name, (xmin, ymin - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, color, thickness=1)
         cv2.imwrite(visual_img_file, img)
-
-def addCatItem(name):
-    global category_item_id
-    category_item_id += 1
-    category_id_dict[name] = category_item_id
-    return category_item_id
 
 """
 imgs_dir: 原始图片所在路径
@@ -89,34 +81,6 @@ def draw_image(imgs_dir, annos_dir, visual_save_dir):
             continue
         label_file = label_id_path_dict[img_id]
         draw_box(img_file, label_file, visual_save_dir)
-
-    # 默认统计信息
-    # statistics_info()
-
-"""
-统计信息，并且绘制柱形图，然后输出结果
-"""
-def statistics_info():
-    # 绘制每种类别个数柱状图
-    plt.bar(range(len(every_class_num)), every_class_num.values(), align='center')
-    # 将横坐标0,1,2,3,4替换为相应的类别名称
-    plt.xticks(range(len(every_class_num)), every_class_num.keys(), rotation=90)
-    # 在柱状图上添加数值标签
-    for index, (cls, num) in enumerate(every_class_num.items()):
-        plt.text(x=index, y=num, s=str(num), ha='center')
-        # print(f"{cls}:{num}")
-
-    # 设置x坐标
-    plt.xlabel('image class')
-    # 设置y坐标
-    plt.ylabel('number of images')
-    # 设置柱状图的标题
-    plt.title('class distribution')
-    # 保存柱状图
-    now = datetime.datetime.now()
-    time_str = now.strftime('%Y%m%d-%H%M%S')
-    plt.savefig(f"class_distribution_{time_str}.png")
-    # plt.show()
 
 if __name__ == '__main__':
     """
@@ -142,13 +106,9 @@ if __name__ == '__main__':
         image_path = opt.imgs_dir
         anno_path = opt.label_dir
         save_img_dir = opt.save_dir
-        print("category nums: {}".format(len(category_id_dict)))
-        print("bbox nums: {}".format(sum(every_class_num.values())))
     else:
         image_path = './data/images'
         anno_path = './data/convert/voc'
         save_img_dir = './data/save'
+
     draw_image(image_path, anno_path, save_img_dir)
-    print(every_class_num)
-    print("category nums: {}".format(len(category_id_dict)))
-    print("bbox nums: {}".format(sum(every_class_num.values())))
