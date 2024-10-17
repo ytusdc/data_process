@@ -63,6 +63,9 @@ def find_duplicate_img(ori_img_dir, compare_img_dir, duplicate_dir):
     ori_img_hash_dict = get_hash_img_dict(ori_img_dir)
     compare_img_hash_dict = get_hash_img_dict(compare_img_dir)
 
+    if not os.path.exists(duplicate_dir):
+        os.makedirs(duplicate_dir)
+
     ori_hash_set = set(ori_img_hash_dict.keys())
     compare_hash_set = set(compare_img_hash_dict.keys())
     common_hash_set = ori_hash_set & compare_hash_set
@@ -73,18 +76,16 @@ def find_duplicate_img(ori_img_dir, compare_img_dir, duplicate_dir):
 
     for index, dup_tuple in enumerate(duplicates_ls):
         print(f"重复图片: {dup_tuple[0]} 和 {dup_tuple[1]}")
-        prefix = f"{index}_duplicate_"
+        # prefix = f"{index}_duplicate_"
         _, filename_1 = os.path.split(dup_tuple[0])
         _, filename_2 = os.path.split(dup_tuple[1])
-
-        if filename_1 == filename_2:
-            move_path_1 =  os.path.join(duplicate_dir, prefix + '0_' + filename_1)
-            move_path_2 =  os.path.join(duplicate_dir, prefix + '1_' + filename_2)
-            shutil.move(dup_tuple[0], move_path_1)
-            shutil.move(dup_tuple[1], move_path_2)
-        else:
-            shutil.move(dup_tuple[0], duplicate_dir)
-            shutil.move(dup_tuple[1], duplicate_dir)
+        ori_prefix = f"{index}_0_duplicate_"
+        compare_prefix = f"{index}_1_duplicate_"
+        move_path_1 = os.path.join(duplicate_dir, ori_prefix + filename_1)
+        move_path_2 = os.path.join(duplicate_dir, compare_prefix + filename_2)
+        # shutil.move(dup_tuple[0], move_path_1)
+        shutil.copy(dup_tuple[0], move_path_1) # 原文件复制图片到duplicate_dir
+        shutil.move(dup_tuple[1], move_path_2) # 被比较文静移动图片到duplicate_dir
 
 """
 查找自身目录下相同图片, 相同的图片加入前缀 num_duplicate_, 移动到指定目录
@@ -99,6 +100,9 @@ def find_self_duplicate_img(img_dir, duplicate_dir):
     hash_list = list(image_hash_dict.values())
     duplicate_hash_list = common_fun.find_duplicate_elem(hash_list)
     duplicate_hash_set = set(duplicate_hash_list)
+
+    if not os.path.exists(duplicate_dir):
+        os.makedirs(duplicate_dir)
 
     if len(duplicate_hash_set) > 0:
         print(f"发现图片重复的哈希值 {len(duplicate_hash_set) } 个")
@@ -148,10 +152,17 @@ def rename_duplicate_img(duplicate_dir):
         shutil.move(img_file, new_img_file)
 
 if __name__ == '__main__':
-    ori_dir = "/home/ytusdc/Pictures/动火/test"
-    compare_dir = "/home/ytusdc/Pictures/动火/label"
+    ori_dir = "/home/ytusdc/Pictures/动火/ori"
+    compare_dir = "/home/ytusdc/Pictures/动火/compare"
     dupli_dir = "/home/ytusdc/Pictures/动火/dupli"
-    find_self_duplicate_img(compare_dir, dupli_dir)
+
+    # 当前目录中查找相同项，并且移动到dupli_dir
+    # find_self_duplicate_img(ori_dir, dupli_dir)
+
+    # 两个目录比较相同的图片，
+    find_duplicate_img(ori_dir, compare_dir, dupli_dir)
+
+    # 重命名的图片恢复原来的命名
     # rename_duplicate_img(dupli_dir)
 
 

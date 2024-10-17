@@ -34,7 +34,7 @@ def parse_xml_to_dict(xml_tree):
 
 def parser_info_dict(info: dict):
     """
-    通过xml解析后得到的字典数据，得到数据的类别 object 和图片的 size， 允许坐标为float型
+    通过xml解析后得到的字典数据，得到数据的类别 object 和图片的 size， 允许坐标为float型， 但是一般为 int 型
     Args:
         info:
     Returns:
@@ -65,13 +65,13 @@ def parser_info_dict(info: dict):
         xmax = obj['bndbox']['xmax']
         ymax = obj['bndbox']['ymax']
         bbox = (xmin, ymin, xmax, ymax)
-        object = [obj_name, bbox]
-        objects.append(object)
+        object_one = [obj_name, bbox]
+        objects.append(object_one)
     return objects, size_tuple
 
 def parse_info_xml(xml_file):
     """
-     通过 解析 xml_file 文件， 得到数据的类别 object 和图片的 size， 允许坐标为float型
+     通过 解析 xml_file 文件， 得到数据的类别 object 和图片的 size， 允许坐标为float型, 但是一般为 int 型
     Args:
         xml_file:
     Returns:
@@ -127,8 +127,8 @@ def parse_info_xml(xml_file):
 
         if bndbox_dict['xmin'] is not None:
             bbox = (bndbox_dict['xmin'], bndbox_dict['xmax'], bndbox_dict['ymin'], bndbox_dict['ymax'])
-            obj = [object_name, bbox]
-            objects.append(obj)
+            object_one = [object_name, bbox]
+            objects.append(object_one)
     return objects, size_tuple
 
 def parse_xml(xml_file, select=True):
@@ -155,6 +155,7 @@ def save_anno_to_xml(filename, size, objs, save_path):
         filename: 图片文件名
         size:
         objs: 保存目标列表: objs = [object1, objiect2],  object1 =[cls_name, [xmin, ymin, xmax, ymax]]
+         [xmin, ymin, xmax, ymax] 可以是任意类型 str/int/float 但是推荐为 int
         save_path:
     Returns:
     """

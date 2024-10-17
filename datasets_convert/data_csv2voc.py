@@ -46,10 +46,12 @@ def csv2json(csv_file, xml_save_dir):
             channel = int(row_data[9])
             label = row_data[2]
             category_name = str(label)
-            xmin = int(row_data[3])
-            ymin = int(row_data[4])
-            xmax = int(row_data[5])
-            ymax = int(row_data[6])
+
+            xmin = row_data[3]
+            ymin = row_data[4]
+            xmax = row_data[5]
+            ymax = row_data[6]
+
             bbox = [xmin, ymin, xmax, ymax]
             obj = [category_name, bbox]
 
@@ -60,7 +62,7 @@ def csv2json(csv_file, xml_save_dir):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--img-dir', type=str, default=None, help='图片文件路径')
+    parser.add_argument('-f', '--file-csv', type=str, default=None, help='csv 文件路径')
     parser.add_argument('-s', '--save-dir', type=str, default=None, help='存储标签文件路径, voc格式')
     opt = parser.parse_args()
 
@@ -69,10 +71,11 @@ if __name__ == '__main__':
         if len(input_args) / 2 != 2:
             print(f"必须传入两个参数，请检查输入, 退出脚本！")
             sys.exit(-1)
-        img_dir = opt.img_dir  # 图片源文件地址
-        xml_dir = opt.save_dir  # 对应标签源文件
+        csv_file = opt.file_csv  # 图片源文件地址
+        xml_save_dir = opt.save_dir  # 对应标签源文件
     else:
-        img_dir = "path/to/file.csv"
-        xml_dir = "path/to/xml_dir"
-    csv2json(img_dir, xml_dir)
+        csv_file = "path/to/file.csv"
+        xml_save_dir = "path/to/xml_dir"
+
+    csv2json(csv_file, xml_save_dir)
 
