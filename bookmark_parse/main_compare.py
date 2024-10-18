@@ -12,8 +12,8 @@ import compare_by_dir
 只找出新增项，其他的暂时不考虑
 """
 if __name__ == '__main__':
-    old_html_file = "/home/ytusdc/Documents/favorites_9_25_24_111.html"
-    new_html_file = '/home/ytusdc/Documents/favorites_10_11_24.html'
+    old_html_file = r"./favorites_2024_10_1.html"
+    new_html_file = './favorites_2024_10_18.html'
     labelname = "网文html"
 
     # labelname下逐个文件夹， 比较其中的url异同

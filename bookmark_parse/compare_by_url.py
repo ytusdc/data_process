@@ -5,7 +5,8 @@
 Time    : 2024-10-15 14:14
 Author  : sdc
 """
-import parse_bookmark_html_to_json as prase_html_fun
+import parse_bookmark_html_to_json as parse_html_fun
+from utils import print_with_style_and_color
 
 """
 url作为key比较不同
@@ -47,7 +48,7 @@ def get_url_name_dict(html_file, label_name):
     """
     获取 url->name 对应的字典
     """
-    bookmark_json =  prase_html_fun.html_2_json(html_file)
+    bookmark_json =  parse_html_fun.html_2_json(html_file)
     result_dict = dict()
     process_json_data(bookmark_json, result_dict, labelname=label_name)
     # print(f"result_dict = {len(result_dict)}")
@@ -73,7 +74,7 @@ def main(bookmark_file_old, bookmark_file_new, label_name):
         print(f"{name} : {url}")
 
     print(f"************************************")
-    print(f"总共找到不同项 {len(diff_url_set)} 个")
+    print_with_style_and_color(f"总共找到不同项 {len(diff_url_set)} 个", color='red', style='bold')
 
 if __name__ == '__main__':
     old_html_file = "/home/ytusdc/Documents/favorites_9_25_24_111.html"

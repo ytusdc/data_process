@@ -5,7 +5,7 @@
 Time    : 2024-10-11 11:21
 Author  : sdc
 """
-import parse_bookmark_html_to_json as prase_html_fun
+import parse_bookmark_html_to_json as parse_html_fun
 from utils import print_with_style_and_color
 
 """
@@ -70,19 +70,19 @@ def find_url_add(base_url_dict, compare_url_dict):
             diff_url_set = base_url_set - compare_url_set
             if len(diff_url_set) <= 0:
                 continue
-            print_with_style_and_color(f"{base_key}  {'' * 10}", color='red', style='bold')
+            print_with_style_and_color(f"{base_key}, diff_num:{len(diff_url_set)}  {'' * 10}", color='red', style='bold')
             for url in diff_url_set:
                 url_name = base_url_dict[base_key][url]
                 print_with_style_and_color(f"{'-' * 5}{url_name} : {url}")
         else:
             if len(base_url_dict[base_key]) <= 0:
                 continue
-            print_with_style_and_color(f"{base_key}  {'' * 10}", color='red', style='bold')
+            print_with_style_and_color(f"{base_key}, diff_num:{len(base_url_dict[base_key])} {'' * 10}", color='red', style='bold')
             for url, url_name in base_url_dict[base_key].items():
                 print_with_style_and_color(f"{'-' * 5}{url_name} : {url}")
 
 def get_contents_dict(bookmark_file, label_name):
-    bookmark_json =  prase_html_fun.html_2_json(bookmark_file)
+    bookmark_json =  parse_html_fun.html_2_json(bookmark_file)
     result_dict = dict()
     process_json_data(bookmark_json, result_dict, labelname=label_name)
     contents_dict = process_dict(result_dict, label_name)
