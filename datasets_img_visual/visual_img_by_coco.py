@@ -175,9 +175,9 @@ if __name__ == '__main__':
         print("image nums: {}".format(len(image_set)))
         print("bbox nums: {}".format(sum(every_class_num.values())))
     else:
-        image_path = './data/images'
-        anno_path = 'result/convert/coco/train.json'
-        save_img_dir = './result/visual_images/visual_coco'
+        image_path = '../datasets_convert/data/images'
+        anno_path = '../datasets_convert/data/labels/coco/train.json'
+        save_img_dir = '../datasets_img_visual/visual_images/visual_coco'
 
         # image_path = '/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/val'
         # anno_path = '/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/annotations/instance_val.json'

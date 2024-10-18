@@ -95,11 +95,11 @@ if __name__ == '__main__':
         yaml_file = opt.yaml_file
     else:
 
-        image_path = './data/images'       # path/to/images
-        anno_path = './data/labels/yolo'   # path/to/label/yolo
-        img_visual_save_dir = './result/visual_images/visual_yolo'  # path/to/visual_images
+        image_path = '../datasets_convert/data/images'  # path/to/images
+        anno_path = '../datasets_convert/data/labels/yolo'  # path/to/label/yolo
+        img_visual_save_dir = '../datasets_img_visual/visual_images/visual_yolo'  # path/to/visual_images
         yaml_file = None  # path/to/id_class_yaml, 可以为None，则以yolo中类别id作为类别名进行visual
-        yaml_file = "./data/labels/yolo/id_classes.yaml"
+        yaml_file = "../datasets_convert/data/labels/yolo/id_classes.yaml"
 
     draw_image(image_path, anno_path, img_visual_save_dir, yaml_file)
 

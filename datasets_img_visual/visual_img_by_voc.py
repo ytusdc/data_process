@@ -115,8 +115,8 @@ if __name__ == '__main__':
         anno_path = opt.voc_dir
         visual_img_save_dir = opt.save_dir
     else:
-        image_path = './data/images'     # path/to/images
-        anno_path = './data/labels/voc'  # path/to/label/voc
-        visual_img_save_dir = './result/visual_images/visual_voc'  # path/to/visual_images
+        image_path = '../datasets_convert/data/images'  # path/to/images
+        anno_path = '../datasets_convert/data/labels/voc'  # path/to/label/voc
+        visual_img_save_dir = '../datasets_img_visual/visual_images/visual_voc'  # path/to/visual_images
 
     draw_image(image_path, anno_path, visual_img_save_dir)
