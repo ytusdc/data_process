@@ -59,9 +59,9 @@ def draw_box(json_file_path, image_dir, save_dir, bgr=True):
 
 def addCatItem(name):
     global global_category_id
-    category_item_id += 1
-    category_id_dict[name] = category_item_id
-    return category_item_id
+    global_category_id += 1
+    category_id_dict[name] = global_category_id
+    return global_category_id
 
 
 """

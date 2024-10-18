@@ -7,6 +7,7 @@ Author  : sdc
 """
 import os
 import sys
+from fileinput import filename
 from pathlib import Path
 """
 获取文件夹下相关列表或者字典
@@ -93,20 +94,11 @@ def get_id_path_dict(data_dir, suffix=None):
             id_filepath_dict[name_no_stffix] = os.path.join(data_dir, filename)
     return id_filepath_dict
 
-def get_id_filename_dict(data_dir, file_suffix=['.jpg', '.png', '.jpeg', '.bmp']):
-
-    # id_path_dict = get_id_path_dict(data_dir, file_suffix=file_suffix)
-    # id_filename_dict = {}
-    # for id, path in id_path_dict.items():
-    #     _, filename = os.path.split(path)
-    #     id_filename_dict[id] = filename
-    # return id_filename_dict
-
-    filter_file_ls = os.listdir(data_dir)
-    for i in range(len(filter_file_ls) - 1, -1, -1):  # for i in range(0, num_list.__len__())[::-1]
-        if filter_file_ls[i].startswith('.'):
-            filter_file_ls.pop(i)
-    id_name_dict = {os.path.splitext(name)[0]: name for name in filter_file_ls}
+def get_id_filename_dict(data_dir, suffix=None):
+    if suffix is None:
+        suffix = global_img_stuffix  # 如果 suffix 为None， 则默认使用 图片过滤
+    filter_filename_ls  = get_filename_ls(data_dir, suffix=suffix)
+    id_name_dict = {os.path.splitext(name)[0]: name for name in filter_filename_ls}
     return id_name_dict
 
 """

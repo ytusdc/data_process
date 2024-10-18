@@ -25,11 +25,11 @@ global_category_id = -1
 def addCatItem(name):
     global global_category_id
     category_item = dict()
-    category_item_id += 1
-    category_item['id'] = category_item_id
+    global_category_id += 1
+    category_item['id'] = global_category_id
     category_item['name'] = name
-    category_set[name] = category_item_id
-    return category_item_id
+    category_set[name] = global_category_id
+    return global_category_id
 
 # 将类别名字和id建立索引
 def catid2name(coco):
@@ -114,11 +114,11 @@ def draw_image(imgs_dir, annos_dir, imgs_save_dir, bgr=True):
                 color = get_color_rgb(category_id)
 
             cv2.rectangle(img, (xmin, ymin), (xmax, ymax), color, thickness=2)
-            cv2.putText(img, category_name, (xmin, ymin), cv2.FONT_HERSHEY_SIMPLEX, 1, color, thickness=2)
+            cv2.putText(img, category_name, (xmin, ymin - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, color, thickness=2)
             cv2.imwrite(os.path.join(imgs_save_dir, filename), img)
 
     # 默认统计信息
-    statistics_info()
+    # statistics_info()
         # if show:
         #     cv2.imshow(filename, img)
         #     cv2.waitKey()
@@ -176,12 +176,12 @@ if __name__ == '__main__':
         print("bbox nums: {}".format(sum(every_class_num.values())))
     else:
         image_path = './data/images'
-        anno_path = './data/labels/coco/train.json'
-        save_img_dir = './data/save'
+        anno_path = 'result/convert/coco/train.json'
+        save_img_dir = './result/visual_images/visual_coco'
 
-        image_path = '/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/val'
-        anno_path = '/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/annotations/instance_val.json'
-        save_img_dir = '/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/visual_val'
+        # image_path = '/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/val'
+        # anno_path = '/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/annotations/instance_val.json'
+        # save_img_dir = '/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/visual_val'
         draw_image(image_path, anno_path, save_img_dir)
 
         print(every_class_num)

@@ -160,6 +160,6 @@ if __name__ == '__main__':
     else:
         image_path = './data/images'
         anno_path = './data/labels/yolo'
-        save_path = './data/convert/coco'
+        save_path = 'result/convert/coco'
         json_name = 'train.json'
         parseXmlFilse(image_path, anno_path, save_path, json_name)

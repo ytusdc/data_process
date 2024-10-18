@@ -120,5 +120,5 @@ if __name__ == '__main__':
         parseJsonFile(opt.data_dir, opt.save_path)
     else:
         data_dir = './data/labels/coco/train.json'
-        xml_save_path = './data/convert/voc'
+        xml_save_path = 'result/convert/voc'
         parseJsonFile(data_dir=data_dir, xmls_save_path=xml_save_path)

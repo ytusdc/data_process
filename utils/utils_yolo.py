@@ -39,7 +39,17 @@ def xyxy2xywhn(bbox, size):
     hn = (bbox[3] - bbox[1]) / size[1]
     return (xc, yc, wn, hn)
 
-def parse_yolo(label_file, img_height, img_width):
+def parse_yolo(label_file, shape):
+    """
+    Args:
+        label_file:
+        shape: opencv 获取的图片尺寸shape， [height, width, depth]
+    Returns:
+    objects = [object1, object2]
+    object = [category_id, (xmin, ymin, xmax, ymax)]
+    """
+    img_height = shape[0]
+    img_width = shape[1]
     objects = []
     with open(label_file, 'r') as f_d:
         for line in f_d.readlines():

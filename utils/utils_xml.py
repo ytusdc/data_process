@@ -8,6 +8,7 @@ Author  : sdc
 import os
 from lxml import etree, objectify
 import xml.etree.ElementTree as ET
+from utils import  yamloperate
 
 def parse_xml_to_dict(xml_tree):
     """
@@ -153,7 +154,7 @@ def save_anno_to_xml(filename, size, objs, save_path):
     """
     Args: 保存信息到 xml 文件
         filename: 图片文件名
-        size:
+        size: opencv 获取的图片shape
         objs: 保存目标列表: objs = [object1, objiect2],  object1 =[cls_name, [xmin, ymin, xmax, ymax]]
          [xmin, ymin, xmax, ymax] 可以是任意类型 str/int/float 但是推荐为 int
         save_path:
@@ -193,3 +194,43 @@ def save_anno_to_xml(filename, size, objs, save_path):
     filename_no_ext, ext = os.path.splitext(filename)
     anno_path = os.path.join(save_path, filename_no_ext + ".xml")
     etree.ElementTree(anno_tree).write(anno_path, pretty_print=True)
+
+
+def get_id_class_dict(yaml_file=None, xml_files=None, save_dir=None):
+    """
+    将类别名字和id建立索引， 返回 {id： 类别名} 字典,
+    如果传入 yaml_file 将从 yaml文件中读取索引字典
+    如果传入xml_files，save_dir 将从 xml文件中读取所有类别，然后类别名排序后建立索引，
+    将索引字典保存到  id_classes.yaml 中
+    Args:
+        yaml_file:
+        xml_files:
+        save_dir:
+    Returns:
+    """
+
+    if yaml_file is not None:
+        print('读取 yaml 文件获取 {id：类别名} 索引字典 ')
+        id_cls_dict = yamloperate.get_id_cls_dict(yaml_file)
+        return id_cls_dict
+    elif xml_files is not None and save_dir is not None:
+        # 先解析所有xml文件获取所有类别信息 category_set
+        category_set = set()
+        for xml_file in xml_files:
+            objects, _ = parse_xml(xml_file)
+            for object in objects:
+                object_name = object[0]
+                category_set.add(object_name)
+        id_cls_dict = dict((k, v) for k, v in enumerate(sorted(category_set)))
+        save_yaml_file = os.path.join(save_dir, "id_classes.yaml")
+        yamloperate.write_yaml(save_yaml_file, id_cls_dict)
+        # class_indices_dict = dict((v, k) for k, v in id_cls_dict.items())
+        print("读取 xml 信息，获取 {id：类别名} 索引字典，生成 yaml 文件")
+        print(f"生成的 yaml 文件存储在： {save_yaml_file}")
+        return id_cls_dict
+    else:
+        print("如果是从xml文件中获取id-class索引字典，xml_files，save_dir不能为空！")
+        return None
+
+
+

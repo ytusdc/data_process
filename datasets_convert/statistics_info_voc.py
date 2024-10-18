@@ -16,7 +16,6 @@ import datetime
 from tqdm import tqdm
 
 from utils import *
-from utils.utils_xml import parse_xml
 
 # 全局变量， 类别名和类别数量
 global_category_num_dict = defaultdict(int)
@@ -63,9 +62,9 @@ def statistics_info(xml_dir):
     xml_files_ls = common_fun.get_filepath_ls(xml_dir, suffix=".xml")
 
     for xml_file in tqdm(xml_files_ls):
-        objects, _ = parse_xml(xml_file, select=True)
-        for object in objects:
-            object_name = object[0]
+        objects, _ = utils_xml_opt.parse_xml(xml_file, select=True)
+        for obj in objects:
+            object_name = obj[0]
             global_category_num_dict[object_name] += 1
 
     plot_statistics_info()

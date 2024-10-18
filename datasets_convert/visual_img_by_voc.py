@@ -101,7 +101,7 @@ if __name__ == '__main__':
     """
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--imgs-dir', type=str, default=None, help='图片文件路径')
-    parser.add_argument('-l', '--label-dir', type=str, default=None, help='标签文件路径')
+    parser.add_argument('-v', '--voc-dir', type=str, default=None, help='标签文件路径')
     parser.add_argument('-s', '--save-dir', default=None, help='图片存储路径')
     opt = parser.parse_args()
 
@@ -112,11 +112,11 @@ if __name__ == '__main__':
             sys.exit(-1)
 
         image_path = opt.imgs_dir
-        anno_path = opt.label_dir
-        save_img_dir = opt.save_dir
+        anno_path = opt.voc_dir
+        visual_img_save_dir = opt.save_dir
     else:
-        image_path = './data/images'
-        anno_path = './data/convert/voc'
-        save_img_dir = './data/save'
+        image_path = './data/images'     # path/to/images
+        anno_path = './data/labels/voc'  # path/to/label/voc
+        visual_img_save_dir = './result/visual_images/visual_voc'  # path/to/visual_images
 
-    draw_image(image_path, anno_path, save_img_dir)
+    draw_image(image_path, anno_path, visual_img_save_dir)

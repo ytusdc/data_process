@@ -109,7 +109,7 @@ if __name__ == '__main__':
         # print("bbox nums: {}".format(bbox_nums))
     else:
         json_path = './data/labels/coco/train.json'  # r'D:\practice\compete\goodsDec\data\train\train.json'
-        txt_save_path = './data/convert/yolo'
+        txt_save_path = 'result/convert/yolo'
         parseJsonFile(json_path, txt_save_path)
         # print("image nums: {}".format(images_nums))
         # print("category nums: {}".format(category_nums))
