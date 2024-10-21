@@ -70,6 +70,15 @@ def parser_info_dict(info: dict):
         objects.append(object_one)
     return objects, size_tuple
 
+def parse_xmlfile2dict(xml_file):
+    with open(xml_file) as f_r:
+        xml_str = f_r.read()
+    # xml = etree.fromstring(xml_str)
+    xml = etree.fromstring(xml_str.encode('utf-8'))
+    info_dict = parse_xml_to_dict(xml)
+    return parser_info_dict(info_dict)
+
+
 def parse_info_xml(xml_file):
     """
      通过 解析 xml_file 文件， 得到数据的类别 object 和图片的 size， 允许坐标为float型, 但是一般为 int 型
@@ -141,12 +150,12 @@ def parse_xml(xml_file, select=True):
     Returns:
     """
     if select is True:
-        with open(xml_file) as f_r:
-            xml_str = f_r.read()
-        # xml = etree.fromstring(xml_str)
-        xml = etree.fromstring(xml_str.encode('utf-8'))
-        info_dict = parse_xml_to_dict(xml)
-        return parser_info_dict(info_dict)
+        # with open(xml_file) as f_r:
+        #     xml_str = f_r.read()
+        # # xml = etree.fromstring(xml_str)
+        # xml = etree.fromstring(xml_str.encode('utf-8'))
+        # info_dict = parse_xml_to_dict(xml)
+        return parse_xmlfile2dict(xml_file)
     else:
         return parse_info_xml(xml_file)
 
@@ -232,5 +241,30 @@ def get_id_class_dict(yaml_file=None, xml_files=None, save_dir=None):
         print("如果是从xml文件中获取id-class索引字典，xml_files，save_dir不能为空！")
         return None
 
+'''
 
+xml_file: xml 文件
+element: 需要改变的标签
+elem_value: 修改后的标签内容
+'''
+
+def modify_xml_elem(xml_file, element, elem_value):
+    """
+    修改特定元素值, 保存并且覆盖原文件
+    注意：使用前最好有备份
+    Args:
+        xml_file: xml 文件
+        element:  需要改变的标签
+        elem_value: 修改后的标签内容
+
+    Returns:
+
+    """
+    tree = ET.parse(xml_file)
+    root = tree.getroot()
+    # nodes = root.findall('.//filename')
+    nodes = root.findall(element)
+    for node in nodes:
+        node.text = elem_value
+    tree.write(xml_file, encoding='utf-8')
 
