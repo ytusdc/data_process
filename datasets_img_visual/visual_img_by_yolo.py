@@ -90,7 +90,7 @@ if __name__ == '__main__':
             print(f"imgs-dir/label-dir/save-dir，三个参数必须都不为空，请检查输入, 退出脚本！")
             sys.exit(-1)
         image_path = opt.imgs_dir
-        anno_path = opt.label_dir
+        anno_path = opt.yolo_dir
         img_visual_save_dir = opt.save_dir
         yaml_file = opt.yaml_file
     else:

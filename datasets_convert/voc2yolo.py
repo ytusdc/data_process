@@ -55,7 +55,7 @@ if __name__ == '__main__':
             print("voc 文件路径和转换后文件存储路径不能为空, 退出脚本！")
             sys.exit(-1)
         voc_label_dir = opt.voc_dir
-        yolo_label_save_dir = opt.save_dir
+        yolo_label_save_dir = opt.yolo_dir
         yaml_file = opt.yaml_file
     else:
         yaml_file = None

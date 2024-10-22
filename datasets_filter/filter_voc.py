@@ -1,90 +1,26 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import sys
+sys.path.append("..")
+
 import os
 import json
 import argparse
-import sys
 import shutil
 from tqdm import tqdm
 from pathlib import Path
-import utils.utils as utils
 from lxml import etree, objectify
-import xml.etree.ElementTree as ET
 
-"""
-Time    : 2024-08-13 16:32
-Author  : sdc
-"""
-def parse_cls_info(info: dict):
-    cls_set = set()
-    filename = info['annotation']['filename']
-    if 'object' not in info['annotation']:
-        print(filename)
-        return cls_set
-    for obj in info['annotation']['object']:
-        obj_name = obj['name']
-        cls_set.add(obj_name)
-    return cls_set
+from utils import *
 
-def get_xml_AllClasses(voc_xml_dir):
-    xml_files = [os.path.join(voc_xml_dir, i) for i in os.listdir(voc_xml_dir) if os.path.splitext(i)[-1] == '.xml']
-    category_set = set()
-    # 先解析所有xml文件获取所有类别信息 category_set
-    xml_files = tqdm(xml_files)
-    for xml_file in xml_files:
-        with open(xml_file) as fid:
-            xml_str = fid.read()
-        xml = etree.fromstring(xml_str)
-        info_dict = parse_xml_to_dict(xml)
-        classes_set = parse_cls_info(info_dict)
-        category_set.update(classes_set)
-    id_cls_dict = dict((k, v) for k, v in enumerate(sorted(category_set)))
-    class_indices_dict = dict((v, k) for k, v in id_cls_dict.items())
-
-    for key, value in class_indices_dict.items():
-        print(f"{key}:{value}")
-    return class_indices_dict
-
-def parse_xml_to_dict(xml):
-    """
-    将xml文件解析成字典形式，参考tensorflow的recursive_parse_xml_to_dict
-    Args:
-        xml: xml tree obtained by parsing XML file contents using lxml.etree
-
-    Returns:
-        Python dictionary holding XML contents.
-    """
-    if len(xml) == 0:  # 遍历到底层，直接返回tag对应的信息
-        return {xml.tag: xml.text}
-    result = {}
-    for child in xml:
-        child_result = parse_xml_to_dict(child)  # 递归遍历标签信息
-        if child.tag != 'object':
-            result[child.tag] = child_result[child.tag]
-        else:
-            if child.tag not in result:  # 因为object可能有多个，所以需要放入列表里
-                result[child.tag] = []
-            result[child.tag].append(child_result[child.tag])
-    return {xml.tag: result}
-
-# def dict_to_xml(root_tag, d):
-#     """
-#     将字典转换为XML字符串。
-#     参数:
-#     - root_tag: XML根标签
-#     - d: 字典数据
-#     """
-#     elem = ET.Element(root_tag)
-#     def _dict_to_xml(parent, d):
-#         for k, v in d.items():
-#             if isinstance(v, dict):
-#                 child = ET.SubElement(parent, k)
-#                 _dict_to_xml(child, v)
-#             else:
-#                 ET.SubElement(parent, k).text = str(v)
-#
-#     _dict_to_xml(elem, d)
-#     return ET.tostring(elem, encoding='utf-8').decode('utf-8')
+import os
+def mkdirs(full_path_dir):
+    if not os.path.exists(full_path_dir):
+        os.makedirs(full_path_dir)
+        return True
+    else:
+        print(f"{full_path_dir} is exist, please modify save folder")
+        return False
 
 def get_include_info(info: dict, include_cls_set):
     """
@@ -115,7 +51,7 @@ def get_exclude_info(info: dict, exclude_cls_set):
     Returns:
     """
     '''
-    有图片中没有目标object的情况
+    图片中没有目标object的情况
     '''
     try:
         for obj in info['annotation']['object']:
@@ -129,60 +65,30 @@ def get_exclude_info(info: dict, exclude_cls_set):
 
 
 def parser_retain_info(info: dict, retain_cls_set=None, unretain_cls_set=None):
+    """
+    得到最终 的类别信息
+    Args:
+        info:
+        retain_cls_set:
+        unretain_cls_set:
+
+    Returns:
+
+    """
     if retain_cls_set is None:
         return get_exclude_info(info, unretain_cls_set)
     else:
         return get_include_info(info, unretain_cls_set)
 
-def save_anno_to_xml(info_dict, save_path):
-    annotation_dict = info_dict['annotation']
-    filename = annotation_dict['filename']
-    objs = annotation_dict['object']
-    size = annotation_dict['size']
-    E = objectify.ElementMaker(annotate=False)
-    anno_tree = E.annotation(
-        E.folder("voc 2012"),
-        E.filename(filename),
-        E.source(
-            E.database("The VOC Database"),
-            E.annotation("PASCAL VOC"),
-            E.image("flickr")
-        ),
-        E.size(
-            E.width(size['width']),
-            E.height(size['height']),
-            E.depth(size['depth'])
-        ),
-        E.segmented(0)
-    )
-    for obj in objs:
-        E2 = objectify.ElementMaker(annotate=False)
-        sub_anno_tree = E2.object(
-            E.name(obj['name']),
-            E.pose(obj['pose']),
-            E.truncated('0'),  #有找不到这个标签的
-            E.difficult(obj['difficult']),
-            E.bndbox(
-                E.xmin(obj['bndbox']['xmin']),
-                E.ymin(obj['bndbox']['ymin']),
-                E.xmax(obj['bndbox']['xmax']),
-                E.ymax(obj['bndbox']['ymax'])
-            )
-        )
-        anno_tree.append(sub_anno_tree)
-    # anno_path = os.path.join(save_path, filename[:-3] + "xml")
-    # etree.ElementTree(anno_tree).write(anno_path, pretty_print=True)
-    etree.ElementTree(anno_tree).write(save_path, pretty_print=True)
-
 
 def filterXmlFiles(img_voc_dir, xml_voc_dir, save_dir, filter_include_set=None, filter_exclude_set=None):
-    img_save_dir = os.path.join(save_dir, "image")
+    img_save_dir = os.path.join(save_dir, "images")
     xml_save_dir = os.path.join(save_dir, "xml")
 
     if filter_include_set is not None and filter_exclude_set is not None:
         print("filter_include_set 和 filter_exclude_set 只能有一个不为None")
         return
-    if not utils.mkdirs(img_save_dir) or not utils.mkdirs(xml_save_dir):
+    if not mkdirs(img_save_dir) or not mkdirs(xml_save_dir):
         return
     if not os.path.exists(img_voc_dir) or not os.path.exists(xml_voc_dir):
         print("VOC dir {JPEGImages} or {Annotations} is not exist, please check")
@@ -194,9 +100,8 @@ def filterXmlFiles(img_voc_dir, xml_voc_dir, save_dir, filter_include_set=None, 
         with open(xml_file) as fid:
             xml_str = fid.read()
         xml = etree.fromstring(xml_str.encode('utf-8'))
-        info_dict = parse_xml_to_dict(xml)
+        info_dict = utils_xml_opt.parse_xml_to_dict(xml)
 
-        # print(xml_file)
         retain_info_dict = parser_retain_info(info_dict, retain_cls_set=filter_include_set, unretain_cls_set=filter_exclude_set)
         if len(retain_info_dict['annotation']['object']) <= 0:
             continue
@@ -208,7 +113,7 @@ def filterXmlFiles(img_voc_dir, xml_voc_dir, save_dir, filter_include_set=None, 
         shutil.copy(ori_img_path, img_save_dir)
 
         save_xml_path = os.path.join(xml_save_dir, filename_xml)
-        save_anno_to_xml(retain_info_dict, save_xml_path)
+        utils_xml_opt.save_info_dict_to_xml(retain_info_dict, save_xml_path)
 
 '''
 voc_dir: voc 数据集路径
@@ -219,12 +124,11 @@ filter_set： 需要筛选的类
 
 if __name__ == '__main__':
 
-
     # img_voc_dir = os.path.join(voc_dir, "JPEGImages")
     # xml_voc_dir = os.path.join(voc_dir, "Annotations")
 
-    xml_voc_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/annotations/train"
-    img_voc_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/train"
+    xml_voc_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/annotations/val"
+    img_voc_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/val"
     save_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/fliter"
 
     # get_xml_AllClasses(xml_voc_dir)
