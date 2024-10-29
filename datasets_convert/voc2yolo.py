@@ -16,11 +16,12 @@ def parse_xml2yolo(voc_dir, save_dir, yaml_file=None):
         print(f"{save_dir} : 文件夹不为空或者文件夹创建失败，请检查, 程序退出！")
         return
     xml_files = common_fun.get_filepath_ls(voc_dir, suffix=".xml")
-    id_class_dict = utils_xml_opt.get_id_class_dict(xml_files=xml_files, save_dir=save_dir, yaml_file=yaml_file)
+    id_class_dict = utils_xml_opt.get_id_class_dict(yaml_file=yaml_file, xml_files=xml_files, save_dir=save_dir)
     class_indices_dict = dict((v, k) for k, v in id_class_dict.items())
     if len(class_indices_dict) == 0:
-        print("没有生成用于 yolo 数据转换的 类别名：id ，对应字典，请检查，程序退出!")
+        print("没有生成用于 yolo 数据转换的 类别名：id 对应字典，请检查，程序退出!")
         return
+
 
     for xml_file in tqdm(xml_files):
         objects_voc, size = utils_xml_opt.parse_xml(xml_file)

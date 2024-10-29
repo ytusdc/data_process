@@ -154,9 +154,9 @@ def main():
         ori_label_dir = opt.label_dir  # 对应标签源文件
         des_dir = opt.des_dir  # 划分后数据集保存位置
     else:
-        ori_img_dir = ""  # 图片源文件地址
-        ori_label_dir = ""  # 对应标签源文件
-        des_dir = ""  # 划分后数据集保存位置
+        ori_img_dir = "path/to/img"  # 图片源文件地址
+        ori_label_dir = "path/to/label"  # 对应标签源文件
+        des_dir = "path/to/save"  # 划分后数据集保存位置
 
     # 划分后数据集 自动生成 images， labels 文件夹，根据需要自己修改
     des_img_dir = os.path.join(des_dir, "images")    # 图片目存储标地址
