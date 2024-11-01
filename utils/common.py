@@ -18,6 +18,7 @@ global_img_stuffix = ['.jpg', '.png', '.jpeg', '.bmp']
 
 """
 过滤特定类型，获取文件名列表， 默认获取图片文件列表
+suffix： 文件后缀 None/str/[str1,str2,..]
 """
 def get_filename_ls(data_dir, suffix=None):
     if suffix is None:

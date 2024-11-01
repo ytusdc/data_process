@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 from utils import  yamloperate
 from tqdm import tqdm
 
-def parse_xml_to_dict(xml_tree):
+def parse_xmltree_2_dict(xml_tree):
     """
     将xml tree 格式数据，解析成字典形式，参考tensorflow的recursive_parse_xml_to_dict
     Args:
@@ -25,7 +25,7 @@ def parse_xml_to_dict(xml_tree):
 
     result = {}
     for child in xml_tree:
-        child_result = parse_xml_to_dict(child)  # 递归遍历标签信息
+        child_result = parse_xmltree_2_dict(child)  # 递归遍历标签信息
         if child.tag != 'object':
             result[child.tag] = child_result[child.tag]
         else:
@@ -71,18 +71,21 @@ def parser_info_dict(info: dict):
         objects.append(object_one)
     return objects, size_tuple
 
-def parse_xmlfile2dict(xml_file):
+def parse_xml2dict(xml_file):
     with open(xml_file) as f_r:
         xml_str = f_r.read()
     # xml = etree.fromstring(xml_str)
     xml = etree.fromstring(xml_str.encode('utf-8'))
-    info_dict = parse_xml_to_dict(xml)
-    return parser_info_dict(info_dict)
+    info_dict = parse_xmltree_2_dict(xml)
+    return info_dict
 
+def parse_xml_by_dict(xml_file):
+    xml_info_dict = parse_xmltree_2_dict(xml_file)
+    return parser_info_dict(xml_info_dict)
 
-def parse_info_xml(xml_file):
+def parse_xml_by_ET(xml_file):
     """
-     通过 解析 xml_file 文件， 得到数据的类别 object 和图片的 size， 允许坐标为float型, 但是一般为 int 型
+     通过 ET 解析 xml_file 文件， 得到数据的类别 object 和图片的 size， 允许坐标为float型, 但是一般为 int 型
     Args:
         xml_file:
     Returns:
@@ -156,9 +159,9 @@ def parse_xml(xml_file, select=True):
         # # xml = etree.fromstring(xml_str)
         # xml = etree.fromstring(xml_str.encode('utf-8'))
         # info_dict = parse_xml_to_dict(xml)
-        return parse_xmlfile2dict(xml_file)
+        return parse_xml_by_dict(xml_file)
     else:
-        return parse_info_xml(xml_file)
+        return parse_xml_by_ET(xml_file)
 
 def save_anno_to_xml(filename, size, objs, save_path):
     """

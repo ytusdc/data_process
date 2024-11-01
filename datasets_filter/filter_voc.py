@@ -4,7 +4,6 @@ import sys
 sys.path.append("..")
 
 import os
-import json
 import argparse
 import shutil
 from tqdm import tqdm
@@ -24,7 +23,8 @@ def mkdirs(full_path_dir):
 
 def get_include_info(info: dict, include_cls_set):
     """
-    Args: 过滤包含 include_cls_set 中（一个或者多个）类别的 info
+    Args: 过滤包含 include_cls_set 中（一个或者多个）类别，
+        并把包含的类别信息，保存到 info['annotation']['object'] 中
         info:
         include_cls_set:
     Returns:
@@ -46,6 +46,7 @@ def get_include_info(info: dict, include_cls_set):
 def get_exclude_info(info: dict, exclude_cls_set):
     """
     Args: 过滤不包含 exclude_cls_set 中（全部）类别的 info
+        如果包含exclude_cls_set 中任一类别，则info['annotation']['object']置空
         info:
         exclude_cls_set:
     Returns:
@@ -78,10 +79,23 @@ def parser_retain_info(info: dict, retain_cls_set=None, unretain_cls_set=None):
     if retain_cls_set is None:
         return get_exclude_info(info, unretain_cls_set)
     else:
-        return get_include_info(info, unretain_cls_set)
+        return get_include_info(info, retain_cls_set)
 
 
 def filterXmlFiles(img_voc_dir, xml_voc_dir, save_dir, filter_include_set=None, filter_exclude_set=None):
+    """
+    过滤xml数据
+    Args:
+        img_voc_dir:
+        xml_voc_dir:
+        save_dir:
+        filter_include_set:  过滤包含的类别，只要包含就保留
+        filter_exclude_set:  过滤不包含的类别，必须都不包含才保留
+
+        filter_include_set 和 filter_exclude_set 同时只能选择一个条件，另一个为None
+    Returns:
+    """
+
     img_save_dir = os.path.join(save_dir, "images")
     xml_save_dir = os.path.join(save_dir, "xml")
 
@@ -100,7 +114,7 @@ def filterXmlFiles(img_voc_dir, xml_voc_dir, save_dir, filter_include_set=None, 
         with open(xml_file) as fid:
             xml_str = fid.read()
         xml = etree.fromstring(xml_str.encode('utf-8'))
-        info_dict = utils_xml_opt.parse_xml_to_dict(xml)
+        info_dict = utils_xml_opt.parse_xmltree_2_dict(xml)
 
         retain_info_dict = parser_retain_info(info_dict, retain_cls_set=filter_include_set, unretain_cls_set=filter_exclude_set)
         if len(retain_info_dict['annotation']['object']) <= 0:
@@ -127,14 +141,15 @@ if __name__ == '__main__':
     # img_voc_dir = os.path.join(voc_dir, "JPEGImages")
     # xml_voc_dir = os.path.join(voc_dir, "Annotations")
 
-    xml_voc_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/annotations/val"
-    img_voc_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/val"
+    xml_voc_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/annotations/train"
+    img_voc_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/train"
     save_dir = "/home/ytusdc/Downloads/SODA10M/data/SSLAD-2D/fliter"
 
     # get_xml_AllClasses(xml_voc_dir)
 
-    # include_cls_set = set(['bicycle', 'car', 'person', 'motorbike'])
     include_cls_set = None
+    exclude_cls_set = None
+    # include_cls_set = set(['Car', 'Truck', 'Tram'])
     exclude_cls_set = set(['Pedestrian', 'Cyclist', 'Tricycle'])
 
     filterXmlFiles(img_voc_dir, xml_voc_dir, save_dir, filter_include_set=include_cls_set, filter_exclude_set=exclude_cls_set)

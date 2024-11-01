@@ -36,8 +36,10 @@ def process_directory(directory, merge_category_map):
             xml_file = os.path.join(directory, filename)
             update_category(xml_file, merge_category_map)
 
+'''
+voc 不同类别合并
+'''
 def main():
-
     parser = argparse.ArgumentParser()
     parser.add_argument('-v', '--voc-dir', type=str, default=None, help='voc 标注文件xml路径')
     opt = parser.parse_args()
@@ -50,13 +52,12 @@ def main():
         voc_label_dir = opt.voc_dir
     else:
         voc_label_dir = "path/to/voc_xml"    # 指定VOC数据集的标注文件目录
-        voc_label_dir = "/home/ytusdc/Data/Data_split/Data_car_v3/xml"    # 指定VOC数据集的标注文件目录
+        voc_label_dir = "/home/ytusdc/Data/打电话/xml"    # 指定VOC数据集的标注文件目录
 
 
     # 定义 需要合并的类别映射
     category_map = {
-        'bus2': 'car',
-        'pickup': 'car'
+        'phone': 'call',
     }
 
     # 调用函数处理目录中的所有XML文件

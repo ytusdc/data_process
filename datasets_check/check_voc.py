@@ -70,8 +70,8 @@ class CheckVocInfo:
 
     '''
     检测 xml 文件中记录的 filename， 是否和图片文件名对应,
-    发现错误的文件, 移动存放在filename_not_equal目录下
-    ismodify: 如果发现错误时候修改, 默认修改
+    ismodify: 如果发现错误时候修改, 默认修改,     
+    如果发现错误的文件不修改, 则移动存放在filename_not_equal目录下
     '''
     def check_filename_equal(self, images_dir, labels_dir, ismodify=True):
         images_id_path_dict = common_fun.get_id_path_dict(images_dir)
@@ -83,7 +83,7 @@ class CheckVocInfo:
         for common_id in tqdm(common_id_set):
             img_file_path = images_id_path_dict[common_id]
             xml_file_path = labels_id_path_dict[common_id]
-            xml_info = utils_xml_opt.parse_xmlfile2dict(xml_file_path)
+            xml_info = utils_xml_opt.parse_xml2dict(xml_file_path)
             file_name_in_xml = xml_info['annotation']['filename']
             file_name_img = os.path.basename(img_file_path)
             if file_name_in_xml == file_name_img:
@@ -99,26 +99,29 @@ class CheckVocInfo:
                     print("文件名和xml中的filename不对应")
                     print(f"xml file = {xml_file_path}")
 
-    def checkinfo(self, images_dir, labels_dir, yaml_file=None, isCheckBoxValue=True):
+    def checkinfo(self, images_dir, labels_dir, yaml_file=None):
         """
         Args:
             labels_dir:
             label_info:
             yaml_file:
-            isCheckBoxValue:
 
         Returns:
+        1、检查 类别名是否跟yaml_file中相同
+        2、检查 图片读取是否有问题
+        3、检查 xml 中是否有标注目标
+        4、检查 bbox标注是否越界
         """
-        images_id_path_dict = common_fun.get_id_path_dict(images_dir)
-        label_id_path_dict = common_fun.get_id_path_dict(labels_dir, suffix='.xml')
 
         cls_name_set = set()
         if yaml_file is not None:
-            cls_name_set = get_id_cls_dict(yaml_file)["names"].values()
+            cls_name_set = get_id_cls_dict(yaml_file).values()
             if len(cls_name_set) == 0:
-                print(f"yaml 文件中没有读取到类别信息： {yaml_file}")
+                print(f"yaml 文件中没有读取到类别信息： {yaml_file}, ")
                 return
 
+        images_id_path_dict = common_fun.get_id_path_dict(images_dir)
+        label_id_path_dict = common_fun.get_id_path_dict(labels_dir, suffix='.xml')
         images_id_set = set(images_id_path_dict.keys())
         labels_id_set = set(label_id_path_dict.keys())
         common_id_set = images_id_set & labels_id_set
@@ -126,10 +129,11 @@ class CheckVocInfo:
         for id in common_id_set:
             img_file = images_id_path_dict[id]
             xml_file = label_id_path_dict[id]
-            label_info = utils_xml_opt.parse_xmlfile2dict(xml_file)
+            label_info = utils_xml_opt.parse_xml2dict(xml_file)
 
             bndbox_ls = label_info['annotation'].get('object')
 
+            # 图像中没有标注目标
             if bndbox_ls is None:
                 save_object_error_dir = os.path.join(self.save_error_dir, "xml_have_not_object")
                 if not os.path.exists(save_object_error_dir):
@@ -138,9 +142,15 @@ class CheckVocInfo:
                 move_files(img_file, xml_file, save_object_error_dir)
                 continue
 
-            img_h, img_w = None, None
-            if isCheckBoxValue:
-                img_h, img_w, _ = cv2.imread(img_file).shape
+            img = cv2.imread(img_file)
+            # 可能图片文件损坏，单独存储
+            if img is None:
+                save_img_none_error_dir = os.path.join(self.save_error_dir, "img_None_error")
+                move_files(img_file, xml_file, save_img_none_error_dir)
+                continue
+
+            img_h, img_w, _ = img.shape
+
             for bndbox in bndbox_ls:
                 xmax = int(bndbox['bndbox']['xmax'])
                 xmin = int(bndbox['bndbox']['xmin'])
@@ -148,22 +158,14 @@ class CheckVocInfo:
                 ymin = int(bndbox['bndbox']['ymin'])
                 cls_name = bndbox['name']
 
-                if img_h is not None and img_w is not None:
-                    is_find_error = False
-                    if xmin < 0 or ymin < 0:
-                        print(f"xml file : {xml_file}, bbox value < 0")
-                        is_find_error = True
-                    if xmax > img_w:
-                        print(f"xml file : {xml_file}, bbox xmax value > {img_w}")
-                        is_find_error = True
-                    if ymax > img_h:
-                        print(f"xml file : {xml_file}, bbox ymax value > {img_w}")
-                        is_find_error = True
-                    if is_find_error:
-                        save_cls_error_dir = os.path.join(self.save_error_dir, "img_size_error")
-                        move_files(img_file, xml_file, save_cls_error_dir)
+                # 检查 voc 标注是否超越界限
+                if xmin < 0 or ymin < 0 or xmax > img_w or ymax > img_h:
+                    print(f"xml file : {xml_file}, bbox 越界")
+                    save_cls_error_dir = os.path.join(self.save_error_dir, "img_size_error")
+                    move_files(img_file, xml_file, save_cls_error_dir)
 
-                if cls_name not in cls_name_set:
+                # yaml_file 不为None时， 检测 voc 中类别名是否正确
+                if yaml_file is not None and cls_name not in cls_name_set:
                     print(f"xml file : {xml_file}, have not label: {cls_name}")
                     save_cls_error_dir = os.path.join(self.save_error_dir, "xml_cls_name_error")
                     move_files(img_file, xml_file, save_cls_error_dir)
@@ -177,16 +179,23 @@ class CheckVocInfo:
 检查, xml中标注的类别名有没有错误
 img_dir: 图片文件地址
 xml_dir： 对应的 xml 文件地址
-isCheckBoxValue: 是否检查图片尺寸
 '''
 '''
 检查数据的类别，标注等信息有没有问题
 '''
 if __name__ == '__main__':
 
-    images_dir = ""
-    labels_dir = ""
-    save_error_dir = ""
+    '''
+        images_dir = "path/to/image"
+        labels_dir = "path/to/xml"
+        save_error_dir = "path/to/save_error"
+        yaml_file = "path/to/yamfile"  或者 None
+    '''
+
+    images_dir = "/home/ytusdc/Data/吸烟/image"
+    labels_dir = "/home/ytusdc/Data/吸烟/xml"
+    save_error_dir = "/home/ytusdc/Data/吸烟/error"
     yaml_file = None
+    yaml_file = "/home/ytusdc/Data/id_classes.yaml"
     checkvoc_cls = CheckVocInfo(images_dir, labels_dir, save_error_dir, yaml_file)
     checkvoc_cls.begin_check()
