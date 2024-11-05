@@ -80,7 +80,7 @@ def parse_xml2dict(xml_file):
     return info_dict
 
 def parse_xml_by_dict(xml_file):
-    xml_info_dict = parse_xmltree_2_dict(xml_file)
+    xml_info_dict = parse_xml2dict(xml_file)
     return parser_info_dict(xml_info_dict)
 
 def parse_xml_by_ET(xml_file):

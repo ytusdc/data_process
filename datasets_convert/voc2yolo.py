@@ -62,7 +62,7 @@ if __name__ == '__main__':
         yaml_file = None
         voc_label_dir = './data/labels/voc'
         yolo_label_save_dir = './result/convert/yolo'
-        # yaml_file = 'path/to/yaml or None'
+        yaml_file = 'path/to/yaml or None'
 
     parse_xml2yolo(voc_label_dir, yolo_label_save_dir, yaml_file)
 
