@@ -3,9 +3,6 @@
 
 import os
 import sys
-
-from torch.utils.flop_counter import suffixes
-
 sys.path.append("..")
 
 from pathlib import Path

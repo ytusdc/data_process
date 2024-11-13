@@ -8,10 +8,12 @@ Author  : sdc
 
 import os
 import sys
+from pathlib import Path
 import argparse
+import shutil
 import xml.etree.ElementTree as ET
 
-def update_category(xml_file, merge_category_map):
+def update_category(xml_file, save_merge_xml, merge_category_map):
     # 解析XML文件
     tree = ET.parse(xml_file)
     root = tree.getroot()
@@ -26,15 +28,30 @@ def update_category(xml_file, merge_category_map):
 
     # 保存修改后的XML文件
     if ismodify:
-        tree.write(xml_file, encoding='utf-8', xml_declaration=True)
+        merge_xml_file_name = Path(save_merge_xml, Path(xml_file).name)
+        tree.write(merge_xml_file_name, encoding='utf-8', xml_declaration=True)
         print(f"{os.path.basename(xml_file)} modify label")
+    else:
+        shutil.copy(xml_file, save_merge_xml)
 
-def process_directory(directory, merge_category_map):
+
+def process_directory(voc_dir, merge_category_map):
+
+    merge_xml_name = "xml_merge"
+    save_merge_dir = Path(Path(voc_dir).parent, merge_xml_name)
+    if not Path(save_merge_dir).exists():
+        Path(save_merge_dir).mkdir(parents=True, exist_ok=True)
+    else:
+        if len(os.listdir(save_merge_dir)) > 0:
+            print(f"文件夹：{save_merge_dir}，不为空，程序退出")
+            return
+
+
     # 遍历目录中的所有XML文件
-    for filename in os.listdir(directory):
+    for filename in os.listdir(voc_dir):
         if filename.endswith('.xml'):
-            xml_file = os.path.join(directory, filename)
-            update_category(xml_file, merge_category_map)
+            xml_file = os.path.join(voc_dir, filename)
+            update_category(xml_file, save_merge_dir, merge_category_map)
 
 '''
 voc 不同类别合并, / 类别改名
@@ -51,13 +68,11 @@ def main():
             sys.exit(-1)
         voc_label_dir = opt.voc_dir
     else:
-        voc_label_dir = "path/to/voc_xml"    # 指定VOC数据集的标注文件目录
-        voc_label_dir = "/home/ytusdc/Data/原始数据/车辆数据/车辆/xml"    # 指定VOC数据集的标注文件目录
-
+        voc_label_dir = "path/to/voc_xml"    # 指定VOC数据集的标注文件目录s
 
     # 定义 需要合并的类别映射
     category_map = {
-        'pickup': 'car',
+        'pickup': 'truck',
         'bus2': 'car',
     }
 
