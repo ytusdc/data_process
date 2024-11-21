@@ -1,11 +1,16 @@
+import sys
+sys.path.append("..")
+
 import argparse
 import json
 import os
 import sys
 import shutil
 from datetime import datetime
-
+from utils import *
+from datetime import datetime
 import cv2
+from pathlib import Path
 
 coco = dict()
 coco['images'] = []
@@ -13,7 +18,6 @@ coco['type'] = 'instances'
 coco['annotations'] = []
 coco['categories'] = []
 
-category_set = dict()
 image_set = set()
 
 image_id = 000000
@@ -27,7 +31,6 @@ def addCatItem(category_dict):
         category_item['id'] = int(k)
         category_item['name'] = v
         coco['categories'].append(category_item)
-
 
 def addImgItem(file_name, size):
     global image_id
@@ -66,7 +69,6 @@ def addAnnoItem(object_name, image_id, category_id, bbox):
     # # right_top
     # seg.append(bbox[0] + bbox[2])
     # seg.append(bbox[1])
-    #
     # annotation_item['segmentation'].append(seg)
 
     annotation_item['area'] = bbox[2] * bbox[3]
@@ -79,62 +81,50 @@ def addAnnoItem(object_name, image_id, category_id, bbox):
     annotation_item['id'] = annotation_id
     coco['annotations'].append(annotation_item)
 
-
-def xywhn2xywh(bbox, size):
-    bbox = list(map(float, bbox))
-    size = list(map(float, size))
-    xmin = (bbox[0] - bbox[2] / 2.) * size[1]
-    ymin = (bbox[1] - bbox[3] / 2.) * size[0]
-    w = bbox[2] * size[1]
-    h = bbox[3] * size[0]
-    box = (xmin, ymin, w, h)
-    return list(map(int, box))
-
-
-def parseXmlFilse(image_path, anno_path, save_path, json_name='train.json'):
-    assert os.path.exists(image_path), "ERROR {} dose not exists".format(image_path)
-    assert os.path.exists(anno_path), "ERROR {} dose not exists".format(anno_path)
-    # if os.path.exists(save_path):
-    #     shutil.rmtree(save_path)  # 递归地删除文件夹以及里面的文件
+def convert2Coco(image_dir, yolo_path, yaml_file, save_path=None):
+    assert os.path.exists(image_dir), "ERROR {} dose not exists".format(image_dir)
+    assert os.path.exists(yolo_path), "ERROR {} dose not exists".format(yolo_path)
 
     if not os.path.exists(save_path):
         os.makedirs(save_path)
-    json_path = os.path.join(save_path, json_name)
-    assert not os.path.exists(json_path), "{} file is exits, please make sure".format(json_path)
 
-    category_set = []
-    with open(anno_path + '/classes.txt', 'r') as f:
-        for i in f.readlines():
-            category_set.append(i.strip())
-    category_id = dict((k, v) for k, v in enumerate(category_set))
-    addCatItem(category_id)
+    id_class_dict = utils_xml_opt.get_id_class_dict(yaml_file=yaml_file)
+    addCatItem(id_class_dict)
 
-    images = [os.path.join(image_path, i) for i in os.listdir(image_path)]
-    files = [os.path.join(anno_path, i) for i in os.listdir(anno_path)]
-    images_index = dict((v.split(os.sep)[-1][:-4], k) for k, v in enumerate(images))
-    for file in files:
-        if os.path.splitext(file)[-1] != '.txt' or 'classes' in file.split(os.sep)[-1]:
+    img_id_path_dict = common_fun.get_id_path_dict(image_dir)
+    label_id_path_dict = common_fun.get_id_path_dict(yolo_path, suffix=".txt")
+
+    img_id_set = set(img_id_path_dict.keys())
+
+    for label_id, label_path in label_id_path_dict.items():
+        if label_id not in img_id_set:
+            print(f"error: 标签文件找不到对应图片文件, id: {label_id}")
             continue
-        if file.split(os.sep)[-1][:-4] in images_index:
-            index = images_index[file.split(os.sep)[-1][:-4]]
-            img = cv2.imread(images[index])
-            shape = img.shape
-            filename = images[index].split(os.sep)[-1]
-            current_image_id = addImgItem(filename, shape)
-        else:
-            continue
-        with open(file, 'r') as fid:
-            for i in fid.readlines():
-                i = i.strip().split()
-                category = int(i[0])
-                category_name = category_id[category]
-                bbox = xywhn2xywh((i[1], i[2], i[3], i[4]), shape)
+        img_path = img_id_path_dict[label_id]
+        img = cv2.imread(img_path)
+        shape = img.shape  # (h, w, c)
+        size = (shape[1], shape[0])
+        filename = Path(img_path).name
+        current_image_id = addImgItem(filename, shape)
+        # 读取yolo标签文件
+        with open(label_path, 'r') as f_r:
+            for line in f_r.readlines():
+                line = line.strip().split()
+                category = int(line[0])
+                category_name = id_class_dict[category]
+                bbox = utils_yolo_opt.xywhn2xywh((line[1], line[2], line[3], line[4]), size)
                 addAnnoItem(category_name, current_image_id, category, bbox)
+    timestamp = datetime.now().timestamp()
+    # 将时间戳转换为日期时间对象
+    formatted_string = datetime.fromtimestamp(timestamp).strftime('%Y%m%d_%H%M%S')
 
+    json_path = os.path.join(save_path, formatted_string + ".json")
     json.dump(coco, open(json_path, 'w'))
     print("class nums:{}".format(len(coco['categories'])))
     print("image nums:{}".format(len(coco['images'])))
     print("bbox nums:{}".format(len(coco['annotations'])))
+    print(f"转换后json文件: {json_path}")
+
 
 
 if __name__ == '__main__':
@@ -148,18 +138,26 @@ if __name__ == '__main__':
         json_name: json文件名字
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('-ap', '--anno-path', type=str, default='./data/labels/yolo', help='yolo txt path')
+    parser.add_argument('-i', '--image-dir', type=str, default='./data/images')
+    parser.add_argument('-y', '--yolo-dir', type=str, default='./data/labels/yolo', help='yolo 标签路径')
+    parser.add_argument('-f', '--yaml-file', type=str, default=None, help='yaml file 文件路径')
     parser.add_argument('-s', '--save-path', type=str, default='./data/convert/coco', help='json save path')
-    parser.add_argument('--image-path', default='./data/images')
-    parser.add_argument('--json-name', default='train.json')
 
     opt = parser.parse_args()
-    if len(sys.argv) > 1:
-        print(opt)
-        parseXmlFilse(**vars(opt))
+    input_args = sys.argv[1:]  # 第一个参数是脚本名本身
+    if len(input_args) > 0:
+        if opt.image_dir is None or opt.yolo_dir is None or opt.yaml_file:
+            print("图片文件路径，yolo 文件路径和yaml file 文件不能为空, 退出脚本！")
+            sys.exit(-1)
+        image_dir = opt.image_dir
+        yolo_dir = opt.yolo_dir
+        yaml_file = opt.yaml_file
+        save_path = opt.save_path
     else:
-        image_path = './data/images'
-        anno_path = './data/labels/yolo'
+        image_dir = './data/images'
+        yolo_dir = './data/labels/yolo'
+        yaml_file = ''
         save_path = 'result/convert/coco'
         json_name = 'train.json'
-        parseXmlFilse(image_path, anno_path, save_path, json_name)
+
+    convert2Coco(image_dir, yolo_dir, yaml_file, save_path)

@@ -14,7 +14,7 @@ from pathlib import Path
 """
 
 # 图片后缀
-global_img_stuffix = ['.jpg', '.png', '.jpeg', '.bmp']
+global_img_suffix = ['.jpg', '.png', '.jpeg', '.bmp']
 
 """
 过滤特定类型，获取文件名列表， 默认获取图片文件列表
@@ -22,7 +22,7 @@ suffix： 文件后缀 None/str/[str1,str2,..]
 """
 def get_filename_ls(data_dir, suffix=None):
     if suffix is None:
-        suffix = global_img_stuffix  # 如果 suffix 为None， 则默认使用 图片过滤
+        suffix = global_img_suffix  # 如果 suffix 为None， 则默认使用 图片过滤
 
     # 过滤掉 ‘.’开头的隐藏文件, 有的情况下会出现，大部分情况不会，以防万一
     filter_file_ls = os.listdir(data_dir)
@@ -38,12 +38,16 @@ def get_filename_ls(data_dir, suffix=None):
         file_ls = [x for x in filter_file_ls if os.path.splitext(x.lower())[-1] in suffix]
     return sorted(file_ls)  # 排序， 不同平台保持顺序一致
 
-"""
-过滤特定类型，获取文件全路径列表， 默认获取图片文件列表
-"""
 def get_filepath_ls(data_dir, suffix=None):
+    """
+    过滤特定类型，获取文件全路径列表， 默认获取图片文件列表
+    Args:
+        data_dir:
+        suffix: None 默认过滤图片文件
+    Returns:
+    """
     if suffix is None:
-        suffix = global_img_stuffix  # 如果 suffix 为None， 则默认使用 图片过滤
+        suffix = global_img_suffix  # 如果 suffix 为None， 则默认使用 图片过滤
 
     # 过滤掉 ‘.’开头的隐藏文件, 有的情况下会出现，大部分情况不会，以防万一
     filter_file_ls = os.listdir(data_dir)
@@ -63,7 +67,7 @@ def get_filepath_ls(data_dir, suffix=None):
 """
 def get_id_path_dict(data_dir, suffix=None):
     if suffix is None:
-        suffix = global_img_stuffix  # 如果 suffix 为None， 则默认使用 图片过滤
+        suffix = global_img_suffix  # 如果 suffix 为None， 则默认使用 图片过滤
     file_ls = []
     # 过滤掉 ‘.’开头的隐藏文件, 有的情况下会出现，大部分情况不会，以防万一
     filter_file_ls = os.listdir(data_dir)
@@ -97,7 +101,7 @@ def get_id_path_dict(data_dir, suffix=None):
 
 def get_id_filename_dict(data_dir, suffix=None):
     if suffix is None:
-        suffix = global_img_stuffix  # 如果 suffix 为None， 则默认使用 图片过滤
+        suffix = global_img_suffix  # 如果 suffix 为None， 则默认使用 图片过滤
     filter_filename_ls  = get_filename_ls(data_dir, suffix=suffix)
     id_name_dict = {os.path.splitext(name)[0]: name for name in filter_filename_ls}
     return id_name_dict
@@ -107,7 +111,7 @@ def get_id_filename_dict(data_dir, suffix=None):
 """
 def get_filename_path_dict(data_dir, suffix=None):
     if suffix is None:
-        suffix = global_img_stuffix  # 如果 suffix 为None， 则默认使用 图片过滤
+        suffix = global_img_suffix  # 如果 suffix 为None， 则默认使用 图片过滤
     file_ls = []
     # 过滤掉 ‘.’开头的隐藏文件, 有的情况下会出现，大部分情况不会，以防万一
     filter_file_ls = os.listdir(data_dir)

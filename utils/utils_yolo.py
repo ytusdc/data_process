@@ -11,7 +11,8 @@ def xywhn2xyxy(box, size):
     """
     Args:
         box: yolo文件读到的 归一化后的 (xc, yc, wn, hn)
-        size: (img_width, img_height)
+        size: (img_width, img_height)  , img.shape 返回的是（img_height, img_width, ch）
+        这里需要注意
     Returns:
         (xmin, ymin, xmax, ymax)  左上和右下角坐标
     """
@@ -27,7 +28,8 @@ def xyxy2xywhn(bbox, size):
     """
     Args:
         bbox: (xmin, ymin, xmax, ymax)
-        size:  (img_width, img_height)
+        size:  (img_width, img_height)， img.shape 返回的是（img_height, img_width, ch）
+        这里需要注意
     Returns:
        归一化后的  (xc, yc, wn, hn)
     """
@@ -38,6 +40,23 @@ def xyxy2xywhn(bbox, size):
     wn = (bbox[2] - bbox[0]) / size[0]
     hn = (bbox[3] - bbox[1]) / size[1]
     return (xc, yc, wn, hn)
+
+
+def xywhn2xywh(bbox, size):
+    """
+    Args:
+        bbox: yolo文件读到的 归一化后的 (xc, yc, wn, hn)
+        size: (img_width, img_height)  , img.shape 返回的是（img_height, img_width, ch）
+        这里需要注意
+    """
+    bbox = list(map(float, bbox))
+    size = list(map(float, size))
+    xmin = (bbox[0] - bbox[2] / 2.) * size[0]
+    ymin = (bbox[1] - bbox[3] / 2.) * size[1]
+    w = bbox[2] * size[0]
+    h = bbox[3] * size[1]
+    box = (xmin, ymin, w, h)
+    return list(map(int, box))
 
 def parse_yolo(label_file, shape):
     """
