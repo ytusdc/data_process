@@ -158,6 +158,5 @@ if __name__ == '__main__':
         yolo_dir = './data/labels/yolo'
         yaml_file = ''
         save_path = 'result/convert/coco'
-        json_name = 'train.json'
 
     convert2Coco(image_dir, yolo_dir, yaml_file, save_path)
