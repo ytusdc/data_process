@@ -64,7 +64,7 @@ class OpencvDetect:
         k = 1 / scale
         i2d = np.array([[scale, 0, ox],[0, scale, oy]])
         d2i = [k, 0, -k*ox, 0, k, -k*oy]
-        input_image = cv2.warpAffine(ori_img, i2d, self.input_size)
+        input_image = cv2.warpAffine(ori_img, i2d, (to_width, to_height))
         # 仿射变换矩阵
         self.i2d = i2d
         self.d2i = d2i  # 逆变换
@@ -160,7 +160,6 @@ def get_filepath_ls(data_dir, suffix=None):
     """
     if suffix is None:
         suffix = ['.jpg', '.png', '.jpeg', '.bmp']
-
     if Path(data_dir).is_file() and data_dir.lower().endswith(suffix):
         # data_dir 本身是一个图片文件
         return [data_dir]
@@ -184,6 +183,8 @@ def video_infer(model_net, video_path, save_dir, interval=20):
     if not cap.isOpened():
         print(f"Error: Could not open video: {video_path}")
         return
+    # 获取视频总帧数
+    frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     count_frame = 0
     while True:
         ret, frame = cap.read()  # 读取一帧
@@ -195,6 +196,8 @@ def video_infer(model_net, video_path, save_dir, interval=20):
         if count_frame % interval == 0:
             model_net.predict(frame)
             cv2.imwrite(img_save_path, frame)
+            cv2.imshow('out_det', frame)
+            cv2.waitKey(1)
         count_frame += 1
     # 释放捕获对象
     cap.release()
@@ -209,23 +212,43 @@ def get_id_cls_dict(yaml_file_path):
     yaml_dict = read_yaml(yaml_file_path)
     return yaml_dict["names"]
 
-def begin_video_infer(model_path, video_dir, save_dir, id_class_dict=None, frame_interval=20):
-    video_path_ls = traverse_folder(video_dir)
+def begin_video_infer(model_path, video_path, save_dir, id_class_dict=None, frame_interval=20):
+    """
+    Args:
+        model_path:  onnx 模型路径
+        video_path: video dir/video file,
+                     video dir 存放目录：会遍历整个目录的video， 并且建立相应的目录结构存放检测结果
+                     video file 文件路径： video 文件路径
+        save_dir:
+        id_class_dict:
+        frame_interval:
+    Returns:
+    """
     model_Net = OpencvDetect(model_path, id_class_dict=id_class_dict)
-    for video_path in tqdm(sorted(video_path_ls)):
-        parent_dir = str(Path(video_path).parent)
+    # 检测video文件
+    if video_path.endswith(('.mp4', 'avi')):
+        video_path = video_path
         video_name = Path(video_path).stem
-        middle_dir = parent_dir.replace(video_dir, "").strip('/')
-        result_save_dir = Path(save_dir, middle_dir, video_name)
+        result_save_dir = Path(save_dir, video_name)
         Path(result_save_dir).mkdir(parents=True, exist_ok=True)
         print(f"current process: {video_path}")
         video_infer(model_Net, video_path, result_save_dir, interval=frame_interval)
+    else:   # 遍历video_dir目录
+        video_file_ls = traverse_folder(video_path)
+        for video_file in tqdm(sorted(video_file_ls)):
+            parent_dir = str(Path(video_file).parent).strip('/')
+            video_name = Path(video_file).stem
+            middle_dir = parent_dir.replace(video_path.strip('/'), "").strip('/')
+            result_save_dir = Path(save_dir, middle_dir, video_name)
+            Path(result_save_dir).mkdir(parents=True, exist_ok=True)
+            print(f"current process: {video_file}")
+            video_infer(model_Net, video_file, result_save_dir, interval=frame_interval)
 
 def begin_img_infer(model_path, img_dir, save_dir, id_class_dict=None):
     img_path_ls = get_filepath_ls(img_dir)
     model_Net = OpencvDetect(model_path, id_class_dict=id_class_dict)
     Path(save_dir).mkdir(parents=True, exist_ok=True)
-    for img_path in img_path_ls:
+    for img_path in tqdm(sorted(img_path_ls)):
         image = cv2.imread(img_path)
         if image is None:
             continue
@@ -233,25 +256,34 @@ def begin_img_infer(model_path, img_dir, save_dir, id_class_dict=None):
         img_name = Path(img_path).name
         img_save_path = os.path.join(save_dir, img_name)
         cv2.imwrite(img_save_path, image)
+        cv2.imshow('out_det', image)
+        cv2.waitKey(1)
 
 def main():
 
     # img param
     img_dir = '/home/ytusdc/测试数据/car_1'
+    img_dir = '/home/ytusdc/测试数据/00010003439000000'
     # video param
-    video_dir = "/home/ytusdc/测试数据/10.11/20241007002056-20241007112056"
+    video_dir = "/home/ytusdc/测试数据/10.11/"
+    video_dir = "/home/ytusdc/测试数据/192.100.10.59/00010003630000000.mp4"
+    video_dir = "/home/ytusdc/测试数据/10.11/20241010000825-20241010110825/output_segment_2.avi"
 
     # common param
+    # model_path = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/皮带状态/belt_v1.onnx"
+    # yaml_file = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/皮带状态/id_class.yaml"
+
     model_path = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/车辆检测/v1.1/yolov5_car_v1.1.onnx"
     yaml_file = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/车辆检测/v1.1/id_class.yaml"
     id_class_dict = get_id_cls_dict(yaml_file)
     # frame_interval = 20  # 间隔帧
 
     save_dir = '/home/ytusdc/测试数据/result'
+    save_dir = '/home/ytusdc/测试数据/10.11/20241010000825-20241010110825/result'
     # save_dir = "/home/ytusdc/测试数据/10.11/"
-    # begin_video_infer(model_path, video_dir, save_dir)
+    begin_video_infer(model_path, video_dir, save_dir, id_class_dict=id_class_dict, frame_interval=1)
 
-    begin_img_infer(model_path, img_dir, save_dir, id_class_dict)
+    # begin_img_infer(model_path, img_dir, save_dir, id_class_dict)
 
 if __name__ == '__main__':
     main()
