@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 import cv2
-def str2senond(str_time):
+def str2second(str_time):
     """
     Args:
         str_time: str_time format is hh:mm:ss
@@ -35,7 +35,25 @@ def str2senond(str_time):
     else:
          return -1
 
-def extract_video_segment(video_path, clip_video_path, start_time, end_time):
+def get_video_attribute(video_cap):
+    # 获取视频属性
+    fps = video_cap.get(cv2.CAP_PROP_FPS)
+    width = int(video_cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(video_cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    # # 获取视频总帧数
+    frame_count = int(video_cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    print(f"FPS: {fps}, Width: {width}, Height: {height}， 总帧数： {frame_count}")
+
+def clip_video_segment(video_path, clip_video_path, start_time, end_time):
+    """
+    视频截取某一段
+    Args:
+        video_path:      原始 video 存储路径
+        clip_video_path: 截取的 video 存储路径
+        start_time: 截取的开始时间
+        end_time:   截取的结束时间
+    Returns:
+    """
     # 打开视频文件
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
@@ -48,8 +66,8 @@ def extract_video_segment(video_path, clip_video_path, start_time, end_time):
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     print(f"FPS: {fps}, Width: {width}, Height: {height}")
 
-    start_seconds = str2senond(start_time)
-    end_seconds = str2senond(end_time)
+    start_seconds = str2second(start_time)
+    end_seconds = str2second(end_time)
     if start_seconds == -1 or end_seconds==-1:
         print("时间转换有问题，情检查时间格式是否输入正确")
         return
@@ -80,11 +98,53 @@ def extract_video_segment(video_path, clip_video_path, start_time, end_time):
     video_write.release()
     print("Extraction complete.")
 
+
+def extract_frame(video_path, save_dir, interval=20):
+    '''
+    视频抽帧
+    Args:
+        video_path:  视频video路径
+        save_dir:    抽帧图片保存路径
+        interval: 间隔 interval 帧保存图片
+    Returns:
+    '''
+
+    Path(save_dir).mkdir(parents=True, exist_ok=True)
+
+    # 创建视频捕获对象, 创建一个VideoCapture对象，参数是视频文件的路径
+    cap = cv2.VideoCapture(video_path)  # 替换为你的视频文件路径
+    # 检查视频是否打开成功
+    if not cap.isOpened():
+        print(f"Error: Could not open video: {video_path}")
+        return
+
+    get_video_attribute(cap)
+    count_frame = 0
+    while True:
+        ret, frame = cap.read()  # 读取一帧
+        if not ret:
+            print("Can't receive frame (stream end?). Exiting ...")
+            break
+
+        if count_frame % interval == 0:
+            formatted_name = str(count_frame).zfill(6) + ".jpg"
+            img_save_path = os.path.join(save_dir, formatted_name)
+            cv2.imwrite(img_save_path, frame)
+        count_frame += 1
+
+    # 释放捕获对象
+    cap.release()
+
 if __name__ == '__main__':
 
-    input_video_path = '/home/ytusdc/测试数据/10.11/20241010000825-20241010110825/路卡下_采选路卡_采选路卡，100.142_20241007125829_20241007151951_3219837.mp4'  # 输入视频路径
-    output_video_path = '/home/ytusdc/测试数据/10.11/20241010000825-20241010110825/output_segment_2.avi'  # 输出视频路径
-    start_time = "0:50:25"  # 开始时间为5秒
-    end_time = "0:50:40"   # 结束时间为10秒
+    input_video_path = '/home/ytusdc/测试数据/01000000772000000.mp4'  # 输入视频路径
+    output_video_path = '/home/ytusdc/测试数据/01000000772000000_clip_no.mp4'  # 输出视频路径
+    start_time = "2:09:0"  # 开始时间为5秒
+    end_time = "2:14:0"   # 结束时间为10秒
 
-    extract_video_segment(input_video_path, output_video_path, start_time, end_time)
+    # clip_video_segment(input_video_path, output_video_path, start_time, end_time)
+
+    video_path = "/home/ytusdc/Pictures/yiwu.mp4"
+    save_dir  = "/home/ytusdc/Pictures/temp"
+    interval = 15
+    extract_frame(video_path, save_dir, interval)

@@ -113,7 +113,7 @@ def get_filepath_ls(data_dir, suffix=None):
     Returns:
     """
     if suffix is None:
-        suffix = ['.jpg', '.png', '.jpeg', '.bmp']
+        suffix = ('.jpg', '.png', '.jpeg', '.bmp')
     if Path(data_dir).is_file() and data_dir.lower().endswith(suffix):
         # data_dir 本身是一个图片文件
         return [data_dir]
@@ -220,7 +220,7 @@ def begin_img_infer(model_path, img_dir, save_dir, id_class_dict=None):
         img_save_path = os.path.join(save_dir, img_name)
         cv2.imwrite(img_save_path, result_img)
         cv2.imshow('out_det', image)
-        cv2.waitKey(1)
+        cv2.waitKey(0)
 
 def main():
     # img param, 可以单张图片或者图片文件夹
@@ -230,12 +230,12 @@ def main():
     model_path = "/home/ytusdc/codes_zkyc/svn_Release/源模型/语义分割/皮带状态/煤流检测_v2.onnx"
 
     # model param
-    video_path = "/home/ytusdc/测试数据/9号皮带/20230220/22/ch22_20230220182404.mp4"
+    video_path = "/home/ytusdc/测试数据/01000000772000000_clip_no.mp4"
     # yaml_file = None
     # id_class_dict = get_id_cls_dict(yaml_file)
     id_class_dict = None
 
-    save_dir = "/home/ytusdc/测试数据/9号皮带/20230220/coal_result_video"
+    save_dir = "/home/ytusdc/测试数据/result_no"
 
     begin_video_infer(model_path, video_path, save_dir, id_class_dict=id_class_dict, frame_interval=1)
 

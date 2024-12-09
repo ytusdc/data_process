@@ -14,9 +14,8 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 import datetime
 from tqdm import tqdm
-from operator import itemgetter
-
 from collections import OrderedDict
+from pathlib import Path
 
 from utils import *
 
@@ -81,15 +80,15 @@ def statistics_info(yolo_dir):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-v', '--voc-dir', type=str, default=None, help='voc 文件路径')
+    parser.add_argument('-y', '--yolo-dir', type=str, default=None, help='yolo 标签文件路径')
     opt = parser.parse_args()
 
     input_args = sys.argv[1:]  # 第一个参数是脚本名本身
     if len(input_args) > 0:
-        if opt.voc_dir is None:
-            print("voc 文件路径不能为空, 退出脚本！")
+        if opt.yolo_dir is None:
+            print("yolo 标签文件路径不能为空, 退出脚本！")
             sys.exit(-1)
-        yolo_txt_dir = opt.voc_dir
+        yolo_txt_dir = opt.yolo_dir
     else:
-        yolo_txt_dir = "/path/to/xml"
+        yolo_txt_dir = "/path/to/yolo"
     statistics_info(yolo_txt_dir)
