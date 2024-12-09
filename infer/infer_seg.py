@@ -113,7 +113,8 @@ def get_filepath_ls(data_dir, suffix=None):
     Returns:
     """
     if suffix is None:
-        suffix = ('.jpg', '.png', '.jpeg', '.bmp')
+        # suffix = ('.jpg', '.png', '.jpeg', '.bmp')
+        suffix = ['.jpg', '.png', '.jpeg', '.bmp']
     if Path(data_dir).is_file() and data_dir.lower().endswith(suffix):
         # data_dir 本身是一个图片文件
         return [data_dir]

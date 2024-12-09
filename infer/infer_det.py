@@ -159,7 +159,8 @@ def get_filepath_ls(data_dir, suffix=None):
     Returns:
     """
     if suffix is None:
-        suffix = ('.jpg', '.png', '.jpeg', '.bmp')
+        # suffix = ('.jpg', '.png', '.jpeg', '.bmp')
+        suffix = ['.jpg', '.png', '.jpeg', '.bmp']
     if Path(data_dir).is_file() and data_dir.lower().endswith(suffix):
         # data_dir 本身是一个图片文件
         return [data_dir]
@@ -257,14 +258,14 @@ def begin_img_infer(model_path, img_dir, save_dir, id_class_dict=None):
         img_save_path = os.path.join(save_dir, img_name)
         cv2.imwrite(img_save_path, image)
         cv2.imshow('out_det', image)
-        cv2.waitKey(1)
+        cv2.waitKey(10)
 
 def main():
 
     # img param
     img_dir = '/home/ytusdc/测试数据/car_1'
     img_dir = '/home/ytusdc/测试数据/00010003439000000'
-    img_dir = '/home/ytusdc/Pictures/22.jpeg'
+    img_dir = '/home/ytusdc/Pictures/img_2'
     # video param
     video_dir = "/home/ytusdc/测试数据/10.11/"
     video_dir = "/home/ytusdc/测试数据/192.100.10.59/00010003630000000.mp4"
@@ -273,22 +274,27 @@ def main():
     # video_dir = "/home/ytusdc/测试数据/10.11/20241010000825-20241010110825/output_segment_2.avi"
 
     # common param
-    model_path = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/皮带状态/belt_v1.onnx"
-    yaml_file = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/皮带状态/id_class.yaml"
+    # model_path = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/皮带状态/belt_v1.onnx"
+    # yaml_file = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/皮带状态/id_class.yaml"
 
     # model_path = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/车辆检测/v1.1/yolov5_car_v1.1.onnx"
     # # model_path = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/动火检测/v1.1/spark_v1.1.onnx"
     # yaml_file = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/动火检测/v1.1/id_class.yaml"
     # yaml_file = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/车辆检测/v1.1/id_class.yaml"
+
+
+    model_path = "/home/ytusdc/best_6.onnx"
+    yaml_file = "/home/ytusdc/Data/Data_yiwu_exact/coco_belt.yaml"
+
     id_class_dict = get_id_cls_dict(yaml_file)
     # frame_interval = 20  # 间隔帧
 
     save_dir = '/home/ytusdc/测试数据/result'
     # save_dir = '/home/ytusdc/测试数据/第一批/result_det'
     # save_dir = "/home/ytusdc/测试数据/10.11/"
-    begin_video_infer(model_path, video_dir, save_dir, id_class_dict=id_class_dict, frame_interval=1)
+    # begin_video_infer(model_path, video_dir, save_dir, id_class_dict=id_class_dict, frame_interval=1)
 
-    # begin_img_infer(model_path, img_dir, save_dir, id_class_dict)
+    begin_img_infer(model_path, img_dir, save_dir, id_class_dict)
 
 if __name__ == '__main__':
     main()
