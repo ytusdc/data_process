@@ -44,6 +44,20 @@ def get_video_attribute(video_cap):
     frame_count = int(video_cap.get(cv2.CAP_PROP_FRAME_COUNT))
     print(f"FPS: {fps}, Width: {width}, Height: {height}， 总帧数： {frame_count}")
 
+def traverse_folder(folder_path, suffix=None):
+    if suffix is None:
+        suffix = (".mp4", ".avi")
+
+    if Path(folder_path).is_file() and folder_path.endswith(suffix):
+        return [folder_path]   # 如果传入的是视频文件，则直接返回
+
+    file_path_ls = []
+    for file_path in Path(folder_path).glob('**/*'):
+        if file_path.is_file() and str(file_path).endswith(suffix):
+            # print(file_path)
+            file_path_ls.append(str(file_path))
+    return file_path_ls
+
 def clip_video_segment(video_path, clip_video_path, start_time, end_time):
     """
     视频截取某一段
@@ -99,11 +113,11 @@ def clip_video_segment(video_path, clip_video_path, start_time, end_time):
     print("Extraction complete.")
 
 
-def extract_frame(video_path, save_dir, interval=20):
+def extract_frame(video_path_dir, save_dir, interval=10):
     '''
     视频抽帧
     Args:
-        video_path:  视频video路径
+        video_path_dir:  视频video路径, 或者视频video文件夹
         save_dir:    抽帧图片保存路径
         interval: 间隔 interval 帧保存图片
     Returns:
@@ -111,29 +125,32 @@ def extract_frame(video_path, save_dir, interval=20):
 
     Path(save_dir).mkdir(parents=True, exist_ok=True)
 
-    # 创建视频捕获对象, 创建一个VideoCapture对象，参数是视频文件的路径
-    cap = cv2.VideoCapture(video_path)  # 替换为你的视频文件路径
-    # 检查视频是否打开成功
-    if not cap.isOpened():
-        print(f"Error: Could not open video: {video_path}")
-        return
+    video_path_ls = traverse_folder(video_path_dir)
 
-    get_video_attribute(cap)
     count_frame = 0
-    while True:
-        ret, frame = cap.read()  # 读取一帧
-        if not ret:
-            print("Can't receive frame (stream end?). Exiting ...")
-            break
+    for video_path in video_path_ls:
+        # 创建视频捕获对象, 创建一个VideoCapture对象，参数是视频文件的路径
+        cap = cv2.VideoCapture(video_path)  # 替换为你的视频文件路径
+        # 检查视频是否打开成功
+        if not cap.isOpened():
+            print(f"Error: Could not open video: {video_path}")
+            continue
+        get_video_attribute(cap)
+        while True:
+            ret, frame = cap.read()  # 读取一帧
+            if not ret:
+                print("Can't receive frame (stream end?). Exiting ...")
+                break
 
-        if count_frame % interval == 0:
-            formatted_name = str(count_frame).zfill(6) + ".jpg"
-            img_save_path = os.path.join(save_dir, formatted_name)
-            cv2.imwrite(img_save_path, frame)
-        count_frame += 1
+            if count_frame % interval == 0:
+                formatted_name = str(int(count_frame / interval)).zfill(6) + ".jpg"
+                # formatted_name = str(count_frame).zfill(6) + ".jpg"
+                img_save_path = os.path.join(save_dir, formatted_name)
+                cv2.imwrite(str(img_save_path), frame)
+            count_frame += 1
 
-    # 释放捕获对象
-    cap.release()
+        # 释放捕获对象
+        cap.release()
 
 if __name__ == '__main__':
 
@@ -145,6 +162,7 @@ if __name__ == '__main__':
     # clip_video_segment(input_video_path, output_video_path, start_time, end_time)
 
     video_path = "/home/ytusdc/Pictures/yiwu.mp4"
-    save_dir  = "/home/ytusdc/Pictures/temp"
+    video_path = "/home/ytusdc/2024-12-11"
+    save_dir  = "/home/ytusdc/2024-12-11/save_dir"
     interval = 15
     extract_frame(video_path, save_dir, interval)
