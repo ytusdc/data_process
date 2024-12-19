@@ -187,6 +187,7 @@ def video_infer(model_net, video_path, save_dir, interval=20):
     # 获取视频总帧数
     frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     count_frame = 0
+    cv2.namedWindow('out_det', cv2.WINDOW_NORMAL)
     while True:
         ret, frame = cap.read()  # 读取一帧
         if not ret:
@@ -271,6 +272,7 @@ def main():
     video_dir = "/home/ytusdc/测试数据/192.100.10.59/00010003630000000.mp4"
     video_dir = "/home/ytusdc/测试数据/clip.avi"
     video_dir = "/home/ytusdc/Pictures/yiwu.mp4"
+    video_dir = "/home/ytusdc/雄山五矿_异物数据/异物视频采集/192.168.80.83_01_20241211100259652.mp4"
     # video_dir = "/home/ytusdc/测试数据/10.11/20241010000825-20241010110825/output_segment_2.avi"
 
     # common param
@@ -283,8 +285,9 @@ def main():
     # yaml_file = "/home/ytusdc/codes_zkyc/svn_Release/源模型/物体检测/车辆检测/v1.1/id_class.yaml"
 
 
-    model_path = "/home/ytusdc/best_6.onnx"
-    yaml_file = "/home/ytusdc/Data/Data_yiwu_exact/coco_belt.yaml"
+    model_path = "/home/ytusdc/best_v9.onnx"
+    # yaml_file = "/home/ytusdc/Data/Data_yiwu_exact/coco_belt.yaml"
+    yaml_file = "/home/ytusdc/雄山五矿_异物数据/belt_yiwu_2.yaml"
 
     id_class_dict = get_id_cls_dict(yaml_file)
     # frame_interval = 20  # 间隔帧
@@ -292,9 +295,9 @@ def main():
     save_dir = '/home/ytusdc/测试数据/result'
     # save_dir = '/home/ytusdc/测试数据/第一批/result_det'
     # save_dir = "/home/ytusdc/测试数据/10.11/"
-    # begin_video_infer(model_path, video_dir, save_dir, id_class_dict=id_class_dict, frame_interval=1)
+    begin_video_infer(model_path, video_dir, save_dir, id_class_dict=id_class_dict, frame_interval=17)
 
-    begin_img_infer(model_path, img_dir, save_dir, id_class_dict)
+    # begin_img_infer(model_path, img_dir, save_dir, id_class_dict)
 
 if __name__ == '__main__':
     main()
