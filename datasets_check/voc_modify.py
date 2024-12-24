@@ -13,7 +13,7 @@ import argparse
 import shutil
 import xml.etree.ElementTree as ET
 
-def update_category(xml_file, save_merge_xml, merge_category_map):
+def update_category(xml_file, save_rename_xml, rename_category_map):
     # 解析XML文件
     tree = ET.parse(xml_file)
     root = tree.getroot()
@@ -22,39 +22,38 @@ def update_category(xml_file, save_merge_xml, merge_category_map):
     # 更新类别标签
     for obj in root.findall('object'):
         name = obj.find('name').text
-        if name in merge_category_map:
-            obj.find('name').text = merge_category_map[name]
+        if name in rename_category_map:
+            obj.find('name').text = rename_category_map[name]
             ismodify = True
 
     # 保存修改后的XML文件
     if ismodify:
-        merge_xml_file_name = Path(save_merge_xml, Path(xml_file).name)
-        tree.write(merge_xml_file_name, encoding='utf-8', xml_declaration=True)
+        rename_xml_file_name = Path(save_rename_xml, Path(xml_file).name)
+        tree.write(rename_xml_file_name, encoding='utf-8', xml_declaration=True)
         print(f"{os.path.basename(xml_file)} modify label")
     else:
-        shutil.copy(xml_file, save_merge_xml)
+        shutil.copy(xml_file, save_rename_xml)
 
 
-def process_directory(voc_dir, merge_category_map):
-
-    merge_xml_name = "xml_merge"
-    save_merge_dir = Path(Path(voc_dir).parent, merge_xml_name)
-    if not Path(save_merge_dir).exists():
-        Path(save_merge_dir).mkdir(parents=True, exist_ok=True)
+# 类别名修改后，不修改源文件，而是存储到新建的文件夹中，放置污染原始标签文件
+def process_directory(voc_dir, rename_category_map):
+    merge_xml_name = "xml_modify_class"
+    save_rename_dir = Path(Path(voc_dir).parent, merge_xml_name)
+    if not Path(save_rename_dir).exists():
+        Path(save_rename_dir).mkdir(parents=True, exist_ok=True)
     else:
-        if len(os.listdir(save_merge_dir)) > 0:
-            print(f"文件夹：{save_merge_dir}，不为空，程序退出")
+        if len(os.listdir(save_rename_dir)) > 0:
+            print(f"文件夹：{save_rename_dir}，不为空，程序退出")
             return
-
 
     # 遍历目录中的所有XML文件
     for filename in os.listdir(voc_dir):
         if filename.endswith('.xml'):
             xml_file = os.path.join(voc_dir, filename)
-            update_category(xml_file, save_merge_dir, merge_category_map)
+            update_category(xml_file, save_rename_dir, rename_category_map)
 
 '''
-voc 不同类别合并, / 类别改名
+voc 不同类别合并, 或者 类别改名
 '''
 def main():
     parser = argparse.ArgumentParser()
@@ -71,11 +70,11 @@ def main():
         voc_label_dir = "path/to/voc_xml"    # 指定VOC数据集的标注文件目录s
 
     # 定义 需要合并的类别映射
+    # key: 原有类别名，
+    # value：更改后的类别名
     category_map = {
-        'pickup': 'truck',
-        'bus2': 'car',
+        'coal': 'gangue',
     }
-
     # 调用函数处理目录中的所有XML文件
     process_directory(voc_label_dir, category_map)
 

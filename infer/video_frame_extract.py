@@ -152,17 +152,22 @@ def extract_frame(video_path_dir, save_dir, interval=10):
         # 释放捕获对象
         cap.release()
 
-if __name__ == '__main__':
-
+def video_clip_segment():
     input_video_path = '/home/ytusdc/测试数据/01000000772000000.mp4'  # 输入视频路径
     output_video_path = '/home/ytusdc/测试数据/01000000772000000_clip_no.mp4'  # 输出视频路径
-    start_time = "2:09:0"  # 开始时间为5秒
-    end_time = "2:14:0"   # 结束时间为10秒
+    start_time = "2:09:0"  # 开始时间: hh:mm:ss / mm:ss / ss
+    end_time = "2:14:0"   # 结束时间：hh:mm:ss / mm:ss / ss
 
-    # clip_video_segment(input_video_path, output_video_path, start_time, end_time)
+    clip_video_segment(input_video_path, output_video_path, start_time, end_time)
 
-    video_path = "/home/ytusdc/Pictures/yiwu.mp4"
-    video_path = "/home/ytusdc/2024-12-11"
-    save_dir  = "/home/ytusdc/2024-12-11/save_dir"
-    interval = 15
+def video_extract():
+    video_path = "/home/ytusdc/测试数据/车辆/192.168.10.123/00000000065000000.mp4"
+    save_dir  = "/home/ytusdc/测试数据/车辆/192.168.10.123/extract_frame"
+    interval = 25
     extract_frame(video_path, save_dir, interval)
+
+if __name__ == '__main__':
+    video_extract()
+    # video_clip_segment()
+
+
