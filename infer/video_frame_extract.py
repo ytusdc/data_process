@@ -1,6 +1,11 @@
 import os
 from pathlib import Path
 import cv2
+import datetime
+
+from rope.base.oi.type_hinting.evaluate import prefix
+
+
 def str2second(str_time):
     """
     Args:
@@ -113,15 +118,29 @@ def clip_video_segment(video_path, clip_video_path, start_time, end_time):
     print("Extraction complete.")
 
 
-def extract_frame(video_path_dir, save_dir, interval=10):
+def extract_frame(video_path_dir, save_dir, interval=10, prefix=None):
     '''
     视频抽帧
     Args:
         video_path_dir:  视频video路径, 或者视频video文件夹
         save_dir:    抽帧图片保存路径
         interval: 间隔 interval 帧保存图片
+        prefix:   抽取frame保存的前缀
     Returns:
     '''
+
+    # 获取当前日期时间
+    now = datetime.datetime.now()
+    # 格式化日期时间字符串
+    # datetime_str = now.strftime("%Y%m%d%H%M%S")
+    datetime_str = now.strftime("%Y%m%d")
+
+    if prefix is None:
+        prefix = datetime_str
+    elif isinstance(prefix, str) and prefix.strip() == "":
+        prefix = datetime_str
+    else:
+        prefix = str(prefix).strip() + "_" + datetime_str
 
     Path(save_dir).mkdir(parents=True, exist_ok=True)
 
@@ -143,7 +162,7 @@ def extract_frame(video_path_dir, save_dir, interval=10):
                 break
 
             if count_frame % interval == 0:
-                formatted_name = str(int(count_frame / interval)).zfill(6) + ".jpg"
+                formatted_name = prefix + "_" + str(int(count_frame / interval)).zfill(6) + ".jpg"
                 # formatted_name = str(count_frame).zfill(6) + ".jpg"
                 img_save_path = os.path.join(save_dir, formatted_name)
                 cv2.imwrite(str(img_save_path), frame)
@@ -169,5 +188,6 @@ def video_extract():
 if __name__ == '__main__':
     video_extract()
     # video_clip_segment()
+    print("")
 
 

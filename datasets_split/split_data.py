@@ -12,19 +12,6 @@ from tqdm import tqdm
 import argparse
 
 from utils import *
-"""
-默认数据集中 image和label文件夹文件没有问题，在不考虑后缀名的前提下，
-只获取id 和对应文件名没有问题
-"""
-def get_id_filename_dict(data_dir):
-    # 过滤掉 ‘.’开头的隐藏文件, 有的情况下会出现，大部分情况不会，以防万一
-    filter_file_ls = os.listdir(data_dir)
-    for i in range(len(filter_file_ls) - 1, -1, -1):  # for i in range(0, num_list.__len__())[::-1]
-        if filter_file_ls[i].startswith('.'):
-            filter_file_ls.pop(i)
-    id_name_dict = {os.path.splitext(name)[0]: name for name in filter_file_ls}
-    return id_name_dict
-
 '''
 找到没有对应的标签或者图片，单独保存，
 '''
@@ -130,7 +117,10 @@ def split_data(ori_img_dir,
         print(f"split percent len is error")
         return
 
-    for split_dir_name, img_ls in zip(split_name_ls, split_img_ls):
+    id_img_dict = common_fun.get_id_filename_dict(ori_img_dir)
+    id_label_dict = common_fun.get_id_filename_dict(ori_label_dir, suffix=[".txt", ".xml"])
+
+    for split_dir_name, split_img_ls in zip(split_name_ls, split_img_ls):
 
         # 前面的步骤已经判断了文件夹是否为空，这里不用再判断了
         target_img_path = Path(des_img_dir, split_dir_name)
@@ -140,12 +130,9 @@ def split_data(ori_img_dir,
         if not Path(target_label_path).exists():
             Path(target_label_path).mkdir(parents=True, exist_ok=True)
 
-        id_img_dict = get_id_filename_dict(ori_img_dir)
-        id_label_dict = get_id_filename_dict(ori_label_dir)
+        split_imgs_id_ls = list(map(lambda x: os.path.splitext(x)[0], split_img_ls))
 
-        imgs_id_ls = list(map(lambda x: os.path.splitext(x)[0], img_ls))
-
-        for id in tqdm(imgs_id_ls, desc=split_dir_name + " split process"):
+        for id in tqdm(split_imgs_id_ls, desc=split_dir_name + " split process"):
             # print(id)
             src_img_file = Path(ori_img_dir, id_img_dict[id])
             src_label_file = Path(ori_label_dir, id_label_dict[id])
@@ -156,7 +143,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--img-dir', type=str, default=None, help='图片文件路径')
     parser.add_argument('-l', '--label-dir', type=str, default=None, help='对应标签文件路径（yolo/voc）格式')
-    parser.add_argument('-d', '--des-dir', type=str, default=None, help='划分后数据集存储路径')
+    parser.add_argument('-s', '--save-dir', type=str, default=None, help='划分后数据集存储路径')
     opt = parser.parse_args()
 
     # 划分 三个数据集
@@ -176,20 +163,20 @@ def main():
         if len(input_args) / 2 != 3:
             print(f"必须传入三个参数，请检查输入")
             sys.exit(-1)
-        if opt.img_dir is None or opt.label_dir is None or opt.des_dir is None:
+        if opt.img_dir is None or opt.label_dir is None or opt.save_dir is None:
             print(f"参数不能为 None")
             sys.exit(-1)
         ori_img_dir = opt.img_dir        # 图片源文件地址
         ori_label_dir = opt.label_dir    # 对应标签源文件
-        des_dir = opt.des_dir            # 划分后数据集保存位置
+        save_dir = opt.save_dir            # 划分后数据集保存位置
     else:
         ori_img_dir = "path/to/img"      # 图片源文件地址
         ori_label_dir = "path/to/label"  # 对应标签源文件
-        des_dir = "path/to/save"         # 划分后数据集保存位置
+        save_dir = "path/to/save"         # 划分后数据集保存位置
 
     # 划分后数据集 自动生成 images， labels 文件夹，根据需要自己修改
-    des_img_dir = os.path.join(des_dir, "images")    # 图片目存储标地址
-    des_label_dir = os.path.join(des_dir, "labels")  # 标签目标存储地址
+    des_img_dir = os.path.join(save_dir, "images")    # 图片目存储标地址
+    des_label_dir = os.path.join(save_dir, "labels")  # 标签目标存储地址
     ret_0 = operate_dir.mkdirs(des_img_dir)
     ret_1 = operate_dir.mkdirs(des_label_dir)
 

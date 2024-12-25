@@ -64,6 +64,7 @@ def get_filepath_ls(data_dir, suffix=None):
 """
 获取文件 id： fullpath, 字典， id 不包含后缀
 前提是文件名命名没有相同的，因为id不包含后缀，如 1.jpg 和 1.png 是不同的文件但是id相同
+默认suffix 是过滤图片的
 """
 def get_id_path_dict(data_dir, suffix=None):
     if suffix is None:

@@ -13,7 +13,7 @@ import argparse
 import shutil
 import xml.etree.ElementTree as ET
 
-def update_category(xml_file, save_rename_xml, rename_category_map):
+def update_category(xml_file, save_xml_dir, rename_category_map_dict):
     # 解析XML文件
     tree = ET.parse(xml_file)
     root = tree.getroot()
@@ -22,17 +22,17 @@ def update_category(xml_file, save_rename_xml, rename_category_map):
     # 更新类别标签
     for obj in root.findall('object'):
         name = obj.find('name').text
-        if name in rename_category_map:
-            obj.find('name').text = rename_category_map[name]
+        if name in rename_category_map_dict.keys():
+            obj.find('name').text = rename_category_map_dict[name]
             ismodify = True
 
     # 保存修改后的XML文件
     if ismodify:
-        rename_xml_file_name = Path(save_rename_xml, Path(xml_file).name)
+        rename_xml_file_name = Path(save_xml_dir, Path(xml_file).name)
         tree.write(rename_xml_file_name, encoding='utf-8', xml_declaration=True)
         print(f"{os.path.basename(xml_file)} modify label")
     else:
-        shutil.copy(xml_file, save_rename_xml)
+        shutil.copy(xml_file, save_xml_dir)
 
 
 # 类别名修改后，不修改源文件，而是存储到新建的文件夹中，放置污染原始标签文件
@@ -69,11 +69,13 @@ def main():
     else:
         voc_label_dir = "path/to/voc_xml"    # 指定VOC数据集的标注文件目录s
 
+    voc_label_dir = "/home/ytusdc/Data/Data_car_1223/xml_未合并/xml_1000_原始未合并/xml"
     # 定义 需要合并的类别映射
     # key: 原有类别名，
     # value：更改后的类别名
     category_map = {
-        'coal': 'gangue',
+        'pickup': 'car',
+        'bus2': 'car',
     }
     # 调用函数处理目录中的所有XML文件
     process_directory(voc_label_dir, category_map)
