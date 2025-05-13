@@ -30,8 +30,13 @@ def convert2yolo_txt(txt_path, height, width, labels_ls, points_ls, class_id_dic
 
     with open(txt_path, "w") as f_w:
         for label, points in zip(labels_ls, points_ls):
-            if len(points) < 3:
+            # 矩形转换成四边形
+            if label == "qiegetou" and len(points) == 2:
+                [x1, y1], [x2, y2] = points
+                points = [[x1, y1], [x2, y1], [x2, y2], [x1, y2]]
+            elif len(points) < 3:
                 print(f"Error: must be at least 3 pairs: {txt_path} points lens= {len(points)}")
+                # pass
             if label not in class_id_dict.keys():
                 print(f"Error: unsupported label: {txt_path}: {label}")
 
@@ -88,10 +93,10 @@ def begin_convert(ori_dir, save_dir, yaml_file=None):
 
 if __name__ == '__main__':
 
-    ori_label_dir = "/home/ytusdc/Data/sdc/煤流检测/json"
+    ori_label_dir = "/home/ytusdc/Data_ori/caimeimian_images/json"
     # ori_label_dir = "/home/ytusdc/Data/ddd"
-    save_dir = "/home/ytusdc/Data/sdc/煤流检测/yolo"
-    yam_file = "/home/ytusdc/codes/ultralytics/ultralytics/cfg/datasets/coco-seg-meiliu.yaml"
+    save_dir = "/home/ytusdc/Data_ori/caimeimian_images/yolo"
+    yam_file = "/home/ytusdc/Data/Data_caimeimian/caimeimian.yaml"
     begin_convert(ori_label_dir, save_dir, yam_file)
 
     pass

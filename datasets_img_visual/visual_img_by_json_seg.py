@@ -85,7 +85,7 @@ def draw_seg_line(json_file, img_file):
         label = shape["label"]
         points = np.array(shape["points"], dtype=np.int32).reshape((-1, 1, 2))
 
-        # 根据标签选择颜色
+        # 根据标签id(0, 1, 2)选择颜色
         if global_cls_id_dict is None:
             color = line_color_default
         else:
@@ -95,7 +95,15 @@ def draw_seg_line(json_file, img_file):
     return image
 
 def draw_image(imgs_dir, annos_dir, imgs_save_dir, yaml_file=None, img_type=['.jpg', '.png', '.jpeg']):
-
+    """
+    Args:
+        imgs_dir:    图片文件数据
+        annos_dir:   标签文件数据
+        imgs_save_dir:  可视化后文件保存位置
+        yaml_file:   id:name 标签对应文件，有id号才能根据id绘制颜色，否则都绘制同一种颜色
+        img_type: 过滤的图片文件类型， 默认['.jpg', '.png', '.jpeg']
+    Returns:
+    """
     assert os.path.exists(imgs_dir), "image path:{} dose not exists".format(image_path)
     assert os.path.exists(annos_dir), "annotation path:{} does not exists".format(annos_dir)
     if not os.path.exists(imgs_save_dir):
@@ -124,8 +132,6 @@ def draw_image(imgs_dir, annos_dir, imgs_save_dir, yaml_file=None, img_type=['.j
         # cv2.imshow("show", mask)
         # # 调整窗口大小（可选）
         # cv2.waitKey(0)
-
-
 
 if __name__ == '__main__':
     image_path = os.path.join("/home/ytusdc/Pictures/meimian", "Snipaste_2025-02-18_11-04-02.png")

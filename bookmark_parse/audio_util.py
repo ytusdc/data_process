@@ -89,7 +89,7 @@ class AudioConvert:
         #     except:
         #         print(f"只支持 Flac/Mp3，两种格式音频，当前音频格式为{suffix}")
         #         return
-
+    # 检查音频后缀有没有错
     def check_audio_format(self, audio_path):
         try:
             audio = FLAC(audio_path)
@@ -106,12 +106,12 @@ class AudioConvert:
         suffix_ls = ['.mp3', '.flac']
         file_ls = [os.path.join(src_dir, i) for i in os.listdir(src_dir) if os.path.splitext(i)[-1].lower() in suffix_ls]
         for file in file_ls:
-            suffix = Path(file).suffix.lower()
+            suffix = Path(file).suffix.lower()  # 原始文件名中后缀
             format_type = self.check_audio_format(file)
             if format_type == "Unknown":
                 print(f"未知文件类型：{file}")
                 continue
-            format_type_suffix = str("." + format_type).lower()
+            format_type_suffix = str("." + format_type).lower() # 真实的文件类型后缀
             if suffix == format_type_suffix:
                 continue
             else:
@@ -149,10 +149,10 @@ class AudioConvert:
         # 加载MP3文件
         audio = EasyID3(mp3_path)
         # 设置或修改元数据标签
-        audio['title'] = 'Your Song Title'
-        audio['artist'] = 'Artist Name'
-        audio['album'] = 'Album Name'
-        audio['genre'] = 'Genre Name'
+        audio['title'] = 'Your Song Title' # 标题
+        audio['artist'] = 'Artist Name' # 艺术家
+        audio['album'] = 'Album Name' # 专辑
+        audio['genre'] = 'Genre Name' # 流派
         audio['date'] = '2023'  # 年份
         # 保存更改
         audio.save()
@@ -364,9 +364,12 @@ if __name__ == '__main__':
 
     temp = "/home/ytusdc/Downloads/test/陈一发儿 - 童话镇.mp3"
     temp = "/home/ytusdc/Downloads/1_music/不仅仅是喜欢 - 孙语赛.mp3"
+
+    main_convert_2_mp3("/home/ytusdc/Downloads/11/W2L.BHY/00.mp3")
+
     # main_convert(src_dir)
     # main_rename(temp)
-    audioConvert_cls = AudioConvert()
+    # audioConvert_cls = AudioConvert()
     #
     # audioConvert_cls.getAudioInfo(temp)
 

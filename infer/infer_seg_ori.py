@@ -47,9 +47,10 @@ class OpencvSeg:
 # 煤流测试
 def coal_video():
     model_path = "/home/ytusdc/codes_zkyc/svn_Release/源模型/语义分割/皮带状态/煤流检测_v2.onnx"
+    model_path = "/home/ytusdc/codes_zkyc/svn_Release/源模型/语义分割/皮带煤流检测/煤流检测v3.onnx"
     model = OpencvSeg(model_path)  # 模型
-    videopath = "/home/ytusdc/测试数据/9号皮带/20230220/22/ch22_20230220182404.mp4"
-    savepath = "/home/ytusdc/测试数据/9号皮带/20230220/coal_result_video"
+    videopath = "/home/ytusdc/test_3.jpg"
+    savepath = "/home/ytusdc/测试数据/coal_result_video"
 
     path1, filename = os.path.split(videopath)
     savepath1 = os.path.join(savepath, filename[:-4])

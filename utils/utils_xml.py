@@ -44,7 +44,7 @@ def parser_info_dict(info: dict):
             (xmin, ymin, xmax, ymax) 均为字符串类型
         size_tuple = (width, height)
     """
-    filename = info['annotation']['filename']
+    # filename = info['annotation']['filename']
     objects = []
 
     width = int(info['annotation']['size']['width'])
@@ -214,7 +214,6 @@ def save_info_dict_to_xml(info_dict, save_path):
     Args:
         info_dict:
         save_path:
-
     Returns:
 
     """

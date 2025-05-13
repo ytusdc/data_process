@@ -13,7 +13,7 @@ imgs_save_dir： 绘制 bbox后的img存储位置
 yaml_file: yolo 标签对应类别的文件
 bgr： 颜色值格式为bgr，使用opencv绘图颜色值是bgr， 如果是rgb格式颜色值需要做相应转换
 """
-def draw_image(images_dir, annos_dir, yaml_file, imgs_save_dir, bgr = True, img_type={'.jpg', '.png', '.jpeg'}):
+def draw_image(images_dir, annos_dir, yaml_file, imgs_save_dir, bgr = True, img_type=['.jpg', '.png', '.jpeg']):
     assert os.path.exists(images_dir), "image path:{} dose not exists".format(images_dir)
     assert os.path.exists(annos_dir), "annotation path:{} does not exists".format(annos_dir)
     if not os.path.exists(imgs_save_dir):
@@ -44,10 +44,11 @@ def draw_image(images_dir, annos_dir, yaml_file, imgs_save_dir, bgr = True, img_
             points = []
             x_sum = 0
             y_sum = 0
+
             for i in range(1, len(object), 2):
-                b = [float(tmp) for tmp in object[i:i + 2]]
-                x = int(b[0] * width)
-                y = int(b[1] * height)
+                b = [float(tmp) for tmp in object[i:i + 2]]  # 获得每个点的[x, y] 坐标
+                x = int(b[0] * width)   # 坐标转换
+                y = int(b[1] * height)  # 坐标转换
                 points.append([x, y])
                 x_sum += x
                 y_sum += y
@@ -72,4 +73,10 @@ if __name__ == '__main__':
     annos_dir = "/home/ytusdc/Data/sdc/煤流检测/yolo"
     yaml_file = "/home/ytusdc/codes/ultralytics/ultralytics/cfg/datasets/coco-seg-meiliu.yaml"
     imgs_save_dir = "/home/ytusdc/Data/sdc/煤流检测/result_img"
+
+    images_dir = "/home/ytusdc/Data/Data_caimeimian/images_2"
+    annos_dir = "/home/ytusdc/Data/Data_caimeimian/labels_2"
+    yaml_file = "/home/ytusdc/Data/Data_caimeimian/id_class.yaml"
+    imgs_save_dir = "/home/ytusdc/Data/Data_caimeimian/result_img"
+
     draw_image(images_dir, annos_dir, yaml_file, imgs_save_dir)
